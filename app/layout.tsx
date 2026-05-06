@@ -3,6 +3,8 @@ import { Montserrat } from "next/font/google";
 import "./globals.css";
 
 import Navbar from "@/components/layout/Navbar";
+import Footer from "@/components/layout/Footer";
+import FloatingInfo from "@/components/layout/FloatingInfo";
 
 const montserrat = Montserrat({
   variable: "--font-montserrat",
@@ -13,6 +15,9 @@ const montserrat = Montserrat({
 export const metadata: Metadata = {
   title: "Welcome - Grand Sud - 100% Management & Tourism School",
   description: "The 100% Management & Tourism school since 1991 | A Supdeform School",
+  icons: {
+    icon: '/icon.svg',
+  },
 };
 
 import { LanguageProvider } from "@/context/LanguageContext";
@@ -31,6 +36,8 @@ export default function RootLayout({
         <LanguageProvider>
           <Navbar />
           <main className="flex-1 flex flex-col">{children}</main>
+          <Footer />
+          <FloatingInfo />
         </LanguageProvider>
       </body>
     </html>
