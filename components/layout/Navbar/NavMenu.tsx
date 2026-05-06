@@ -20,20 +20,17 @@ export default function NavMenu({ lang }: NavMenuProps) {
 
   return (
     <nav className="bg-primary-red sticky top-0 z-50">
-      <div className="container mx-auto px-4">
+      <div className="max-w-[1440px] mx-auto px-6 md:px-[200px]">
         <div className="flex items-center justify-between h-16 md:h-20">
-          {/* Logo - White box overlapping the red bar */}
-          <Link href="/" className="relative z-20 -mt-1 md:-mt-2 transition-transform hover:scale-105">
-            <div className="bg-white p-2 md:p-4 shadow-xl border border-gray-100">
-              <div className="w-28 h-12 md:w-36 md:h-16 relative">
-                <Image
-                  src="/assets/logo.jpg"
-                  alt="Grand Sud Logo"
-                  fill
-                  className="object-contain"
-                  priority
-                />
-              </div>
+          <Link href="/" className="relative z-50 translate-y-2 md:translate-y-3 -mb-10 hover:opacity-80 transition-opacity">
+            <div className="w-32 h-32 md:w-40 md:h-40 relative">
+              <Image
+                src="/assets/logo.jpg"
+                alt="Grand Sud Logo"
+                fill
+                className="object-contain"
+                priority
+              />
             </div>
           </Link>
 
@@ -48,8 +45,8 @@ export default function NavMenu({ lang }: NavMenuProps) {
               >
                 <Link
                   href={item.href}
-                  className={`px-5 py-2 text-[14px] md:text-[15px] font-[600] uppercase tracking-[0.05em] transition-all duration-200 flex items-center gap-2 ${
-                    activeMenu === item.title ? "bg-white text-primary-red" : "text-white hover:bg-white/10"
+                  className={`px-5 py-2 text-[14px] md:text-[15px] font-bold uppercase tracking-[0.05em] transition-all duration-200 flex items-center gap-2 ${
+                    activeMenu === item.title ? "text-[#3d1311]" : "text-white hover:bg-white/10"
                   }`}
                 >
                   {item.title}
@@ -67,9 +64,6 @@ export default function NavMenu({ lang }: NavMenuProps) {
 
           {/* Action Icons */}
           <div className="flex items-center gap-4">
-            <button className="text-white hover:bg-white/10 p-2 rounded-full transition-colors hidden md:block">
-              <Search size={20} />
-            </button>
             <button className="bg-[#3d1311] text-white rounded-full p-1.5 hover:scale-110 transition-transform">
               <svg 
                 xmlns="http://www.w3.org/2000/svg" 

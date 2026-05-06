@@ -8,9 +8,7 @@ interface TopBarProps {
 export default function TopBar({ lang, setLang }: TopBarProps) {
   return (
     <div className="bg-[#812522] text-white py-2 px-4 text-[10px] md:text-[11px] border-b border-white/5 uppercase tracking-[0.12em] font-semibold">
-      <div className="container mx-auto flex items-center justify-between">
-        {/* Left spacer for desktop to center text better if needed, but screenshot shows text centered relative to icons */}
-        <div className="hidden md:block w-32"></div>
+      <div className="max-w-[1440px] mx-auto flex items-center justify-between md:px-[200px]">
 
         <div className="flex-1 text-center">
           THE 100% MANAGEMENT & TOURISM SCHOOL SINCE 1991 | A SUPDEFORM SCHOOL
