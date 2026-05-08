@@ -24,7 +24,7 @@ export default function Hero() {
       apply: "APPLY",
       brochure: "BROCHURE",
       applyHref: "/en/apply",
-      brochureHref: "/en/courses"
+      brochureHref: "/en/brochure"
     },
     fr: {
       heading1: "PARTAGER LE",
@@ -33,7 +33,7 @@ export default function Hero() {
       apply: "CANDIDATER",
       brochure: "BROCHURE",
       applyHref: "/fr/candidater",
-      brochureHref: "/fr/formations"
+      brochureHref: "/fr/brochure"
     }
   };
 

@@ -3,6 +3,7 @@
 import { useLanguage } from "@/context/LanguageContext";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function DreamSection() {
   const { lang } = useLanguage();
@@ -50,37 +51,59 @@ export default function DreamSection() {
 
           {/* Right Side - Stacked CTA Cards */}
           <div className="flex flex-col gap-6 md:gap-8 w-full md:w-auto">
-            {t.cards.map((card, idx) => (
-              <motion.div
-                key={idx}
-                initial={{ opacity: 0, x: 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: idx * 0.1, duration: 0.5 }}
-                className="flex items-center gap-6 cursor-pointer group"
-              >
-                {/* Rectangular Image with White Overlay on Hover */}
-                <div className="relative w-[120px] h-[80px] md:w-[150px] md:h-[100px] shrink-0 overflow-hidden shadow-md">
-                  <Image 
-                    src={card.image}
-                    alt={card.title}
-                    fill
-                    className="object-cover"
-                  />
-                  {/* White Overlay on Hover */}
-                  <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-30 transition-opacity duration-300" />
-                </div>
-
-                {/* Text Beside Image with Translate Effect */}
-                <motion.h4 
-                  whileHover={{ x: 5 }}
-                  transition={{ duration: 0.3 }}
-                  className="text-[14px] md:text-[18px] lg:text-[20px] font-bold text-[#444] uppercase tracking-tight leading-tight max-w-[200px] md:max-w-[300px] group-hover:text-primary-red transition-colors"
+            {t.cards.map((card, idx) => {
+              const content = (
+                <motion.div
+                  key={idx}
+                  initial={{ opacity: 0, x: 20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: idx * 0.1, duration: 0.5 }}
+                  className="flex items-center gap-6 cursor-pointer group"
                 >
-                  {card.title}
-                </motion.h4>
-              </motion.div>
-            ))}
+                  {/* Rectangular Image with White Overlay on Hover */}
+                  <div className="relative w-[120px] h-[80px] md:w-[150px] md:h-[100px] shrink-0 overflow-hidden shadow-md">
+                    <Image 
+                      src={card.image}
+                      alt={card.title}
+                      fill
+                      className="object-cover"
+                    />
+                    {/* White Overlay on Hover */}
+                    <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-30 transition-opacity duration-300" />
+                  </div>
+
+                  {/* Text Beside Image with Translate Effect */}
+                  <motion.h4 
+                    whileHover={{ x: 5 }}
+                    transition={{ duration: 0.3 }}
+                    className="text-[14px] md:text-[18px] lg:text-[20px] font-bold text-[#444] uppercase tracking-tight leading-tight max-w-[200px] md:max-w-[300px] group-hover:text-primary-red transition-colors"
+                  >
+                    {card.title}
+                  </motion.h4>
+                </motion.div>
+              );
+
+              if (idx === 0) {
+                const applyHref = lang === "en" ? "/en/apply" : "/fr/candidater";
+                return (
+                  <Link href={applyHref} key={idx}>
+                    {content}
+                  </Link>
+                );
+              }
+
+              if (idx === 2) {
+                const brochureHref = lang === "en" ? "/en/brochure" : "/fr/brochure";
+                return (
+                  <Link href={brochureHref} key={idx}>
+                    {content}
+                  </Link>
+                );
+              }
+
+              return content;
+            })}
           </div>
 
         </div>
