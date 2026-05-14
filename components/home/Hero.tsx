@@ -24,7 +24,7 @@ export default function Hero() {
       apply: "APPLY",
       brochure: "BROCHURE",
       applyHref: "/en/apply",
-      brochureHref: "/en/courses"
+      brochureHref: "/en/brochure"
     },
     fr: {
       heading1: "PARTAGER LE",
@@ -33,7 +33,7 @@ export default function Hero() {
       apply: "CANDIDATER",
       brochure: "BROCHURE",
       applyHref: "/fr/candidater",
-      brochureHref: "/fr/formations"
+      brochureHref: "/fr/brochure"
     }
   };
 
@@ -41,81 +41,89 @@ export default function Hero() {
 
   return (
     <section className="relative w-full h-[calc(100vh-100px)] md:h-[calc(100vh-120px)] overflow-hidden flex flex-col">
-      {/* Background Video with Premium Slow Zoom */}
-      <div className="absolute inset-0 z-0">
-        <motion.div 
-          animate={{ scale: [1, 1.1] }}
-          transition={{ duration: 20, repeat: Infinity, repeatType: "reverse", ease: "linear" }}
-          className="w-full h-full"
-        >
-          <video
-            autoPlay
-            loop
-            muted
-            playsInline
-            className="w-full h-full object-cover"
+      {/* Cinematic Split Background Layout */}
+      <div className="grid grid-cols-1 lg:grid-cols-2 h-full w-full">
+        
+        {/* Left Section - Video Background with Premium Slow Zoom */}
+        <div className="relative h-[400px] lg:h-full overflow-hidden">
+          <motion.div 
+            animate={{ scale: [1, 1.1] }}
+            transition={{ duration: 20, repeat: Infinity, repeatType: "reverse", ease: "linear" }}
+            className="w-full h-full"
           >
-            <source src="/assets/background-tourism.mp4" type="video/mp4" />
-          </video>
-        </motion.div>
-        {/* Advanced Overlay: Left Darker Gradient */}
-        <div className="absolute inset-0 bg-black/40" />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/30 to-transparent" />
+            <video
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="w-full h-full object-cover"
+            >
+              <source src="/assets/background-tourism.mp4" type="video/mp4" />
+            </video>
+          </motion.div>
+          {/* Advanced Overlay: Darker on mobile for readability */}
+          <div className="absolute inset-0 bg-black/40 lg:bg-black/20" />
+        </div>
+
+        {/* Right Section - Solid Color Panel */}
+        <div className="bg-primary-red h-full" />
       </div>
 
-      {/* Main Content Area - Vertically Centered */}
-      <div className="max-w-[1440px] mx-auto px-6 md:px-[200px] relative h-full flex flex-col justify-center">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          className="max-w-5xl"
-        >
-          <h1 className="text-white text-5xl md:text-7xl lg:text-[90px] font-bold leading-[0.95] mb-6 tracking-tight uppercase">
-            {lang === "fr" ? "« " : "\""}
-            {t.heading1} {t.heading2}
-            {lang === "fr" ? " »" : "\""}
-          </h1>
-          
-          <p className="text-white text-base md:text-lg lg:text-xl font-medium mb-8 max-w-2xl opacity-95 leading-relaxed tracking-wide">
-            {t.subtitle}
-          </p>
+      {/* Main Content Area - Overlapping Both Sections */}
+      <div className="absolute inset-0 z-20 flex flex-col items-center justify-center pointer-events-none">
+        <div className="max-w-[1440px] mx-auto w-full px-6 md:px-12 lg:px-20 pt-20 lg:pt-0">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="flex flex-col items-center lg:items-start max-w-7xl mx-auto pointer-events-auto"
+          >
+            <h1 className="text-white text-center lg:text-left text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight tracking-tight uppercase mb-6 text-balance break-words">
+              {lang === "fr" ? "« " : "\""}
+              {t.heading1} {t.heading2}
+              {lang === "fr" ? " »" : "\""}
+            </h1>
+            
+            <p className="text-white text-center lg:text-left text-lg md:text-xl lg:text-2xl font-medium mb-10 max-w-2xl opacity-95 leading-relaxed tracking-wide text-balance">
+              {t.subtitle}
+            </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 md:gap-5">
-            <Link 
-              href={t.applyHref}
-              className="bg-primary-red text-white font-bold px-10 py-3 rounded-full text-center text-base hover:bg-red-700 transition-all shadow-lg tracking-wide"
-            >
-              {t.apply}
-            </Link>
-            <Link 
-              href={t.brochureHref}
-              className="bg-primary-red text-white font-bold px-10 py-3 rounded-full text-center text-base hover:bg-red-700 transition-all shadow-lg tracking-wide"
-            >
-              {t.brochure}
-            </Link>
-          </div>
-        </motion.div>
+            <div className="flex flex-col sm:flex-row gap-4 md:gap-6">
+              <Link 
+                href={t.applyHref}
+                className="bg-white text-primary-red font-bold px-12 py-4 rounded-full text-center text-base md:text-lg hover:bg-gray-100 transition-all shadow-xl tracking-widest uppercase"
+              >
+                {t.apply}
+              </Link>
+              <Link 
+                href={t.brochureHref}
+                className="bg-transparent border-2 border-white text-white font-bold px-12 py-4 rounded-full text-center text-base md:text-lg hover:bg-white/10 transition-all shadow-xl tracking-widest uppercase"
+              >
+                {t.brochure}
+              </Link>
+            </div>
+          </motion.div>
+        </div>
       </div>
 
-      {/* Structured Logo Strip - Aligned to bottom RIGHT, fully visible */}
-      <div className="relative z-10 pb-8 md:pb-12">
-        <div className="max-w-[1440px] mx-auto px-6 md:px-[200px]">
-          <div className="flex flex-wrap items-center justify-center md:justify-end gap-3 md:gap-4 lg:mr-16">
+      {/* Structured Logo Strip - Bottom Aligned */}
+      <div className="absolute bottom-0 left-0 w-full z-30 pb-8 md:pb-12 pointer-events-none">
+        <div className="max-w-[1440px] mx-auto px-6 md:px-[100px] lg:px-[200px]">
+          <div className="flex flex-wrap items-center justify-center lg:justify-end gap-3 md:gap-6 lg:mr-16 pointer-events-auto">
             {PARTNER_LOGOS.map((logo, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5, delay: 0.4 + index * 0.1 }}
-                className="relative w-16 h-16 md:w-24 md:h-24 flex items-center justify-center transition-all duration-300 group"
+                className="relative w-12 h-12 md:w-20 md:h-20 flex items-center justify-center transition-all duration-300 group"
               >
-                <div className="relative w-full h-full transition-transform duration-300 group-hover:scale-105">
+                <div className="relative w-full h-full bg-white rounded-md p-2 transition-transform duration-300 group-hover:scale-105 shadow-sm">
                   <Image
                     src={logo.src}
                     alt={logo.alt}
                     fill
-                    className="object-contain p-1"
+                    className="object-contain"
                   />
                 </div>
               </motion.div>
@@ -123,7 +131,7 @@ export default function Hero() {
           </div>
         </div>
       </div>
-
     </section>
   );
 }
+

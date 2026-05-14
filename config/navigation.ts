@@ -12,8 +12,8 @@ export const navigationData = {
         ],
         rightSections: [
           { title: "CAMPUS", icon: "map-pin", image: "/assets/campus-toulouse.jpg", subtext: "Toulouse-Labège" },
-          { title: "CHIFFRES CLÉS", icon: "bar-chart" },
-          { title: "NOUS RENCONTRER", icon: "calendar" },
+          { title: "CHIFFRES CLÉS", icon: "bar-chart", href: "/fr/lecole/chiffres-cles" },
+          { title: "NOUS RENCONTRER", icon: "calendar", href: "/fr/lecole/rencontrer" },
         ],
       },
     },
@@ -28,33 +28,33 @@ export const navigationData = {
           {
             title: "PROGRAMMES EN FRANÇAIS",
             links: [
-              { label: "BTS Tourisme", href: "/fr/bts-tourisme" },
-              { label: "BTS MCO", href: "/fr/bts-mco" },
-              { label: "Bachelor Hospitality Management", href: "/fr/bachelor-hospitality" },
-              { label: "Bachelor MICE Designer", href: "/fr/bachelor-mice" },
-              { label: "Bachelor Tourisme Durable", href: "/fr/bachelor-durable" },
-              { label: "Mastère Manager de projets", href: "/fr/mastere-projets" },
+              { label: "BTS Tourisme", href: "/fr/formations/bts-tourisme" },
+              { label: "BTS MCO", href: "/fr/formations/bts-mco" },
+              { label: "Bachelor Hospitality Management", href: "/fr/formations/bachelor-hospitality" },
+              { label: "Bachelor MICE Designer", href: "/fr/formations/bachelor-mice" },
+              { label: "Bachelor Tourisme Durable", href: "/fr/formations/bachelor-durable" },
+              { label: "Mastère Manager de projets", href: "/fr/formations/mastere-projets" },
             ],
-            extra: { title: "COURS INTENSIFS", links: [{ label: "GDS Amadeus", href: "/fr/amadeus" }] }
+            extra: { title: "COURS INTENSIFS", links: [{ label: "GDS Amadeus", href: "/fr/formations/amadeus" }] }
           },
           {
             title: "PROGRAMMES EN ANGLAIS",
             links: [
-              { label: "Bachelor Business & Tourism", href: "/fr/bachelor-business" },
-              { label: "Bachelor Hospitality Management", href: "/fr/bachelor-hospitality-en" },
-              { label: "Bachelor IT & Tourism", href: "/fr/bachelor-it" },
-              { label: "Mastère Business & Tourism", href: "/fr/mastere-business" },
-              { label: "Mastère Hospitality Management", href: "/fr/mastere-hospitality" },
-              { label: "Mastère IT & Tourism", href: "/fr/mastere-it" },
+              { label: "Bachelor Business & Tourism", href: "/fr/formations/bachelor-business" },
+              { label: "Bachelor Hospitality Management", href: "/fr/formations/bachelor-hospitality-en" },
+              { label: "Bachelor IT & Tourism", href: "/fr/formations/bachelor-it" },
+              { label: "Mastère Business & Tourism", href: "/fr/formations/mastere-business" },
+              { label: "Mastère Hospitality Management", href: "/fr/formations/mastere-hospitality" },
+              { label: "Mastère IT & Tourism", href: "/fr/formations/mastere-it" },
             ]
           },
           {
             title: "MODALITÉS",
             links: [
-              { label: "Alternance", href: "/fr/alternance" },
-              { label: "Initial", href: "/fr/initial" },
-              { label: "Formation continue", href: "/fr/continue" },
-              { label: "VAE", href: "/fr/vae" },
+              { label: "Alternance", href: "/fr/formations/alternance" },
+              { label: "Initial", href: "/fr/formations/initial" },
+              { label: "Formation continue", href: "/fr/formations/continue" },
+              { label: "VAE", href: "/fr/formations/vae" },
             ]
           }
         ]
@@ -76,13 +76,13 @@ export const navigationData = {
           ]
         },
         rightLinks: [
-          { label: "Vie associative", href: "/fr/associatif" },
-          { label: "E-campus et career center", href: "/fr/career-center" },
+          { label: "Vie associative", href: "/fr/campus/associatif" },
+          { label: "E-campus et career center", href: "/fr/campus/career-center" },
         ],
         bottomCards: [
-          { title: "ALTERNANCE", image: "/assets/card-alternance.jpg" },
-          { title: "JOBS ÉTUDIANTS", image: "/assets/card-jobs.jpg" },
-          { title: "AIDES FINANCIÈRES", image: "/assets/card-aides.jpg" },
+          { title: "ALTERNANCE", image: "/assets/card-alternance.jpg", href: "/fr/financement/alternance" },
+          { title: "JOBS ÉTUDIANTS", image: "/assets/card-jobs.jpg", href: "/fr/financement/jobs" },
+          { title: "AIDES FINANCIÈRES", image: "/assets/card-aides.jpg", href: "/fr/financement/aides" },
         ]
       }
     },
@@ -92,13 +92,13 @@ export const navigationData = {
       megaMenu: {
         type: "business",
         links: [
-          { label: "Formez vos équipes", href: "/fr/entreprise/formation" },
-          { label: "Recrutez vos talents :", href: "/fr/entreprise/recrutement" },
+          { label: "Formez vos équipes", href: "/fr/business/formation" },
+          { label: "Recrutez vos talents :", href: "/fr/business/recrutement" },
         ],
         cards: [
-          { title: "STAGIAIRE", image: "/assets/card-stagiaire.jpg" },
-          { title: "ALTERNANT", image: "/assets/card-alternant.jpg" },
-          { title: "ALUMNI", image: "/assets/card-alumni.jpg" },
+          { title: "STAGIAIRE", image: "/assets/card-stagiaire.jpg", href: "/fr/business/stagiaire" },
+          { title: "ALTERNANT", image: "/assets/card-alternant.jpg", href: "/fr/business/alternant" },
+          { title: "DIPLÔMÉ", image: "/assets/card-alumni.jpg", href: "/fr/business/diplome" },
         ],
         rightBox: { title: "ESPACE ENTREPRISE", icon: "briefcase" }
       }
@@ -117,8 +117,8 @@ export const navigationData = {
         ],
         rightSections: [
           { title: "CAMPUS", icon: "map-pin", image: "/assets/campus-toulouse.jpg", subtext: "Toulouse-Labège" },
-          { title: "KEY FIGURES", icon: "bar-chart" },
-          { title: "MEET US", icon: "calendar" },
+          { title: "KEY FIGURES", icon: "bar-chart", href: "/en/school/key-figures" },
+          { title: "MEET US", icon: "calendar", href: "/en/school/meetus" },
         ],
       },
     },
@@ -133,33 +133,33 @@ export const navigationData = {
           {
             title: "COURSES IN FRENCH",
             links: [
-              { label: "BTS Tourism", href: "/en/bts-tourism" },
-              { label: "BTS MCO", href: "/en/bts-mco" },
-              { label: "Bachelor Hospitality Management", href: "/en/bachelor-hospitality" },
-              { label: "Bachelor MICE Designer", href: "/en/bachelor-mice" },
-              { label: "Bachelor Sustainable and Digital Tourism Development", href: "/en/bachelor-sustainable" },
-              { label: "Mastere in Event and Tourism Project Management", href: "/en/mastere-tourism" },
+              { label: "BTS Tourism", href: "/en/courses/bts-tourism" },
+              { label: "BTS MCO", href: "/en/courses/bts-mco" },
+              { label: "Bachelor Hospitality Management", href: "/en/courses/bachelor-hospitality" },
+              { label: "Bachelor MICE Designer", href: "/en/courses/bachelor-mice" },
+              { label: "Bachelor Sustainable and Digital Tourism Development", href: "/en/courses/bachelor-sustainable" },
+              { label: "Mastere in Event and Tourism Project Management", href: "/en/courses/mastere-tourism" },
             ],
-            extra: { title: "Intensive courses", links: [{ label: "GDS Amadeus", href: "/en/amadeus" }] }
+            extra: { title: "Intensive courses", links: [{ label: "GDS Amadeus", href: "/en/courses/amadeus" }] }
           },
           {
             title: "COURSES IN ENGLISH",
             links: [
-              { label: "Bachelor Business & Tourism", href: "/en/bachelor-business" },
-              { label: "Bachelor Hospitality Management", href: "/en/bachelor-hospitality-en" },
-              { label: "Bachelor IT & Tourism", href: "/en/bachelor-it" },
-              { label: "Mastère Business & Tourism", href: "/en/mastere-business" },
-              { label: "Mastère Hospitality Management", href: "/en/mastere-hospitality" },
-              { label: "Mastère IT & Tourism", href: "/en/mastere-it" },
+              { label: "Bachelor Business & Tourism", href: "/en/courses/bachelor-business" },
+              { label: "Bachelor Hospitality Management", href: "/en/courses/bachelor-hospitality-en" },
+              { label: "Bachelor IT & Tourism", href: "/en/courses/bachelor-it" },
+              { label: "Mastère Business & Tourism", href: "/en/courses/mastere-business" },
+              { label: "Mastère Hospitality Management", href: "/en/courses/mastere-hospitality" },
+              { label: "Mastère IT & Tourism", href: "/en/courses/mastere-it" },
             ]
           },
           {
             title: "TRAINING OPTIONS",
             links: [
-              { label: "Work study program", href: "/en/work-study" },
-              { label: "Initial training", href: "/en/initial" },
-              { label: "Continuing education", href: "/en/continuing" },
-              { label: "Validation of Acquired Experience (VAE)", href: "/en/vae" },
+              { label: "Work study program", href: "/en/courses/work-study" },
+              { label: "Initial training", href: "/en/courses/initial" },
+              { label: "Continuing education", href: "/en/courses/continuing" },
+              { label: "Validation of Acquired Experience (VAE)", href: "/en/courses/vae" },
             ]
           }
         ]
@@ -181,13 +181,13 @@ export const navigationData = {
           ]
         },
         rightLinks: [
-          { label: "Community Life", href: "/en/community-life" },
-          { label: "E-campus and career center", href: "/en/career-center" },
+          { label: "Community Life", href: "/en/campus/community-life" },
+          { label: "E-campus and career center", href: "/en/campus/career-center" },
         ],
         bottomCards: [
-          { title: "APPRENTICESHIP", image: "/assets/card-alternance.jpg" },
-          { title: "STUDENT JOBS", image: "/assets/card-jobs.jpg" },
-          { title: "FINANCIAL AIDS", image: "/assets/card-aides.jpg" },
+          { title: "APPRENTICESHIP", image: "/assets/card-alternance.jpg", href: "/en/financing/apprenticeship" },
+          { title: "STUDENT JOBS", image: "/assets/card-jobs.jpg", href: "/en/financing/jobs" },
+          { title: "FINANCIAL AIDS", image: "/assets/card-aides.jpg", href: "/en/financing/aids" },
         ]
       }
     },
@@ -201,9 +201,9 @@ export const navigationData = {
           { label: "Hire your talents :", href: "/en/business/recruitment" },
         ],
         cards: [
-          { title: "INTERN", image: "/assets/card-stagiaire.jpg" },
-          { title: "APPRENTICE", image: "/assets/card-alternant.jpg" },
-          { title: "GRADUATE", image: "/assets/card-alumni.jpg" },
+          { title: "INTERN", image: "/assets/card-stagiaire.jpg", href: "/en/business/intern" },
+          { title: "APPRENTICE", image: "/assets/card-alternant.jpg", href: "/en/business/apprentice" },
+          { title: "GRADUATE", image: "/assets/card-alumni.jpg", href: "/en/business/graduate" },
         ],
         rightBox: { title: "BUSINESS SPACE", icon: "briefcase" }
       }

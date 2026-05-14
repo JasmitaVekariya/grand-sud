@@ -30,28 +30,39 @@ export default function MegaMenu({ type, data, isOpen }: MegaMenuProps) {
         </ul>
       </div>
       <div className="md:col-span-7 flex flex-col h-full">
-        {data.rightSections.map((section: any, idx: number) => (
-          <div key={idx} className={`flex-1 px-8 py-3 flex flex-col justify-center ${idx === 1 ? "bg-[#3d1311]" : "bg-primary-red"} text-white group cursor-pointer transition-colors hover:brightness-105`}>
-            <div className="flex items-center gap-4">
-              <div className="flex-shrink-0">
-                {section.icon === "map-pin" && <MapPin size={22} />}
-                {section.icon === "bar-chart" && <BarChart2 size={22} />}
-                {section.icon === "calendar" && <Calendar size={22} />}
-              </div>
-              <h3 className="text-[13px] font-[700] uppercase tracking-widest">{section.title}</h3>
-            </div>
-            {section.image && (idx === 0) && (
-              <div className="mt-2 relative w-full h-20 overflow-hidden border border-white/20">
-                <Image src={section.image} alt={section.subtext} fill className="object-cover" />
-                {/* Red Hover Overlay */}
-                <div className="absolute inset-0 bg-primary-red/0 group-hover:bg-primary-red/30 transition-colors duration-300 z-10" />
-                <div className="absolute inset-0 bg-black/30 flex items-center justify-center z-20">
-                  <span className="text-[10px] font-[700] uppercase tracking-widest">{section.subtext}</span>
+        {data.rightSections.map((section: any, idx: number) => {
+          const Content = (
+            <div className={`flex-1 px-8 py-3 flex flex-col justify-center ${idx === 1 ? "bg-[#3d1311]" : "bg-primary-red"} text-white group cursor-pointer transition-colors hover:brightness-105 h-full`}>
+              <div className="flex items-center gap-4">
+                <div className="flex-shrink-0">
+                  {section.icon === "map-pin" && <MapPin size={22} />}
+                  {section.icon === "bar-chart" && <BarChart2 size={22} />}
+                  {section.icon === "calendar" && <Calendar size={22} />}
                 </div>
+                <h3 className="text-[13px] font-[700] uppercase tracking-widest">{section.title}</h3>
               </div>
-            )}
-          </div>
-        ))}
+              {section.image && (idx === 0) && (
+                <div className="mt-2 relative w-full h-20 overflow-hidden border border-white/20">
+                  <Image src={section.image} alt={section.subtext} fill className="object-cover" />
+                  <div className="absolute inset-0 bg-primary-red/0 group-hover:bg-primary-red/30 transition-colors duration-300 z-10" />
+                  <div className="absolute inset-0 bg-black/30 flex items-center justify-center z-20">
+                    <span className="text-[10px] font-[700] uppercase tracking-widest">{section.subtext}</span>
+                  </div>
+                </div>
+              )}
+            </div>
+          );
+
+          return section.href ? (
+            <Link key={idx} href={section.href} className="flex-1">
+              {Content}
+            </Link>
+          ) : (
+            <div key={idx} className="flex-1">
+              {Content}
+            </div>
+          );
+        })}
       </div>
     </div>
   );
@@ -158,16 +169,28 @@ export default function MegaMenu({ type, data, isOpen }: MegaMenuProps) {
             Pay for your studies:
           </p>
           <div className="grid grid-cols-3 gap-4">
-            {data.bottomCards.map((card: any, idx: number) => (
-              <div key={idx} className="relative group cursor-pointer overflow-hidden aspect-[16/7] border border-gray-100">
-                <Image src={card.image} alt={card.title} fill className="object-cover" />
-                {/* White Hover Overlay */}
-                <div className="absolute inset-0 bg-white/0 group-hover:bg-white/30 transition-colors duration-300 z-10" />
-                <div className="absolute inset-0 bg-black/40 flex items-center justify-center p-2 text-center z-20">
-                  <span className="text-[11px] font-[700] text-white tracking-widest uppercase leading-tight">{card.title}</span>
+            {data.bottomCards.map((card: any, idx: number) => {
+              const CardContent = (
+                <div className="relative group cursor-pointer overflow-hidden aspect-[16/7] border border-gray-100 h-full">
+                  <Image src={card.image} alt={card.title} fill className="object-cover" />
+                  {/* White Hover Overlay */}
+                  <div className="absolute inset-0 bg-white/0 group-hover:bg-white/30 transition-colors duration-300 z-10" />
+                  <div className="absolute inset-0 bg-black/40 flex items-center justify-center p-2 text-center z-20">
+                    <span className="text-[11px] font-[700] text-white tracking-widest uppercase leading-tight">{card.title}</span>
+                  </div>
                 </div>
-              </div>
-            ))}
+              );
+
+              return card.href ? (
+                <Link key={idx} href={card.href}>
+                  {CardContent}
+                </Link>
+              ) : (
+                <div key={idx}>
+                  {CardContent}
+                </div>
+              );
+            })}
           </div>
         </div>
       </div>
@@ -186,16 +209,28 @@ export default function MegaMenu({ type, data, isOpen }: MegaMenuProps) {
         ))}
       </ul>
       <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-        {data.cards.map((card: any, idx: number) => (
-          <div key={idx} className="relative group overflow-hidden aspect-[16/8] cursor-pointer border border-gray-100">
-            <Image src={card.image} alt={card.title} fill className="object-cover" />
-            {/* White Hover Overlay */}
-            <div className="absolute inset-0 bg-white/0 group-hover:bg-white/30 transition-colors duration-300 z-10" />
-            <div className="absolute inset-0 bg-black/40 flex items-center justify-center p-2 text-center z-20">
-              <span className="text-[11px] font-[700] text-white tracking-widest uppercase">{card.title}</span>
+        {data.cards.map((card: any, idx: number) => {
+          const CardContent = (
+            <div className="relative group overflow-hidden aspect-[16/8] cursor-pointer border border-gray-100 h-full">
+              <Image src={card.image} alt={card.title} fill className="object-cover" />
+              {/* White Hover Overlay */}
+              <div className="absolute inset-0 bg-white/0 group-hover:bg-white/30 transition-colors duration-300 z-10" />
+              <div className="absolute inset-0 bg-black/40 flex items-center justify-center p-2 text-center z-20">
+                <span className="text-[11px] font-[700] text-white tracking-widest uppercase">{card.title}</span>
+              </div>
             </div>
-          </div>
-        ))}
+          );
+
+          return card.href ? (
+            <Link key={idx} href={card.href}>
+              {CardContent}
+            </Link>
+          ) : (
+            <div key={idx}>
+              {CardContent}
+            </div>
+          );
+        })}
         {/* Business Space Fixed Card - 4th Box */}
         <div className="bg-primary-red relative group overflow-hidden aspect-[16/8] cursor-pointer flex items-center justify-center text-white hover:brightness-110 transition-all shadow-md">
           <div className="flex items-center gap-5 px-6">
