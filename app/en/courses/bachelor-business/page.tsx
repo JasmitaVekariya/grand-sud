@@ -1,7 +1,17 @@
+"use client";
+
 import CourseBanner from "@/components/courses/CourseBanner";
+import CourseDetailLayout from "@/components/courses/CourseDetailLayout";
+import CourseAdvantages from "@/components/courses/CourseAdvantages";
+import CourseProgram from "@/components/courses/CourseProgram";
+import CourseAdmissions from "@/components/courses/CourseAdmissions";
+import CourseValidation from "@/components/courses/CourseValidation";
+import CourseJobs from "@/components/courses/CourseJobs";
+import CourseFurtherEducation from "@/components/courses/CourseFurtherEducation";
+import { CheckCircle2, Search, PenTool, Users, Briefcase, MonitorPlay, BookOpen, Globe, Handshake } from "lucide-react";
 
 export default function BachelorBusinessPage() {
-  const t = {
+  const bannerData = {
     title: "Bachelor Business & Tourism",
     image: "/assets/Gemini_Generated_Image_moyjrqmoyjrqmoyj-scaled-e1756663814308.png",
     details: [
@@ -14,27 +24,341 @@ export default function BachelorBusinessPage() {
     logos: ["/assets/logo-france-competences.png"]
   };
 
+  const sections = [
+    { id: "description", label: "DESCRIPTION" },
+    { id: "programm", label: "PROGRAM" },
+    { id: "admissions", label: "ADMISSIONS" },
+    { id: "validation", label: "VALIDATION" },
+    { id: "jobs", label: "JOB OPPORTUNITIES" },
+    { id: "further-education", label: "FURTHER EDUCATION" },
+  ];
+
+  const advantagesData = {
+    title: "The advantages of Grand Sud",
+    subtitle: "With nearly 35 years of experience in education, Grand Sud School knows the keys to success in providing its students with what they need to succeed.",
+    advantages: [
+      { icon: CheckCircle2, text: "100% tourism expertise since 1991", isDarkRed: false },
+      { icon: Search, text: "support in finding an internship", isDarkRed: true },
+      { icon: PenTool, text: "Two mock exam sessions per year / professional examiners", isDarkRed: false },
+      { icon: Users, text: "workshop with real partners and real issues", isDarkRed: true },
+      { icon: Briefcase, text: "real-life business cases studied in class", isDarkRed: false },
+      { icon: MonitorPlay, text: "professional speakers", isDarkRed: true },
+      { icon: BookOpen, text: "a program tailored to the needs of businesses", isDarkRed: false },
+      { icon: Globe, text: "an internationally oriented program", isDarkRed: true },
+      { icon: Handshake, text: "students from diverse backgrounds, vectors of cultural richness", isDarkRed: false },
+    ]
+  };
+
+  const programYears = [
+    {
+      id: "year1",
+      title: "Year 1 - 602 hours",
+      hours: "602 hours",
+      content: [
+        {
+          unit: "Skills Unit 1 – Cross-disciplinary skills",
+          items: [
+            { label: "Welcome Days", description: "Back-to-school integration and team-building seminar" },
+            { label: "Tourism English", description: "Welcoming and assisting foreign customers, selling French tourism products to foreign customers, selling foreign tourism products to French customers, accompanying foreign tourists, monitoring and retaining foreign customers" },
+            { label: "French", description: "Learning to communicate in order to meet basic and specific needs (level A1)" },
+            { label: "French culture", description: "Understanding and mastering French culture" },
+            { label: "Supervised assignments and mock exams", description: "Exam simulation" },
+          ]
+        },
+        {
+          unit: "Skills Unit 2 – Tourism culture",
+          items: [
+            { label: "Tourism product design", description: "Mastering concepts from the analysis and implementation phase through to marketing" },
+            { label: "Overview of global tourism", description: "Understanding the specific characteristics and trends of different types of tourism, understanding the main tourist destinations around the world" },
+            { label: "Amadeus", description: "Mastering the functioning of the Amadeus GDS (Global Distribution Systems), the reservation system for the airline and rail ecosystem" },
+            { label: "Tourism information management", description: "Mastering the main tools and software for collecting, processing, and publishing tourism information" },
+          ]
+        },
+        {
+          unit: "Skills Unit 3 – User experience",
+          items: [
+            { label: "Commercial management", description: "Build quality relationships to ensure long-term customer loyalty" },
+            { label: "Marketing", description: "Understand the basic rules of marketing" },
+            { label: "Tourism marketing", description: "Master the fundamentals of tourism marketing" },
+            { label: "Communication strategy", description: "Be able to build a 360° communication strategy" },
+          ]
+        },
+        {
+          unit: "Skills Unit 4 – Management",
+          items: [
+            { label: "Fundamentals of management", description: "Understand the different emerging management methods" },
+            { label: "Intercultural management", description: "Analyze intercultural interaction in professional situations using different conceptual approaches" },
+            { label: "Team management", description: "Mobilize the individual energies of team members" },
+            { label: "Management and CSR", description: "Integrate CSR into management methods" },
+          ]
+        }
+      ]
+    },
+    {
+      id: "year2",
+      title: "Year 2 - 602 hours",
+      hours: "602 hours",
+      content: [
+        {
+          unit: "Skills Unit 1 – Cross-disciplinary skills",
+          items: [
+            { label: "Welcome Days", description: "Back-to-school integration seminar and team building" },
+            { label: "Tourism English", description: "Welcoming and assisting foreign customers, selling French tourism products to foreign customers, selling foreign tourism products to French customers, accompanying foreign tourists, monitoring and retaining foreign customers" },
+            { label: "French", description: "Understanding the essentials of everyday written texts: emails, brochures, articles, film reviews; ability to write simple, coherent texts on familiar topics (intermediate level B1)" },
+            { label: "French culture", description: "Knowledge and mastery of French culture" },
+            { label: "Supervised assignments and mock exams", description: "Exam simulation" },
+          ]
+        },
+        {
+          unit: "Skills Unit 2 – Tourism culture",
+          items: [
+            { label: "Tourism product design", description: "Mastering concepts from the analysis and implementation phase through to marketing" },
+            { label: "Overview of global tourism", description: "Understanding the specific characteristics and trends of different types of tourism, understanding the main tourist destinations around the world" },
+            { label: "Amadeus", description: "Mastering the functioning of the Amadeus GDS (Global Distribution Systems), the reservation system for the airline and rail ecosystem" },
+            { label: "Tourism information management", description: "Mastering the main tools and software for collecting, processing, and publishing tourism information" },
+          ]
+        },
+        {
+          unit: "Skills Unit 3 – User experience",
+          items: [
+            { label: "Economic and legal environment", description: "Understand the legal basis for running a business" },
+            { label: "E-commerce website creation and eco-friendly web design [CMS]", description: "Be able to create an e-commerce website" },
+            { label: "Event management", description: "Organize an eco-friendly event" },
+            { label: "Social media", description: "Be able to run a social media campaign" },
+          ]
+        },
+        {
+          unit: "Skills Unit 4 – Management",
+          items: [
+            { label: "Managing a sales team", description: "Knowing the rules of management" },
+            { label: "Intercultural management", description: "Analyzing intercultural interaction in professional situations using different conceptual approaches" },
+            { label: "Public speaking", description: "Being able to create an engaging speech" },
+            { label: "Commercial negotiation", description: "Understanding the basics of commercial negotiation (role-playing)" },
+          ]
+        }
+      ]
+    },
+    {
+      id: "year3",
+      title: "Year 3 - 602 hours",
+      hours: "602 hours",
+      content: [
+        {
+          unit: "Skills Unit 1 – Cross-disciplinary skills",
+          items: [
+            { label: "Welcome Days", description: "Back-to-school integration seminar and team building" },
+            { label: "Tourism English", description: "Welcoming and assisting foreign customers, selling French tourism products to foreign customers, selling foreign tourism products to French customers, accompanying foreign tourists, monitoring and retaining foreign customers" },
+            { label: "French", description: "Understanding texts written in everyday language: emails, brochures, articles, film reviews; ability to write more complex, connected texts on familiar topics (intermediate level B2)" },
+            { label: "French culture", description: "Knowledge and mastery of French culture" },
+            { label: "Supervised assignments and mock exams", description: "Exam simulation" },
+          ]
+        },
+        {
+          unit: "Skills Unit 2 – Business and economics",
+          items: [
+            { label: "Tourism project management", description: "Understanding project management" },
+            { label: "Financial management", description: "Analyzing a company's accounting performance" },
+            { label: "Analytical and strategic marketing", description: "Choosing a marketing strategy in the tourism sector and setting objectives" },
+            { label: "Marketing plan", description: "Planning a digital communication plan in the tourism sector" },
+          ]
+        },
+        {
+          unit: "Skills Unit 3 – User experience",
+          items: [
+            { label: "Business relationships", description: "Building quality relationships to ensure long-term customer loyalty" },
+            { label: "Local tourism and events management", description: "Understanding the principles of local tourism and knowing how to set up a project" },
+            { label: "Regional development", description: "Carrying out a regional assessment, developing a regional project taking into account sustainable development and CSR" },
+            { label: "Local strategy", description: "Acquire fundamental knowledge of cultural, wine-growing, and tourist heritage at the regional, departmental, and local levels; identify local products and promote them" },
+          ]
+        },
+        {
+          unit: "Skills Unit 4 – Management",
+          items: [
+            { label: "Fundamentals of management", description: "Understand different management methods" },
+            { label: "Intercultural management", description: "Analyze intercultural interaction in professional situations using different conceptual approaches" },
+            { label: "Team management", description: "Mobilize the individual energies of team members" },
+            { label: "Management and CSR", description: "Integrate CSR into management methods" },
+          ]
+        }
+      ]
+    }
+  ];
+
+  const admissionsData = {
+    title: "ADMISSIONS",
+    prerequisite: {
+      title: "Prerequisite",
+      items: [
+        "High school diploma or equivalent",
+        "Sufficient English language skills to follow the program (minimum B2), as demonstrated by official results from an English language test or equivalent (TOEIC, BULATS, TOEFL, IELTS, CAMBRIDGE, etc.), except for native English speakers or candidates who have studied for at least two years in a program taught in English (candidates must provide supporting documents).",
+        "Good academic level",
+        "If high school diploma level: candidates must pass the missing exams as independent candidates during the first year of the program"
+      ]
+    },
+    intakes: {
+      periodTitle: "Admission period",
+      periodText: "All year",
+      intakesTitle: "Intakes",
+      nextYearLabel: "Next start date:",
+      nextYearValue: "October 6, 2025",
+      deferredLabel: "Deferred start date:",
+      deferredValue: "February 9, 2026"
+    },
+    processTitle: "Admission process",
+    processSteps: [
+      {
+        title: "Step 1: Application",
+        items: [
+          { text: "Download your application form." },
+          { text: "Send your completed application by email, remembering to include all the required attachments!" },
+          { text: "Application fee: €300, non-refundable", isItalic: true }
+        ]
+      },
+      {
+        title: "Step 2: Selection",
+        items: [
+          { text: "Review of your application and verification of prerequisites for the desired program: level of education and foreign languages, professional experience," },
+          { text: "Individual appointment: remote motivation interview (via video)" },
+          { text: "Admissions committee review: our team will review your application as a whole" },
+          { text: "Response within 48 business hours: favorable or unfavorable", isItalic: true }
+        ]
+      },
+      {
+        title: "Step 3: enrollment",
+        items: [
+          { text: "Signing of the education contract" },
+          { text: "Support with financing options and internship searches" }
+        ]
+      }
+    ],
+    prices: {
+      title: "Initial tuition:",
+      initialLabel: "Per year:",
+      initialPrice: "€12,500\nScholarships are available. Contact your admissions officer for details.",
+      visaNote: "",
+      workStudyLabel: "",
+      workStudyPrice: "",
+      workStudyNote: "",
+      seminarLabel: "",
+      seminarPrice: "",
+      seminarNote: ""
+    }
+  };
+
+  const validationData = {
+    title: "VALIDATION",
+    details: {
+      assessmentTitle: "Assessment methods",
+      assessmentText: "Oral and written exams.",
+      certificationTitle: "Certification",
+      diplomaName: "Responsable de développement touristique territorial (RDTT) – Certified bachelor's degree",
+      rncpLabel: "RNCP 35706",
+      rncpLink: "",
+      diplomaCodeLabel: "Diploma code",
+      diplomaCode: "36T33403",
+      ministry: "Ministère du travail, du plein emploi et de l'insertion",
+      expirationLabel: "Expiration date :",
+      expirationDate: "08/02/2026",
+      certificationNote: "This qualification consists of four skill sets known as \"professional skill certificates\" (CCP). It can be obtained by accumulating CCPs or by completing a training program.",
+      equivalencesTitle: "Equivalences",
+      equivalencesItems: [
+        "The CCP \"Supporting the marketing development of a region\" in the RDTT qualification is equivalent to the CCP \"Marketing a tourist establishment using a multi-channel approach\" in the professional qualification \"Tourist Establishment Manager.\"",
+        "The CCP \"Ensuring the financial feasibility of a tourism initiative\" of the RDTT qualification is equivalent to the CCP \"Ensuring the operational management and planning investments for a tourist establishment\" of the professional qualification \"Tourist Establishment Manager.\""
+      ]
+    }
+  };
+
+  const jobsData = {
+    title: "JOB OPPORTUNITIES",
+    intro: "After completing this international bachelor's degree, the world will be your oyster and you'll have some exciting career opportunities!",
+    categories: [
+      {
+        jobs: [
+          { label: "ACCOMMODATION PLACE MANAGER", isDarkRed: false },
+          { label: "TOURISM PRODUCT DESIGNER", isDarkRed: true },
+          { label: "REGIONAL COORDINATOR", isDarkRed: false },
+          { label: "MOUNTAIN RESORT ENTERTAINMENT MANAGER", isDarkRed: true },
+          { label: "RECEPTIONIST", isDarkRed: true },
+          { label: "TRAVEL AGENCY MANAGER", isDarkRed: false },
+          { label: "SALES MANAGER", isDarkRed: true },
+          { label: "MARKETING MANAGER", isDarkRed: false },
+          { label: "COMMUNICATION MANAGER", isDarkRed: false },
+          { label: "PRODUCT PROJECT MANAGER", isDarkRed: true },
+          { label: "HEAD OF THE RECEPTION TEAM", isDarkRed: false },
+          { label: "VISITOR RELATIONS MANAGER", isDarkRed: true },
+        ]
+      }
+    ]
+  };
+
+  const furtherEducationData = {
+    title: "FURTHER EDUCATION",
+    links: [
+      { label: "Mastère Business & Tourism", href: "/en/courses/mastere-business", flag: "UK" as const },
+      { label: "Mastère Hospitality Management", href: "/en/courses/mastere-hospitality", flag: "UK" as const },
+      { label: "Mastère Tourism Strategy Management", href: "/en/courses/mastere-tourism", flag: "FR" as const },
+      { label: "In general, all level 7 titles", href: "/en/courses" }
+    ],
+    jobs: []
+  };
+
   return (
-    <main className="bg-white pb-20">
+    <main className="bg-white">
       <CourseBanner 
-        title={t.title} 
-        image={t.image} 
-        details={t.details} 
-        logos={t.logos}
+        title={bannerData.title} 
+        image={bannerData.image} 
+        details={bannerData.details} 
+        logos={bannerData.logos}
       />
       
-      <div className="max-w-[1440px] mx-auto px-6 md:px-[200px] py-16">
-        <h2 className="text-3xl font-bold text-gray-900 mb-8 uppercase tracking-wider border-l-4 border-primary-red pl-6">
-          International Business & Travel
-        </h2>
-        <div className="prose prose-lg max-w-none text-gray-700">
-          <p>
-            The Bachelor Business & Tourism is our flagship international programme, taught entirely in English. 
-            It combines rigorous business management training with specialized tourism knowledge, preparing 
-            students for global careers in the world's largest industry.
-          </p>
-        </div>
-      </div>
+      <CourseDetailLayout 
+        sections={sections}
+        applyButton={{ label: "Apply", href: "/en/apply" }}
+      >
+        {/* Description Section */}
+        <section id="description" className="scroll-mt-32 space-y-16">
+          <div className="space-y-8">
+            <h2 className="text-[32px] md:text-[42px] font-bold text-primary-red uppercase tracking-tight">
+              DESCRIPTION
+            </h2>
+            <div className="space-y-6 text-[16px] text-black leading-relaxed font-medium max-w-4xl">
+              <p>This Bachelor's degree, designed for students with international ambitions, trains them in tourism issues, French culture, and mastery of the marketing mix specific to the sector.</p>
+              <p>Graduates obtain a certified Level 6 professional qualification enabling them to access a variety of positions in the tourism industry.</p>
+              <p>It is designed for students who are passionate about travel, culture, and business, who have a high school diploma (or equivalent) and are looking for a career in international tourism, as well as for European and international students seeking to study in France in an international learning environment.</p>
+            </div>
+          </div>
+          <CourseAdvantages {...advantagesData} />
+        </section>
+
+        {/* Program Section */}
+        <section id="programm" className="scroll-mt-32">
+          <CourseProgram 
+            title="PROGRAM"
+            years={programYears}
+          />
+        </section>
+
+        {/* Admissions Section */}
+        <section id="admissions" className="scroll-mt-32">
+          <CourseAdmissions {...admissionsData} />
+        </section>
+
+        {/* Validation Section */}
+        <section id="validation" className="scroll-mt-32">
+          <CourseValidation {...validationData} />
+        </section>
+
+        {/* Job Opportunities Section */}
+        <section id="jobs" className="scroll-mt-32">
+          <CourseJobs {...jobsData} />
+        </section>
+        
+        {/* Further Education Section */}
+        <section id="further-education" className="scroll-mt-32">
+          <CourseFurtherEducation {...furtherEducationData} />
+        </section>
+
+      </CourseDetailLayout>
     </main>
   );
 }

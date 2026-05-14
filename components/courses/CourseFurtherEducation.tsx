@@ -62,18 +62,20 @@ export default function CourseFurtherEducation({ title, links, jobs }: CourseFur
         ))}
       </div>
 
-      <div className="grid grid-cols-2 md:grid-cols-4 w-full items-stretch">
-        {jobs.map((job, i) => (
-          <div 
-            key={i}
-            className={`flex items-center justify-center px-4 py-8 text-center text-white text-[13px] md:text-[14px] font-bold uppercase tracking-wider leading-tight min-h-[100px] h-full
-              ${job.isDarkRed ? "bg-[#4D1B19]" : "bg-[#3F3F3F]"}
-            `}
-          >
-            {job.label}
-          </div>
-        ))}
-      </div>
+      {jobs && jobs.length > 0 && (
+        <div className="grid grid-cols-2 md:grid-cols-4 w-full items-stretch mt-8">
+          {jobs.map((job, i) => (
+            <div 
+              key={i}
+              className={`flex items-center justify-center px-4 py-8 text-center text-white text-[13px] md:text-[14px] font-bold uppercase tracking-wider leading-tight min-h-[100px] h-full
+                ${job.isDarkRed ? "bg-[#4D1B19]" : "bg-[#3F3F3F]"}
+              `}
+            >
+              {job.label}
+            </div>
+          ))}
+        </div>
+      )}
     </div>
   );
 }

@@ -23,17 +23,10 @@ export default function AmadeusPageFR() {
         logos={t.logos}
       />
       
-      <div className="max-w-[1440px] mx-auto px-6 md:px-[200px] py-16">
-        <h2 className="text-3xl font-bold text-gray-900 mb-8 uppercase tracking-wider border-l-4 border-primary-red pl-6">
-          Formation Intensive GDS
-        </h2>
-        <div className="prose prose-lg max-w-none text-gray-700">
-          <p>
-            Maîtrisez le premier système de distribution mondiale. Notre formation Amadeus offre 
-            une expérience pratique et concrète dans la réservation de vols, d'hôtels et de locations 
-            de voitures, essentielle pour tout professionnel de l'industrie du voyage et du tourisme.
-          </p>
-        </div>
+      <div className="max-w-[1440px] mx-auto px-6 py-16 text-center border-t border-b border-gray-100">
+        <p className="text-lg font-medium text-gray-900">
+          La formation GDS Amadeus sera de retour très prochainement dans un format mis à jour, restez à l'écoute pour plus d'informations !
+        </p>
       </div>
     </main>
   );

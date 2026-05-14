@@ -24,21 +24,28 @@ interface ProcessStep {
     text: string;
     isLink?: boolean;
     linkText?: string;
+    isItalic?: boolean;
   }[];
 }
 
 interface PricesProps {
   title: string;
   initialLabel: string;
-  initialYear1: string;
-  initialYear2: string;
+  initialPrice?: string;
+  initialYear1?: string;
+  initialYear2?: string;
   visaNote?: string;
+  visaPrice?: string;
   visaYear1?: string;
   visaYear2?: string;
   workStudyLabel: string;
-  workStudyYear1: string;
-  workStudyYear2: string;
+  workStudyPrice?: string;
+  workStudyYear1?: string;
+  workStudyYear2?: string;
   workStudyNote: string;
+  seminarLabel?: string;
+  seminarPrice?: string;
+  seminarNote?: string;
 }
 
 interface CourseAdmissionsProps {
@@ -126,7 +133,7 @@ export default function CourseAdmissions({
                 </h4>
                 <div className="space-y-4 text-[13px] leading-relaxed text-gray-700">
                   {step.items.map((item, i) => (
-                    <p key={i}>
+                    <p key={i} className={item.isItalic ? "italic" : ""}>
                       {item.isLink ? (
                         <>
                           {item.text.split(item.linkText || "")[0]}
@@ -153,40 +160,75 @@ export default function CourseAdmissions({
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24">
           {/* Initial Fee column */}
-          <div className="space-y-8">
+          <div className="space-y-6">
             <div className="space-y-3">
               <h4 className="text-[14px] font-bold uppercase tracking-widest">{prices.initialLabel}</h4>
               <div className="text-[13px] text-white/90 space-y-2">
-                <p>Year 1: {prices.initialYear1}</p>
-                <p>Year 2: {prices.initialYear2}</p>
+                {prices.initialPrice ? (
+                  <p>{prices.initialPrice}</p>
+                ) : (prices.initialYear1 || prices.initialYear2) ? (
+                  <>
+                    {prices.initialYear1 && <p>Year 1: {prices.initialYear1}</p>}
+                    {prices.initialYear2 && <p>Year 2: {prices.initialYear2}</p>}
+                  </>
+                ) : null}
               </div>
             </div>
 
             {prices.visaNote && (
               <div className="space-y-3">
                 <p className="text-[12px] italic text-white/80 max-w-[300px]">{prices.visaNote}</p>
-                <div className="text-[13px] text-white/90 space-y-2">
-                  <p>Year 1: {prices.visaYear1}</p>
-                  <p>Year 2: {prices.visaYear2}</p>
-                </div>
+                {(prices.visaPrice || prices.visaYear1 || prices.visaYear2) && (
+                  <div className="text-[13px] text-white/90 space-y-2">
+                    {prices.visaPrice ? (
+                      <p>{prices.visaPrice}</p>
+                    ) : (
+                      <>
+                        {prices.visaYear1 && <p>Year 1: {prices.visaYear1}</p>}
+                        {prices.visaYear2 && <p>Year 2: {prices.visaYear2}</p>}
+                      </>
+                    )}
+                  </div>
+                )}
               </div>
             )}
           </div>
 
           {/* Work-study column */}
-          <div className="space-y-8">
+          <div className="space-y-6">
             <div className="space-y-3">
               <h4 className="text-[14px] font-bold uppercase tracking-widest">{prices.workStudyLabel}</h4>
               <div className="text-[13px] text-white/90 space-y-2">
-                <p>Year 1: {prices.workStudyYear1}</p>
-                <p>Year 2: {prices.workStudyYear2}</p>
+                {prices.workStudyPrice ? (
+                  <p>{prices.workStudyPrice}</p>
+                ) : (prices.workStudyYear1 || prices.workStudyYear2) ? (
+                  <>
+                    {prices.workStudyYear1 && <p>Year 1: {prices.workStudyYear1}</p>}
+                    {prices.workStudyYear2 && <p>Year 2: {prices.workStudyYear2}</p>}
+                  </>
+                ) : null}
               </div>
             </div>
-            <p className="text-[12px] italic text-white/80 leading-relaxed">
-              {prices.workStudyNote}
-            </p>
+            {prices.workStudyNote && (
+              <p className="text-[12px] italic text-white/80 leading-relaxed max-w-[350px]">
+                {prices.workStudyNote}
+              </p>
+            )}
           </div>
         </div>
+
+        {/* Seminar Block */}
+        {prices.seminarLabel && (
+          <div className="flex gap-4 items-start pt-6">
+            <div className="flex-shrink-0 bg-[#E33E38]/80 text-[#4D1B19] rounded-sm flex items-center justify-center p-1" style={{ width: 40, height: 40 }}>
+               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14"/><path d="M12 5v14"/></svg>
+            </div>
+            <div className="space-y-2">
+               <p className="text-[14px] font-bold"><span className="text-white">{prices.seminarLabel}:</span> <span className="font-normal">{prices.seminarPrice}</span></p>
+               <p className="text-[12px] italic text-white/80">{prices.seminarNote}</p>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );

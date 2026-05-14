@@ -58,7 +58,7 @@ export default function CourseDetailLayout({ sections, children, applyButton }: 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
         
         {/* Sidebar (25%) */}
-        <aside className="lg:col-span-3 lg:sticky lg:top-32 self-start space-y-12">
+        <aside className="lg:col-span-3 lg:sticky lg:top-32 self-start space-y-12 bg-white">
           <div className="space-y-4">
             {sections.map((section) => (
               <button 

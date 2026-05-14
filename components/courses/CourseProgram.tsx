@@ -20,19 +20,17 @@ interface ProgramYear {
 interface CourseProgramProps {
   title: string;
   years: ProgramYear[];
-  downloadButton: {
+  downloadButton?: {
     label: string;
     href: string;
   };
 }
 
 export default function CourseProgram({ title, years, downloadButton }: CourseProgramProps) {
-  const [openYears, setOpenYears] = useState<string[]>([years[0]?.id]);
+  const [openYear, setOpenYear] = useState<string | null>(years[0]?.id || null);
 
   const toggleYear = (id: string) => {
-    setOpenYears(prev => 
-      prev.includes(id) ? prev.filter(y => y !== id) : [...prev, id]
-    );
+    setOpenYear(prev => prev === id ? null : id);
   };
 
   return (
@@ -49,7 +47,7 @@ export default function CourseProgram({ title, years, downloadButton }: CoursePr
               className="w-full bg-primary-red text-white px-6 h-[47px] flex items-center justify-between group transition-colors hover:bg-primary-red/90"
             >
               <div className="flex items-center gap-3">
-                {openYears.includes(year.id) ? <ChevronUp size={20} /> : <ChevronDown size={20} />}
+                {openYear === year.id ? <ChevronUp size={20} /> : <ChevronDown size={20} />}
                 <span className="text-[16px] font-bold tracking-wide">
                   {year.title} - {year.hours}
                 </span>
@@ -57,7 +55,7 @@ export default function CourseProgram({ title, years, downloadButton }: CoursePr
             </button>
 
             <AnimatePresence>
-              {openYears.includes(year.id) && (
+              {openYear === year.id && (
                 <motion.div
                   initial={{ height: 0, opacity: 0 }}
                   animate={{ height: "auto", opacity: 1 }}
@@ -71,14 +69,14 @@ export default function CourseProgram({ title, years, downloadButton }: CoursePr
                         <h3 className="text-[14px] font-bold text-black border-b border-gray-100 pb-1 uppercase tracking-wide">
                           {unit.unit}
                         </h3>
-                        <div className="space-y-2">
+                        <ul className="space-y-2 list-disc list-outside pl-5">
                           {unit.items.map((item, i) => (
-                            <div key={i} className="text-[12px] leading-relaxed text-gray-800">
+                            <li key={i} className="text-[12px] md:text-[14px] leading-relaxed text-gray-800">
                               <span className="font-normal text-black">{item.label}</span>
                               <span className="text-gray-700"> – {item.description}</span>
-                            </div>
+                            </li>
                           ))}
-                        </div>
+                        </ul>
                       </div>
                     ))}
                   </div>
@@ -89,14 +87,16 @@ export default function CourseProgram({ title, years, downloadButton }: CoursePr
         ))}
       </div>
 
-      <div className="flex justify-end">
-        <motion.a
-          href={downloadButton.href}
-          className="bg-primary-red text-white px-8 py-4 rounded-full text-[14px] font-medium tracking-wide transition-colors duration-300 hover:bg-gray-600"
-        >
-          {downloadButton.label}
-        </motion.a>
-      </div>
+      {downloadButton && (
+        <div className="flex justify-end">
+          <motion.a
+            href={downloadButton.href}
+            className="bg-primary-red text-white px-8 py-4 rounded-full text-[14px] font-medium tracking-wide transition-colors duration-300 hover:bg-gray-600"
+          >
+            {downloadButton.label}
+          </motion.a>
+        </div>
+      )}
     </div>
   );
 }

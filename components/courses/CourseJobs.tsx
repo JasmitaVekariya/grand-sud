@@ -1,12 +1,12 @@
 "use client";
 
 interface JobCategory {
-  title: string;
+  title?: string;
   jobs: {
     label: string;
     isDarkRed: boolean;
   }[];
-  prospects: string;
+  prospects?: string;
 }
 
 interface CourseJobsProps {
@@ -23,15 +23,17 @@ export default function CourseJobs({ title, intro, categories }: CourseJobsProps
       </h2>
 
       <div className="space-y-6 text-[15px] text-gray-700 leading-relaxed max-w-4xl">
-        <p>{intro}</p>
+        <p dangerouslySetInnerHTML={{ __html: intro }} />
       </div>
 
       <div className="space-y-16">
         {categories.map((category, idx) => (
           <div key={idx} className="space-y-8">
-            <h3 className="text-[16px] font-medium text-black max-w-2xl leading-relaxed">
-              {category.title}
-            </h3>
+            {category.title && (
+              <h3 className="text-[16px] font-medium text-black max-w-2xl leading-relaxed">
+                {category.title}
+              </h3>
+            )}
 
             <div className="grid grid-cols-2 md:grid-cols-4 w-full items-stretch">
               {category.jobs.map((job, i) => (
@@ -46,9 +48,11 @@ export default function CourseJobs({ title, intro, categories }: CourseJobsProps
               ))}
             </div>
 
-            <p className="text-[14px] text-gray-700 leading-relaxed italic">
-              {category.prospects}
-            </p>
+            {category.prospects && (
+              <p className="text-[14px] text-gray-700 leading-relaxed italic">
+                {category.prospects}
+              </p>
+            )}
           </div>
         ))}
       </div>
