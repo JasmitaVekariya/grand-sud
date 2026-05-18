@@ -63,7 +63,11 @@ export default function NavMenu({ lang }: NavMenuProps) {
 
           {/* Action Icons */}
           <div className="flex items-center gap-4">
-            <button className="bg-[#3d1311] text-white rounded-full p-1.5 hover:scale-110 transition-transform">
+            <Link 
+              href={lang === "en" ? "/en/apply" : "/fr/candidater"}
+              className="bg-[#3d1311] text-white rounded-full p-1.5 hover:scale-110 transition-transform cursor-pointer"
+              title={lang === "en" ? "Apply" : "Candidater"}
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 512 512"
@@ -72,7 +76,7 @@ export default function NavMenu({ lang }: NavMenuProps) {
                 <circle fill="none" stroke="currentColor" strokeWidth="20" strokeMiterlimit="10" cx="256" cy="256" r="218.6" />
                 <path d="M256,108c19.9,0,36,16.1,36,36s-16.1,36-36,36-36-16.1-36-36,16.1-36,36-36ZM373.7,206c-28.7,6.8-55.5,12.8-82.1,15.8.9,101,12.3,123.1,25,155.6,3.6,9.3-1,19.7-10.2,23.3s-19.7-1-23.3-10.2c-8.7-22.3-17.1-40.6-22.3-78.6h-9.7c-5.2,37.9-13.5,56.2-22.3,78.5-3.6,9.3-14.1,13.8-23.3,10.2-9.3-3.6-13.8-14.1-10.2-23.3,12.7-32.5,24.2-54.5,25-155.6-26.6-3.1-53.4-9-82.1-15.8-8.6-2-13.9-10.6-11.9-19.2,2-8.6,10.7-13.9,19.2-11.9,96.7,22.8,124.3,22.8,220.8,0,8.6-2,17.2,3.3,19.2,11.9,2,8.6-3.3,17.2-11.9,19.2h0Z" />
               </svg>
-            </button>
+            </Link>
             <button
               className="md:hidden text-white p-2"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}

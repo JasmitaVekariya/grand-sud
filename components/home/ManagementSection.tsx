@@ -65,10 +65,8 @@ export default function ManagementSection() {
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="relative pl-8 py-2 md:py-4 max-w-[280px] md:max-w-xs"
           >
-            {/* Decorative L-shaped / Bracket Border */}
-            <div className="absolute left-0 top-0 bottom-0 w-[2.5px] bg-white"></div>
-            <div className="absolute left-0 top-0 w-10 h-[2.5px] bg-white"></div>
-            <div className="absolute left-0 bottom-0 w-10 h-[2.5px] bg-white"></div>
+            {/* Standardized bracket style from ApplyPage */}
+            <div className="absolute inset-0 border-l-[4px] border-t-[4px] border-b-[4px] border-white w-[80px] md:w-[100px]" />
             
             <h2 className="text-2xl md:text-3xl lg:text-[34px] font-bold leading-[1.05] tracking-tight uppercase">
               {t.title}

@@ -82,7 +82,23 @@ export default function TopBar({ lang, setLang }: TopBarProps) {
       return `/${newLang}`; // Default to language home if no match found
     };
 
+    const getFallbackPath = (): string => {
+      const currentPrefix = `/${lang}`;
+      const targetPrefix = `/${newLang}`;
+
+      if (pathname === currentPrefix || pathname === `${currentPrefix}/`) {
+        return targetPrefix;
+      } else if (pathname.startsWith(`${currentPrefix}/`)) {
+        return pathname.replace(currentPrefix, targetPrefix);
+      }
+      return targetPrefix;
+    };
+
     targetPath = findEquivalentPath();
+    if (targetPath === `/${newLang}`) {
+      targetPath = getFallbackPath();
+    }
+
     setLang(newLang);
     router.push(targetPath);
   };

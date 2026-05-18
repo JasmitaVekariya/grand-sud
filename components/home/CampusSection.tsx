@@ -67,7 +67,7 @@ export default function CampusSection() {
               {t.title[0]} {t.title[1]}
             </h2>
 
-            <div className="flex flex-col gap-0">
+            <div className="flex flex-col gap-0 mb-8">
               {t.description.map((line, idx) => (
                 <h3 
                   key={idx}
@@ -77,6 +77,13 @@ export default function CampusSection() {
                 </h3>
               ))}
             </div>
+
+            <Link 
+              href={lang === "en" ? "/en/apply" : "/fr/candidater"}
+              className="bg-primary-red text-white font-bold px-10 py-4 rounded-full text-center text-[15px] hover:bg-[#3d1311] transition-all shadow-xl tracking-widest uppercase w-fit"
+            >
+              {t.button}
+            </Link>
           </div>
 
           {/* Right Image Slider - Fixed Height to match content */}

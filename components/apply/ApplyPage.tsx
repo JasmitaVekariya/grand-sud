@@ -211,10 +211,11 @@ export default function ApplyPage() {
               priority
             />
           </motion.div>
-          <div className="absolute inset-0 bg-[#dc4b3b]/30 pointer-events-none" />
-          <div className="absolute left-6 md:left-10 lg:left-12 top-[96px] w-8 md:w-12 h-[180px] md:h-[240px] lg:h-[300px] border-l-[4px] border-t-[4px] border-b-[4px] border-white pointer-events-none" />
-          <div className="absolute inset-0 flex items-start justify-center pt-[150px] px-12 md:px-20 lg:px-24 pointer-events-none">
-            <h1 className="text-white text-[28px] md:text-[44px] lg:text-[52px] font-bold uppercase leading-[1.1] text-center tracking-tight">
+          <div className="absolute inset-0 bg-[#dc4b3b]/60 pointer-events-none" />
+          <div className="absolute left-6 md:left-10 lg:left-12 top-[120px] md:top-[160px] py-12 pl-6 pr-4 pointer-events-none max-w-[85%]">
+            {/* White border bracket: bold lines with small horizontal width */}
+            <div className="absolute inset-0 border-l-[4px] border-t-[4px] border-b-[4px] border-white w-[100px]" />
+            <h1 className="text-white text-[28px] md:text-[44px] lg:text-[52px] font-bold uppercase leading-[1.1] text-left tracking-tight relative z-10 whitespace-pre-line">
               {t.heading}
             </h1>
           </div>

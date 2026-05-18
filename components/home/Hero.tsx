@@ -41,32 +41,26 @@ export default function Hero() {
 
   return (
     <section className="relative w-full h-[calc(100vh-100px)] md:h-[calc(100vh-120px)] overflow-hidden flex flex-col">
-      {/* Cinematic Split Background Layout */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 h-full w-full">
-        
-        {/* Left Section - Video Background with Premium Slow Zoom */}
-        <div className="relative h-[400px] lg:h-full overflow-hidden">
-          <motion.div 
-            animate={{ scale: [1, 1.1] }}
-            transition={{ duration: 20, repeat: Infinity, repeatType: "reverse", ease: "linear" }}
-            className="w-full h-full"
+      {/* Cinematic Full Background Video */}
+      <div className="absolute inset-0 w-full h-full">
+        <motion.div 
+          animate={{ scale: [1, 1.05] }}
+          transition={{ duration: 20, repeat: Infinity, repeatType: "reverse", ease: "linear" }}
+          className="w-full h-full"
+        >
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="w-full h-full object-cover"
           >
-            <video
-              autoPlay
-              loop
-              muted
-              playsInline
-              className="w-full h-full object-cover"
-            >
-              <source src="/assets/background-tourism.mp4" type="video/mp4" />
-            </video>
-          </motion.div>
-          {/* Advanced Overlay: Darker on mobile for readability */}
-          <div className="absolute inset-0 bg-black/40 lg:bg-black/20" />
-        </div>
-
-        {/* Right Section - Solid Color Panel */}
-        <div className="bg-primary-red h-full" />
+            <source src="/assets/background-tourism.mp4" type="video/mp4" />
+          </video>
+        </motion.div>
+        {/* Cinematic Overlays */}
+        <div className="absolute inset-0 bg-black/40" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/20 to-transparent" />
       </div>
 
       {/* Main Content Area - Overlapping Both Sections */}
@@ -91,13 +85,13 @@ export default function Hero() {
             <div className="flex flex-col sm:flex-row gap-4 md:gap-6">
               <Link 
                 href={t.applyHref}
-                className="bg-white text-primary-red font-bold px-12 py-4 rounded-full text-center text-base md:text-lg hover:bg-gray-100 transition-all shadow-xl tracking-widest uppercase"
+                className="bg-primary-red text-white font-bold px-12 py-4 rounded-full text-center text-base md:text-lg hover:bg-[#8B2318] transition-all shadow-xl tracking-widest uppercase"
               >
                 {t.apply}
               </Link>
               <Link 
                 href={t.brochureHref}
-                className="bg-transparent border-2 border-white text-white font-bold px-12 py-4 rounded-full text-center text-base md:text-lg hover:bg-white/10 transition-all shadow-xl tracking-widest uppercase"
+                className="bg-primary-red text-white font-bold px-12 py-4 rounded-full text-center text-base md:text-lg hover:bg-[#8B2318] transition-all shadow-xl tracking-widest uppercase"
               >
                 {t.brochure}
               </Link>

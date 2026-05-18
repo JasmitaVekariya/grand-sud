@@ -11,7 +11,7 @@ export const navigationData = {
           { label: "International", href: "/fr/lecole/international" },
         ],
         rightSections: [
-          { title: "CAMPUS", icon: "map-pin", image: "/assets/campus-toulouse.jpg", subtext: "Toulouse-Labège" },
+          { title: "CAMPUS", icon: "map-pin", image: "/assets/campus-toulouse.jpg", subtext: "Toulouse-Labège", href: "/fr/campus/toulouse-labege" },
           { title: "CHIFFRES CLÉS", icon: "bar-chart", href: "/fr/lecole/chiffres-cles" },
           { title: "NOUS RENCONTRER", icon: "calendar", href: "/fr/lecole/rencontrer" },
         ],
@@ -69,6 +69,7 @@ export const navigationData = {
           title: "CAMPUS",
           image: "/assets/campus-toulouse.jpg",
           subtext: "Toulouse-Labège",
+          href: "/fr/campus/toulouse-labege",
           links: [
             { label: "Le campus et ses alentours", icon: "map", href: "/fr/campus/alentours" },
             { label: "Se loger autour du campus", icon: "home", href: "/fr/campus/logement" },
@@ -100,7 +101,7 @@ export const navigationData = {
           { title: "ALTERNANT", image: "/assets/card-alternant.jpg", href: "/fr/business/alternant" },
           { title: "DIPLÔMÉ", image: "/assets/card-alumni.jpg", href: "/fr/business/diplome" },
         ],
-        rightBox: { title: "ESPACE ENTREPRISE", icon: "briefcase" }
+        rightBox: { title: "ESPACE ENTREPRISE", icon: "briefcase", href: "/fr/welcome/business/espace-dedie-aux-entreprises" }
       }
     }
   ],
@@ -116,7 +117,7 @@ export const navigationData = {
           { label: "International", href: "/en/school/international" },
         ],
         rightSections: [
-          { title: "CAMPUS", icon: "map-pin", image: "/assets/campus-toulouse.jpg", subtext: "Toulouse-Labège" },
+          { title: "CAMPUS", icon: "map-pin", image: "/assets/campus-toulouse.jpg", subtext: "Toulouse-Labège", href: "/en/campus/toulouse-labege" },
           { title: "KEY FIGURES", icon: "bar-chart", href: "/en/school/key-figures" },
           { title: "MEET US", icon: "calendar", href: "/en/school/meetus" },
         ],
@@ -174,6 +175,7 @@ export const navigationData = {
           title: "CAMPUS",
           image: "/assets/campus-toulouse.jpg",
           subtext: "Toulouse-Labège",
+          href: "/en/campus/toulouse-labege",
           links: [
             { label: "The campus and its surroundings", icon: "map", href: "/en/campus/surroundings" },
             { label: "Housing around the campus", icon: "home", href: "/en/campus/housing" },
@@ -205,7 +207,7 @@ export const navigationData = {
           { title: "APPRENTICE", image: "/assets/card-alternant.jpg", href: "/en/business/apprentice" },
           { title: "GRADUATE", image: "/assets/card-alumni.jpg", href: "/en/business/graduate" },
         ],
-        rightBox: { title: "BUSINESS SPACE", icon: "briefcase" }
+        rightBox: { title: "BUSINESS SPACE", icon: "briefcase", href: "/en/welcome/business/dedicated-page-for-businesses" }
       }
     }
   ],

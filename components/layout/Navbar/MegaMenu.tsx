@@ -127,20 +127,35 @@ export default function MegaMenu({ type, data, isOpen }: MegaMenuProps) {
           </div>
           {/* Left Images with Red Overlay */}
           <div className="flex flex-col gap-3 mb-6">
-            <div className="relative w-full h-20 overflow-hidden border border-white/20 group cursor-pointer">
-              <Image src={data.leftSection.image} alt="Toulouse" fill className="object-cover" />
-              <div className="absolute inset-0 bg-primary-red/0 group-hover:bg-primary-red/30 transition-colors duration-300 z-10" />
-              <div className="absolute inset-0 bg-black/30 flex items-center justify-center z-20">
-                <span className="text-[10px] font-[700] uppercase tracking-widest">Toulouse-Labège</span>
+            {data.leftSection.href ? (
+              <Link href={data.leftSection.href} className="relative w-full h-20 overflow-hidden border border-white/20 group cursor-pointer block">
+                <Image src={data.leftSection.image} alt="Toulouse" fill className="object-cover" />
+                <div className="absolute inset-0 bg-primary-red/0 group-hover:bg-primary-red/30 transition-colors duration-300 z-10" />
+                <div className="absolute inset-0 bg-black/30 flex items-center justify-center z-20">
+                  <span className="text-[10px] font-[700] uppercase tracking-widest">Toulouse-Labège</span>
+                </div>
+              </Link>
+            ) : (
+              <div className="relative w-full h-20 overflow-hidden border border-white/20 group cursor-pointer">
+                <Image src={data.leftSection.image} alt="Toulouse" fill className="object-cover" />
+                <div className="absolute inset-0 bg-primary-red/0 group-hover:bg-primary-red/30 transition-colors duration-300 z-10" />
+                <div className="absolute inset-0 bg-black/30 flex items-center justify-center z-20">
+                  <span className="text-[10px] font-[700] uppercase tracking-widest">Toulouse-Labège</span>
+                </div>
               </div>
-            </div>
-            <div className="relative w-full h-20 overflow-hidden border border-white/20 group cursor-pointer">
+            )}
+            <a 
+              href="http://formainstitute.ae/" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="relative w-full h-20 overflow-hidden border border-white/20 group cursor-pointer"
+            >
               <Image src="/assets/card-alumni.jpg" alt="Dubai" fill className="object-cover" />
               <div className="absolute inset-0 bg-primary-red/0 group-hover:bg-primary-red/30 transition-colors duration-300 z-10" />
               <div className="absolute inset-0 bg-black/30 flex items-center justify-center z-20">
                 <span className="text-[10px] font-[700] uppercase tracking-widest">Dubai Campus</span>
               </div>
-            </div>
+            </a>
           </div>
         </div>
         <div className="px-8 pb-8 flex flex-col gap-3">
@@ -232,12 +247,15 @@ export default function MegaMenu({ type, data, isOpen }: MegaMenuProps) {
           );
         })}
         {/* Business Space Fixed Card - 4th Box */}
-        <div className="bg-primary-red relative group overflow-hidden aspect-[16/8] cursor-pointer flex items-center justify-center text-white hover:brightness-110 transition-all shadow-md">
+        <Link 
+          href={data.rightBox.href}
+          className="bg-primary-red relative group overflow-hidden aspect-[16/8] cursor-pointer flex items-center justify-center text-white hover:brightness-110 transition-all shadow-md"
+        >
           <div className="flex items-center gap-5 px-6">
             <Briefcase size={32} className="text-white opacity-90 group-hover:opacity-100 transition-opacity flex-shrink-0" />
             <h3 className="text-[14px] font-[800] uppercase tracking-widest leading-tight border-l-2 border-white/30 pl-5">{data.rightBox.title}</h3>
           </div>
-        </div>
+        </Link>
       </div>
     </div>
   );
