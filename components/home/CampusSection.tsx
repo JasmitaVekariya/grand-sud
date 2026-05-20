@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
-import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { useLanguage } from "@/context/LanguageContext";
 
@@ -54,7 +53,7 @@ export default function CampusSection() {
 
   return (
     <section className="py-8 md:py-12 bg-white overflow-hidden">
-      <div className="max-w-[1440px] mx-auto px-6 md:px-[200px]">
+      <div className="max-w-[1440px] mx-auto px-6 md:px-16 lg:px-24 xl:px-[200px]">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 items-stretch">
           
           {/* Left Content */}
@@ -63,20 +62,21 @@ export default function CampusSection() {
               {t.label}
             </span>
             
-            <h2 className="text-[28px] md:text-[44px] font-bold text-primary-red leading-[1.0] tracking-tight mb-1">
+            <h2 className="text-[32px] md:text-[54px] font-bold text-primary-red leading-[1.0] tracking-tight mb-1">
               {t.title[0]} {t.title[1]}
             </h2>
 
-            <div className="flex flex-col gap-0">
+            <div className="flex flex-col gap-0 mb-8">
               {t.description.map((line, idx) => (
                 <h3 
                   key={idx}
-                  className="text-[28px] md:text-[44px] font-bold text-[#4d1a18] leading-[1.0] uppercase tracking-tight"
+                  className="text-[32px] md:text-[54px] font-bold text-[#4d1a18] leading-[1.0] uppercase tracking-tight"
                 >
                   {line}
                 </h3>
               ))}
             </div>
+
           </div>
 
           {/* Right Image Slider - Fixed Height to match content */}

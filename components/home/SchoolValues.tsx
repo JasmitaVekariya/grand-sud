@@ -96,7 +96,7 @@ export default function SchoolValues() {
 
   return (
     <section className="bg-[#F23A2E] py-8 md:py-12 overflow-hidden">
-      <div className="max-w-[1440px] mx-auto px-6 md:px-[200px]">
+      <div className="max-w-[1440px] mx-auto px-6 md:px-16 lg:px-24 xl:px-[200px]">
         
         {/* Heading - Top Left */}
         <motion.h2

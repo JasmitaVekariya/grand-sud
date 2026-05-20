@@ -54,7 +54,7 @@ export default function MeetUsPage() {
         height="h-[450px]" 
       />
       
-      <div className="max-w-[1440px] mx-auto px-6 md:px-[100px] lg:px-[200px] py-16 md:py-20">
+      <div className="max-w-[1440px] mx-auto px-6 md:px-16 lg:px-24 xl:px-[200px] py-16 md:py-20">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
           
           {/* Sidebar - Navigation Section (25%) */}

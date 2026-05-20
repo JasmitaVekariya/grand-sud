@@ -126,7 +126,7 @@ export default function CurriculumSlider() {
 
   return (
     <section className="py-8 md:py-12 bg-white overflow-visible">
-      <div className="max-w-[1440px] mx-auto px-6 md:px-[200px] relative">
+      <div className="max-w-[1440px] mx-auto px-6 md:px-16 lg:px-24 xl:px-[200px] relative">
         {/* Heading with Overlapping Effect - Reduced Boldness and Size */}
         <div className="relative z-30 mb-[-30px] md:mb-[-45px]">
           <motion.h2 
@@ -169,7 +169,7 @@ export default function CurriculumSlider() {
 
               {/* Slide Content - Compact Typography */}
               <div className="absolute inset-0 flex items-center">
-                <div className="w-full px-8 md:px-16 lg:px-24 pt-12 md:pt-20">
+                <div className="w-full px-12 md:px-16 lg:px-24 pt-12 md:pt-20">
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}

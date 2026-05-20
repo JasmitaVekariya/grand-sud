@@ -211,10 +211,11 @@ export default function ApplyPage() {
               priority
             />
           </motion.div>
-          <div className="absolute inset-0 bg-[#dc4b3b]/30 pointer-events-none" />
-          <div className="absolute left-6 md:left-10 lg:left-12 top-[96px] w-8 md:w-12 h-[180px] md:h-[240px] lg:h-[300px] border-l-[4px] border-t-[4px] border-b-[4px] border-white pointer-events-none" />
-          <div className="absolute inset-0 flex items-start justify-center pt-[150px] px-12 md:px-20 lg:px-24 pointer-events-none">
-            <h1 className="text-white text-[28px] md:text-[44px] lg:text-[52px] font-bold uppercase leading-[1.1] text-center tracking-tight">
+          <div className="absolute inset-0 bg-[#dc4b3b]/60 pointer-events-none" />
+          <div className="absolute left-6 md:left-10 lg:left-12 top-[120px] md:top-[160px] py-12 pl-6 pr-4 pointer-events-none max-w-[85%]">
+            {/* White border bracket: bold lines with small horizontal width */}
+            <div className="absolute inset-0 border-l-[4px] border-t-[4px] border-b-[4px] border-white w-[100px]" />
+            <h1 className="text-white text-[28px] md:text-[44px] lg:text-[52px] font-bold uppercase leading-[1.1] text-left tracking-tight relative z-10 whitespace-pre-line">
               {t.heading}
             </h1>
           </div>
@@ -234,37 +235,37 @@ export default function ApplyPage() {
           {/* Form */}
           <form onSubmit={handleSubmit} className="space-y-6">
             {/* Name fields */}
-            <div className="flex flex-col md:flex-row gap-6">
-              <div className="space-y-1.5">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
+              <div className="space-y-1.5 w-full">
                 <label className="text-[12px] font-bold uppercase text-black tracking-wide">
                   {t.fields.firstName} <span className="text-primary-red">*</span>
                 </label>
                 <input
                   type="text"
-                  className={`w-full md:w-[388px] h-[40px] border border-black px-4 text-[15px] focus:outline-none transition-colors focus:border-[#1a80b0]`}
+                  className={`w-full h-[40px] border border-black px-4 text-[15px] focus:outline-none transition-colors focus:border-[#1a80b0]`}
                   value={formData.firstName}
                   onBlur={() => handleBlur('firstName')}
                   onChange={(e) => setFormData({ ...formData, firstName: e.target.value })}
                 />
                 {getError('firstName') && (
-                  <div className="bg-red-500/10 px-3 py-1.5 w-full md:w-[388px]">
+                  <div className="bg-red-500/10 px-3 py-1.5 w-full">
                     <p className="text-black text-[13px]">{getError('firstName')}</p>
                   </div>
                 )}
               </div>
-              <div className="space-y-1.5">
+              <div className="space-y-1.5 w-full">
                 <label className="text-[12px] font-bold uppercase text-black tracking-wide">
                   {t.fields.surname} <span className="text-primary-red">*</span>
                 </label>
                 <input
                   type="text"
-                  className={`w-full md:w-[388px] h-[40px] border border-black px-4 text-[15px] focus:outline-none transition-colors focus:border-[#1a80b0]`}
+                  className={`w-full h-[40px] border border-black px-4 text-[15px] focus:outline-none transition-colors focus:border-[#1a80b0]`}
                   value={formData.surname}
                   onBlur={() => handleBlur('surname')}
                   onChange={(e) => setFormData({ ...formData, surname: e.target.value })}
                 />
                 {getError('surname') && (
-                  <div className="bg-red-500/10 px-3 py-1.5 w-full md:w-[388px]">
+                  <div className="bg-red-500/10 px-3 py-1.5 w-full">
                     <p className="text-black text-[13px]">{getError('surname')}</p>
                   </div>
                 )}
@@ -272,58 +273,58 @@ export default function ApplyPage() {
             </div>
 
             {/* Email */}
-            <div className="space-y-1.5">
+            <div className="space-y-1.5 w-full">
               <label className="text-[12px] font-bold uppercase text-black tracking-wide">
                 {t.fields.email} <span className="text-primary-red">*</span>
               </label>
               <input
                 type="email"
-                className={`w-full md:w-[800px] h-[40px] border border-black px-4 text-[15px] focus:outline-none transition-colors focus:border-[#1a80b0]`}
+                className={`w-full h-[40px] border border-black px-4 text-[15px] focus:outline-none transition-colors focus:border-[#1a80b0]`}
                 value={formData.email}
                 onBlur={() => handleBlur('email')}
                 onChange={(e) => setFormData({ ...formData, email: e.target.value })}
               />
               {getError('email') && (
-                <div className="bg-red-500/10 px-3 py-1.5 w-full md:w-[800px]">
+                <div className="bg-red-500/10 px-3 py-1.5 w-full">
                   <p className="text-black text-[13px]">{getError('email')}</p>
                 </div>
               )}
             </div>
 
             {/* Phone */}
-            <div className="space-y-1.5">
+            <div className="space-y-1.5 w-full">
               <label className="text-[12px] font-bold uppercase text-black tracking-wide">
                 {t.fields.phone} <span className="text-primary-red">*</span>
               </label>
               <input
                 type="tel"
-                className={`w-full md:w-[800px] h-[40px] border border-black px-4 text-[15px] focus:outline-none transition-colors focus:border-[#1a80b0]`}
+                className={`w-full h-[40px] border border-black px-4 text-[15px] focus:outline-none transition-colors focus:border-[#1a80b0]`}
                 value={formData.phone}
                 onBlur={() => handleBlur('phone')}
                 onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
               />
               {getError('phone') && (
-                <div className="bg-red-500/10 px-3 py-1.5 w-full md:w-[800px]">
+                <div className="bg-red-500/10 px-3 py-1.5 w-full">
                   <p className="text-black text-[13px]">{getError('phone')}</p>
                 </div>
               )}
             </div>
 
             {/* Country */}
-            <div className="space-y-1.5">
+            <div className="space-y-1.5 w-full">
               <label className="text-[12px] font-bold uppercase text-black tracking-wide">
                 {t.fields.country}
               </label>
               <input
                 type="text"
-                className="w-full md:w-[800px] h-[40px] border border-black px-4 text-[15px] focus:outline-none transition-colors focus:border-[#1a80b0]"
+                className="w-full h-[40px] border border-black px-4 text-[15px] focus:outline-none transition-colors focus:border-[#1a80b0]"
                 value={formData.country}
                 onChange={(e) => setFormData({ ...formData, country: e.target.value })}
               />
             </div>
 
             {/* Custom Dropdowns */}
-            <div className="w-full md:w-[800px]">
+            <div className="w-full">
               <CustomSelect 
                 label={t.fields.diploma}
                 options={t.diplomas}
@@ -334,7 +335,7 @@ export default function ApplyPage() {
               />
             </div>
 
-            <div className="w-full md:w-[800px]">
+            <div className="w-full">
               <CustomSelect 
                 label={t.fields.intake}
                 options={t.intakes}

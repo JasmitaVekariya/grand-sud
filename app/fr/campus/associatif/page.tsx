@@ -13,7 +13,7 @@ export default function VieAssociativePageFR() {
         image={t.image} 
       />
       
-      <div className="max-w-[1440px] mx-auto px-6 md:px-[200px] py-20">
+      <div className="max-w-[1440px] mx-auto px-6 md:px-16 lg:px-24 xl:px-[200px] py-20">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
           <div className="lg:col-span-8">
             <h2 className="text-3xl font-bold text-gray-900 mb-8 uppercase tracking-wider border-l-4 border-primary-red pl-6">

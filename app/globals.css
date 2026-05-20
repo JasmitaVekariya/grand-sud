@@ -29,3 +29,177 @@ body {
   color: var(--foreground);
   font-family: var(--font-montserrat);
 }
+
+/* ==========================================
+   GLOBAL ACCESSIBILITY WIDGET STYLING
+   ========================================== */
+
+/* 1. Bigger Text Scaling (Applied to HTML, affects rem sizes) */
+html.acc-text-1 {
+  font-size: 110% !important;
+}
+html.acc-text-2 {
+  font-size: 120% !important;
+}
+html.acc-text-3 {
+  font-size: 130% !important;
+}
+html.acc-text-4 {
+  font-size: 140% !important;
+}
+
+/* 2. Text Spacing (Letter spacing) */
+html.acc-spacing-1 *:not(.acc-widget-container):not(.acc-widget-container *) {
+  letter-spacing: 0.12em !important;
+}
+html.acc-spacing-2 *:not(.acc-widget-container):not(.acc-widget-container *) {
+  letter-spacing: 0.18em !important;
+}
+html.acc-spacing-3 *:not(.acc-widget-container):not(.acc-widget-container *) {
+  letter-spacing: 0.24em !important;
+}
+
+/* 3. Line Height */
+html.acc-lineheight-1 *:not(.acc-widget-container):not(.acc-widget-container *) {
+  line-height: 1.5 !important;
+}
+html.acc-lineheight-2 *:not(.acc-widget-container):not(.acc-widget-container *) {
+  line-height: 1.75 !important;
+}
+html.acc-lineheight-3 *:not(.acc-widget-container):not(.acc-widget-container *) {
+  line-height: 2.0 !important;
+}
+
+/* 4. Text Alignment */
+html.acc-align-left p, html.acc-align-left span, html.acc-align-left h1, html.acc-align-left h2, html.acc-align-left h3, html.acc-align-left h4, html.acc-align-left h5, html.acc-align-left h6, html.acc-align-left li, html.acc-align-left a {
+  text-align: left !important;
+}
+html.acc-align-center p, html.acc-align-center span, html.acc-align-center h1, html.acc-align-center h2, html.acc-align-center h3, html.acc-align-center h4, html.acc-align-center h5, html.acc-align-center h6, html.acc-align-center li, html.acc-align-center a {
+  text-align: center !important;
+}
+html.acc-align-right p, html.acc-align-right span, html.acc-align-right h1, html.acc-align-right h2, html.acc-align-right h3, html.acc-align-right h4, html.acc-align-right h5, html.acc-align-right h6, html.acc-align-right li, html.acc-align-right a {
+  text-align: right !important;
+}
+html.acc-align-justify p, html.acc-align-justify span, html.acc-align-justify h1, html.acc-align-justify h2, html.acc-align-justify h3, html.acc-align-justify h4, html.acc-align-justify h5, html.acc-align-justify h6, html.acc-align-justify li, html.acc-align-justify a {
+  text-align: justify !important;
+}
+
+/* 5. Highlight Links */
+html.acc-highlight-links a:not(.acc-widget-container *) {
+  background-color: #000000 !important;
+  color: #ffff00 !important;
+  text-decoration: underline !important;
+  text-decoration-color: #ffff00 !important;
+  text-decoration-style: solid !important;
+  text-decoration-thickness: 2.5px !important;
+  font-weight: 700 !important;
+  padding: 2px 6px !important;
+  border-radius: 4px !important;
+  transition: all 0.2s ease !important;
+}
+html.acc-highlight-links a:not(.acc-widget-container *) * {
+  color: #ffff00 !important;
+  text-decoration-color: #ffff00 !important;
+}
+
+/* 6. Contrast Modes */
+
+/* Contrast + (High Contrast) */
+html.acc-contrast-hc *:not(.acc-widget-container):not(.acc-widget-container *) {
+  background-color: #000000 !important;
+  color: #ffffff !important;
+  border-color: #ffffff !important;
+}
+
+/* Dark Contrast (Yellow Text on Black) */
+html.acc-contrast-dc *:not(.acc-widget-container):not(.acc-widget-container *) {
+  background-color: #000000 !important;
+  color: #ffff00 !important;
+  border-color: #ffff00 !important;
+}
+
+/* Light Contrast (Black Text on White) */
+html.acc-contrast-lc *:not(.acc-widget-container):not(.acc-widget-container *) {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+  border-color: #000000 !important;
+}
+
+/* Monochrome (Grayscale filter) */
+html.acc-contrast-mono body *:not(.acc-widget-container):not(.acc-widget-container *) {
+  filter: grayscale(100%) !important;
+}
+
+/* Invert Colors */
+html.acc-contrast-invert body *:not(.acc-widget-container):not(.acc-widget-container *) {
+  filter: invert(100%) !important;
+}
+/* Prevent double inversion of image/video content */
+html.acc-contrast-invert img,
+html.acc-contrast-invert picture,
+html.acc-contrast-invert video,
+html.acc-contrast-invert iframe {
+  filter: invert(100%) !important;
+}
+
+/* 7. Saturation Adjustments */
+html.acc-sat-low body *:not(.acc-widget-container):not(.acc-widget-container *) {
+  filter: saturate(40%) !important;
+}
+html.acc-sat-high body *:not(.acc-widget-container):not(.acc-widget-container *) {
+  filter: saturate(200%) !important;
+}
+html.acc-sat-mono body *:not(.acc-widget-container):not(.acc-widget-container *) {
+  filter: grayscale(100%) !important;
+}
+
+/* 8. Pause Animations (Freezes CSS animations and stops standard transitions) */
+html.acc-pause-anim *,
+html.acc-pause-anim *::before,
+html.acc-pause-anim *::after {
+  animation-play-state: paused !important;
+  transition: none !important;
+  transition-property: none !important;
+  transition-duration: 0s !important;
+  scroll-behavior: auto !important;
+}
+
+/* 9. Hide Images (Useful for users who need clean screen readers or are highly distracted) */
+html.acc-hide-images img:not(.acc-icon),
+html.acc-hide-images picture:not(.acc-icon),
+html.acc-hide-images iframe:not(.acc-widget-container *),
+html.acc-hide-images [style*="background-image"] {
+  visibility: hidden !important;
+  opacity: 0 !important;
+}
+
+/* 10. Dyslexia-friendly & Legible Font overrides */
+@font-face {
+  font-family: 'OpenDyslexic';
+  src: url('https://cdn.jsdelivr.net/npm/opendyslexic@1.0.3/dist/woff/OpenDyslexic-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+html.acc-font-dyslexic *:not(.acc-widget-container):not(.acc-widget-container *):not(i) {
+  font-family: 'OpenDyslexic', 'Comic Sans MS', 'Comic Sans', cursive, sans-serif !important;
+}
+html.acc-font-legible *:not(.acc-widget-container):not(.acc-widget-container *):not(i) {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif !important;
+}
+
+/* 11. Cursor Styles */
+/* Large Cursor Style */
+html.acc-cursor-large,
+html.acc-cursor-large * {
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'%3E%3Cpath d='M0 0 L32 32 L16 34 L32 60 L24 64 L8 38 L0 44 Z' fill='black' stroke='white' stroke-width='3'/%3E%3C/svg%3E"), auto !important;
+}
+/* Reading Mask and Guide custom cursor rules */
+html.acc-cursor-guide,
+html.acc-cursor-guide * {
+  cursor: crosshair !important;
+}
+html.acc-cursor-mask,
+html.acc-cursor-mask * {
+  cursor: crosshair !important;
+}
