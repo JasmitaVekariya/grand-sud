@@ -6,8 +6,13 @@ import Link from "next/link";
 import { Accessibility, ShieldCheck, Info } from "lucide-react";
 import { FaFacebookF, FaInstagram, FaYoutube, FaLinkedinIn } from "react-icons/fa";
 
+import { useAccessibility } from "@/context/AccessibilityContext";
+import { useCookie } from "@/context/CookieContext";
+
 export default function Footer() {
   const { lang } = useLanguage();
+  const { setIsOpen: setAccessibilityOpen } = useAccessibility();
+  const { setIsCookieModalOpen } = useCookie();
 
   const t = {
     en: {
@@ -22,9 +27,9 @@ export default function Footer() {
         recruitments: "Recruitments",
         rules: "Rules",
         complaint: "Complaint form",
-        company: "Company and Business",
-        student: "Student and alumni",
-        faculty: "Faculty"
+        company: "Company login",
+        student: "Student and alumni login",
+        faculty: "Speaker login"
       },
       legal: {
         notices: "LEGAL NOTICES AND PRIVACY POLICY",
@@ -44,9 +49,9 @@ export default function Footer() {
         recruitments: "Recrutements",
         rules: "Règlement intérieur",
         complaint: "Formulaire de réclamation",
-        company: "Entreprises et Business",
-        student: "Étudiants et alumni",
-        faculty: "Intervenants"
+        company: "Connexion entreprise",
+        student: "Connexion étudiant et alumni",
+        faculty: "Connexion intervenant"
       },
       legal: {
         notices: "MENTIONS LÉGALES ET POLITIQUE DE CONFIDENTIALITÉ",
@@ -91,12 +96,12 @@ export default function Footer() {
           <div className="flex flex-col gap-4">
             <h3 className="text-[14px] md:text-[15px] font-bold tracking-tight opacity-95">{t.explore}</h3>
             <ul className="flex flex-col gap-2 text-[12px] md:text-[13px] font-[400] opacity-90">
-              <li><Link href="#" className="hover:opacity-100 transition-opacity">{t.links.news}</Link></li>
-              <li><Link href="#" className="hover:opacity-100 transition-opacity">{t.links.meetUs}</Link></li>
-              <li><Link href="#" className="hover:opacity-100 transition-opacity">{t.links.contactUs}</Link></li>
-              <li><Link href="#" className="hover:opacity-100 transition-opacity">{t.links.recruitments}</Link></li>
-              <li><Link href="#" className="hover:opacity-100 transition-opacity">{t.links.rules}</Link></li>
-              <li><Link href="#" className="hover:opacity-100 transition-opacity">{t.links.complaint}</Link></li>
+              <li><Link href={`/${lang}/explore/news`} className="hover:opacity-100 transition-opacity">{t.links.news}</Link></li>
+              <li><Link href={lang === "en" ? "/en/school/meetus" : "/fr/lecole/rencontrer"} className="hover:opacity-100 transition-opacity">{t.links.meetUs}</Link></li>
+              <li><Link href={lang === "en" ? "/en/contact" : "/fr/contact"} className="hover:opacity-100 transition-opacity">{t.links.contactUs}</Link></li>
+              <li><Link href={lang === "en" ? "/en/school/recruitments" : "/fr/lecole/recrutement"} className="hover:opacity-100 transition-opacity">{t.links.recruitments}</Link></li>
+              <li><Link href={`/${lang}/explore/rules`} className="hover:opacity-100 transition-opacity">{t.links.rules}</Link></li>
+              <li><Link href={`/${lang}/explore/complaint`} className="hover:opacity-100 transition-opacity">{t.links.complaint}</Link></li>
             </ul>
           </div>
 
@@ -104,30 +109,33 @@ export default function Footer() {
           <div className="flex flex-col gap-4 relative">
             <h3 className="text-[14px] md:text-[15px] font-bold tracking-tight opacity-95">{t.privateSpaces}</h3>
             <ul className="flex flex-col gap-2 text-[12px] md:text-[13px] font-[400] opacity-90">
-              <li><Link href="#" className="hover:opacity-100 transition-opacity">{t.links.company}</Link></li>
-              <li><Link href="#" className="hover:opacity-100 transition-opacity">{t.links.student}</Link></li>
-              <li><Link href="#" className="hover:opacity-100 transition-opacity">{t.links.faculty}</Link></li>
+              <li><Link href={`/${lang}/welcome/company-login`} className="hover:opacity-100 transition-opacity">{t.links.company}</Link></li>
+              <li><Link href={`/${lang}/campus/career-center/student-login`} className="hover:opacity-100 transition-opacity">{t.links.student}</Link></li>
+              <li><Link href={`/${lang}/campus/career-center/faculty-login`} className="hover:opacity-100 transition-opacity">{t.links.faculty}</Link></li>
             </ul>
 
             {/* Social Icons */}
             <div className="flex items-center gap-4 mt-8 md:mt-12">
-              <Link href="#" className="hover:opacity-70 transition-opacity">
+              <Link href="https://www.facebook.com/ecolegrandsud/" target="_blank" className="hover:opacity-70 transition-opacity">
                 <FaFacebookF size={18} />
               </Link>
-              <Link href="#" className="hover:opacity-70 transition-opacity">
+              <Link href="https://www.instagram.com/ecolegrandsud/" target="_blank" className="hover:opacity-70 transition-opacity">
                 <FaInstagram size={20} />
               </Link>
-              <Link href="#" className="hover:opacity-70 transition-opacity">
+              <Link href="https://www.youtube.com/@ecolegrandsud" target="_blank" className="hover:opacity-70 transition-opacity">
                 <FaYoutube size={20} />
               </Link>
-              <Link href="#" className="hover:opacity-70 transition-opacity">
+              <Link href="https://www.linkedin.com/school/ecolegrandsud/" target="_blank" className="hover:opacity-70 transition-opacity">
                 <FaLinkedinIn size={18} />
               </Link>
             </div>
 
-            {/* Accessibility & Security Icons */}
+             {/* Accessibility & Security Icons */}
             <div className="flex items-center gap-3 mt-6">
-              <div className="w-[36px] h-[36px] rounded-full bg-[#3d1311] flex items-center justify-center hover:scale-110 transition-transform cursor-pointer shadow-md">
+              <div 
+                onClick={() => setAccessibilityOpen(true)}
+                className="w-[36px] h-[36px] rounded-full bg-[#3d1311] flex items-center justify-center hover:scale-110 transition-transform cursor-pointer shadow-md"
+              >
                 <svg 
                   xmlns="http://www.w3.org/2000/svg" 
                   viewBox="0 0 512 512" 
@@ -137,7 +145,10 @@ export default function Footer() {
                   <path d="M256,108c19.9,0,36,16.1,36,36s-16.1,36-36,36-36-16.1-36-36,16.1-36,36-36ZM373.7,206c-28.7,6.8-55.5,12.8-82.1,15.8.9,101,12.3,123.1,25,155.6,3.6,9.3-1,19.7-10.2,23.3s-19.7-1-23.3-10.2c-8.7-22.3-17.1-40.6-22.3-78.6h-9.7c-5.2,37.9-13.5,56.2-22.3,78.5-3.6,9.3-14.1,13.8-23.3,10.2-9.3-3.6-13.8-14.1-10.2-23.3,12.7-32.5,24.2-54.5,25-155.6-26.6-3.1-53.4-9-82.1-15.8-8.6-2-13.9-10.6-11.9-19.2,2-8.6,10.7-13.9,19.2-11.9,96.7,22.8,124.3,22.8,220.8,0,8.6-2,17.2,3.3,19.2,11.9,2,8.6-3.3,17.2-11.9,19.2h0Z" />
                 </svg>
               </div>
-              <div className="w-[36px] h-[36px] rounded-full bg-[#3d1311] flex items-center justify-center hover:scale-110 transition-transform cursor-pointer shadow-md">
+              <div 
+                onClick={() => setIsCookieModalOpen(true)}
+                className="w-[36px] h-[36px] rounded-full bg-[#3d1311] flex items-center justify-center hover:scale-110 transition-transform cursor-pointer shadow-md"
+              >
                 <ShieldCheck size={20} className="text-white" />
               </div>
             </div>

@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
-import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { useLanguage } from "@/context/LanguageContext";
 
@@ -63,7 +62,7 @@ export default function CampusSection() {
               {t.label}
             </span>
             
-            <h2 className="text-[28px] md:text-[44px] font-bold text-primary-red leading-[1.0] tracking-tight mb-1">
+            <h2 className="text-[32px] md:text-[54px] font-bold text-primary-red leading-[1.0] tracking-tight mb-1">
               {t.title[0]} {t.title[1]}
             </h2>
 
@@ -71,19 +70,13 @@ export default function CampusSection() {
               {t.description.map((line, idx) => (
                 <h3 
                   key={idx}
-                  className="text-[28px] md:text-[44px] font-bold text-[#4d1a18] leading-[1.0] uppercase tracking-tight"
+                  className="text-[32px] md:text-[54px] font-bold text-[#4d1a18] leading-[1.0] uppercase tracking-tight"
                 >
                   {line}
                 </h3>
               ))}
             </div>
 
-            <Link 
-              href={lang === "en" ? "/en/apply" : "/fr/candidater"}
-              className="bg-primary-red text-white font-bold px-10 py-4 rounded-full text-center text-[15px] hover:bg-[#3d1311] transition-all shadow-xl tracking-widest uppercase w-fit"
-            >
-              {t.button}
-            </Link>
           </div>
 
           {/* Right Image Slider - Fixed Height to match content */}

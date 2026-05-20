@@ -1,26 +1,39 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { motion, animate, useInView } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import { useLanguage } from "@/context/LanguageContext";
 
-interface CounterProps {
-  value: number;
-}
-
-function Counter({ value }: CounterProps) {
+function Counter({ value }: { value: number }) {
   const [count, setCount] = useState(0);
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
+  const ref = useRef<HTMLSpanElement>(null);
+  const isInView = useInView(ref, { once: true, amount: 0.1 });
 
   useEffect(() => {
     if (isInView) {
-      const controls = animate(0, value, {
-        duration: 2,
-        ease: "easeOut",
-        onUpdate: (latest) => setCount(Math.floor(latest)),
-      });
-      return () => controls.stop();
+      let start = 0;
+      const end = value;
+      const duration = 2000; // 2 seconds animation
+      let startTime: number | null = null;
+      let animationFrameId: number;
+
+      const animate = (timestamp: number) => {
+        if (!startTime) startTime = timestamp;
+        const progress = Math.min((timestamp - startTime) / duration, 1);
+        
+        // Cubic ease-out formula for smooth slowing down at the end
+        const easeOutCubic = (t: number) => 1 - Math.pow(1 - t, 3);
+        const current = Math.floor(easeOutCubic(progress) * (end - start) + start);
+        
+        setCount(current);
+
+        if (progress < 1) {
+          animationFrameId = requestAnimationFrame(animate);
+        }
+      };
+
+      animationFrameId = requestAnimationFrame(animate);
+      return () => cancelAnimationFrame(animationFrameId);
     }
   }, [isInView, value]);
 

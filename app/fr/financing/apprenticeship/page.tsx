@@ -1,4 +1,4 @@
-import ApprenticeshipPage from "@/components/campus/ApprenticeshipPage";
+import ApprenticeshipPage from "@/components/financing/ApprenticeshipPage";
 
 export default function ApprenticeshipRouteFr() {
   return <ApprenticeshipPage lang="fr" />;
