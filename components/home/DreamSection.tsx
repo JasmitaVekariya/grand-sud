@@ -29,7 +29,7 @@ export default function DreamSection() {
 
   return (
     <section className="bg-[#efefef] py-16 md:py-24 border-t border-b border-primary-red overflow-hidden">
-      <div className="max-w-[1440px] mx-auto px-6 md:px-[200px]">
+      <div className="max-w-[1440px] mx-auto px-6 md:px-16 lg:px-24 xl:px-[200px]">
         <div className="flex flex-col md:flex-row items-center justify-between gap-12 lg:gap-20">
           
           {/* Left Side - Large Impactful Heading with Bracket */}

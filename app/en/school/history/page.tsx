@@ -141,9 +141,9 @@ export default function HistoryPage() {
         height="h-[450px]" 
       />
       
-      <div className="max-w-[1440px] mx-auto px-6 md:px-[100px] lg:px-[200px] py-12 md:py-16">
+      <div className="max-w-[1440px] mx-auto px-6 md:px-16 lg:px-24 xl:px-[200px] py-12 md:py-16">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16">
-          
+           
           {/* Sidebar - Navigation Section */}
           <aside className="lg:col-span-3 lg:sticky lg:top-32 self-start space-y-6">
             <button 
@@ -165,10 +165,10 @@ export default function HistoryPage() {
               </span>
             </button>
           </aside>
-
+ 
           {/* Main Content Area */}
           <div className="lg:col-span-9 space-y-12">
-            
+             
             {/* Introduction */}
             <div className="space-y-8">
               <p className="text-[12px] text-black leading-relaxed font-medium">
@@ -188,7 +188,7 @@ export default function HistoryPage() {
                 </ul>
               </div>
             </div>
-
+ 
             {/* Section: Tourism in France */}
             <section id="tourism" className="space-y-8 pt-8 border-t border-gray-100">
               <h2 className="text-3xl md:text-4xl font-bold text-primary-red uppercase tracking-tight">
@@ -197,7 +197,7 @@ export default function HistoryPage() {
               <p className="text-[12px] text-black leading-relaxed">
                 Tourism is a strategic sector of the local, national, and international economy. Every development at the school is closely linked to tourism figures and trends.
               </p>
-
+ 
               {/* Stats Grid */}
               <div className="grid grid-cols-1 md:grid-cols-3 bg-white shadow-xl max-w-[820px]">
                 {/* Stat 1 */}
@@ -232,7 +232,7 @@ export default function HistoryPage() {
                 </div>
               </div>
             </section>
-
+ 
             {/* Section: Key Dates - Vertical Timeline */}
             <section id="dates" className="space-y-12 pt-8 border-t border-gray-100 pb-20 overflow-hidden">
               <h2 className="text-3xl md:text-4xl font-bold text-primary-red uppercase tracking-tight text-center mb-24">
@@ -241,47 +241,49 @@ export default function HistoryPage() {
               
               <div className="relative">
                 {/* Central Line */}
-                <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-[2px] bg-gray-900" />
-
-                <div className="space-y-24 relative">
+                <div className="absolute left-4 md:left-1/2 transform -translate-x-1/2 h-full w-[2px] bg-gray-900" />
+ 
+                <div className="space-y-12 md:space-y-24 relative">
                   {timelineData.map((item, index) => (
-                    <div key={index} className="relative flex items-start w-full">
+                    <div key={index} className="relative flex flex-col md:flex-row items-start w-full gap-8 md:gap-0">
                       
                       {/* Center Icon */}
-                      <div className="absolute left-1/2 transform -translate-x-1/2 z-10 top-0">
-                        <div className="w-12 h-12 rounded-full bg-[#7D1F1F] border-4 border-white flex items-center justify-center shadow-lg">
+                      <div className="absolute left-4 md:left-1/2 transform -translate-x-1/2 z-10 top-0">
+                        <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-[#7D1F1F] border-4 border-white flex items-center justify-center shadow-lg">
                           {item.icon}
                         </div>
                       </div>
-
+ 
                       {/* Left Side Container */}
-                      <div className="w-1/2 px-12 flex flex-col items-end text-right">
+                      <div className={`w-full md:w-1/2 pl-12 pr-6 md:px-12 flex flex-col items-start md:items-end text-left md:text-right ${item.side === "left" ? "order-2 md:order-none" : "order-1 md:order-none"}`}>
                         {item.side === "right" ? (
-                           <span className="text-xl font-black text-[#7D1F1F] uppercase tracking-tight mt-2">{item.date}</span>
+                           <span className="text-lg md:text-xl font-black text-[#7D1F1F] uppercase tracking-tight mt-0 md:mt-2">{item.date}</span>
                         ) : (
-                          <div className="relative bg-[#7D1F1F] p-8 shadow-xl rounded-sm w-full max-w-[400px]">
+                          <div className="relative bg-[#7D1F1F] p-6 md:p-8 shadow-xl rounded-sm w-full max-w-[400px]">
                             {/* Pointer - Top Right */}
-                            <div className="absolute top-4 -right-2 w-4 h-4 bg-[#7D1F1F] transform rotate-45" />
-                            <h3 className="text-lg font-bold text-white mb-2 leading-tight uppercase">{item.title}</h3>
+                            <div className="hidden md:block absolute top-4 -right-2 w-4 h-4 bg-[#7D1F1F] transform rotate-45" />
+                            {/* Pointer - Top Left (mobile only) */}
+                            <div className="block md:hidden absolute top-4 -left-2 w-4 h-4 bg-[#7D1F1F] transform rotate-45" />
+                            <h3 className="text-base md:text-lg font-bold text-white mb-2 leading-tight uppercase">{item.title}</h3>
                             <p className="text-[12px] text-white/90 leading-relaxed">{item.text}</p>
                           </div>
                         )}
                       </div>
-
+ 
                       {/* Right Side Container */}
-                      <div className="w-1/2 px-12 flex flex-col items-start text-left">
+                      <div className={`w-full md:w-1/2 pl-12 pr-6 md:px-12 flex flex-col items-start text-left ${item.side === "left" ? "order-1 md:order-none" : "order-2 md:order-none"}`}>
                         {item.side === "left" ? (
-                           <span className="text-xl font-black text-[#7D1F1F] uppercase tracking-tight mt-2">{item.date}</span>
+                           <span className="text-lg md:text-xl font-black text-[#7D1F1F] uppercase tracking-tight mt-0 md:mt-2">{item.date}</span>
                         ) : (
-                          <div className="relative bg-[#7D1F1F] p-8 shadow-xl rounded-sm w-full max-w-[400px]">
+                          <div className="relative bg-[#7D1F1F] p-6 md:p-8 shadow-xl rounded-sm w-full max-w-[400px]">
                             {/* Pointer - Top Left */}
                             <div className="absolute top-4 -left-2 w-4 h-4 bg-[#7D1F1F] transform rotate-45" />
-                            <h3 className="text-lg font-bold text-white mb-2 leading-tight uppercase">{item.title}</h3>
+                            <h3 className="text-base md:text-lg font-bold text-white mb-2 leading-tight uppercase">{item.title}</h3>
                             <p className="text-[12px] text-white/90 leading-relaxed">{item.text}</p>
                           </div>
                         )}
                       </div>
-
+ 
                     </div>
                   ))}
                 </div>

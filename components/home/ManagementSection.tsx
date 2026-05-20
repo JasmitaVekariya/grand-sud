@@ -68,7 +68,7 @@ export default function ManagementSection() {
 
   return (
     <section className="bg-[#8B2318] text-white py-14 md:py-16 overflow-hidden">
-      <div className="max-w-[1440px] mx-auto px-6 md:px-[200px]">
+      <div className="max-w-[1440px] mx-auto px-6 md:px-16 lg:px-24 xl:px-[200px]">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-start">
           {/* Left: Title with Decorative Border */}
           <motion.div

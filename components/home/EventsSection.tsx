@@ -55,7 +55,7 @@ export default function EventsSection() {
 
   return (
     <section className="bg-[#F23A2E] py-8 md:py-12 overflow-hidden">
-      <div className="max-w-[1440px] mx-auto px-6 md:px-[200px]">
+      <div className="max-w-[1440px] mx-auto px-6 md:px-16 lg:px-24 xl:px-[200px]">
         
         {/* Section Heading */}
         <h2 className="text-white text-[40px] md:text-[56px] font-bold text-center mb-6 md:mb-10 tracking-tight uppercase">

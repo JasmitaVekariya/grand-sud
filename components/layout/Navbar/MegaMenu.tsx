@@ -268,7 +268,7 @@ export default function MegaMenu({ type, data, isOpen }: MegaMenuProps) {
       transition={{ duration: 0.3, ease: "circOut" }}
       className="absolute top-full left-0 w-full bg-white border-b-4 border-primary-red shadow-2xl z-50 overflow-hidden"
     >
-      <div className="max-w-[1440px] mx-auto px-6 md:px-[200px]">
+      <div className="max-w-[1440px] mx-auto px-6 md:px-16 lg:px-24 xl:px-[200px]">
         {type === "school" && renderSchoolMenu()}
         {type === "courses" && renderCoursesMenu()}
         {type === "student-life" && renderStudentLifeMenu()}

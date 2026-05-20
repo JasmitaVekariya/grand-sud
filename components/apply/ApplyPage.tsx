@@ -235,37 +235,37 @@ export default function ApplyPage() {
           {/* Form */}
           <form onSubmit={handleSubmit} className="space-y-6">
             {/* Name fields */}
-            <div className="flex flex-col md:flex-row gap-6">
-              <div className="space-y-1.5">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
+              <div className="space-y-1.5 w-full">
                 <label className="text-[12px] font-bold uppercase text-black tracking-wide">
                   {t.fields.firstName} <span className="text-primary-red">*</span>
                 </label>
                 <input
                   type="text"
-                  className={`w-full md:w-[388px] h-[40px] border border-black px-4 text-[15px] focus:outline-none transition-colors focus:border-[#1a80b0]`}
+                  className={`w-full h-[40px] border border-black px-4 text-[15px] focus:outline-none transition-colors focus:border-[#1a80b0]`}
                   value={formData.firstName}
                   onBlur={() => handleBlur('firstName')}
                   onChange={(e) => setFormData({ ...formData, firstName: e.target.value })}
                 />
                 {getError('firstName') && (
-                  <div className="bg-red-500/10 px-3 py-1.5 w-full md:w-[388px]">
+                  <div className="bg-red-500/10 px-3 py-1.5 w-full">
                     <p className="text-black text-[13px]">{getError('firstName')}</p>
                   </div>
                 )}
               </div>
-              <div className="space-y-1.5">
+              <div className="space-y-1.5 w-full">
                 <label className="text-[12px] font-bold uppercase text-black tracking-wide">
                   {t.fields.surname} <span className="text-primary-red">*</span>
                 </label>
                 <input
                   type="text"
-                  className={`w-full md:w-[388px] h-[40px] border border-black px-4 text-[15px] focus:outline-none transition-colors focus:border-[#1a80b0]`}
+                  className={`w-full h-[40px] border border-black px-4 text-[15px] focus:outline-none transition-colors focus:border-[#1a80b0]`}
                   value={formData.surname}
                   onBlur={() => handleBlur('surname')}
                   onChange={(e) => setFormData({ ...formData, surname: e.target.value })}
                 />
                 {getError('surname') && (
-                  <div className="bg-red-500/10 px-3 py-1.5 w-full md:w-[388px]">
+                  <div className="bg-red-500/10 px-3 py-1.5 w-full">
                     <p className="text-black text-[13px]">{getError('surname')}</p>
                   </div>
                 )}
@@ -273,58 +273,58 @@ export default function ApplyPage() {
             </div>
 
             {/* Email */}
-            <div className="space-y-1.5">
+            <div className="space-y-1.5 w-full">
               <label className="text-[12px] font-bold uppercase text-black tracking-wide">
                 {t.fields.email} <span className="text-primary-red">*</span>
               </label>
               <input
                 type="email"
-                className={`w-full md:w-[800px] h-[40px] border border-black px-4 text-[15px] focus:outline-none transition-colors focus:border-[#1a80b0]`}
+                className={`w-full h-[40px] border border-black px-4 text-[15px] focus:outline-none transition-colors focus:border-[#1a80b0]`}
                 value={formData.email}
                 onBlur={() => handleBlur('email')}
                 onChange={(e) => setFormData({ ...formData, email: e.target.value })}
               />
               {getError('email') && (
-                <div className="bg-red-500/10 px-3 py-1.5 w-full md:w-[800px]">
+                <div className="bg-red-500/10 px-3 py-1.5 w-full">
                   <p className="text-black text-[13px]">{getError('email')}</p>
                 </div>
               )}
             </div>
 
             {/* Phone */}
-            <div className="space-y-1.5">
+            <div className="space-y-1.5 w-full">
               <label className="text-[12px] font-bold uppercase text-black tracking-wide">
                 {t.fields.phone} <span className="text-primary-red">*</span>
               </label>
               <input
                 type="tel"
-                className={`w-full md:w-[800px] h-[40px] border border-black px-4 text-[15px] focus:outline-none transition-colors focus:border-[#1a80b0]`}
+                className={`w-full h-[40px] border border-black px-4 text-[15px] focus:outline-none transition-colors focus:border-[#1a80b0]`}
                 value={formData.phone}
                 onBlur={() => handleBlur('phone')}
                 onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
               />
               {getError('phone') && (
-                <div className="bg-red-500/10 px-3 py-1.5 w-full md:w-[800px]">
+                <div className="bg-red-500/10 px-3 py-1.5 w-full">
                   <p className="text-black text-[13px]">{getError('phone')}</p>
                 </div>
               )}
             </div>
 
             {/* Country */}
-            <div className="space-y-1.5">
+            <div className="space-y-1.5 w-full">
               <label className="text-[12px] font-bold uppercase text-black tracking-wide">
                 {t.fields.country}
               </label>
               <input
                 type="text"
-                className="w-full md:w-[800px] h-[40px] border border-black px-4 text-[15px] focus:outline-none transition-colors focus:border-[#1a80b0]"
+                className="w-full h-[40px] border border-black px-4 text-[15px] focus:outline-none transition-colors focus:border-[#1a80b0]"
                 value={formData.country}
                 onChange={(e) => setFormData({ ...formData, country: e.target.value })}
               />
             </div>
 
             {/* Custom Dropdowns */}
-            <div className="w-full md:w-[800px]">
+            <div className="w-full">
               <CustomSelect 
                 label={t.fields.diploma}
                 options={t.diplomas}
@@ -335,7 +335,7 @@ export default function ApplyPage() {
               />
             </div>
 
-            <div className="w-full md:w-[800px]">
+            <div className="w-full">
               <CustomSelect 
                 label={t.fields.intake}
                 options={t.intakes}

@@ -38,7 +38,7 @@ export default function RecruitmentsPage() {
 
   return (
     <main className="bg-white min-h-screen pt-28 md:pt-36 pb-20">
-      <div className="max-w-[1440px] mx-auto px-6 md:px-[100px] lg:px-[150px]">
+      <div className="max-w-[1440px] mx-auto px-6 md:px-16 lg:px-24 xl:px-[200px]">
         
         {/* Red-Bracket Heading Section Centered */}
         <div className="flex justify-center w-full mb-12">

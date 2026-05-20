@@ -63,10 +63,11 @@ export default function KeyFiguresPage() {
     <div className="mb-12">
       {title && <h3 className="text-[28px] font-bold text-black/80 mb-6">{title}</h3>}
       <div 
-        className={`grid w-full overflow-hidden`}
-        style={{ 
-          gridTemplateColumns: `repeat(${items.length}, minmax(0, 1fr))` 
-        }}
+        className={`grid w-full overflow-hidden ${
+          items.length === 4 
+            ? "grid-cols-2 md:grid-cols-4" 
+            : "grid-cols-1 sm:grid-cols-3"
+        }`}
       >
         {items.map((item, i) => (
           <div 
@@ -108,7 +109,7 @@ export default function KeyFiguresPage() {
         />
       </div>
       
-      <div className="max-w-[1440px] mx-auto px-6 md:px-[100px] lg:px-[200px] py-16 md:py-20">
+      <div className="max-w-[1440px] mx-auto px-6 md:px-16 lg:px-24 xl:px-[200px] py-16 md:py-20">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
           
           {/* Sidebar - Navigation Section (25%) */}

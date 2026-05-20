@@ -53,7 +53,7 @@ export default function CampusSection() {
 
   return (
     <section className="py-8 md:py-12 bg-white overflow-hidden">
-      <div className="max-w-[1440px] mx-auto px-6 md:px-[200px]">
+      <div className="max-w-[1440px] mx-auto px-6 md:px-16 lg:px-24 xl:px-[200px]">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 items-stretch">
           
           {/* Left Content */}

@@ -122,14 +122,14 @@ export default function TopBar({ lang, setLang }: TopBarProps) {
 
   return (
     <div className="bg-[#812522] text-white py-2 px-4 text-[10px] md:text-[11px] border-b border-white/5 uppercase tracking-[0.12em] font-semibold">
-      <div className="max-w-[1440px] mx-auto flex items-center justify-between md:px-[200px]">
+      <div className="max-w-[1440px] mx-auto flex items-center justify-between md:px-16 lg:px-24 xl:px-[200px]">
 
         <div className="flex-1 text-center">
           {lang === "fr" ? "L'ÉCOLE 100% MANAGEMENT & TOURISME DEPUIS 1991 | UNE ÉCOLE SUPDEFORM" : "THE 100% MANAGEMENT & TOURISM SCHOOL SINCE 1991 | A SUPDEFORM SCHOOL"}
         </div>
 
         <div className="flex items-center gap-4 md:gap-8">
-          <div className="hidden md:flex items-center gap-2">
+          <div className="hidden min-[880px]:flex items-center gap-2">
             <Link href="https://www.facebook.com/ecolegrandsud/" target="_blank" className="w-8 h-8 flex items-center justify-center bg-white/20 rounded-md hover:bg-white/40 transition-colors">
               <svg className="w-4 h-4 fill-white" viewBox="0 0 24 24">
                 <path d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978 1.602 0 2.703.117 2.703.117v3.382s-1.136-.01-2.21-.01c-1.622 0-2.242.639-2.242 2.112v1.957h4.39l-.569 3.667h-3.82v7.98h-4.11z"/>

@@ -65,7 +65,7 @@ export default function Hero() {
 
       {/* Main Content Area - Overlapping Both Sections */}
       <div className="flex-1 flex items-center z-20 w-full pt-32 pb-12 pointer-events-none">
-        <div className="max-w-[1440px] mx-auto w-full px-6 md:px-[200px]">
+        <div className="max-w-[1440px] mx-auto w-full px-6 md:px-16 lg:px-24 xl:px-[200px]">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -102,7 +102,7 @@ export default function Hero() {
 
       {/* Structured Logo Strip - Bottom Aligned */}
       <div className="w-full z-30 pb-8 md:pb-12 mt-auto pointer-events-none">
-        <div className="max-w-[1440px] mx-auto px-6 md:px-[100px] lg:px-[200px]">
+        <div className="max-w-[1440px] mx-auto px-6 md:px-16 lg:px-24 xl:px-[200px]">
           <div className="flex flex-wrap items-center justify-center lg:justify-end gap-3 md:gap-6 lg:mr-16 pointer-events-auto">
             {PARTNER_LOGOS.map((logo, index) => (
               <motion.div

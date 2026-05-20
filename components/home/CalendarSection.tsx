@@ -107,7 +107,7 @@ export default function CalendarSection() {
 
   return (
     <section className="bg-[#F5F5F5] py-16 md:py-24 overflow-hidden relative">
-      <div className="max-w-[1440px] mx-auto px-6 md:px-[200px]">
+      <div className="max-w-[1440px] mx-auto px-6 md:px-16 lg:px-24 xl:px-[200px]">
         
         {/* Header */}
         <div className="text-center mb-12">
