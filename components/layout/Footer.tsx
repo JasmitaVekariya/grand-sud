@@ -68,7 +68,7 @@ export default function Footer() {
           
           {/* Left Column */}
           <div className="flex flex-col gap-5 md:col-span-1">
-            <div className="relative w-[100px] h-[50px]">
+            <div className="relative w-[100px] h-[100px]">
               <Image 
                 src="/assets/logo-white.svg"
                 alt="Grand Sud"
@@ -80,9 +80,9 @@ export default function Footer() {
             <p className="text-[12px] md:text-[13px] leading-relaxed max-w-full font-[400] opacity-90">
               <span className="font-[700] uppercase">Grand Sud</span> {t.description.replace("Grand Sud ", "")}
             </p>
-            <div className="flex flex-col gap-2 mt-2">
+            <div className="flex flex-col items-start gap-2 mt-2">
               <span className="text-[11px] font-[500] uppercase opacity-80">{t.aSchoolOf}</span>
-              <div className="relative w-[110px] h-[35px] bg-white rounded-md p-1.5 shadow-sm">
+              <div className="bg-white rounded-full px-3 py-0.5 shadow-sm inline-flex items-center justify-center">
                 <Image 
                   src="/assets/logo-supdeform.png"
                   alt="Supdeform"

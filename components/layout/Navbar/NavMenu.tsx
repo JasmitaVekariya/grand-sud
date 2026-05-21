@@ -46,14 +46,23 @@ export default function NavMenu({ lang }: NavMenuProps) {
                 onMouseEnter={() => setActiveMenu(item.title)}
                 onMouseLeave={() => setActiveMenu(null)}
               >
-                <Link
-                  href={item.href}
-                  className={`px-5 py-2 text-[14px] md:text-[15px] font-bold uppercase tracking-[0.05em] transition-all duration-200 flex items-center gap-2 ${activeMenu === item.title ? "text-[#3d1311]" : "text-white hover:bg-white/10"
-                    }`}
-                >
-                  {item.title}
-                  {item.megaMenu && <ChevronDown size={14} className={`transition-transform duration-200 ${activeMenu === item.title ? "rotate-180 text-primary-red" : "text-white"}`} />}
-                </Link>
+                {item.megaMenu ? (
+                  <button
+                    className={`px-5 py-2 text-[14px] md:text-[15px] font-bold uppercase tracking-[0.05em] transition-all duration-200 flex items-center gap-2 ${activeMenu === item.title ? "text-[#3d1311]" : "text-white hover:bg-white/10"
+                      }`}
+                  >
+                    {item.title}
+                    <ChevronDown size={14} className={`transition-transform duration-200 ${activeMenu === item.title ? "rotate-180 text-primary-red" : "text-white"}`} />
+                  </button>
+                ) : (
+                  <Link
+                    href={item.href}
+                    className={`px-5 py-2 text-[14px] md:text-[15px] font-bold uppercase tracking-[0.05em] transition-all duration-200 flex items-center gap-2 ${activeMenu === item.title ? "text-[#3d1311]" : "text-white hover:bg-white/10"
+                      }`}
+                  >
+                    {item.title}
+                  </Link>
+                )}
 
                 <AnimatePresence>
                   {activeMenu === item.title && item.megaMenu && (

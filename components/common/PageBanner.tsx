@@ -10,18 +10,18 @@ interface PageBannerProps {
   overlayOpacity?: number;
 }
 
-export default function PageBanner({ 
-  title, 
-  image, 
-  height = "h-[500px] lg:h-[600px]", 
-  overlayOpacity = 0.3 
+export default function PageBanner({
+  title,
+  image,
+  height = "h-[500px] lg:h-[600px]",
+  overlayOpacity = 0.3
 }: PageBannerProps) {
   return (
     <section className={`relative w-full ${height} overflow-hidden`}>
 
       {/* Split Background Layout */}
       <div className="grid grid-cols-1 lg:grid-cols-2 h-full w-full">
-        
+
         {/* Left Section - Image */}
         <div className="relative h-[300px] lg:h-full overflow-hidden">
           <Image
@@ -33,8 +33,8 @@ export default function PageBanner({
             sizes="(max-width: 1024px) 100vw, 50vw"
           />
           {/* Subtle Dark Overlay for readability */}
-          <div 
-            className="absolute inset-0 bg-black/20" 
+          <div
+            className="absolute inset-0 bg-black/20"
           />
         </div>
 

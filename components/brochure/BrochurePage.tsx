@@ -146,17 +146,17 @@ export default function BrochurePage() {
     },
     fr: {
       heading: "TÉLÉCHARGER LA BROCHURE",
-      topText: "Pour télécharger la brochure de l'école, remplissez simplement le formulaire ci-dessous : vous la recevrez par e-mail dans quelques minutes !",
+      topText: "Pour télécharger la brochure de l'école Grand Sud, il vous suffit de remplir le formulaire ci-dessous : vous la recevrez par mail en quelques minutes !",
       fields: {
-        firstName: "Prénom",
-        surname: "Nom",
-        email: "Email",
-        phone: "Numéro de téléphone",
+        firstName: "PRÉNOM",
+        surname: "NOM",
+        email: "EMAIL",
+        phone: "MOBILE",
         country: "Pays d’origine",
         diploma: "Choisissez votre diplôme",
-        consent: "J'accepte d'être contacté au sujet de ma recherche d'informations sur nos formations",
+        consent: "J'ACCEPTE DE RECEVOIR LA BROCHURE PAR MAIL ET D'ÊTRE RECONTACTÉ POUR M'AIDER DANS MA DÉMARCHE DE RECHERCHE DE FORMATION. JE PEUX RETIRER MON CONSENTEMENT À TOUT MOMENT ET M'INSCRIRE SUR BLOCTEL. * *",
       },
-      button: "OBTENIR LA BROCHURE",
+      button: "TÉLÉCHARGER LA BROCHURE",
       errorMsg: "Ce champ est requis",
       diplomas: [
         "Bachelor Business & Tourism",
@@ -229,112 +229,190 @@ export default function BrochurePage() {
 
           {/* Form */}
           <form onSubmit={handleSubmit} className="space-y-6">
-            <div className="flex flex-col md:flex-row gap-6">
-              <div className="space-y-1.5">
-                <label className="text-[12px] font-bold uppercase text-black tracking-wide">
-                  {t.fields.firstName} <span className="text-primary-red">*</span>
-                </label>
-                <input
-                  type="text"
-                  className={`w-full md:w-[388px] h-[40px] border border-black px-4 text-[15px] focus:outline-none transition-colors focus:border-[#1a80b0]`}
-                  value={formData.firstName}
-                  onBlur={() => handleBlur('firstName')}
-                  onChange={(e) => setFormData({ ...formData, firstName: e.target.value })}
-                />
-                {getError('firstName') && (
-                  <div className="bg-red-500/10 px-3 py-1.5 w-full md:w-[388px]">
-                    <p className="text-black text-[13px]">{getError('firstName')}</p>
+            {lang === 'en' ? (
+              <>
+                <div className="flex flex-col md:flex-row gap-6">
+                  <div className="space-y-1.5">
+                    <label className="text-[12px] font-bold uppercase text-black tracking-wide">
+                      {t.fields.firstName} <span className="text-primary-red">*</span>
+                    </label>
+                    <input
+                      type="text"
+                      className={`w-full md:w-[388px] h-[40px] border border-black px-4 text-[15px] focus:outline-none transition-colors focus:border-[#1a80b0]`}
+                      value={formData.firstName}
+                      onBlur={() => handleBlur('firstName')}
+                      onChange={(e) => setFormData({ ...formData, firstName: e.target.value })}
+                    />
+                    {getError('firstName') && (
+                      <div className="bg-red-500/10 px-3 py-1.5 w-full md:w-[388px]">
+                        <p className="text-black text-[13px]">{getError('firstName')}</p>
+                      </div>
+                    )}
                   </div>
-                )}
-              </div>
-              <div className="space-y-1.5">
-                <label className="text-[12px] font-bold uppercase text-black tracking-wide">
-                  {t.fields.surname} <span className="text-primary-red">*</span>
-                </label>
-                <input
-                  type="text"
-                  className={`w-full md:w-[388px] h-[40px] border border-black px-4 text-[15px] focus:outline-none transition-colors focus:border-[#1a80b0]`}
-                  value={formData.surname}
-                  onBlur={() => handleBlur('surname')}
-                  onChange={(e) => setFormData({ ...formData, surname: e.target.value })}
-                />
-                {getError('surname') && (
-                  <div className="bg-red-500/10 px-3 py-1.5 w-full md:w-[388px]">
-                    <p className="text-black text-[13px]">{getError('surname')}</p>
+                  <div className="space-y-1.5">
+                    <label className="text-[12px] font-bold uppercase text-black tracking-wide">
+                      {t.fields.surname} <span className="text-primary-red">*</span>
+                    </label>
+                    <input
+                      type="text"
+                      className={`w-full md:w-[388px] h-[40px] border border-black px-4 text-[15px] focus:outline-none transition-colors focus:border-[#1a80b0]`}
+                      value={formData.surname}
+                      onBlur={() => handleBlur('surname')}
+                      onChange={(e) => setFormData({ ...formData, surname: e.target.value })}
+                    />
+                    {getError('surname') && (
+                      <div className="bg-red-500/10 px-3 py-1.5 w-full md:w-[388px]">
+                        <p className="text-black text-[13px]">{getError('surname')}</p>
+                      </div>
+                    )}
                   </div>
-                )}
-              </div>
-            </div>
-
-            <div className="space-y-1.5">
-              <label className="text-[12px] font-bold uppercase text-black tracking-wide">
-                {t.fields.email} <span className="text-primary-red">*</span>
-              </label>
-              <input
-                type="email"
-                className={`w-full md:w-[800px] h-[40px] border border-black px-4 text-[15px] focus:outline-none transition-colors focus:border-[#1a80b0]`}
-                value={formData.email}
-                onBlur={() => handleBlur('email')}
-                onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-              />
-              {getError('email') && (
-                <div className="bg-red-500/10 px-3 py-1.5 w-full md:w-[800px]">
-                  <p className="text-black text-[13px]">{getError('email')}</p>
                 </div>
-              )}
-            </div>
 
-            <div className="space-y-1.5">
-              <label className="text-[12px] font-bold uppercase text-black tracking-wide">
-                {t.fields.phone} <span className="text-primary-red">*</span>
-              </label>
-              <input
-                type="tel"
-                className={`w-full md:w-[800px] h-[40px] border border-black px-4 text-[15px] focus:outline-none transition-colors focus:border-[#1a80b0]`}
-                value={formData.phone}
-                onBlur={() => handleBlur('phone')}
-                onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-              />
-              {getError('phone') && (
-                <div className="bg-red-500/10 px-3 py-1.5 w-full md:w-[800px]">
-                  <p className="text-black text-[13px]">{getError('phone')}</p>
+                <div className="space-y-1.5">
+                  <label className="text-[12px] font-bold uppercase text-black tracking-wide">
+                    {t.fields.email} <span className="text-primary-red">*</span>
+                  </label>
+                  <input
+                    type="email"
+                    className={`w-full md:w-[800px] h-[40px] border border-black px-4 text-[15px] focus:outline-none transition-colors focus:border-[#1a80b0]`}
+                    value={formData.email}
+                    onBlur={() => handleBlur('email')}
+                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                  />
+                  {getError('email') && (
+                    <div className="bg-red-500/10 px-3 py-1.5 w-full md:w-[800px]">
+                      <p className="text-black text-[13px]">{getError('email')}</p>
+                    </div>
+                  )}
                 </div>
-              )}
-            </div>
 
-            <div className="space-y-1.5">
-              <label className="text-[12px] font-bold uppercase text-black tracking-wide">
-                {t.fields.country}
-              </label>
-              <input
-                type="text"
-                className="w-full md:w-[800px] h-[40px] border border-black px-4 text-[15px] focus:outline-none transition-colors focus:border-[#1a80b0]"
-                value={formData.country}
-                onChange={(e) => setFormData({ ...formData, country: e.target.value })}
-              />
-            </div>
+                <div className="space-y-1.5">
+                  <label className="text-[12px] font-bold uppercase text-black tracking-wide">
+                    {t.fields.phone} <span className="text-primary-red">*</span>
+                  </label>
+                  <input
+                    type="tel"
+                    className={`w-full md:w-[800px] h-[40px] border border-black px-4 text-[15px] focus:outline-none transition-colors focus:border-[#1a80b0]`}
+                    value={formData.phone}
+                    onBlur={() => handleBlur('phone')}
+                    onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                  />
+                  {getError('phone') && (
+                    <div className="bg-red-500/10 px-3 py-1.5 w-full md:w-[800px]">
+                      <p className="text-black text-[13px]">{getError('phone')}</p>
+                    </div>
+                  )}
+                </div>
 
-            <div className="w-full md:w-[800px]">
-              <CustomSelect 
-                label={t.fields.diploma}
-                options={t.diplomas}
-                value={formData.diploma}
-                onChange={(val) => setFormData({ ...formData, diploma: val })}
-                required
-                error={getError('diploma')}
-              />
-            </div>
+                <div className="space-y-1.5">
+                  <label className="text-[12px] font-bold uppercase text-black tracking-wide">
+                    {t.fields.country}
+                  </label>
+                  <input
+                    type="text"
+                    className="w-full md:w-[800px] h-[40px] border border-black px-4 text-[15px] focus:outline-none transition-colors focus:border-[#1a80b0]"
+                    value={formData.country}
+                    onChange={(e) => setFormData({ ...formData, country: e.target.value })}
+                  />
+                </div>
 
-            <div className="flex items-start gap-4 pt-4">
+                <div className="w-full md:w-[800px]">
+                  <CustomSelect 
+                    label={t.fields.diploma}
+                    options={t.diplomas}
+                    value={formData.diploma}
+                    onChange={(val) => setFormData({ ...formData, diploma: val })}
+                    required
+                    error={getError('diploma')}
+                  />
+                </div>
+              </>
+            ) : (
+              <>
+                <div className="space-y-1.5 w-full">
+                  <label className="text-[12px] font-bold uppercase text-black tracking-wide">
+                    {t.fields.surname} <span className="text-primary-red">*</span>
+                  </label>
+                  <input
+                    type="text"
+                    className={`w-full md:w-[800px] h-[40px] border border-black px-4 text-[15px] focus:outline-none transition-colors focus:border-[#1a80b0]`}
+                    value={formData.surname}
+                    onBlur={() => handleBlur('surname')}
+                    onChange={(e) => setFormData({ ...formData, surname: e.target.value })}
+                  />
+                  {getError('surname') && (
+                    <div className="bg-red-500/10 px-3 py-1.5 w-full md:w-[800px]">
+                      <p className="text-black text-[13px]">{getError('surname')}</p>
+                    </div>
+                  )}
+                </div>
+
+                <div className="space-y-1.5 w-full">
+                  <label className="text-[12px] font-bold uppercase text-black tracking-wide">
+                    {t.fields.firstName} <span className="text-primary-red">*</span>
+                  </label>
+                  <input
+                    type="text"
+                    className={`w-full md:w-[800px] h-[40px] border border-black px-4 text-[15px] focus:outline-none transition-colors focus:border-[#1a80b0]`}
+                    value={formData.firstName}
+                    onBlur={() => handleBlur('firstName')}
+                    onChange={(e) => setFormData({ ...formData, firstName: e.target.value })}
+                  />
+                  {getError('firstName') && (
+                    <div className="bg-red-500/10 px-3 py-1.5 w-full md:w-[800px]">
+                      <p className="text-black text-[13px]">{getError('firstName')}</p>
+                    </div>
+                  )}
+                </div>
+
+                <div className="space-y-1.5 w-full">
+                  <label className="text-[12px] font-bold uppercase text-black tracking-wide">
+                    {t.fields.email} <span className="text-primary-red">*</span>
+                  </label>
+                  <input
+                    type="email"
+                    className={`w-full md:w-[800px] h-[40px] border border-black px-4 text-[15px] focus:outline-none transition-colors focus:border-[#1a80b0]`}
+                    value={formData.email}
+                    onBlur={() => handleBlur('email')}
+                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                  />
+                  {getError('email') && (
+                    <div className="bg-red-500/10 px-3 py-1.5 w-full md:w-[800px]">
+                      <p className="text-black text-[13px]">{getError('email')}</p>
+                    </div>
+                  )}
+                </div>
+
+                <div className="space-y-1.5 w-full">
+                  <label className="text-[12px] font-bold uppercase text-black tracking-wide">
+                    {t.fields.phone} <span className="text-primary-red">*</span>
+                  </label>
+                  <input
+                    type="tel"
+                    className={`w-full md:w-[800px] h-[40px] border border-black px-4 text-[15px] focus:outline-none transition-colors focus:border-[#1a80b0]`}
+                    value={formData.phone}
+                    onBlur={() => handleBlur('phone')}
+                    onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                  />
+                  {getError('phone') && (
+                    <div className="bg-red-500/10 px-3 py-1.5 w-full md:w-[800px]">
+                      <p className="text-black text-[13px]">{getError('phone')}</p>
+                    </div>
+                  )}
+                </div>
+              </>
+            )}
+
+            <div className="flex items-start gap-4 pt-4 md:w-[800px]">
               <input
                 type="checkbox"
                 id="consent"
-                className="mt-1 w-5 h-5 border-black text-primary-red focus:ring-primary-red rounded-sm cursor-pointer"
+                className="mt-1 w-5 h-5 border-black text-primary-red focus:ring-primary-red rounded-sm cursor-pointer shrink-0"
                 checked={formData.consent}
                 onChange={(e) => setFormData({ ...formData, consent: e.target.checked })}
               />
-              <label htmlFor="consent" className="text-[15px] text-black font-medium leading-relaxed cursor-pointer">
-                {t.fields.consent} <span className="text-primary-red">*</span>
+              <label htmlFor="consent" className="text-[11px] md:text-[13px] text-black uppercase font-medium leading-relaxed cursor-pointer tracking-wide">
+                {t.fields.consent}
               </label>
             </div>
 
