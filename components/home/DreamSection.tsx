@@ -29,13 +29,13 @@ export default function DreamSection() {
 
   return (
     <section className="bg-[#efefef] py-16 md:py-24 border-t border-b border-primary-red overflow-hidden">
-      <div className="max-w-[1440px] mx-auto px-6 md:px-[200px]">
+      <div className="max-w-[1440px] mx-auto px-6 md:px-16 lg:px-24 xl:px-[200px]">
         <div className="flex flex-col md:flex-row items-center justify-between gap-12 lg:gap-20">
           
           {/* Left Side - Large Impactful Heading with Bracket */}
           <div className="relative py-8 pl-10 md:pl-16 shrink-0 w-full md:w-auto">
-            {/* Red Decorative Bracket - Detailed Shape */}
-            <div className="absolute left-0 top-0 bottom-0 w-8 md:w-12 border-l-[3px] border-t-[3px] border-b-[3px] border-primary-red" />
+            {/* Standardized bracket style from ApplyPage */}
+            <div className="absolute inset-0 border-l-[4px] border-t-[4px] border-b-[4px] border-primary-red w-[80px] md:w-[100px]" />
             
             <h2 className="text-[#222] tracking-tighter">
               {t.title.map((line, idx) => (
@@ -88,6 +88,15 @@ export default function DreamSection() {
                 const applyHref = lang === "en" ? "/en/apply" : "/fr/candidater";
                 return (
                   <Link href={applyHref} key={idx}>
+                    {content}
+                  </Link>
+                );
+              }
+
+              if (idx === 1) {
+                const meetUsHref = lang === "en" ? "/en/school/meetus" : "/fr/lecole/rencontrer";
+                return (
+                  <Link href={meetUsHref} key={idx}>
                     {content}
                   </Link>
                 );

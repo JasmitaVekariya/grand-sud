@@ -21,6 +21,11 @@ export const metadata: Metadata = {
 };
 
 import { LanguageProvider } from "@/context/LanguageContext";
+import { CookieProvider } from "@/context/CookieContext";
+import { AccessibilityProvider } from "@/context/AccessibilityContext";
+import AccessibilityWidget from "@/components/accessibility/AccessibilityWidget";
+import GlobalAccessibilityFeatures from "@/components/accessibility/GlobalAccessibilityFeatures";
+import CookieModal from "@/components/layout/CookieModal";
 
 export default function RootLayout({
   children,
@@ -34,10 +39,17 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col">
         <LanguageProvider>
-          <Navbar />
-          <main className="flex-1 flex flex-col">{children}</main>
-          <Footer />
-          <FloatingInfo />
+          <CookieProvider>
+            <AccessibilityProvider>
+              <Navbar />
+              <main className="flex-1 flex flex-col">{children}</main>
+              <Footer />
+              <FloatingInfo />
+              <AccessibilityWidget />
+              <GlobalAccessibilityFeatures />
+              <CookieModal />
+            </AccessibilityProvider>
+          </CookieProvider>
         </LanguageProvider>
       </body>
     </html>

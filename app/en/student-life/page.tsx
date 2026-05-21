@@ -19,7 +19,7 @@ export default function StudentLifePage() {
         height="h-[450px]"
       />
       
-      <div className="max-w-[1440px] mx-auto px-6 md:px-[100px] lg:px-[200px] py-16 md:py-24">
+      <div className="max-w-[1440px] mx-auto px-6 md:px-16 lg:px-24 xl:px-[200px] py-16 md:py-24">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20">
           
           <aside className="lg:col-span-4 space-y-8">

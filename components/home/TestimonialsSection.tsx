@@ -93,7 +93,7 @@ export default function TestimonialsSection() {
 
   return (
     <section className="bg-[#F23A2E] py-8 md:py-10 overflow-hidden min-h-[466px] flex flex-col justify-center">
-      <div className="max-w-[1440px] mx-auto px-6 md:px-[200px] relative w-full">
+      <div className="max-w-[1440px] mx-auto px-6 md:px-16 lg:px-24 xl:px-[200px] relative w-full">
         
         {/* Heading - Less Bold */}
         <h2 className="text-white text-[28px] md:text-[36px] font-bold text-center mb-6 md:mb-8 tracking-tight uppercase">

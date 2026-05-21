@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
+import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { useLanguage } from "@/context/LanguageContext";
 import { ChevronLeft, ChevronRight, ChevronDown } from "lucide-react";
@@ -106,7 +107,7 @@ export default function CalendarSection() {
 
   return (
     <section className="bg-[#F5F5F5] py-16 md:py-24 overflow-hidden relative">
-      <div className="max-w-[1440px] mx-auto px-6 md:px-[200px]">
+      <div className="max-w-[1440px] mx-auto px-6 md:px-16 lg:px-24 xl:px-[200px]">
         
         {/* Header */}
         <div className="text-center mb-12">
@@ -246,13 +247,15 @@ export default function CalendarSection() {
 
         {/* Footer Button */}
         <div className="mt-12 flex justify-center">
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="bg-[#F23A2E] text-white px-10 py-4 rounded-full font-bold text-[15px] uppercase tracking-widest hover:bg-[#666666] transition-all duration-300 shadow-lg"
-          >
-            {t.meetUs}
-          </motion.button>
+          <Link href={lang === 'en' ? "/en/school/meetus" : "/fr/lecole/rencontrer"}>
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="bg-[#F23A2E] text-white px-10 py-4 rounded-full font-bold text-[15px] uppercase tracking-widest hover:bg-[#666666] transition-all duration-300 shadow-lg"
+            >
+              {t.meetUs}
+            </motion.button>
+          </Link>
         </div>
 
       </div>

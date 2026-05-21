@@ -69,7 +69,7 @@ export default function InternationalPage() {
         height="h-[450px]" 
       />
       
-      <div className="max-w-[1440px] mx-auto px-6 md:px-[100px] lg:px-[200px] py-12 md:py-16">
+      <div className="max-w-[1440px] mx-auto px-6 md:px-16 lg:px-24 xl:px-[200px] py-12 md:py-16">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16">
           
           {/* Sidebar - Navigation Section (25%) */}
@@ -226,7 +226,7 @@ export default function InternationalPage() {
                   Partnerships
                 </h2>
                 
-                <div className="relative w-full h-[400px] overflow-hidden mb-0">
+                <div className="relative w-full min-h-[400px] lg:h-[400px] flex items-center p-6 lg:p-0 overflow-hidden mb-0">
                   <Image 
                     src="/assets/pexels-kelly-2881370-scaled.jpg" 
                     alt="Partnerships Background" 
@@ -234,7 +234,7 @@ export default function InternationalPage() {
                     className="object-cover"
                   />
                   <div className="absolute inset-0 bg-black/20" />
-                  <div className="absolute top-1/2 left-12 -translate-y-1/2 max-w-[450px] bg-white/90 p-8 shadow-xl">
+                  <div className="relative lg:absolute lg:top-1/2 lg:left-12 lg:-translate-y-1/2 max-w-[450px] w-full bg-white/90 p-6 md:p-8 shadow-xl z-10">
                     <p className="text-[14px] text-black leading-relaxed font-medium mb-4">
                       Grand Sud regularly establishes partnerships abroad to facilitate student mobility.
                     </p>
