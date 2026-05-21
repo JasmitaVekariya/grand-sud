@@ -13,16 +13,16 @@ export default function CreateCompanyAccountForm({ lang }: CreateCompanyAccountF
     en: {
       title: "CREATE A BUSINESS ACCOUNT",
       fields: [
-        { label: "USERNAME", type: "text" },
-        { label: "FIRST NAME", type: "text" },
-        { label: "LAST NAME", type: "text" },
-        { label: "COMPANY", type: "text" },
-        { label: "PHONE NUMBER", type: "text" },
-        { label: "EMAIL ADDRESS", type: "email" },
-        { label: "PASSWORD", type: "password" },
-        { label: "CONFIRM PASSWORD", type: "password" }
+        { label: "IDENTIFIANT", type: "text" },
+        { label: "PRÉNOM", type: "text" },
+        { label: "NOM", type: "text" },
+        { label: "ENTREPRISE", type: "text" },
+        { label: "TÉLÉPHONE", type: "text" },
+        { label: "ADRESSE E-MAIL", type: "email" },
+        { label: "MOT DE PASSE", type: "password" },
+        { label: "CONFIRMER LE MOT DE PASSE", type: "password" }
       ],
-      submit: "REGISTER",
+      submit: "S'INSCRIRE",
       image: "/assets/pexels-pixabay-532173-scaled.jpg"
     },
     fr: {
@@ -35,7 +35,7 @@ export default function CreateCompanyAccountForm({ lang }: CreateCompanyAccountF
         { label: "TÉLÉPHONE", type: "text" },
         { label: "ADRESSE E-MAIL", type: "email" },
         { label: "MOT DE PASSE", type: "password" },
-        { label: "CONFIRM MOT DE PASSE", type: "password" }
+        { label: "CONFIRMER LE MOT DE PASSE", type: "password" }
       ],
       submit: "S'INSCRIRE",
       image: "/assets/pexels-pixabay-532173-scaled.jpg"

@@ -70,10 +70,37 @@ export default function GraduatePage({ lang }: GraduatePageProps) {
 
   return (
     <main className="bg-white">
-      <PageBanner 
-        title={t.heroTitle}
-        image={t.bannerImage}
-      />
+      {/* Custom Banner mimicking PageBanner to allow object-top for the specific image */}
+      <section className="relative w-full h-[500px] lg:h-[600px] overflow-hidden">
+        <div className="grid grid-cols-1 lg:grid-cols-2 h-full w-full">
+          <div className="relative h-[300px] lg:h-full overflow-hidden">
+            <Image
+              src={t.bannerImage}
+              alt={t.heroTitle}
+              fill
+              className="object-cover object-top"
+              priority
+              sizes="(max-width: 1024px) 100vw, 50vw"
+            />
+            <div className="absolute inset-0 bg-black/20" />
+          </div>
+          <div className="bg-primary-red h-full" />
+        </div>
+        <div className="absolute inset-0 z-20 flex items-center justify-center pointer-events-none">
+          <div className="max-w-[1440px] mx-auto w-full px-6 md:px-12 lg:px-20">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+              className="flex justify-center translate-x-[8%] lg:translate-x-[12%]"
+            >
+              <h1 className="text-white text-left text-[28px] sm:text-[32px] md:text-4xl lg:text-5xl font-bold uppercase leading-tight tracking-tight text-balance break-words max-w-[700px] pointer-events-auto">
+                {t.heroTitle}
+              </h1>
+            </motion.div>
+          </div>
+        </div>
+      </section>
 
       <div className="pt-4">
         <CourseDetailLayout sections={t.sidebar}>

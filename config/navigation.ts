@@ -140,6 +140,7 @@ export const navigationData = {
               { label: "Bachelor MICE Designer", href: "/en/courses/bachelor-mice" },
               { label: "Bachelor Sustainable and Digital Tourism Development", href: "/en/courses/bachelor-sustainable" },
               { label: "Mastere in Event and Tourism Project Management", href: "/en/courses/mastere-tourism" },
+              { label: "Apply (only French)", href: "/fr/candidater" },
             ],
             extra: { title: "Intensive courses", links: [{ label: "GDS Amadeus", href: "/en/courses/amadeus" }] }
           },
@@ -203,9 +204,9 @@ export const navigationData = {
           { label: "Hire your talents :" },
         ],
         cards: [
-          { title: "INTERN", image: "/assets/card-stagiaire.jpg", href: "/en/business/intern" },
-          { title: "APPRENTICE", image: "/assets/card-alternant.jpg", href: "/en/business/apprentice" },
-          { title: "GRADUATE", image: "/assets/card-alumni.jpg", href: "/en/business/graduate" },
+          { title: "INTERN", image: "/assets/pexels-danxavier-1239291-scaled.jpg", href: "/en/business/intern" },
+          { title: "APPRENTICE", image: "/assets/pexels-mikhail-nilov-7820321-scaled.jpg", href: "/en/business/apprentice" },
+          { title: "GRADUATE", image: "/assets/pexels-teddyjmodel-2955375-scaled.jpg", href: "/en/business/graduate" },
         ],
         rightBox: { title: "BUSINESS SPACE", icon: "briefcase", href: "/en/welcome/business/dedicated-page-for-businesses" }
       }

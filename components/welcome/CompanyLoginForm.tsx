@@ -63,7 +63,7 @@ export default function CompanyLoginForm({ lang }: CompanyLoginFormProps) {
       </div>
 
       {/* Right side: Login Form */}
-      <div className="flex-1 flex items-center justify-center p-8 md:p-16 lg:p-24 bg-white">
+      <div className="flex-1 bg-white px-8 md:px-16 lg:pl-[120px] pt-[120px] flex flex-col items-start w-full">
         <div className="w-full max-w-md space-y-8">
           <form className="space-y-6">
             <div className="space-y-2">

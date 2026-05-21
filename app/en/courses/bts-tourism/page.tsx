@@ -286,7 +286,7 @@ export default function BTSTourismPage() {
       
       <CourseDetailLayout 
         sections={sections}
-        applyButton={{ label: "Apply (French only)", href: "/en/apply" }}
+        applyButton={{ label: "Apply (French only)", href: "/fr/candidater" }}
       >
         {/* Description Section */}
         <section id="description" className="scroll-mt-32 space-y-16">

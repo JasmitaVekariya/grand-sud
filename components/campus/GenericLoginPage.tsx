@@ -41,10 +41,10 @@ export default function GenericLoginPage({ lang, type }: GenericLoginPageProps) 
   }[lang];
 
   return (
-    <div className="min-h-screen bg-white flex flex-col font-sans overflow-hidden">
-      <div className="flex-1 flex flex-col lg:flex-row min-h-0">
-        {/* Left Side - Image with Frame */}
-        <div className="lg:w-[500px] relative h-[400px] lg:h-auto overflow-hidden shrink-0">
+    <div className="flex flex-col lg:flex-row min-h-screen bg-white">
+      {/* Left side: Hero Image with Bracket Title */}
+      <div className="relative w-full lg:w-[565px] lg:min-w-[565px] h-[400px] lg:h-auto overflow-hidden pt-[40px]">
+        <div className="relative h-full w-full overflow-hidden">
           <Image 
             src="/assets/pexels-pixabay-532173-scaled.jpg" 
             alt="Login Background" 
@@ -53,21 +53,19 @@ export default function GenericLoginPage({ lang, type }: GenericLoginPageProps) 
             priority
           />
           <div className="absolute inset-0 bg-[#8B2318]/40" />
-          
-          {/* Bracket Frame and Title */}
-          <div className="absolute inset-0 flex items-center justify-center p-8 md:p-12 lg:p-16">
-            <div className="relative w-full h-fit flex items-center py-12 px-8">
-               <div className="absolute inset-0 border-l-[4px] border-t-[4px] border-b-[4px] border-white w-[100px]" />
-               <h1 className="text-white text-[32px] md:text-[40px] lg:text-[48px] font-bold leading-[1] uppercase tracking-tighter max-w-sm relative z-10">
-                 {type === "student" ? t.student : t.faculty}
-               </h1>
-            </div>
+          <div className="absolute left-6 md:left-10 lg:left-12 top-[120px] md:top-[160px] py-12 pl-6 pr-4 pointer-events-none max-w-[85%]">
+            {/* White border bracket style */}
+            <div className="absolute inset-0 border-l-[4px] border-t-[4px] border-b-[4px] border-white w-[80px] md:w-[100px]" />
+            <h1 className="text-white text-[28px] md:text-[44px] lg:text-[52px] font-bold uppercase leading-[1.1] text-left tracking-tight relative z-10 whitespace-pre-line">
+              {type === "student" ? t.student : t.faculty}
+            </h1>
           </div>
         </div>
+      </div>
 
-        {/* Right Side - Form */}
-        <div className="flex-1 bg-white px-6 pb-12 md:px-12 lg:pl-[35px] pt-[90px] flex flex-col items-start max-w-4xl mx-auto w-full">
-          <form onSubmit={handleLogin} className="space-y-10 w-full max-w-[800px]">
+      {/* Right Side - Form */}
+      <div className="flex-1 bg-white px-8 md:px-16 lg:pl-[120px] pt-[120px] flex flex-col items-start w-full">
+        <form onSubmit={handleLogin} className="space-y-10 w-full max-w-md">
             <div className="space-y-4">
               <label className="block text-[13px] font-bold uppercase tracking-widest text-[#333]">
                 {t.username}
@@ -109,7 +107,6 @@ export default function GenericLoginPage({ lang, type }: GenericLoginPageProps) 
             </a>
           </form>
         </div>
-      </div>
     </div>
   );
 }

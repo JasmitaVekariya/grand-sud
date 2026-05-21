@@ -95,10 +95,14 @@ export default function ApplyPage() {
   const [formData, setFormData] = useState({
     firstName: "",
     surname: "",
+    prenom: "",
     email: "",
     phone: "",
     country: "",
     diploma: "Bachelor Business & Tourism",
+    formationSouhaitee: "BTS Tourisme 1ère année",
+    niveauActuel: "BAC",
+    dateEvenement: "",
     intake: "September/October",
     consent: false,
   });
@@ -117,6 +121,53 @@ export default function ApplyPage() {
       setLang("en");
     }
   }, [pathname, setLang]);
+
+  const evenements = [
+    "Portes ouvertes – 11 octobre 2025 – 10h-13h",
+    "Soirée d'information – 15 octobre 2025 – 17h-20h30",
+    "Portes ouvertes – 15 novembre 2025 – 10h-13h",
+    "Soirée d'information – 19 novembre 2025 – 17h-20h30",
+    "Portes ouvertes – 13 décembre 2025 – 10h-13h",
+    "Soirée d'information – 17 décembre 2025 – 17h-20h30",
+    "Portes ouvertes – 17 janvier 2026 – 10h-13h",
+    "Soirée d'information – 21 janvier 2026 – 17h-20h30",
+    "Portes ouvertes – 14 février 2026 – 10h-13h",
+    "Soirée d'information – 18 février 2026 – 17h-20h30",
+    "Portes ouvertes – 14 mars 2026 – 10h-13h",
+    "Soirée d'information – 18 mars 2026 – 17h-20h30",
+    "Portes ouvertes – 11 avril 2026 – 10h-13h",
+    "Soirée d'information – 15 avril 2026 – 17h-20h30",
+    "Soirée d'information – 20 mai 2026 – 17h-20h30",
+    "Portes ouvertes – 30 mai 2026 – 10h-13h",
+    "Portes ouvertes – 13 juin 2026 – 10h-13h",
+    "Soirée d'information – 17 juin 2026 – 17h-20h30",
+    "Portes ouvertes – 11 juillet 2026 – 10h-13h",
+    "Soirée d'information – 15 juillet 2026 – 17h-20h30",
+    "Portes ouvertes – 22 août 2026 – 10h-13h",
+    "Soirée d'information – 26 août 2026 – 17h-20h30",
+    "Portes ouvertes – 12 septembre 2026 – 10h-13h"
+  ];
+
+  const formationsList = [
+    "BTS MCO 1ère année",
+    "BTS Tourisme 1ère année",
+    "BTS Tourisme 2ème année",
+    "BTS MCO 2ème année",
+    "BACHELOR RESPONSABLE DU DÉVELOPPEMENT TOURISTIQUE DURABLE ET DIGITAL",
+    "BACHELOR HOSPITALITY MANAGEMENT",
+    "BACHELOR MICE DESIGNER",
+    "MASTERE MANAGER DE PROJETS ÉVÉNEMENTIELS ET TOURISTIQUES"
+  ];
+
+  const niveauxList = [
+    "BAC",
+    "BAC+1",
+    "BAC+2",
+    "BAC+3",
+    "BAC+4",
+    "BAC+5",
+    "Autre"
+  ];
 
   const t = {
     en: {
@@ -149,31 +200,21 @@ export default function ApplyPage() {
     },
     fr: {
       heading: "POSTULEZ À NOS FORMATIONS",
-      topText: "Pour télécharger le dossier de candidature, veuillez remplir le formulaire ci-dessous. \nVous le recevrez ensuite par e-mail et devrez nous le renvoyer accompagné des pièces justificatives demandées afin que nous puissions étudier votre profil et vous proposer un entretien d’admission.",
+      topText: "Pour télécharger le dossier de candidature, il vous suffit de compléter le formulaire ci-dessous.\nVous le recevrez alors par mail, il faudra nous le renvoyer accompagné des pièces justificatives demandées pour nous permettre d'étudier votre profil et de vous proposer un entretien d'admission.",
       fields: {
-        firstName: "Prénom",
-        surname: "Nom",
-        email: "Email",
-        phone: "Numéro de téléphone",
-        country: "Pays d’origine",
-        diploma: "Choisissez votre diplôme",
-        intake: "Choisissez votre rentrée",
-        consent: "J'accepte d'être contacté au sujet de mon admission",
+        firstName: "FIRST NAME",
+        surname: "SURNAME",
+        prenom: "PRÉNOM",
+        email: "EMAIL",
+        phone: "MOBILE",
+        formationSouhaitee: "FORMATION SOUHAITÉE",
+        niveauActuel: "NIVEAU ACTUEL",
+        dateEvenement: "DATE DE L'ÉVÈNEMENT",
+        consentement: "CONSENTEMENT",
+        consentText: "Je m'inscris à l'évènement souhaité et j'accepte d'être recontacté pour m'aider dans ma démarche de recherche de formation. Je peux retirer mon consentement à tout moment et m'inscrire sur Bloctel.",
       },
-      button: "OBTENIR LE DOSSIER D’ADMISSION",
+      button: "S'INSCRIRE",
       errorMsg: "Ce champ est requis",
-      diplomas: [
-        "Bachelor Business & Tourism",
-        "Bachelor IT & Tourism",
-        "Bachelor Hospitality Management",
-        "Mastère Business & Tourism",
-        "Mastère IT & Tourism",
-        "BTS Tourisme",
-        "BTS MCO",
-        "Bachelor MICE Designer",
-        "Bachelor Tourisme Durable",
-      ],
-      intakes: ["Septembre/Octobre", "Janvier", "Rentrée de printemps"],
     },
   }[lang];
 
@@ -213,7 +254,6 @@ export default function ApplyPage() {
           </motion.div>
           <div className="absolute inset-0 bg-[#dc4b3b]/60 pointer-events-none" />
           <div className="absolute left-6 md:left-10 lg:left-12 top-[120px] md:top-[160px] py-12 pl-6 pr-4 pointer-events-none max-w-[85%]">
-            {/* White border bracket: bold lines with small horizontal width */}
             <div className="absolute inset-0 border-l-[4px] border-t-[4px] border-b-[4px] border-white w-[100px]" />
             <h1 className="text-white text-[28px] md:text-[44px] lg:text-[52px] font-bold uppercase leading-[1.1] text-left tracking-tight relative z-10 whitespace-pre-line">
               {t.heading}
@@ -226,145 +266,270 @@ export default function ApplyPage() {
       <div className="flex-1 px-6 pb-12 md:px-12 lg:pl-[35px] pt-[90px] flex flex-col items-start bg-white">
         <div className="max-w-[800px] w-full">
           {/* Top Text */}
-          <div className="mb-14">
+          <div className="mb-10">
             <p className="text-black text-[13px] font-medium leading-relaxed whitespace-pre-line">
               {t.topText}
             </p>
           </div>
 
-          {/* Form */}
           <form onSubmit={handleSubmit} className="space-y-6">
-            {/* Name fields */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
-              <div className="space-y-1.5 w-full">
-                <label className="text-[12px] font-bold uppercase text-black tracking-wide">
-                  {t.fields.firstName} <span className="text-primary-red">*</span>
-                </label>
-                <input
-                  type="text"
-                  className={`w-full h-[40px] border border-black px-4 text-[15px] focus:outline-none transition-colors focus:border-[#1a80b0]`}
-                  value={formData.firstName}
-                  onBlur={() => handleBlur('firstName')}
-                  onChange={(e) => setFormData({ ...formData, firstName: e.target.value })}
-                />
-                {getError('firstName') && (
-                  <div className="bg-red-500/10 px-3 py-1.5 w-full">
-                    <p className="text-black text-[13px]">{getError('firstName')}</p>
+            {lang === 'en' ? (
+              <>
+                {/* Name fields */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
+                  <div className="space-y-1.5 w-full">
+                    <label className="text-[12px] font-bold uppercase text-black tracking-wide">
+                      {t.fields.firstName} <span className="text-primary-red">*</span>
+                    </label>
+                    <input
+                      type="text"
+                      className="w-full h-[40px] border border-black px-4 text-[15px] focus:outline-none transition-colors focus:border-[#1a80b0]"
+                      value={formData.firstName}
+                      onBlur={() => handleBlur('firstName')}
+                      onChange={(e) => setFormData({ ...formData, firstName: e.target.value })}
+                    />
+                    {getError('firstName') && (
+                      <div className="bg-red-500/10 px-3 py-1.5 w-full">
+                        <p className="text-black text-[13px]">{getError('firstName')}</p>
+                      </div>
+                    )}
                   </div>
-                )}
-              </div>
-              <div className="space-y-1.5 w-full">
-                <label className="text-[12px] font-bold uppercase text-black tracking-wide">
-                  {t.fields.surname} <span className="text-primary-red">*</span>
-                </label>
-                <input
-                  type="text"
-                  className={`w-full h-[40px] border border-black px-4 text-[15px] focus:outline-none transition-colors focus:border-[#1a80b0]`}
-                  value={formData.surname}
-                  onBlur={() => handleBlur('surname')}
-                  onChange={(e) => setFormData({ ...formData, surname: e.target.value })}
-                />
-                {getError('surname') && (
-                  <div className="bg-red-500/10 px-3 py-1.5 w-full">
-                    <p className="text-black text-[13px]">{getError('surname')}</p>
+                  <div className="space-y-1.5 w-full">
+                    <label className="text-[12px] font-bold uppercase text-black tracking-wide">
+                      {t.fields.surname} <span className="text-primary-red">*</span>
+                    </label>
+                    <input
+                      type="text"
+                      className="w-full h-[40px] border border-black px-4 text-[15px] focus:outline-none transition-colors focus:border-[#1a80b0]"
+                      value={formData.surname}
+                      onBlur={() => handleBlur('surname')}
+                      onChange={(e) => setFormData({ ...formData, surname: e.target.value })}
+                    />
+                    {getError('surname') && (
+                      <div className="bg-red-500/10 px-3 py-1.5 w-full">
+                        <p className="text-black text-[13px]">{getError('surname')}</p>
+                      </div>
+                    )}
                   </div>
-                )}
-              </div>
-            </div>
-
-            {/* Email */}
-            <div className="space-y-1.5 w-full">
-              <label className="text-[12px] font-bold uppercase text-black tracking-wide">
-                {t.fields.email} <span className="text-primary-red">*</span>
-              </label>
-              <input
-                type="email"
-                className={`w-full h-[40px] border border-black px-4 text-[15px] focus:outline-none transition-colors focus:border-[#1a80b0]`}
-                value={formData.email}
-                onBlur={() => handleBlur('email')}
-                onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-              />
-              {getError('email') && (
-                <div className="bg-red-500/10 px-3 py-1.5 w-full">
-                  <p className="text-black text-[13px]">{getError('email')}</p>
                 </div>
-              )}
-            </div>
 
-            {/* Phone */}
-            <div className="space-y-1.5 w-full">
-              <label className="text-[12px] font-bold uppercase text-black tracking-wide">
-                {t.fields.phone} <span className="text-primary-red">*</span>
-              </label>
-              <input
-                type="tel"
-                className={`w-full h-[40px] border border-black px-4 text-[15px] focus:outline-none transition-colors focus:border-[#1a80b0]`}
-                value={formData.phone}
-                onBlur={() => handleBlur('phone')}
-                onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-              />
-              {getError('phone') && (
-                <div className="bg-red-500/10 px-3 py-1.5 w-full">
-                  <p className="text-black text-[13px]">{getError('phone')}</p>
+                <div className="space-y-1.5 w-full">
+                  <label className="text-[12px] font-bold uppercase text-black tracking-wide">
+                    {t.fields.email} <span className="text-primary-red">*</span>
+                  </label>
+                  <input
+                    type="email"
+                    className="w-full h-[40px] border border-black px-4 text-[15px] focus:outline-none transition-colors focus:border-[#1a80b0]"
+                    value={formData.email}
+                    onBlur={() => handleBlur('email')}
+                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                  />
+                  {getError('email') && (
+                    <div className="bg-red-500/10 px-3 py-1.5 w-full">
+                      <p className="text-black text-[13px]">{getError('email')}</p>
+                    </div>
+                  )}
                 </div>
-              )}
-            </div>
 
-            {/* Country */}
-            <div className="space-y-1.5 w-full">
-              <label className="text-[12px] font-bold uppercase text-black tracking-wide">
-                {t.fields.country}
-              </label>
-              <input
-                type="text"
-                className="w-full h-[40px] border border-black px-4 text-[15px] focus:outline-none transition-colors focus:border-[#1a80b0]"
-                value={formData.country}
-                onChange={(e) => setFormData({ ...formData, country: e.target.value })}
-              />
-            </div>
+                <div className="space-y-1.5 w-full">
+                  <label className="text-[12px] font-bold uppercase text-black tracking-wide">
+                    {t.fields.phone} <span className="text-primary-red">*</span>
+                  </label>
+                  <input
+                    type="tel"
+                    className="w-full h-[40px] border border-black px-4 text-[15px] focus:outline-none transition-colors focus:border-[#1a80b0]"
+                    value={formData.phone}
+                    onBlur={() => handleBlur('phone')}
+                    onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                  />
+                  {getError('phone') && (
+                    <div className="bg-red-500/10 px-3 py-1.5 w-full">
+                      <p className="text-black text-[13px]">{getError('phone')}</p>
+                    </div>
+                  )}
+                </div>
 
-            {/* Custom Dropdowns */}
-            <div className="w-full">
-              <CustomSelect 
-                label={t.fields.diploma}
-                options={t.diplomas}
-                value={formData.diploma}
-                onChange={(val) => setFormData({ ...formData, diploma: val })}
-                required
-                error={getError('diploma')}
-              />
-            </div>
+                <div className="space-y-1.5 w-full">
+                  <label className="text-[12px] font-bold uppercase text-black tracking-wide">
+                    {t.fields.country}
+                  </label>
+                  <input
+                    type="text"
+                    className="w-full h-[40px] border border-black px-4 text-[15px] focus:outline-none transition-colors focus:border-[#1a80b0]"
+                    value={formData.country}
+                    onChange={(e) => setFormData({ ...formData, country: e.target.value })}
+                  />
+                </div>
 
-            <div className="w-full">
-              <CustomSelect 
-                label={t.fields.intake}
-                options={t.intakes}
-                value={formData.intake}
-                onChange={(val) => setFormData({ ...formData, intake: val })}
-                required
-                error={getError('intake')}
-              />
-            </div>
+                <div className="w-full">
+                  <CustomSelect 
+                    label={t.fields.diploma!}
+                    options={t.diplomas!}
+                    value={formData.diploma}
+                    onChange={(val) => setFormData({ ...formData, diploma: val })}
+                    required
+                    error={getError('diploma')}
+                  />
+                </div>
 
-            {/* Consent Checkbox */}
-            <div className="flex items-start gap-4 pt-4">
-              <input
-                type="checkbox"
-                id="consent"
-                className="mt-1 w-5 h-5 border-black text-primary-red focus:ring-primary-red rounded-sm cursor-pointer"
-                checked={formData.consent}
-                onChange={(e) => setFormData({ ...formData, consent: e.target.checked })}
-              />
-              <label htmlFor="consent" className="text-[15px] text-black font-medium leading-relaxed cursor-pointer">
-                {t.fields.consent} <span className="text-primary-red">*</span>
-              </label>
-            </div>
+                <div className="w-full">
+                  <CustomSelect 
+                    label={t.fields.intake!}
+                    options={t.intakes!}
+                    value={formData.intake}
+                    onChange={(val) => setFormData({ ...formData, intake: val })}
+                    required
+                    error={getError('intake')}
+                  />
+                </div>
+
+                <div className="flex items-start gap-4 pt-4">
+                  <input
+                    type="checkbox"
+                    id="consent"
+                    className="mt-1 w-5 h-5 border-black text-primary-red focus:ring-primary-red rounded-sm cursor-pointer"
+                    checked={formData.consent}
+                    onChange={(e) => setFormData({ ...formData, consent: e.target.checked })}
+                  />
+                  <label htmlFor="consent" className="text-[15px] text-black font-medium leading-relaxed cursor-pointer">
+                    {t.fields.consent} <span className="text-primary-red">*</span>
+                  </label>
+                </div>
+              </>
+            ) : (
+              <>
+                {/* French Specific Form */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
+                  <div className="space-y-1.5 w-full">
+                    <label className="text-[12px] font-bold uppercase text-black tracking-wide">
+                      {t.fields.firstName} <span className="text-primary-red">*</span>
+                    </label>
+                    <input
+                      type="text"
+                      className="w-full h-[40px] border border-black px-4 text-[15px] focus:outline-none transition-colors focus:border-[#1a80b0]"
+                      value={formData.firstName}
+                      onBlur={() => handleBlur('firstName')}
+                      onChange={(e) => setFormData({ ...formData, firstName: e.target.value })}
+                    />
+                  </div>
+                  <div className="space-y-1.5 w-full">
+                    <label className="text-[12px] font-bold uppercase text-black tracking-wide">
+                      {t.fields.surname} <span className="text-primary-red">*</span>
+                    </label>
+                    <input
+                      type="text"
+                      className="w-full h-[40px] border border-black px-4 text-[15px] focus:outline-none transition-colors focus:border-[#1a80b0]"
+                      value={formData.surname}
+                      onBlur={() => handleBlur('surname')}
+                      onChange={(e) => setFormData({ ...formData, surname: e.target.value })}
+                    />
+                  </div>
+                </div>
+
+                <div className="space-y-1.5 w-full">
+                  <label className="text-[12px] font-bold uppercase text-black tracking-wide">
+                    {t.fields.prenom}
+                  </label>
+                  <input
+                    type="text"
+                    className="w-full h-[40px] border border-black px-4 text-[15px] focus:outline-none transition-colors focus:border-[#1a80b0]"
+                    value={formData.prenom}
+                    onChange={(e) => setFormData({ ...formData, prenom: e.target.value })}
+                  />
+                </div>
+
+                <div className="space-y-1.5 w-full">
+                  <label className="text-[12px] font-bold uppercase text-black tracking-wide">
+                    {t.fields.email} <span className="text-primary-red">*</span>
+                  </label>
+                  <input
+                    type="email"
+                    className="w-full h-[40px] border border-black px-4 text-[15px] focus:outline-none transition-colors focus:border-[#1a80b0]"
+                    value={formData.email}
+                    onBlur={() => handleBlur('email')}
+                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                  />
+                </div>
+
+                <div className="space-y-1.5 w-full">
+                  <label className="text-[12px] font-bold uppercase text-black tracking-wide">
+                    {t.fields.phone} <span className="text-primary-red">*</span>
+                  </label>
+                  <input
+                    type="tel"
+                    className="w-full h-[40px] border border-black px-4 text-[15px] focus:outline-none transition-colors focus:border-[#1a80b0]"
+                    value={formData.phone}
+                    onBlur={() => handleBlur('phone')}
+                    onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                  />
+                </div>
+
+                <div className="w-full">
+                  <CustomSelect 
+                    label={t.fields.formationSouhaitee!}
+                    options={formationsList}
+                    value={formData.formationSouhaitee}
+                    onChange={(val) => setFormData({ ...formData, formationSouhaitee: val })}
+                  />
+                </div>
+
+                <div className="w-full">
+                  <CustomSelect 
+                    label={t.fields.niveauActuel!}
+                    options={niveauxList}
+                    value={formData.niveauActuel}
+                    onChange={(val) => setFormData({ ...formData, niveauActuel: val })}
+                  />
+                </div>
+
+                <div className="space-y-3 w-full pt-4">
+                  <label className="text-[12px] font-bold uppercase text-black tracking-wide block">
+                    {t.fields.dateEvenement} <span className="text-primary-red">*</span>
+                  </label>
+                  <div className="space-y-3 pl-1">
+                    {evenements.map((evt, idx) => (
+                      <div key={idx} className="flex items-start gap-3">
+                        <input
+                          type="radio"
+                          id={`evt-${idx}`}
+                          name="dateEvenement"
+                          className="mt-1 w-4 h-4 accent-gray-500 cursor-pointer"
+                          checked={formData.dateEvenement === evt}
+                          onChange={() => setFormData({ ...formData, dateEvenement: evt })}
+                        />
+                        <label htmlFor={`evt-${idx}`} className="text-[13px] text-gray-700 font-medium cursor-pointer">
+                          {evt}
+                        </label>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="space-y-2 pt-6">
+                  <label className="text-[12px] font-bold uppercase text-black tracking-wide block">
+                    {t.fields.consentement} <span className="text-primary-red">*</span>
+                  </label>
+                  <div className="flex items-start gap-3">
+                    <input
+                      type="checkbox"
+                      id="consent"
+                      className="mt-1 w-5 h-5 border-black text-primary-red focus:ring-primary-red rounded-sm cursor-pointer shrink-0"
+                      checked={formData.consent}
+                      onChange={(e) => setFormData({ ...formData, consent: e.target.checked })}
+                    />
+                    <label htmlFor="consent" className="text-[12px] text-[#555] font-medium leading-relaxed cursor-pointer pt-1">
+                      {t.fields.consentText}
+                    </label>
+                  </div>
+                </div>
+              </>
+            )}
 
             {/* Submit Button */}
             <div className="pt-6">
               <button
                 type="submit"
-                className="bg-[#dc4b3b] text-white px-10 py-4 text-[15px] font-bold uppercase tracking-widest hover:bg-[#c03d2f] transition-all shadow-none active:scale-95"
+                className="bg-[#dc4b3b] text-white px-10 py-3 text-[14px] font-bold uppercase tracking-widest hover:bg-[#c03d2f] transition-all shadow-none active:scale-95"
               >
                 {t.button}
               </button>
