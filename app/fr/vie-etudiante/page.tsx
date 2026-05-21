@@ -8,7 +8,7 @@ export default function StudentLifePageFR() {
         Grand Sud
       </>
     ),
-    image: "/assets/Gemini_Generated_Image_ug7he5ug7he5ug7h-scaled-e1754316372260-1536x894.jpg"
+    image: "/assets/Gemini_Generated_Image_ug7he5ug7he5ug7h-scaled-e1754316372260-1536x894.png"
   };
 
   return (

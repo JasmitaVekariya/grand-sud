@@ -115,6 +115,7 @@ export default function CourseAdmissions({
               src="/assets/apply-course-card.jpg"
               alt="Admission Process"
               fill
+                sizes="(max-width: 768px) 100vw, 50vw"
               className="object-cover"
             />
           </motion.div>

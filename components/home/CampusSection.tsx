@@ -94,6 +94,7 @@ export default function CampusSection() {
                   src={IMAGES[currentIdx]}
                   alt={`Campus view ${currentIdx + 1}`}
                   fill
+                sizes="(max-width: 768px) 100vw, 50vw"
                   className="object-cover"
                   priority
                 />

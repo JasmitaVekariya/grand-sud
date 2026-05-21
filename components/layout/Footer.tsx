@@ -73,6 +73,7 @@ export default function Footer() {
                 src="/assets/logo-white.svg"
                 alt="Grand Sud"
                 fill
+                sizes="100px"
                 className="object-contain object-left"
               />
             </div>
@@ -85,9 +86,9 @@ export default function Footer() {
                 <Image 
                   src="/assets/logo-supdeform.png"
                   alt="Supdeform"
-                  width={80}
-                  height={18}
-                  className="object-contain"
+                  fill
+                  sizes="110px"
+                  className="object-contain p-0.5"
                 />
               </div>
             </div>

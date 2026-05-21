@@ -57,7 +57,8 @@ export default function CreateCompanyAccountForm({ lang }: CreateCompanyAccountF
             <Image 
               src={t.image} 
               alt="Registration Background" 
-              fill 
+              fill
+                sizes="(max-width: 1024px) 100vw, 565px" 
               className="object-cover" 
               priority
             />

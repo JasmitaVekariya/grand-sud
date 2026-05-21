@@ -144,6 +144,7 @@ export default function TestimonialsSection() {
                       src={TESTIMONIALS[currentIndex].image}
                       alt={TESTIMONIALS[currentIndex].name}
                       fill
+                sizes="(max-width: 768px) 80px, 95px"
                       className="object-cover"
                     />
                   </div>

@@ -117,6 +117,7 @@ export default function Hero() {
                     src={logo.src}
                     alt={logo.alt}
                     fill
+                    sizes="(max-width: 768px) 3rem, 5rem"
                     className="object-contain"
                   />
                 </div>

@@ -352,6 +352,7 @@ export default function CampusToulousePage({ lang }: CampusToulousePageProps) {
                       src={carouselImages[currentImageIndex]} 
                       alt={`Toulouse ${currentImageIndex + 1}`}
                       fill
+                sizes="(max-width: 768px) 100vw, 33vw"
                       className="object-cover"
                       priority
                     />
@@ -376,6 +377,7 @@ export default function CampusToulousePage({ lang }: CampusToulousePageProps) {
                         src={img} 
                         alt="Thumbnail"
                         fill
+                sizes="100vw"
                         className="object-cover"
                       />
                     </button>
@@ -428,6 +430,7 @@ export default function CampusToulousePage({ lang }: CampusToulousePageProps) {
                 src="/assets/1-scaled.jpg" 
                 alt="Discover Toulouse"
                 fill
+                sizes="100vw"
                 className="object-cover"
               />
               <div className="absolute inset-0 bg-black/10" />
@@ -453,6 +456,7 @@ export default function CampusToulousePage({ lang }: CampusToulousePageProps) {
                       src="/assets/tou.png" 
                       alt="Toulouse Tourisme"
                       fill
+                sizes="100vw"
                       className="object-contain p-2"
                     />
                   </div>
@@ -472,6 +476,7 @@ export default function CampusToulousePage({ lang }: CampusToulousePageProps) {
                       src="/assets/tourisme-occitanie.png" 
                       alt="Tourisme Occitanie"
                       fill
+                sizes="100vw"
                       className="object-contain p-2"
                     />
                   </div>
@@ -501,6 +506,7 @@ export default function CampusToulousePage({ lang }: CampusToulousePageProps) {
                       src="/assets/tou.png" 
                       alt="Le Petit Tou"
                       fill
+                sizes="100vw"
                       className="object-contain p-2"
                     />
                   </div>
@@ -518,6 +524,7 @@ export default function CampusToulousePage({ lang }: CampusToulousePageProps) {
                       src="/assets/toulousemairie.png" 
                       alt="Toulouse Mairie Métropole"
                       fill
+                sizes="100vw"
                       className="object-contain p-2"
                     />
                   </div>
@@ -541,6 +548,7 @@ export default function CampusToulousePage({ lang }: CampusToulousePageProps) {
                       src="/assets/toulouseweb.png" 
                       alt="Toulouse Web"
                       fill
+                sizes="100vw"
                       className="object-contain p-2"
                     />
                   </div>
@@ -558,6 +566,7 @@ export default function CampusToulousePage({ lang }: CampusToulousePageProps) {
                       src="/assets/toulouscope.png" 
                       alt="Toulouscope"
                       fill
+                sizes="100vw"
                       className="object-contain p-2"
                     />
                   </div>

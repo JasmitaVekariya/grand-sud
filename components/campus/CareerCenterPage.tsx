@@ -240,7 +240,8 @@ export default function CareerCenterPage({ lang }: CareerCenterPageProps) {
               <Image 
                 src="/assets/pexels-pixabay-532173-scaled.jpg" 
                 alt="Career Access" 
-                fill 
+                fill
+                sizes="100vw" 
                 className="object-cover brightness-50"
               />
               <div className="absolute inset-0 flex flex-col md:flex-row items-center justify-center p-8 md:p-12 gap-0">

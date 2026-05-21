@@ -35,6 +35,7 @@ export default function CourseBanner({
                 src={image}
                 alt={title}
                 fill
+                sizes="(max-width: 1024px) 100vw, 60vw"
                 className="object-cover object-center"
                 priority
               />
@@ -80,6 +81,7 @@ export default function CourseBanner({
                       src={logo}
                       alt="Logo"
                       fill
+                sizes="150px"
                       className="object-contain"
                     />
                   </div>

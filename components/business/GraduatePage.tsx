@@ -140,7 +140,8 @@ export default function GraduatePage({ lang }: GraduatePageProps) {
                   <Image 
                     src={t.howTo.bgImage} 
                     alt="Recruitment background" 
-                    fill 
+                    fill
+                sizes="100vw" 
                     className="object-cover" 
                   />
                 </motion.div>

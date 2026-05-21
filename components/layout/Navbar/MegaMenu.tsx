@@ -43,7 +43,13 @@ export default function MegaMenu({ type, data, isOpen }: MegaMenuProps) {
               </div>
               {section.image && (idx === 0) && (
                 <div className="mt-2 relative w-full h-20 overflow-hidden border border-white/20">
-                  <Image src={section.image} alt={section.subtext} fill className="object-cover" />
+                  <Image
+                    src={section.image}
+                    alt={section.subtext}
+                    fill
+                    sizes="(max-width: 1280px) 280px, 25vw"
+                    className="object-cover"
+                  />
                   <div className="absolute inset-0 bg-primary-red/0 group-hover:bg-primary-red/30 transition-colors duration-300 z-10" />
                   <div className="absolute inset-0 bg-black/30 flex items-center justify-center z-20">
                     <span className="text-[10px] font-[700] uppercase tracking-widest">{section.subtext}</span>
@@ -129,7 +135,13 @@ export default function MegaMenu({ type, data, isOpen }: MegaMenuProps) {
           <div className="flex flex-col gap-3 mb-6">
             {data.leftSection.href ? (
               <Link href={data.leftSection.href} className="relative w-full h-20 overflow-hidden border border-white/20 group cursor-pointer block">
-                <Image src={data.leftSection.image} alt="Toulouse" fill className="object-cover" />
+                <Image
+                  src={data.leftSection.image}
+                  alt="Toulouse"
+                  fill
+                  sizes="(max-width: 1280px) 280px, 25vw"
+                  className="object-cover"
+                />
                 <div className="absolute inset-0 bg-primary-red/0 group-hover:bg-primary-red/30 transition-colors duration-300 z-10" />
                 <div className="absolute inset-0 bg-black/30 flex items-center justify-center z-20">
                   <span className="text-[10px] font-[700] uppercase tracking-widest">Toulouse-Labège</span>
@@ -137,7 +149,13 @@ export default function MegaMenu({ type, data, isOpen }: MegaMenuProps) {
               </Link>
             ) : (
               <div className="relative w-full h-20 overflow-hidden border border-white/20 group cursor-pointer">
-                <Image src={data.leftSection.image} alt="Toulouse" fill className="object-cover" />
+                <Image
+                  src={data.leftSection.image}
+                  alt="Toulouse"
+                  fill
+                  sizes="(max-width: 1280px) 280px, 25vw"
+                  className="object-cover"
+                />
                 <div className="absolute inset-0 bg-primary-red/0 group-hover:bg-primary-red/30 transition-colors duration-300 z-10" />
                 <div className="absolute inset-0 bg-black/30 flex items-center justify-center z-20">
                   <span className="text-[10px] font-[700] uppercase tracking-widest">Toulouse-Labège</span>
@@ -150,7 +168,13 @@ export default function MegaMenu({ type, data, isOpen }: MegaMenuProps) {
               rel="noopener noreferrer" 
               className="relative w-full h-20 overflow-hidden border border-white/20 group cursor-pointer"
             >
-              <Image src="/assets/card-alumni.jpg" alt="Dubai" fill className="object-cover" />
+              <Image
+                src="/assets/card-alumni.jpg"
+                alt="Dubai"
+                fill
+                sizes="(max-width: 1280px) 280px, 25vw"
+                className="object-cover"
+              />
               <div className="absolute inset-0 bg-primary-red/0 group-hover:bg-primary-red/30 transition-colors duration-300 z-10" />
               <div className="absolute inset-0 bg-black/30 flex items-center justify-center z-20">
                 <span className="text-[10px] font-[700] uppercase tracking-widest">Dubai Campus</span>
@@ -187,7 +211,13 @@ export default function MegaMenu({ type, data, isOpen }: MegaMenuProps) {
             {data.bottomCards.map((card: any, idx: number) => {
               const CardContent = (
                 <div className="relative group cursor-pointer overflow-hidden aspect-[16/7] border border-gray-100 h-full">
-                  <Image src={card.image} alt={card.title} fill className="object-cover" />
+                  <Image
+                    src={card.image}
+                    alt={card.title}
+                    fill
+                    sizes="(max-width: 768px) 50vw, 25vw"
+                    className="object-cover"
+                  />
                   {/* White Hover Overlay */}
                   <div className="absolute inset-0 bg-white/0 group-hover:bg-white/30 transition-colors duration-300 z-10" />
                   <div className="absolute inset-0 bg-black/40 flex items-center justify-center p-2 text-center z-20">
@@ -233,7 +263,13 @@ export default function MegaMenu({ type, data, isOpen }: MegaMenuProps) {
         {data.cards.map((card: any, idx: number) => {
           const CardContent = (
             <div className="relative group overflow-hidden aspect-[16/8] cursor-pointer border border-gray-100 h-full">
-              <Image src={card.image} alt={card.title} fill className="object-cover" />
+              <Image
+                src={card.image}
+                alt={card.title}
+                fill
+                sizes="(max-width: 768px) 50vw, 25vw"
+                className="object-cover"
+              />
               {/* White Hover Overlay */}
               <div className="absolute inset-0 bg-white/0 group-hover:bg-white/30 transition-colors duration-300 z-10" />
               <div className="absolute inset-0 bg-black/40 flex items-center justify-center p-2 text-center z-20">

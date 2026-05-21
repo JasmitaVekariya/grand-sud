@@ -313,6 +313,7 @@ export default function HousingPage({ lang }: HousingPageProps) {
               src="/assets/pexels-fotoaibe-1571468-1024x684.jpg" 
               alt="Housing Assistance"
               fill
+                sizes="100vw"
               className="object-cover transition-transform duration-700"
             />
             <div className="absolute inset-0 bg-black/5" />
@@ -338,6 +339,7 @@ export default function HousingPage({ lang }: HousingPageProps) {
                       src={partner.logo} 
                       alt={partner.name}
                       fill
+                sizes="100vw"
                       className="object-contain p-2"
                     />
                   </div>

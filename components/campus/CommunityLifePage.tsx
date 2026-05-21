@@ -115,7 +115,8 @@ export default function CommunityLifePage({ lang }: CommunityLifePageProps) {
                 <Image 
                   src={t.bde.image} 
                   alt="BDE" 
-                  fill 
+                  fill
+                sizes="(max-width: 768px) 100vw, 50vw" 
                   className="object-cover"
                 />
               </div>
@@ -148,7 +149,8 @@ export default function CommunityLifePage({ lang }: CommunityLifePageProps) {
                 <Image 
                   src={t.humanitarian.image} 
                   alt="Humanitarian" 
-                  fill 
+                  fill
+                sizes="100vw" 
                   className="object-cover"
                 />
               </div>
@@ -172,7 +174,8 @@ export default function CommunityLifePage({ lang }: CommunityLifePageProps) {
                 <Image 
                   src={t.ambassador.image} 
                   alt="Ambassador Club" 
-                  fill 
+                  fill
+                sizes="100vw" 
                   className="object-cover"
                 />
               </div>
