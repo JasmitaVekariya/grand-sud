@@ -44,6 +44,7 @@ export default function CourseFurtherEducation({ title, links, jobs }: CourseFur
                     src={link.flag === "FR" ? "/assets/1f1eb-1f1f7.svg" : "/assets/1f1ec-1f1e7.svg"}
                     alt={link.flag}
                     fill
+                sizes="100vw"
                     className="object-cover"
                   />
                 </div>

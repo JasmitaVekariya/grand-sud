@@ -115,7 +115,8 @@ export default function EngagementsPage() {
                     <Image 
                       src="/assets/pexels-olly-840996-scaled-e1756303685528.jpg" 
                       alt="Parcours Personnalisé" 
-                      fill 
+                      fill
+                sizes="100vw" 
                       className="object-cover"
                     />
                   </motion.div>
@@ -197,7 +198,8 @@ export default function EngagementsPage() {
                     <Image 
                       src="/assets/pexels-fauxels-3184423-scaled.jpg" 
                       alt="Diversité et Inclusion" 
-                      fill 
+                      fill
+                sizes="100vw" 
                       className="object-cover"
                     />
                   </motion.div>
@@ -259,7 +261,8 @@ export default function EngagementsPage() {
                     <Image 
                       src="/assets/pexels-camcasey-1157255-scaled.jpg" 
                       alt="Mobilité Nationale et Internationale" 
-                      fill 
+                      fill
+                sizes="100vw" 
                       className="object-cover"
                     />
                   </motion.div>
@@ -303,7 +306,8 @@ export default function EngagementsPage() {
                             <Image 
                               src="/assets/IMG_2502-e1756303121108.jpg" 
                               alt="Christophe PEOTTA" 
-                              fill 
+                              fill
+                sizes="100vw" 
                               className="object-cover"
                             />
                           </div>

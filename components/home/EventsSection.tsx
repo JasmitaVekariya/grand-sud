@@ -80,6 +80,7 @@ export default function EventsSection() {
                   src="/assets/events_planer.png"
                   alt="Events Planner"
                   fill
+                sizes="(max-width: 768px) 100vw, 33vw"
                   className="object-cover"
                 />
               </div>

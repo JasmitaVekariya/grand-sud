@@ -48,7 +48,8 @@ export default function GenericLoginPage({ lang, type }: GenericLoginPageProps) 
           <Image 
             src="/assets/pexels-pixabay-532173-scaled.jpg" 
             alt="Login Background" 
-            fill 
+            fill
+                sizes="100vw" 
             className="object-cover brightness-[0.6] grayscale-[0.2]"
             priority
           />

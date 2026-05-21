@@ -30,6 +30,7 @@ export default function NavMenu({ lang }: NavMenuProps) {
                 src="/assets/logo.jpg"
                 alt="Grand Sud Logo"
                 fill
+                sizes="(max-width: 880px) 8rem, 10rem"
                 className="object-contain"
                 priority
               />

@@ -187,7 +187,8 @@ export default function BusinessSpacePage({ lang }: BusinessSpacePageProps) {
             <Image 
               src={t.cta.bgImage} 
               alt="Recruitment Background" 
-              fill 
+              fill
+                sizes="(max-width: 1024px) 100vw, 60vw" 
               className="object-cover" 
             />
           </motion.div>

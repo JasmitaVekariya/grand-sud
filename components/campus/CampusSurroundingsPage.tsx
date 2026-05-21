@@ -453,6 +453,7 @@ export default function CampusSurroundingsPage({ lang }: CampusSurroundingsPageP
                 src="/assets/Car_liO_a_la_gare_routiere_de_Nimes-scaled.jpg" 
                 alt="Public Transport"
                 fill
+                sizes="100vw"
                 className="object-cover"
               />
               <div className="absolute inset-0 bg-black/20" />
@@ -507,6 +508,7 @@ export default function CampusSurroundingsPage({ lang }: CampusSurroundingsPageP
               src="/assets/unnamed.jpg" 
               alt="Environment"
               fill
+                sizes="100vw"
               className="object-cover"
             />
             <div className="absolute inset-0 bg-black/10" />
@@ -533,6 +535,7 @@ export default function CampusSurroundingsPage({ lang }: CampusSurroundingsPageP
                           src={item.logo} 
                           alt={item.name}
                           fill
+                sizes="100vw"
                           className="object-contain p-2"
                         />
                       </div>

@@ -166,7 +166,8 @@ export default function InternationalPage() {
                       <Image 
                         src="/assets/pexels-camcasey-1157255-scaled.jpg" 
                         alt="International Mobility" 
-                        fill 
+                        fill
+                sizes="100vw" 
                         className="object-cover"
                       />
                     </motion.div>
@@ -207,7 +208,8 @@ export default function InternationalPage() {
                         <Image 
                           src="/assets/IMG_2502-e1756303121108.jpg" 
                           alt="Christophe PEOTTA" 
-                          fill 
+                          fill
+                sizes="100vw" 
                           className="object-cover"
                         />
                       </div>
@@ -230,7 +232,8 @@ export default function InternationalPage() {
                   <Image 
                     src="/assets/pexels-kelly-2881370-scaled.jpg" 
                     alt="Partnerships Background" 
-                    fill 
+                    fill
+                sizes="(max-width: 768px) 100vw, 50vw" 
                     className="object-cover"
                   />
                   <div className="absolute inset-0 bg-black/20" />

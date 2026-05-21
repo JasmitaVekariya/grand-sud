@@ -8,7 +8,7 @@ export default function CoursesPage() {
         Expert Programs
       </>
     ),
-    image: "/assets/Gemini_Generated_Image_hromqqhromqqhrom-e1756710798902.jpg"
+    image: "/assets/Gemini_Generated_Image_hromqqhromqqhrom-e1756710798902.png"
   };
 
   return (

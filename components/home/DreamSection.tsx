@@ -67,6 +67,7 @@ export default function DreamSection() {
                       src={card.image}
                       alt={card.title}
                       fill
+                sizes="(max-width: 768px) 120px, 150px"
                       className="object-cover"
                     />
                     {/* White Overlay on Hover */}

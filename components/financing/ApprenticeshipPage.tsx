@@ -28,7 +28,8 @@ const ModularSection = ({ section }: { section: any }) => {
       {section.imageLeft && (
         <div className="md:w-1/2 relative min-h-[300px] lg:min-h-[380px] overflow-hidden">
           <motion.div style={{ scale }} className="absolute inset-0">
-            <Image src={section.image} alt={section.title} fill className="object-cover" />
+            <Image src={section.image} alt={section.title} fill
+                sizes="100vw" className="object-cover" />
           </motion.div>
         </div>
       )}
@@ -47,7 +48,8 @@ const ModularSection = ({ section }: { section: any }) => {
       {!section.imageLeft && (
         <div className="md:w-1/2 relative min-h-[300px] lg:min-h-[380px] overflow-hidden">
           <motion.div style={{ scale }} className="absolute inset-0">
-            <Image src={section.image} alt={section.title} fill className="object-cover" />
+            <Image src={section.image} alt={section.title} fill
+                sizes="100vw" className="object-cover" />
           </motion.div>
         </div>
       )}

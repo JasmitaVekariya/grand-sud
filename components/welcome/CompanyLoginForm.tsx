@@ -46,7 +46,8 @@ export default function CompanyLoginForm({ lang }: CompanyLoginFormProps) {
             <Image 
               src={t.image} 
               alt="Login Background" 
-              fill 
+              fill
+                sizes="(max-width: 1024px) 100vw, 565px" 
               className="object-cover" 
               priority
             />
