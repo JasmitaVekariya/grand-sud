@@ -94,7 +94,7 @@ export const navigationData = {
         type: "business",
         links: [
           { label: "Formez vos équipes", href: "/fr/business/formation" },
-          { label: "Recrutez vos talents :", href: "/fr/business/recrutement" },
+          { label: "Recrutez vos talents :" },
         ],
         cards: [
           { title: "STAGIAIRE", image: "/assets/card-stagiaire.jpg", href: "/fr/business/stagiaire" },
@@ -200,7 +200,7 @@ export const navigationData = {
         type: "business",
         links: [
           { label: "Train your teams", href: "/en/business/training" },
-          { label: "Hire your talents :", href: "/en/business/recruitment" },
+          { label: "Hire your talents :" },
         ],
         cards: [
           { title: "INTERN", image: "/assets/card-stagiaire.jpg", href: "/en/business/intern" },
