@@ -122,7 +122,7 @@ export default function TopBar({ lang, setLang }: TopBarProps) {
 
   return (
     <div className="bg-[#812522] text-white py-2 px-4 text-[10px] md:text-[11px] border-b border-white/5 uppercase tracking-[0.12em] font-semibold">
-      <div className="max-w-[1440px] mx-auto flex items-center justify-between md:px-16 lg:px-24 xl:px-[200px]">
+      <div className="max-w-[1440px] mx-auto flex flex-col sm:flex-row items-center justify-between gap-2 md:px-16 lg:px-24 xl:px-[200px]">
 
         <div className="flex-1 text-center">
           {lang === "fr" ? "L'ÉCOLE 100% MANAGEMENT & TOURISME DEPUIS 1991 | UNE ÉCOLE SUPDEFORM" : "THE 100% MANAGEMENT & TOURISM SCHOOL SINCE 1991 | A SUPDEFORM SCHOOL"}
