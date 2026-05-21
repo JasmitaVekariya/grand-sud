@@ -8,12 +8,12 @@ export default function CareerCenterPageFr() {
   };
 
   return (
-    <>
+    <main className="bg-white">
       <PageBanner 
         title={t.title} 
         image={t.image} 
       />
       <CareerCenterPage lang="fr" />
-    </>
+    </main>
   );
 }

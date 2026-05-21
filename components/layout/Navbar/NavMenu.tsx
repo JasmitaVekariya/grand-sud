@@ -139,10 +139,8 @@ export default function NavMenu({ lang }: NavMenuProps) {
                                 {(() => {
                                   const links: Array<{ label: string; href: string; isHeader?: boolean }> = [];
                                   
-                                  links.push({
-                                    label: lang === "en" ? "Overview" : "Présentation",
-                                    href: item.href
-                                  });
+                                  // No overview links in submenus
+
 
                                   if (item.megaMenu.type === "school") {
                                     item.megaMenu.leftLinks?.forEach((l: any) => {
@@ -195,6 +193,13 @@ export default function NavMenu({ lang }: NavMenuProps) {
                                     if (sublink.isHeader) {
                                       return (
                                         <li key={sIdx} className="text-[12px] font-extrabold uppercase text-white/50 tracking-wider pt-3 first:pt-0">
+                                          {sublink.label}
+                                        </li>
+                                      );
+                                    }
+                                    if (!sublink.href) {
+                                      return (
+                                        <li key={sIdx} className="text-lg font-medium text-white/90 select-none cursor-default py-1">
                                           {sublink.label}
                                         </li>
                                       );

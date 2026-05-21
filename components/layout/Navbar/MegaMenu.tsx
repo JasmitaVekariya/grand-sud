@@ -247,9 +247,15 @@ export default function MegaMenu({ type, data, isOpen }: MegaMenuProps) {
       <ul className="flex flex-col gap-4 mb-8">
         {data.links.map((link: any, idx: number) => (
           <li key={idx}>
-            <Link href={link.href} className="flex items-center text-[15px] font-[500] text-gray-900 hover:text-primary-red transition-colors">
-              <span className="w-2.5 h-2.5 bg-primary-red mr-3 flex-shrink-0" /> {link.label}
-            </Link>
+            {link.href ? (
+              <Link href={link.href} className="flex items-center text-[15px] font-[500] text-gray-900 hover:text-primary-red transition-colors">
+                <span className="w-2.5 h-2.5 bg-primary-red mr-3 flex-shrink-0" /> {link.label}
+              </Link>
+            ) : (
+              <span className="flex items-center text-[15px] font-[500] text-gray-900 cursor-default select-none">
+                <span className="w-2.5 h-2.5 bg-primary-red mr-3 flex-shrink-0" /> {link.label}
+              </span>
+            )}
           </li>
         ))}
       </ul>

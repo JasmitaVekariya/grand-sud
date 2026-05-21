@@ -97,7 +97,7 @@ export default function CommunityLifePage({ lang }: CommunityLifePageProps) {
   }[lang];
 
   return (
-    <main className="bg-white overflow-hidden">
+    <div className="bg-white overflow-hidden">
       <CourseDetailLayout sections={t.sections}>
         {/* Intro Text */}
         <div className="space-y-6 text-[16px] md:text-[18px] text-[#333] leading-relaxed font-medium max-w-4xl">
@@ -120,8 +120,8 @@ export default function CommunityLifePage({ lang }: CommunityLifePageProps) {
                   className="object-cover"
                 />
               </div>
-              <div className="lg:w-1/2 p-8 md:p-16 flex flex-col justify-center text-white space-y-8">
-                <h2 className="text-[32px] md:text-[48px] font-bold uppercase leading-tight tracking-tight">
+              <div className="lg:w-1/2 p-6 md:p-8 lg:py-12 lg:pl-8 lg:pr-6 xl:pl-10 xl:pr-8 2xl:pl-16 2xl:pr-10 flex flex-col justify-center text-white space-y-6 lg:space-y-8">
+                <h2 className="text-[26px] sm:text-[30px] lg:text-[32px] xl:text-[36px] 2xl:text-[44px] font-bold uppercase leading-tight tracking-tight">
                   {t.bde.title}
                 </h2>
                 <div className="space-y-4 opacity-90 leading-relaxed font-medium text-[15px] md:text-[16px]">
@@ -154,8 +154,8 @@ export default function CommunityLifePage({ lang }: CommunityLifePageProps) {
                   className="object-cover"
                 />
               </div>
-              <div className="lg:w-1/2 p-8 md:p-16 flex flex-col justify-center text-white space-y-8">
-                <h2 className="text-[32px] md:text-[48px] font-bold uppercase leading-tight tracking-tight">
+              <div className="lg:w-1/2 p-6 md:p-8 lg:py-12 lg:pl-6 lg:pr-8 xl:pl-8 xl:pr-10 2xl:pl-10 2xl:pr-16 flex flex-col justify-center text-white space-y-6 lg:space-y-8">
+                <h2 className="text-[26px] sm:text-[30px] lg:text-[32px] xl:text-[36px] 2xl:text-[44px] font-bold uppercase leading-tight tracking-tight">
                   {t.humanitarian.title}
                 </h2>
                 <div className="space-y-4 opacity-90 leading-relaxed font-medium text-[16px] md:text-[18px]">
@@ -179,8 +179,8 @@ export default function CommunityLifePage({ lang }: CommunityLifePageProps) {
                   className="object-cover"
                 />
               </div>
-              <div className="lg:w-1/2 p-8 md:p-16 flex flex-col justify-center text-white space-y-8">
-                <h2 className="text-[32px] md:text-[48px] font-bold uppercase leading-tight tracking-tight">
+              <div className="lg:w-1/2 p-6 md:p-8 lg:py-12 lg:pl-8 lg:pr-6 xl:pl-10 xl:pr-8 2xl:pl-16 2xl:pr-10 flex flex-col justify-center text-white space-y-6 lg:space-y-8">
+                <h2 className="text-[26px] sm:text-[30px] lg:text-[32px] xl:text-[36px] 2xl:text-[44px] font-bold uppercase leading-tight tracking-tight">
                   {t.ambassador.title}
                 </h2>
                 <div className="space-y-4 opacity-90 leading-relaxed font-medium text-[16px] md:text-[18px]">
@@ -193,6 +193,6 @@ export default function CommunityLifePage({ lang }: CommunityLifePageProps) {
           </section>
         </div>
       </CourseDetailLayout>
-    </main>
+    </div>
   );
 }

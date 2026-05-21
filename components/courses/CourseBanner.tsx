@@ -74,7 +74,7 @@ export default function CourseBanner({
               )}
 
               {/* Logos */}
-              <div className="flex items-center gap-4 pt-4">
+              <div className="flex flex-wrap items-center gap-4 pt-4">
                 {logos?.map((logo, idx) => (
                   <div key={idx} className="relative h-[150px] w-[150px] bg-white rounded-md p-2 shadow-sm">
                     <Image

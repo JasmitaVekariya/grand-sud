@@ -8,12 +8,12 @@ export default function CommunityLifePageEn() {
   };
 
   return (
-    <>
+    <main className="bg-white">
       <PageBanner 
         title={t.title} 
         image={t.image} 
       />
       <CommunityLifePage lang="en" />
-    </>
+    </main>
   );
 }

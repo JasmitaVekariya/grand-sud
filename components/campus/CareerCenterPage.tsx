@@ -148,7 +148,7 @@ export default function CareerCenterPage({ lang }: CareerCenterPageProps) {
   }[lang];
 
   return (
-    <main className="bg-white overflow-hidden">
+    <div className="bg-white overflow-hidden">
       <CourseDetailLayout sections={t.sections}>
         <div className="space-y-24 pb-24">
           {/* Intro Paragraphs */}
@@ -268,6 +268,6 @@ export default function CareerCenterPage({ lang }: CareerCenterPageProps) {
           </section>
         </div>
       </CourseDetailLayout>
-    </main>
+    </div>
   );
 }
