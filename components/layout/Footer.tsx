@@ -81,13 +81,13 @@ export default function Footer() {
             </p>
             <div className="flex flex-col items-start gap-2 mt-2">
               <span className="text-[11px] font-[500] uppercase opacity-80">{t.aSchoolOf}</span>
-              <div className="bg-white rounded-full px-3 py-0.5 shadow-sm inline-flex items-center justify-center">
-                <Image
+              <div className="relative w-[110px] h-8 bg-white rounded-full shadow-sm inline-flex items-center justify-center">
+                <Image 
                   src="/assets/logo-supdeform.png"
                   alt="Supdeform"
-                  width={80}
-                  height={18}
-                  className="object-contain"
+                  fill
+                  sizes="110px"
+                  className="object-contain p-1"
                 />
               </div>
             </div>
