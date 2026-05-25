@@ -213,23 +213,23 @@ export default function CalendarSection() {
                   return (
                     <div 
                       key={idx}
-                      className={`relative border-r border-b border-[#E5E5E5] p-5 group transition-colors hover:bg-[#F9F9F9]
+                      className={`relative border-r border-b border-[#E5E5E5] p-3 md:p-5 group transition-colors hover:bg-[#F9F9F9] overflow-hidden flex flex-col
                         ${!dayObj.currentMonth ? 'bg-[#FAFAFA]' : ''}
                         ${idx % 7 === 6 ? 'border-r-0' : ''}
                       `}
                     >
-                      <span className={`text-[24px] font-bold 
+                      <span className={`text-[20px] md:text-[24px] font-bold leading-none
                         ${dayObj.currentMonth ? 'text-[#2B2B2B]' : 'text-[#2B2B2B]/20'}
                       `}>
                         {dayObj.day}
                       </span>
 
                       {event && dayObj.currentMonth && (
-                        <div className="mt-4 flex flex-col gap-1">
-                          <span className="text-[10px] font-[600] text-[#2B2B2B]/40">
+                        <div className="mt-1 md:mt-2 flex flex-col gap-0.5">
+                          <span className="text-[9px] md:text-[10px] font-[600] text-[#2B2B2B]/40 whitespace-nowrap">
                             {event.time}
                           </span>
-                          <span className="text-[13px] font-bold text-[#2B2B2B] leading-tight">
+                          <span className="text-[11px] md:text-[13px] font-bold text-[#2B2B2B] leading-tight break-words line-clamp-3">
                             {lang === 'fr' ? event.titleFr : event.titleEn}
                           </span>
                         </div>
