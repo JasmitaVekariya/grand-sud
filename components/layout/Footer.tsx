@@ -62,18 +62,18 @@ export default function Footer() {
   }[lang];
 
   return (
-    <footer className="bg-[#F23A2E] text-white pt-10 md:pt-14">
+    <footer className="bg-primary-red text-white pt-10 md:pt-14">
       <div className="max-w-[1440px] mx-auto px-6 md:px-16 lg:px-24 xl:px-[200px] pb-10">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 lg:gap-16">
           
           {/* Left Column */}
           <div className="flex flex-col gap-5 md:col-span-1">
-            <div className="relative w-[100px] h-[100px]">
+            <div className="relative w-32 h-32">
               <Image 
-                src="/assets/logo-white.svg"
-                alt="Grand Sud"
+                src="/assets/logo.jpg"
+                alt="Grand Sud Logo"
                 fill
-                className="object-contain object-left"
+                className="object-contain"
               />
             </div>
             <p className="text-[12px] md:text-[13px] leading-relaxed max-w-full font-[400] opacity-90">
