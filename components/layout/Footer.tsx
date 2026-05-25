@@ -85,9 +85,9 @@ export default function Footer() {
                 <Image
                   src="/assets/logo-supdeform.png"
                   alt="Supdeform"
-                  fill
-                  sizes="110px"
-                  className="object-contain p-0.5"
+                  width={80}
+                  height={18}
+                  className="object-contain"
                 />
               </div>
             </div>
