@@ -33,6 +33,7 @@ export default function NavMenu({ lang }: NavMenuProps) {
                 sizes="(max-width: 880px) 8rem, 10rem"
                 className="object-contain"
                 priority
+                loading="eager"
               />
             </div>
           </Link>

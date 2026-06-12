@@ -69,11 +69,12 @@ export default function Footer() {
           {/* Left Column */}
           <div className="flex flex-col gap-5 md:col-span-1">
             <div className="relative w-32 h-32">
-              <Image
+              <img
                 src="/assets/logo.jpg"
                 alt="Grand Sud Logo"
-                fill
-                className="object-contain"
+                className="object-contain w-full h-full"
+                loading="lazy"
+                decoding="async"
               />
             </div>
             <p className="text-[12px] md:text-[13px] leading-relaxed max-w-full font-[400] opacity-90">
