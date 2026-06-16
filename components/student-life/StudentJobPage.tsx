@@ -244,7 +244,7 @@ export default function StudentJobPage({ lang }: StudentJobPageProps) {
 
       <div className="pt-4">
         <CourseDetailLayout sections={t.sidebar}>
-          <div className="py-8 space-y-16">
+          <div className="pb-8 space-y-16">
             <section className="space-y-4">
               {t.intro.map((para, idx) => (
                 <p key={idx} className="text-[#333] text-[14px] md:text-[15px] leading-relaxed font-medium">

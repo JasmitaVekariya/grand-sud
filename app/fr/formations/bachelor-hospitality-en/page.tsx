@@ -316,7 +316,7 @@ export default function BachelorHospitalityENPageFR() {
       >
         <section id="description" className="scroll-mt-32 space-y-16">
           <div className="space-y-8">
-            <h2 className="text-[32px] md:text-[42px] font-bold text-primary-red uppercase tracking-tight">
+            <h2 className="text-[32px] md:text-[42px] font-bold text-primary-red uppercase tracking-tight leading-none mt-[-2px]">
               DESCRIPTION
             </h2>
             <div className="space-y-6 text-[16px] text-black leading-relaxed font-medium max-w-4xl">

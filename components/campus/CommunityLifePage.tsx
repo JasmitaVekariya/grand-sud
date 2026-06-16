@@ -97,7 +97,7 @@ export default function CommunityLifePage({ lang }: CommunityLifePageProps) {
   }[lang];
 
   return (
-    <div className="bg-white overflow-hidden">
+    <div className="pt-4">
       <CourseDetailLayout sections={t.sections}>
         {/* Intro Text */}
         <div className="space-y-6 text-[16px] md:text-[18px] text-[#333] leading-relaxed font-medium max-w-4xl">
@@ -112,16 +112,16 @@ export default function CommunityLifePage({ lang }: CommunityLifePageProps) {
           <section id="bde" className="scroll-mt-32">
             <div className="bg-[#333333] flex flex-col lg:flex-row min-h-[600px] overflow-hidden rounded-sm shadow-2xl">
               <div className="lg:w-1/2 relative min-h-[400px]">
-                <Image 
-                  src={t.bde.image} 
-                  alt="BDE" 
+                <Image
+                  src={t.bde.image}
+                  alt="BDE"
                   fill
-                sizes="(max-width: 768px) 100vw, 50vw" 
+                  sizes="(max-width: 768px) 100vw, 50vw"
                   className="object-cover"
                 />
               </div>
               <div className="lg:w-1/2 p-6 md:p-8 lg:py-12 lg:pl-8 lg:pr-6 xl:pl-10 xl:pr-8 2xl:pl-16 2xl:pr-10 flex flex-col justify-center text-white space-y-6 lg:space-y-8">
-                <h2 className="text-[26px] sm:text-[30px] lg:text-[32px] xl:text-[36px] 2xl:text-[44px] font-bold uppercase leading-tight tracking-tight">
+                <h2 className="text-[26px] sm:text-[30px] lg:text-[32px] xl:text-[36px] 2xl:text-[44px] font-bold uppercase leading-none tracking-tight mt-[-2px]">
                   {t.bde.title}
                 </h2>
                 <div className="space-y-4 opacity-90 leading-relaxed font-medium text-[15px] md:text-[16px]">
@@ -129,7 +129,7 @@ export default function CommunityLifePage({ lang }: CommunityLifePageProps) {
                     <p key={idx}>{p}</p>
                   ))}
                 </div>
-                
+
                 <div className="flex items-center gap-6 group cursor-pointer">
                   <div className="w-16 h-16 bg-[#8B2318] rounded-xl flex items-center justify-center shadow-lg transition-transform group-hover:scale-110">
                     <FaInstagram size={32} className="text-white" />
@@ -146,16 +146,16 @@ export default function CommunityLifePage({ lang }: CommunityLifePageProps) {
           <section id="humanitarian" className="scroll-mt-32">
             <div className="bg-[#8B2318] flex flex-col lg:flex-row-reverse min-h-[500px] overflow-hidden rounded-sm shadow-2xl">
               <div className="lg:w-1/2 relative min-h-[350px]">
-                <Image 
-                  src={t.humanitarian.image} 
-                  alt="Humanitarian" 
+                <Image
+                  src={t.humanitarian.image}
+                  alt="Humanitarian"
                   fill
-                sizes="100vw" 
+                  sizes="100vw"
                   className="object-cover"
                 />
               </div>
               <div className="lg:w-1/2 p-6 md:p-8 lg:py-12 lg:pl-6 lg:pr-8 xl:pl-8 xl:pr-10 2xl:pl-10 2xl:pr-16 flex flex-col justify-center text-white space-y-6 lg:space-y-8">
-                <h2 className="text-[26px] sm:text-[30px] lg:text-[32px] xl:text-[36px] 2xl:text-[44px] font-bold uppercase leading-tight tracking-tight">
+                <h2 className="text-[26px] sm:text-[30px] lg:text-[32px] xl:text-[36px] 2xl:text-[44px] font-bold uppercase leading-none tracking-tight mt-[-2px]">
                   {t.humanitarian.title}
                 </h2>
                 <div className="space-y-4 opacity-90 leading-relaxed font-medium text-[16px] md:text-[18px]">
@@ -171,16 +171,16 @@ export default function CommunityLifePage({ lang }: CommunityLifePageProps) {
           <section id="ambassador" className="scroll-mt-32">
             <div className="bg-primary-red flex flex-col lg:flex-row min-h-[500px] overflow-hidden rounded-sm shadow-2xl">
               <div className="lg:w-1/2 relative min-h-[350px]">
-                <Image 
-                  src={t.ambassador.image} 
-                  alt="Ambassador Club" 
+                <Image
+                  src={t.ambassador.image}
+                  alt="Ambassador Club"
                   fill
-                sizes="100vw" 
+                  sizes="100vw"
                   className="object-cover"
                 />
               </div>
               <div className="lg:w-1/2 p-6 md:p-8 lg:py-12 lg:pl-8 lg:pr-6 xl:pl-10 xl:pr-8 2xl:pl-16 2xl:pr-10 flex flex-col justify-center text-white space-y-6 lg:space-y-8">
-                <h2 className="text-[26px] sm:text-[30px] lg:text-[32px] xl:text-[36px] 2xl:text-[44px] font-bold uppercase leading-tight tracking-tight">
+                <h2 className="text-[26px] sm:text-[30px] lg:text-[32px] xl:text-[36px] 2xl:text-[44px] font-bold uppercase leading-none tracking-tight mt-[-2px]">
                   {t.ambassador.title}
                 </h2>
                 <div className="space-y-4 opacity-90 leading-relaxed font-medium text-[16px] md:text-[18px]">

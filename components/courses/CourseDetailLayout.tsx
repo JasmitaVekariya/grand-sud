@@ -55,19 +55,19 @@ export default function CourseDetailLayout({ sections, children, applyButton }: 
 
   return (
     <div className="max-w-[1440px] mx-auto px-6 md:px-16 lg:px-24 xl:px-[200px] py-16 md:py-24">
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
         
         {/* Sidebar (25%) */}
-        <aside className="lg:col-span-3 lg:sticky lg:top-32 self-start space-y-12 bg-white">
-          <div className="space-y-4">
+        <aside className="lg:col-span-3 lg:sticky lg:top-32 self-start space-y-12 bg-white pt-0 mt-0">
+          <div className="space-y-4 pt-0 mt-0">
             {sections.map((section) => (
               <button 
                 key={section.id}
                 onClick={() => scrollToSection(section.id)}
                 className="flex items-start gap-3 group w-full text-left transition-all duration-300"
               >
-                <div className="w-4 h-4 mt-1.5 flex-shrink-0 bg-primary-red transition-colors duration-300" />
-                <span className={`text-[14px] font-bold uppercase tracking-widest leading-relaxed transition-colors duration-300 ${activeSection === section.id ? "text-primary-red" : "text-[#444444] group-hover:text-primary-red/70"}`}>
+                <div className="w-4 h-4 mt-1 flex-shrink-0 bg-primary-red transition-colors duration-300" />
+                <span className={`text-[14px] font-bold uppercase tracking-widest leading-none pt-1 transition-colors duration-300 ${activeSection === section.id ? "text-primary-red" : "text-[#444444] group-hover:text-primary-red/70"}`}>
                   {section.label}
                 </span>
               </button>
@@ -87,7 +87,7 @@ export default function CourseDetailLayout({ sections, children, applyButton }: 
         </aside>
 
         {/* Content (75%) */}
-        <div className="lg:col-span-9 space-y-24">
+        <div className="lg:col-span-9 flex flex-col gap-24 pt-0 mt-0">
           {children}
         </div>
 

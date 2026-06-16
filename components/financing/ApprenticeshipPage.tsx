@@ -192,7 +192,7 @@ export default function ApprenticeshipPage({ lang }: ApprenticeshipPageProps) {
 
       <div className="pt-4"> 
         <CourseDetailLayout sections={t.sidebar}>
-          <div className="py-8">
+          <div className="pb-8">
             {/* Intro Section */}
             <section className="space-y-4 mb-12">
               {t.intro.map((para, idx) => (

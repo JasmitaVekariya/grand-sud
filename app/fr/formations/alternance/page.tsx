@@ -41,7 +41,7 @@ export default function AlternancePageFR() {
           </div>
 
           <div className="space-y-8">
-            <h2 className="text-[32px] md:text-[42px] font-bold text-primary-red uppercase tracking-tight">
+            <h2 className="text-[32px] md:text-[42px] font-bold text-primary-red uppercase tracking-tight leading-none mt-[-2px]">
               FORMATIONS EN ALTERNANCE DISPONIBLES
             </h2>
             <div className="space-y-6 text-[15px] text-gray-700 leading-relaxed font-medium">
@@ -59,7 +59,7 @@ export default function AlternancePageFR() {
         {/* Section 2: Les différents contrats */}
         <section id="contracts" className="scroll-mt-32 space-y-12">
           <div className="space-y-8">
-            <h2 className="text-[32px] md:text-[42px] font-bold text-primary-red uppercase tracking-tight">
+            <h2 className="text-[32px] md:text-[42px] font-bold text-primary-red uppercase tracking-tight leading-none mt-[-2px]">
               LES DIFFÉRENTS CONTRATS D'ALTERNANCE
             </h2>
             <div className="space-y-6 text-[15px] text-gray-700 leading-relaxed font-medium">

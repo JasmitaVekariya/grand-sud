@@ -18,7 +18,7 @@ interface CourseJobsProps {
 export default function CourseJobs({ title, intro, categories }: CourseJobsProps) {
   return (
     <div className="space-y-12">
-      <h2 className="text-[32px] md:text-[42px] font-bold text-primary-red uppercase tracking-tight">
+      <h2 className="text-[32px] md:text-[42px] font-bold text-primary-red uppercase tracking-tight leading-none mt-[-2px]">
         {title}
       </h2>
 

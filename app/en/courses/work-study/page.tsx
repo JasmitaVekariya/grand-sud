@@ -41,7 +41,7 @@ export default function WorkStudyPage() {
           </div>
 
           <div className="space-y-8">
-            <h2 className="text-[32px] md:text-[42px] font-bold text-primary-red uppercase tracking-tight">
+            <h2 className="text-[32px] md:text-[42px] font-bold text-primary-red uppercase tracking-tight leading-none mt-[-2px]">
               WORK-STUDY PROGRAMS AVAILABLE
             </h2>
             <div className="space-y-6 text-[15px] text-gray-700 leading-relaxed font-medium">
@@ -59,7 +59,7 @@ export default function WorkStudyPage() {
         {/* Section 2: Different Contracts */}
         <section id="contracts" className="scroll-mt-32 space-y-12">
           <div className="space-y-8">
-            <h2 className="text-[32px] md:text-[42px] font-bold text-primary-red uppercase tracking-tight">
+            <h2 className="text-[32px] md:text-[42px] font-bold text-primary-red uppercase tracking-tight leading-none mt-[-2px]">
               THE DIFFERENT WORK-STUDY CONTRACTS
             </h2>
             <div className="space-y-6 text-[15px] text-gray-700 leading-relaxed font-medium">

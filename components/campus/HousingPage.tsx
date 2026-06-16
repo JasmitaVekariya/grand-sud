@@ -2,7 +2,7 @@
 
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
-import { 
+import {
   ChevronDown,
   Circle,
   Dot
@@ -195,11 +195,11 @@ export default function HousingPage({ lang }: HousingPageProps) {
 
   return (
     <div className="flex flex-col lg:flex-row max-w-[1440px] mx-auto px-6 md:px-12 lg:px-20 py-12 gap-12">
-      
+
       {/* Sticky Sidebar Navigation */}
       <aside className="lg:w-1/4 h-fit lg:sticky lg:top-32 space-y-4 hidden lg:block">
         {t.sidebar.map((item, idx) => (
-          <button 
+          <button
             key={idx}
             onClick={() => scrollToSection(item.toLowerCase().replace(/ /g, '-'))}
             className="flex items-center gap-4 group w-full text-left"
@@ -214,7 +214,7 @@ export default function HousingPage({ lang }: HousingPageProps) {
 
       {/* Main Content */}
       <div className="flex-1 space-y-24 pb-20">
-        
+
         {/* Intro */}
         <section className="space-y-6">
           <p className="text-[16px] text-[#444] font-medium leading-relaxed">
@@ -233,7 +233,7 @@ export default function HousingPage({ lang }: HousingPageProps) {
           <h2 className="text-[32px] md:text-[48px] font-bold text-primary-red uppercase tracking-tight leading-none">
             {t.neighborhoods.title}
           </h2>
-          
+
           <div className="space-y-12">
             <p className="text-[16px] text-[#444] font-medium leading-relaxed whitespace-pre-line max-w-4xl">
               {t.neighborhoods.desc}
@@ -242,7 +242,7 @@ export default function HousingPage({ lang }: HousingPageProps) {
             {/* Neighborhood Cards Grid */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-0">
               {t.neighborhoods.cards.map((card, idx) => (
-                <div 
+                <div
                   key={idx}
                   className={`${card.bgColor} p-10 text-white flex flex-col items-center text-center gap-8 min-h-[360px] justify-start border border-white/5`}
                 >
@@ -279,7 +279,7 @@ export default function HousingPage({ lang }: HousingPageProps) {
             <div className="flex flex-col gap-1">
               {t.types.accordions.map((acc) => (
                 <div key={acc.id} className="w-full">
-                  <button 
+                  <button
                     onClick={() => setActiveAccordion(activeAccordion === acc.id ? null : acc.id)}
                     className="w-full bg-[#F23A2E] text-white p-5 flex items-center justify-between font-bold uppercase tracking-widest text-[16px] md:text-[18px] transition-colors hover:bg-[#D42F25]"
                   >
@@ -309,11 +309,11 @@ export default function HousingPage({ lang }: HousingPageProps) {
 
           {/* Hero Assistance */}
           <div className="relative w-full h-[450px] overflow-hidden group">
-            <Image 
-              src="/assets/pexels-fotoaibe-1571468-1024x684.jpg" 
+            <Image
+              src="/assets/pexels-fotoaibe-1571468-1024x684.jpg"
               alt="Housing Assistance"
               fill
-                sizes="100vw"
+              sizes="100vw"
               className="object-cover transition-transform duration-700"
             />
             <div className="absolute inset-0 bg-black/5" />
@@ -335,11 +335,11 @@ export default function HousingPage({ lang }: HousingPageProps) {
                     </span>
                   )}
                   <div className="relative w-24 h-24 bg-white p-4 overflow-hidden rounded-sm transition-transform duration-300 shadow-lg">
-                    <Image 
-                      src={partner.logo} 
+                    <Image
+                      src={partner.logo}
                       alt={partner.name}
                       fill
-                sizes="100vw"
+                      sizes="100vw"
                       className="object-contain p-2"
                     />
                   </div>

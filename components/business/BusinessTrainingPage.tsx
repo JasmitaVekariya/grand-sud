@@ -86,7 +86,7 @@ export default function BusinessTrainingPage({ lang }: BusinessTrainingPageProps
 
       <div className="pt-4">
         <CourseDetailLayout sections={t.sidebar}>
-          <div className="py-8 space-y-16">
+          <div className="pb-8 space-y-16">
             <section className="space-y-6">
               <p className="text-[#333] text-[14px] md:text-[15px] leading-relaxed font-bold italic">
                 {t.introNote}

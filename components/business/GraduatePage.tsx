@@ -104,7 +104,7 @@ export default function GraduatePage({ lang }: GraduatePageProps) {
 
       <div className="pt-4">
         <CourseDetailLayout sections={t.sidebar}>
-          <div className="py-8 space-y-20">
+          <div className="pb-8 space-y-20">
             {/* Intro */}
             <p className="text-[#333] text-[14px] md:text-[15px] leading-relaxed font-medium max-w-4xl">
               {t.intro}

@@ -127,8 +127,8 @@ export default function CurriculumSlider() {
   return (
     <section className="py-8 md:py-12 bg-white overflow-visible">
       <div className="max-w-[1440px] mx-auto px-6 md:px-16 lg:px-24 xl:px-[200px] relative">
-        {/* Heading with Overlapping Effect - Reduced Boldness and Size */}
-        <div className="relative z-30 mb-[-30px] md:mb-[-45px]">
+        {/* Heading without Overlapping Effect */}
+        <div className="relative z-30 mb-6 md:mb-8">
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}

@@ -332,7 +332,7 @@ export default function AidsPage({ lang }: AidsPageProps) {
 
       <div className="pt-4">
         <CourseDetailLayout sections={t.sidebar}>
-          <div className="py-8 space-y-16">
+          <div className="pb-8 space-y-16">
             {/* Intro Section */}
             <section className="space-y-4">
               {t.intro.map((para, idx) => (

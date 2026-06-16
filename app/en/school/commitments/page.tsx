@@ -162,7 +162,7 @@ export default function CommitmentsPage() {
                         </p>
                         <div className="bg-white p-4 inline-block">
                           <Image 
-                            src="/assets/logo-qualiopi.png" 
+                            src="/assets/qualiopi.png" 
                             alt="Qualiopi" 
                             width={150} 
                             height={50} 

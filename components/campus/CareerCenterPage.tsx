@@ -2,19 +2,19 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { 
-  Calendar, 
-  Pencil, 
-  CalendarX, 
-  BarChart3, 
-  FileDown, 
-  BellRing, 
-  CalendarDays, 
-  CalendarPlus, 
-  User, 
-  Briefcase, 
-  Clock, 
-  GraduationCap, 
+import {
+  Calendar,
+  Pencil,
+  CalendarX,
+  BarChart3,
+  FileDown,
+  BellRing,
+  CalendarDays,
+  CalendarPlus,
+  User,
+  Briefcase,
+  Clock,
+  GraduationCap,
   Users
 } from "lucide-react";
 import CourseDetailLayout from "@/components/courses/CourseDetailLayout";
@@ -148,7 +148,7 @@ export default function CareerCenterPage({ lang }: CareerCenterPageProps) {
   }[lang];
 
   return (
-    <div className="bg-white overflow-hidden">
+    <div className="pt-4">
       <CourseDetailLayout sections={t.sections}>
         <div className="space-y-24 pb-24">
           {/* Intro Paragraphs */}
@@ -237,15 +237,15 @@ export default function CareerCenterPage({ lang }: CareerCenterPageProps) {
 
             {/* Access Buttons Overlay */}
             <div className="relative h-[500px] md:h-[450px] w-full rounded-sm overflow-hidden shadow-2xl group">
-              <Image 
-                src="/assets/pexels-pixabay-532173-scaled.jpg" 
-                alt="Career Access" 
+              <Image
+                src="/assets/pexels-pixabay-532173-scaled.jpg"
+                alt="Career Access"
                 fill
-                sizes="100vw" 
+                sizes="100vw"
                 className="object-cover brightness-50"
               />
               <div className="absolute inset-0 flex flex-col md:flex-row items-center justify-center p-8 md:p-12 gap-0">
-                <Link 
+                <Link
                   href={t.career.access.studentHref}
                   className="w-full md:w-1/2 h-[220px] md:h-full bg-[#8B2318]/90 flex flex-col items-center justify-center gap-6 hover:opacity-70 transition-opacity border-r border-white/10"
                 >
@@ -254,7 +254,7 @@ export default function CareerCenterPage({ lang }: CareerCenterPageProps) {
                     {t.career.access.student}
                   </span>
                 </Link>
-                <Link 
+                <Link
                   href={t.career.access.facultyHref}
                   className="w-full md:w-1/2 h-[220px] md:h-full bg-[#333333]/90 flex flex-col items-center justify-center gap-6 hover:opacity-70 transition-opacity"
                 >

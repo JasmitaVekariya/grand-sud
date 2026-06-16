@@ -64,9 +64,9 @@ export default function EventsSection() {
 
         <div className="flex flex-col md:flex-row gap-6 md:gap-10 items-center justify-center">
           
-          {/* Left Static Card - Height 330px, Vertically Centered */}
+          {/* Left Static Card - Height 412px, Width 375px */}
           <motion.div 
-            className="w-full md:w-1/3 h-auto md:h-[330px] group relative bg-white rounded-[20px] overflow-hidden shadow-lg shrink-0"
+            className="w-full md:w-[375px] h-auto md:h-[412px] group relative bg-white rounded-[20px] overflow-hidden shadow-lg shrink-0"
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -80,7 +80,7 @@ export default function EventsSection() {
                   src="/assets/events_planer.png"
                   alt="Events Planner"
                   fill
-                sizes="(max-width: 768px) 100vw, 33vw"
+                sizes="(max-width: 768px) 100vw, 375px"
                   className="object-cover"
                 />
               </div>
@@ -98,8 +98,8 @@ export default function EventsSection() {
             </div>
           </motion.div>
 
-          {/* Right Scrolling Events - Height 350px */}
-          <div className="w-full md:w-2/3 h-[350px] flex flex-col min-w-0">
+          {/* Right Scrolling Events - Height 450px, Width 690px */}
+          <div className="w-full md:w-[690px] h-[450px] flex flex-col min-w-0">
             {/* Header Bar */}
             <div className="bg-[#7A1F1B] text-white py-[14px] px-8 rounded-t-[16px] text-center shrink-0 h-[50px]">
               <h4 className="text-[15px] font-bold uppercase tracking-[0.2em]">

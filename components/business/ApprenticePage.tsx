@@ -183,7 +183,7 @@ export default function ApprenticePage({ lang }: ApprenticePageProps) {
 
       <div className="pt-4">
         <CourseDetailLayout sections={t.sidebar}>
-          <div className="py-8 space-y-20">
+          <div className="pb-8 space-y-20">
             {/* Intro */}
             <div className="space-y-6 max-w-4xl">
               <p className="text-[#333] text-[14px] md:text-[15px] leading-relaxed font-bold italic">

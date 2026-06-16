@@ -6,11 +6,11 @@ import Link from "next/link";
 import { useLanguage } from "@/context/LanguageContext";
 
 const PARTNER_LOGOS = [
-  { src: "/assets/logo-qualiopi.png", alt: "Qualiopi" },
-  { src: "/assets/logo-atout-france.png", alt: "Atout France" },
-  { src: "/assets/logo-fede.png", alt: "FEDE" },
-  { src: "/assets/logo-france-competences.png", alt: "France Compétences" },
-  { src: "/assets/logo-amforht.png", alt: "AMFORHT" },
+  { src: "/assets/qualiopi.png", alt: "Qualiopi" },
+  { src: "/assets/square-image12-1024x1024.jpg", alt: "Atout France" },
+  { src: "/assets/FEDE.png", alt: "FEDE" },
+  { src: "/assets/france-competences.png", alt: "France Compétences" },
+  { src: "/assets/Amforth-1.png", alt: "AMFORHT" },
 ];
 
 export default function Hero() {
