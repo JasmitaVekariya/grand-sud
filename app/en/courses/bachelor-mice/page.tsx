@@ -264,7 +264,7 @@ export default function BachelorMiceDesignerPage() {
           <CourseProgram 
             title="PROGRAM"
             years={programYears}
-            downloadButton={{ label: "Download the full program (French only)", href: "/assets/program-pdf.pdf" }}
+            downloadButton={{ label: "Download the full program (French only)", href: "/assets/Programme-pedagogique_BTS-Tourisme_2025-2027.pdf" }}
           />
         </section>
 

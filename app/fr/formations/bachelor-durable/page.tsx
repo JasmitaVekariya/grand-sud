@@ -260,7 +260,7 @@ export default function BachelorSustainablePageFR() {
           <CourseProgram 
             title="PROGRAMME"
             years={programYears}
-            downloadButton={{ label: "Télécharger le programme complet", href: "/assets/program-pdf.pdf" }}
+            downloadButton={{ label: "Télécharger le programme complet", href: "/assets/Programme-pedagogique_BTS-Tourisme_2025-2027.pdf" }}
           />
         </section>
 

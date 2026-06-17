@@ -91,6 +91,8 @@ export default function CourseProgram({ title, years, downloadButton }: CoursePr
         <div className="flex justify-end">
           <motion.a
             href={downloadButton.href}
+            target="_blank"
+            rel="noopener noreferrer"
             className="bg-primary-red text-white px-8 py-4 rounded-full text-[14px] font-medium tracking-wide transition-colors duration-300 hover:bg-gray-600"
           >
             {downloadButton.label}

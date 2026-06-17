@@ -58,16 +58,16 @@ export default function CourseDetailLayout({ sections, children, applyButton }: 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
         
         {/* Sidebar (25%) */}
-        <aside className="lg:col-span-3 lg:sticky lg:top-32 self-start space-y-12 bg-white pt-0 mt-0">
-          <div className="space-y-4 pt-0 mt-0">
+        <aside className="lg:col-span-3 lg:sticky lg:top-32 self-start space-y-12 bg-white">
+          <div className="space-y-3 lg:pt-8">
             {sections.map((section) => (
               <button 
                 key={section.id}
                 onClick={() => scrollToSection(section.id)}
-                className="flex items-start gap-3 group w-full text-left transition-all duration-300"
+                className="flex items-center gap-3 group w-full text-left transition-all duration-300"
               >
-                <div className="w-4 h-4 mt-1 flex-shrink-0 bg-primary-red transition-colors duration-300" />
-                <span className={`text-[14px] font-bold uppercase tracking-widest leading-none pt-1 transition-colors duration-300 ${activeSection === section.id ? "text-primary-red" : "text-[#444444] group-hover:text-primary-red/70"}`}>
+                <div className="w-3.5 h-3.5 flex-shrink-0 bg-primary-red transition-colors duration-300" />
+                <span className={`text-[13px] font-bold uppercase tracking-widest leading-tight transition-colors duration-300 ${activeSection === section.id ? "text-primary-red" : "text-[#444444] group-hover:text-primary-red/70"}`}>
                   {section.label}
                 </span>
               </button>
@@ -87,7 +87,7 @@ export default function CourseDetailLayout({ sections, children, applyButton }: 
         </aside>
 
         {/* Content (75%) */}
-        <div className="lg:col-span-9 flex flex-col gap-24 pt-0 mt-0">
+        <div className="lg:col-span-9 flex flex-col gap-24">
           {children}
         </div>
 
