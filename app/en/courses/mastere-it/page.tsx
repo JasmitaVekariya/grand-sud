@@ -52,7 +52,7 @@ export default function MastereITPage() {
   const programYears = [
     {
       id: "year1",
-      title: "Year 1 - 602 hours",
+      title: "Year 1",
       hours: "602 hours",
       content: [
         {
@@ -95,7 +95,7 @@ export default function MastereITPage() {
     },
     {
       id: "year2",
-      title: "Year 2 - 602 hours",
+      title: "Year 2",
       hours: "602 hours",
       content: [
         {
@@ -163,7 +163,7 @@ export default function MastereITPage() {
       {
         title: "Step 1: Application",
         items: [
-          { text: "Download your application form.", isLink: true, linkText: "Download your application form." },
+          { text: "Download your application form.", isLink: true, linkText: "Download your application form.", linkHref: "/en/apply" },
           { text: "Send your completed application by email, remembering to include all the required attachments!" },
           { text: "Application fee: €300, non-refundable", isItalic: true }
         ]
@@ -243,11 +243,12 @@ export default function MastereITPage() {
 
   return (
     <main className="bg-white">
-      <CourseBanner 
-        title={bannerData.title} 
-        image={bannerData.image} 
-        details={bannerData.details} 
+      <CourseBanner
+        title={bannerData.title}
+        image={bannerData.image}
+        details={bannerData.details}
         logos={bannerData.logos}
+        certificationBadge="State Certified Title"
       />
 
       <CourseDetailLayout 

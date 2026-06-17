@@ -21,7 +21,7 @@ export default function BachelorHospitalityENPage() {
       { label: "PACE", value: "initial" },
       { label: "DURATION", value: "3 years – 1,806 hours" },
     ],
-    logos: ["/assets/logo-france-competences.png", "/assets/logo-diploma.png"] // Placeholder for national diploma
+    logos: ["/assets/logo-france-competences.png"]
   };
 
   const sections = [
@@ -54,7 +54,7 @@ export default function BachelorHospitalityENPage() {
   const programYears = [
     {
       id: "year1",
-      title: "Year 1 - 602 hours",
+      title: "Year 1",
       hours: "602 hours",
       content: [
         {
@@ -97,7 +97,7 @@ export default function BachelorHospitalityENPage() {
     },
     {
       id: "year2",
-      title: "Year 2 - 602 hours",
+      title: "Year 2",
       hours: "602 hours",
       content: [
         {
@@ -140,7 +140,7 @@ export default function BachelorHospitalityENPage() {
     },
     {
       id: "year3",
-      title: "Year 3 - 602 hours",
+      title: "Year 3",
       hours: "602 hours",
       content: [
         {
@@ -208,7 +208,7 @@ export default function BachelorHospitalityENPage() {
       {
         title: "Step 1: Application",
         items: [
-          { text: "Download your application form." },
+          { text: "Download your application form.", isLink: true, linkText: "Download your application form.", linkHref: "/en/apply" },
           { text: "Send your completed application by email, remembering to include all the required attachments!" },
           { text: "Application fee: €300, non-refundable", isItalic: true }
         ]
@@ -232,8 +232,8 @@ export default function BachelorHospitalityENPage() {
     ],
     prices: {
       title: "Initial tuition fees:",
-      initialLabel: "Per year:",
-      initialPrice: "€12,500\nScholarships are available. Contact your admissions officer for more information.",
+      initialLabel: "Per year: €12,500",
+      initialPrice: "\nScholarships are available. Contact your admissions officer for more information.",
       visaNote: "",
       workStudyLabel: "",
       workStudyPrice: "",
@@ -313,7 +313,7 @@ export default function BachelorHospitalityENPage() {
       
       <CourseDetailLayout 
         sections={sections}
-        applyButton={{ label: "Apply (French only)", href: "/fr/candidater" }}
+        applyButton={{ label: "Apply", href: "/en/apply" }}
       >
         <section id="description" className="scroll-mt-32 space-y-16">
           <div className="space-y-8">

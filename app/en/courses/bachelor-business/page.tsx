@@ -52,7 +52,7 @@ export default function BachelorBusinessPage() {
   const programYears = [
     {
       id: "year1",
-      title: "Year 1 - 602 hours",
+      title: "Year 1",
       hours: "602 hours",
       content: [
         {
@@ -96,7 +96,7 @@ export default function BachelorBusinessPage() {
     },
     {
       id: "year2",
-      title: "Year 2 - 602 hours",
+      title: "Year 2",
       hours: "602 hours",
       content: [
         {
@@ -140,7 +140,7 @@ export default function BachelorBusinessPage() {
     },
     {
       id: "year3",
-      title: "Year 3 - 602 hours",
+      title: "Year 3",
       hours: "602 hours",
       content: [
         {
@@ -209,7 +209,7 @@ export default function BachelorBusinessPage() {
       {
         title: "Step 1: Application",
         items: [
-          { text: "Download your application form." },
+          { text: "Download your application form.", isLink: true, linkText: "Download your application form.", linkHref: "/en/apply" },
           { text: "Send your completed application by email, remembering to include all the required attachments!" },
           { text: "Application fee: €300, non-refundable", isItalic: true }
         ]
@@ -233,8 +233,8 @@ export default function BachelorBusinessPage() {
     ],
     prices: {
       title: "Initial tuition:",
-      initialLabel: "Per year:",
-      initialPrice: "€12,500\nScholarships are available. Contact your admissions officer for details.",
+      initialLabel: "Per year: €12,500",
+      initialPrice: "\nScholarships are available. Contact your admissions officer for details.",
       visaNote: "",
       workStudyLabel: "",
       workStudyPrice: "",
@@ -304,11 +304,12 @@ export default function BachelorBusinessPage() {
 
   return (
     <main className="bg-white">
-      <CourseBanner 
-        title={bannerData.title} 
-        image={bannerData.image} 
-        details={bannerData.details} 
+      <CourseBanner
+        title={bannerData.title}
+        image={bannerData.image}
+        details={bannerData.details}
         logos={bannerData.logos}
+        certificationBadge="State Certified Title"
       />
       
       <CourseDetailLayout 

@@ -1,22 +1,12 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
 import PageBanner from "@/components/common/PageBanner";
 import CourseDetailLayout from "@/components/courses/CourseDetailLayout";
 import { motion, AnimatePresence } from "framer-motion";
-import { 
-  ChevronDown, 
-  ChevronUp, 
-  MessageSquare, 
-  Send, 
-  Leaf, 
-  Hotel, 
-  Users, 
-  User, 
-  PieChart, 
-  Laptop, 
-  TrendingUp, 
+import {
+  ChevronDown,
+  ChevronUp,
   Briefcase,
   Clock,
   UserCheck,
@@ -27,209 +17,58 @@ import {
   CreditCard,
   Plus,
   CalendarCheck,
-  FileEdit
+  FileEdit,
 } from "lucide-react";
 
 export default function InitialTrainingPageEN() {
   const [openAccordion, setOpenAccordion] = useState<string | null>(null);
 
   const toggleAccordion = (id: string) => {
-    setOpenAccordion(prev => prev === id ? null : id);
+    setOpenAccordion((prev) => (prev === id ? null : id));
   };
 
   const sections = [
-    { id: "accessible", label: "ACCESSIBLE COURSES IN INITIAL TRAINING" },
-    { id: "possible-internships", label: "THE DIFFERENT POSSIBLE INTERNSHIPS" },
-    { id: "rights-duties", label: "RIGHTS AND DUTIES OF THE INTERN" },
-    { id: "reference-site", label: "REFERENCE SITE" },
+    { id: "accessible", label: "INITIAL TRAINING COURSES AVAILABLE" },
+    { id: "possible-internships", label: "THE DIFFERENT INTERNSHIPS AVAILABLE" },
+    { id: "rights-duties", label: "RIGHTS AND RESPONSIBILITIES OF THE INTERN" },
     { id: "internship-program", label: "GRAND SUD INTERNSHIP PROGRAM" },
-  ];
-
-  const courses = [
-    {
-      icon: MessageSquare,
-      title: "BTS Communication",
-      diploma: "State Diploma - BAC+2",
-      duration: "14 weeks of internship minimum per year (i.e. 28 weeks minimum in total)",
-      color: "bg-[#8B2B23]",
-      href: "/en/courses/bts-mco",
-      flag: "🇫🇷"
-    },
-    {
-      icon: Send,
-      title: "BTS Tourism",
-      diploma: "State Diploma - BAC+2",
-      duration: "14 weeks of internship minimum per year (i.e. 28 weeks minimum in total)",
-      color: "bg-[#333333]",
-      href: "/en/courses/bts-tourism",
-      flag: "🇫🇷"
-    },
-    {
-      icon: Leaf,
-      title: "BACHELOR Sustainable Tourism Development",
-      diploma: "RNCP Title - BAC+3",
-      duration: "14 weeks of internship minimum",
-      color: "bg-[#8B2B23]",
-      href: "/en/courses/bachelor-sustainable",
-      flag: "🇫🇷"
-    },
-    {
-      icon: Hotel,
-      title: "BACHELOR Hospitality Management",
-      diploma: "RNCP Title - BAC+3",
-      duration: "14 weeks of internship minimum",
-      color: "bg-[#333333]",
-      href: "/en/courses/bachelor-hospitality",
-      flag: "🇫🇷"
-    },
-    {
-      icon: Users,
-      title: "BACHELOR MICE Designer",
-      diploma: "RNCP Title - BAC+3",
-      duration: "14 weeks of internship minimum",
-      color: "bg-[#8B2B23]",
-      href: "/en/courses/bachelor-mice",
-      flag: "🇫🇷"
-    },
-    {
-      icon: User,
-      title: "MASTERE Manager in Tourism Strategies",
-      diploma: "RNCP Title - BAC+5",
-      duration: "14 weeks of internship minimum per year (i.e. 28 weeks minimum in total)",
-      color: "bg-[#333333]",
-      href: "/en/courses/mastere-tourism",
-      flag: "🇫🇷"
-    },
-    {
-      icon: PieChart,
-      title: "BACHELOR Business & Tourism",
-      diploma: "RNCP Title - BAC+3",
-      duration: "14 weeks of internship minimum per year (i.e. 42 weeks minimum in total)",
-      color: "bg-[#333333]",
-      href: "/en/courses/bachelor-business",
-      flag: "🇬🇧"
-    },
-    {
-      icon: Hotel,
-      title: "BACHELOR Hospitality Management",
-      diploma: "RNCP Title - BAC+3",
-      duration: "14 weeks of internship minimum",
-      color: "bg-[#8B2B23]",
-      href: "/en/courses/bachelor-hospitality",
-      flag: "🇬🇧"
-    },
-    {
-      icon: Laptop,
-      title: "BACHELOR IT & Tourism",
-      diploma: "RNCP Title - BAC+3",
-      duration: "14 weeks of internship minimum per year (i.e. 42 weeks minimum in total)",
-      color: "bg-[#333333]",
-      href: "/en/courses/bachelor-it",
-      flag: "🇬🇧"
-    },
-    {
-      icon: TrendingUp,
-      title: "MASTERE Business & Tourism",
-      diploma: "RNCP Title - BAC+5",
-      duration: "14 weeks of internship minimum per year (i.e. 28 weeks minimum in total)",
-      color: "bg-[#8B2B23]",
-      href: "/en/courses/mastere-business",
-      flag: "🇬🇧"
-    },
-    {
-      icon: Briefcase,
-      title: "MASTERE Hospitality Management",
-      diploma: "RNCP Title - BAC+5",
-      duration: "14 weeks of internship minimum per year (i.e. 28 weeks minimum in total)",
-      color: "bg-[#333333]",
-      href: "/en/courses/mastere-hospitality",
-      flag: "🇬🇧"
-    },
-    {
-      icon: Laptop,
-      title: "MASTERE IT & Tourism",
-      diploma: "RNCP Title - BAC+5",
-      duration: "14 weeks of internship minimum per year (i.e. 28 weeks minimum in total)",
-      color: "bg-[#8B2B23]",
-      href: "/en/courses/mastere-it",
-      flag: "🇬🇧"
-    }
   ];
 
   return (
     <main className="bg-white">
-      <PageBanner 
-        title="Complete a course as an initial training" 
-        image="/assets/pexels-danxavier-1239291-scaled.jpg" 
+      <PageBanner
+        title={
+          <>
+            Complete a course as an<br />
+            initial training
+          </>
+        }
+        image="/assets/pexels-danxavier-1239291-scaled.jpg"
       />
 
       <CourseDetailLayout sections={sections}>
-        {/* Section 1: Accessible Courses */}
+        {/* Section 1: Initial training courses available */}
         <section id="accessible" className="scroll-mt-32 space-y-12">
           <div className="space-y-6">
             <p className="text-[15px] font-bold text-black leading-relaxed">
-              Initial training is a solution adapted for those wishing for a more academic pace than work-study. This training rhythm allows students to follow their theoretical learning and then apply it in a company, in order to immerse themselves in the professional culture.
+              Initial training is a suitable solution for those who prefer a more academic pace than work-study programs. This training pace allows students to learn theory and then apply it in a company, immersing themselves in the professional culture.
             </p>
             <p className="text-[15px] text-gray-700 leading-relaxed font-medium">
-              The status of the person choosing initial training is that of a student, and a trainee during the period in the company.
+              Those who choose initial training have the status of students and interns during their time in the company.
             </p>
           </div>
 
           <div className="space-y-8">
             <h2 className="text-[32px] md:text-[42px] font-bold text-primary-red uppercase tracking-tight leading-tight">
-              ACCESSIBLE COURSES IN INITIAL TRAINING
+              INITIAL TRAINING COURSES AVAILABLE
             </h2>
             <div className="space-y-6 text-[15px] text-gray-700 leading-relaxed font-medium">
-              <p>From BTS to Mastère, all our courses are accessible in initial training, whether with an alternating internship or a year-end internship.</p>
-              <p>The signing of an internship agreement allows you to apply the theoretical skills and knowledge seen in class.</p>
-            </div>
-
-            {/* French Courses Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-0">
-              {courses.filter(c => c.flag === "🇫🇷").map((course, index) => (
-                <Link key={index} href={course.href}>
-                  <div className={`${course.color} p-8 text-white flex flex-col items-center text-center space-y-6 min-h-[350px] transition-transform hover:scale-[1.02] hover:z-10 h-full cursor-pointer`}>
-                    <course.icon size={48} strokeWidth={1} className="opacity-80" />
-                    <div className="space-y-2">
-                      <div className="flex items-center justify-center gap-2 text-[14px] font-bold uppercase tracking-wider mb-2">
-                        <span className="text-[18px]">{course.flag}</span>
-                        {course.title.split(' ')[0]}
-                      </div>
-                      <h3 className="text-[18px] font-bold leading-tight uppercase">
-                        {course.title.split(' ').slice(1).join(' ')}
-                      </h3>
-                    </div>
-                    <p className="text-[13px] opacity-90">{course.diploma}</p>
-                    <p className="text-[13px] font-bold pt-4 border-t border-white/20 w-full">
-                      {course.duration}
-                    </p>
-                  </div>
-                </Link>
-              ))}
-            </div>
-
-            {/* English Courses Grid - Starts from new row */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-0">
-              {courses.filter(c => c.flag === "🇬🇧").map((course, index) => (
-                <Link key={index} href={course.href}>
-                  <div className={`${course.color} p-8 text-white flex flex-col items-center text-center space-y-6 min-h-[350px] transition-transform hover:scale-[1.02] hover:z-10 h-full cursor-pointer`}>
-                    <course.icon size={48} strokeWidth={1} className="opacity-80" />
-                    <div className="space-y-2">
-                      <div className="flex items-center justify-center gap-2 text-[14px] font-bold uppercase tracking-wider mb-2">
-                        <span className="text-[18px]">{course.flag}</span>
-                        {course.title.split(' ')[0]}
-                      </div>
-                      <h3 className="text-[18px] font-bold leading-tight uppercase">
-                        {course.title.split(' ').slice(1).join(' ')}
-                      </h3>
-                    </div>
-                    <p className="text-[13px] opacity-90">{course.diploma}</p>
-                    <p className="text-[13px] font-bold pt-4 border-t border-white/20 w-full">
-                      {course.duration}
-                    </p>
-                  </div>
-                </Link>
-              ))}
+              <p>
+                From the BTS to the Mastère&apos;s degree, all our courses are available as initial training, whether through a work-study program or an end-of-year internship.
+              </p>
+              <p>
+                Signing an internship agreement allows you to apply the skills and theoretical knowledge you have learned in class.
+              </p>
             </div>
           </div>
         </section>
@@ -238,22 +77,26 @@ export default function InitialTrainingPageEN() {
         <section id="possible-internships" className="scroll-mt-32 space-y-12">
           <div className="space-y-8">
             <h2 className="text-[32px] md:text-[42px] font-bold text-primary-red uppercase tracking-tight leading-tight">
-              THE DIFFERENT POSSIBLE INTERNSHIPS
+              THE DIFFERENT INTERNSHIPS AVAILABLE
             </h2>
             <div className="space-y-6 text-[15px] text-gray-700 leading-relaxed font-medium">
-              <p>Your year can take 2 forms, depending on the training and your personal choices:</p>
+              <p>Your year can take two forms, depending on the program and your personal choices:</p>
               <ul className="list-disc list-outside pl-5 space-y-2 font-bold text-black">
-                <li>alternating internship</li>
-                <li>year-end internship</li>
+                <li>work-study internship</li>
+                <li>end-of-year internship</li>
               </ul>
-              <p className="italic">To date, the vast majority of internship agreements signed are for a year-end internship.</p>
-              <p>Grand Sud Formation will transmit to you the necessary elements for the implementation of your internship agreement with your host company (educational program, course schedule, reference of the targeted title, etc.) and will accompany you for the various steps.</p>
+              <p className="italic">
+                To date, the vast majority of internship agreements signed are for end-of-year internships.
+              </p>
+              <p>
+                Grand Sud Formation will provide you with the necessary information to set up your internship agreement with your host company (educational program, course schedule, reference of the qualification sought, etc.) and will assist you with the various procedures.
+              </p>
             </div>
           </div>
 
           {/* Accordion with Background Image */}
           <div className="relative min-h-[500px] flex items-center justify-center py-20 overflow-hidden rounded-sm">
-            <div 
+            <div
               className="absolute inset-0 bg-cover bg-center z-0"
               style={{ backgroundImage: "url('/assets/pexels-pixabay-262978-scaled.jpg')" }}
             >
@@ -263,16 +106,16 @@ export default function InitialTrainingPageEN() {
             <div className="relative z-10 w-full max-w-4xl px-6 space-y-1">
               <div className="overflow-hidden">
                 <button
-                  onClick={() => toggleAccordion("alternating")}
+                  onClick={() => toggleAccordion("work-study")}
                   className="w-full bg-[#E54841] text-white px-6 h-[50px] flex items-center justify-between group transition-colors hover:bg-primary-red/90"
                 >
                   <div className="flex items-center gap-3">
-                    {openAccordion === "alternating" ? <ChevronUp size={24} /> : <ChevronDown size={24} />}
-                    <span className="text-[18px] font-bold tracking-wide">Alternating internship</span>
+                    {openAccordion === "work-study" ? <ChevronUp size={24} /> : <ChevronDown size={24} />}
+                    <span className="text-[18px] font-bold tracking-wide">Work-study internship</span>
                   </div>
                 </button>
                 <AnimatePresence>
-                  {openAccordion === "alternating" && (
+                  {openAccordion === "work-study" && (
                     <motion.div
                       initial={{ height: 0, opacity: 0 }}
                       animate={{ height: "auto", opacity: 1 }}
@@ -280,8 +123,12 @@ export default function InitialTrainingPageEN() {
                       className="bg-white/95 overflow-hidden"
                     >
                       <div className="p-8 text-[15px] text-gray-800 leading-relaxed space-y-4">
-                        <p>For courses available in work-study, the student can choose to do their internship according to the work-study calendar.</p>
-                        <p>It then combines periods in training and periods in the company, but remains under student and trainee status, and not salaried as is the case for an apprentice.</p>
+                        <p>
+                          For work-study programs (so some of our French courses), students can choose to complete their internship according to the work-study schedule.
+                        </p>
+                        <p>
+                          They then alternate between periods of training and periods in the workplace, but remain students and interns, rather than employees as is the case with work-study students.
+                        </p>
                       </div>
                     </motion.div>
                   )}
@@ -290,16 +137,16 @@ export default function InitialTrainingPageEN() {
 
               <div className="overflow-hidden">
                 <button
-                  onClick={() => toggleAccordion("yearend")}
+                  onClick={() => toggleAccordion("end-of-year")}
                   className="w-full bg-[#E54841] text-white px-6 h-[50px] flex items-center justify-between group transition-colors hover:bg-primary-red/90"
                 >
                   <div className="flex items-center gap-3">
-                    {openAccordion === "yearend" ? <ChevronUp size={24} /> : <ChevronDown size={24} />}
-                    <span className="text-[18px] font-bold tracking-wide">Year-end internship</span>
+                    {openAccordion === "end-of-year" ? <ChevronUp size={24} /> : <ChevronDown size={24} />}
+                    <span className="text-[18px] font-bold tracking-wide">End-of-year internship</span>
                   </div>
                 </button>
                 <AnimatePresence>
-                  {openAccordion === "yearend" && (
+                  {openAccordion === "end-of-year" && (
                     <motion.div
                       initial={{ height: 0, opacity: 0 }}
                       animate={{ height: "auto", opacity: 1 }}
@@ -307,7 +154,9 @@ export default function InitialTrainingPageEN() {
                       className="bg-white/95 overflow-hidden"
                     >
                       <div className="p-8 text-[15px] text-gray-800 leading-relaxed space-y-4">
-                        <p>Adapted to those looking for immersion for a long period in the business world, the year-end internship generally takes place at the end of the school year, between May and October (depending on the courses).</p>
+                        <p>
+                          Suitable for those seeking a long-term immersion in the business world, the end-of-year internship generally takes place at the end of the academic year, between May and October (depending on the program).
+                        </p>
                       </div>
                     </motion.div>
                   )}
@@ -317,115 +166,157 @@ export default function InitialTrainingPageEN() {
           </div>
         </section>
 
-        {/* Section 3: Rights and duties */}
+        {/* Section 3: Rights and responsibilities */}
         <section id="rights-duties" className="scroll-mt-32 space-y-12">
           <div className="space-y-8">
             <h2 className="text-[32px] md:text-[42px] font-bold text-primary-red uppercase tracking-tight leading-tight">
-              RIGHTS AND DUTIES OF THE INTERN
+              RIGHTS AND RESPONSIBILITIES OF THE INTERN
             </h2>
-            
-            {/* Header Image for Section */}
+
             <div className="relative h-[250px] rounded-sm overflow-hidden mb-12">
-              <img src="/assets/pexels-asphotograpy-518244-scaled.jpg" alt="Rights and Duties" className="w-full h-full object-cover" />
+              <img
+                src="/assets/pexels-asphotograpy-518244-scaled.jpg"
+                alt="Rights and responsibilities of the intern"
+                className="w-full h-full object-cover"
+              />
               <div className="absolute inset-0 bg-black/40 flex items-center p-8">
                 <div className="max-w-2xl text-white space-y-4">
                   <p className="text-[15px] leading-relaxed">
-                    If the completion of an internship is an asset for the student's career path, the law imposes a framework.
+                    While completing an internship is an asset for a student&apos;s career, legislation imposes certain requirements.
                   </p>
                   <p className="font-bold text-[18px]">
-                    Rights and duties are to be known before committing!
+                    It is important to be aware of your rights and responsibilities before committing to an internship.
                   </p>
                 </div>
               </div>
             </div>
 
             <div className="flex flex-col border border-gray-100 rounded-sm overflow-hidden">
-              {/* Rights Column - Full Width */}
               <div className="bg-[#8B2B23] p-10 text-white space-y-12">
                 <h3 className="text-[42px] font-bold border-b border-white/20 pb-4">Rights</h3>
-                
+
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
                   <div className="space-y-4">
                     <Clock size={48} strokeWidth={1} className="opacity-80 p-2 bg-white/10 rounded-full w-16 h-16" />
-                    <h4 className="font-bold text-[18px] uppercase tracking-wide">Internship Duration</h4>
-                    <p className="text-[14px] opacity-90 leading-relaxed">The internship can last for a maximum of 6 months in the same company for each academic year (i.e., 924 hours).</p>
-                    <p className="text-[14px] opacity-90 leading-relaxed">The duration of the internship is calculated based on the actual time spent in the company. A day of presence corresponds to 7 hours, whether consecutive or not, and a month of presence is reached after 22 days in the company.</p>
+                    <h4 className="font-bold text-[18px] uppercase tracking-wide">Duration of the internship</h4>
+                    <p className="text-[14px] opacity-90 leading-relaxed">
+                      The internship can only last a maximum of 6 months in the same company for each year of study (i.e. 924 hours).
+                    </p>
+                    <p className="text-[14px] opacity-90 leading-relaxed">
+                      The duration of the internship is calculated based on the time actually spent in the company. One day of attendance corresponds to 7 hours, whether consecutive or not, and one month of attendance is reached after 22 days in the company.
+                    </p>
                   </div>
-                  
+
                   <div className="space-y-4">
                     <UserCheck size={48} strokeWidth={1} className="opacity-80 p-2 bg-white/10 rounded-full w-16 h-16" />
-                    <h4 className="font-bold text-[18px] uppercase tracking-wide">Working Time</h4>
-                    <p className="text-[14px] opacity-90 leading-relaxed">The intern cannot work more than 7 hours per day.</p>
-                    <p className="text-[14px] opacity-90 leading-relaxed">Working time is capped at 35 hours per week.</p>
+                    <h4 className="font-bold text-[18px] uppercase tracking-wide">Working hours</h4>
+                    <p className="text-[14px] opacity-90 leading-relaxed">Interns may not work more than 7 hours per day.</p>
+                    <p className="text-[14px] opacity-90 leading-relaxed">Working hours are therefore capped at 35 hours per week.</p>
                   </div>
 
                   <div className="space-y-4">
                     <Bed size={48} strokeWidth={1} className="opacity-80 p-2 bg-white/10 rounded-full w-16 h-16" />
-                    <h4 className="font-bold text-[18px] uppercase tracking-wide">Rest Time</h4>
-                    <p className="text-[14px] opacity-90 leading-relaxed">The weekly rest time is at least 24 consecutive hours, to which is added the daily rest time of at least 11 consecutive hours. The daily break time is at least 20 minutes for 6 consecutive hours of work.</p>
+                    <h4 className="font-bold text-[18px] uppercase tracking-wide">Rest time</h4>
+                    <p className="text-[14px] opacity-90 leading-relaxed">
+                      The weekly rest period is a minimum of 24 consecutive hours, in addition to the daily rest period, which is a minimum of 11 consecutive hours. The daily break is a minimum of 20 minutes for every 6 consecutive hours of work.
+                    </p>
                   </div>
 
                   <div className="space-y-4">
                     <Banknote size={48} strokeWidth={1} className="opacity-80 p-2 bg-white/10 rounded-full w-16 h-16" />
-                    <h4 className="font-bold text-[18px] uppercase tracking-wide">Allowance</h4>
-                    <p className="text-[14px] opacity-90 leading-relaxed">A minimum allowance is paid to the intern if the duration of the internship is more than 2 consecutive months (i.e., the equivalent of 44 days at 7 hours per day, or 309 hours) during the same school or university year.</p>
-                    <p className="text-[14px] opacity-90 leading-relaxed">Below these duration thresholds, the host organization is not required to pay an allowance.</p>
-                    <p className="text-[14px] opacity-90 leading-relaxed">If the hourly amount of the allowance is less than €4.35, the intern is exempt from social security contributions.</p>
+                    <h4 className="font-bold text-[18px] uppercase tracking-wide">Compensation</h4>
+                    <p className="text-[14px] opacity-90 leading-relaxed">
+                      A minimum stipend is paid to the intern if the internship lasts more than two consecutive months (equivalent to 44 days at seven hours per day, or 309 hours) during the same school or university year.
+                    </p>
+                    <p className="text-[14px] opacity-90 leading-relaxed">
+                      Below these thresholds, the host organization is not required to pay a stipend.
+                    </p>
+                    <p className="text-[14px] opacity-90 leading-relaxed">
+                      If the hourly amount of the stipend is less than €4.35, the intern is exempt from social security contributions.
+                    </p>
+                    <p className="text-[14px] opacity-90 leading-relaxed">
+                      The stipend can be paid in two different ways: based on the actual number of hours worked per month or by smoothing out the total number of hours worked during the internship per month.
+                    </p>
                   </div>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 pt-8">
                   <div className="space-y-4">
                     <Umbrella size={48} strokeWidth={1} className="opacity-80 p-2 bg-white/10 rounded-full w-16 h-16" />
-                    <h4 className="font-bold text-[18px] uppercase tracking-wide">Leave</h4>
-                    <p className="text-[14px] opacity-90 leading-relaxed">When the internship lasts more than 2 months, the internship agreement must provide for the possibility of taking leave and authorized absences.</p>
-                    <p className="text-[14px] opacity-90 leading-relaxed">If the internship lasts at most 2 months, taking leave is not mandatory. Payment for leave is optional.</p>
+                    <h4 className="font-bold text-[18px] uppercase tracking-wide">Vacation</h4>
+                    <p className="text-[14px] opacity-90 leading-relaxed">
+                      When the internship lasts more than two months, the internship agreement must provide for the possibility of taking leave and authorizations for absence.
+                    </p>
+                    <p className="text-[14px] opacity-90 leading-relaxed">
+                      If the internship lasts two months or less, taking leave is not mandatory.
+                    </p>
+                    <p className="text-[14px] opacity-90 leading-relaxed">Payment for leave is optional.</p>
                   </div>
 
                   <div className="space-y-4">
                     <Heart size={48} strokeWidth={1} className="opacity-80 p-2 bg-white/10 rounded-full w-16 h-16" />
-                    <h4 className="font-bold text-[18px] uppercase tracking-wide">Social Coverage</h4>
-                    <p className="text-[14px] opacity-90 leading-relaxed">The student continues to benefit from their personal health insurance, often that of their parents.</p>
-                    <p className="text-[14px] opacity-90 leading-relaxed">Since they are not employees, they do not benefit from the social coverage assigned to them. However, as the internship agreement is tripartite and involves the school, they benefit from its support daily throughout the internship.</p>
+                    <h4 className="font-bold text-[18px] uppercase tracking-wide">Health</h4>
+                    <p className="text-[14px] opacity-90 leading-relaxed">
+                      The student continues to benefit from their personal health insurance.
+                    </p>
+                    <p className="text-[14px] opacity-90 leading-relaxed">
+                      As they are not employees, they do not benefit from the social security coverage granted to employees.
+                    </p>
+                    <p className="text-[14px] opacity-90 leading-relaxed">
+                      However, as the internship agreement is tripartite and involves their school, they benefit from the school&apos;s support on a daily basis throughout the internship.
+                    </p>
                   </div>
 
                   <div className="space-y-4">
                     <CreditCard size={48} strokeWidth={1} className="opacity-80 p-2 bg-white/10 rounded-full w-16 h-16" />
-                    <h4 className="font-bold text-[18px] uppercase tracking-wide">Expense Reimbursement</h4>
-                    <p className="text-[14px] opacity-90 leading-relaxed">The intern has access to the company restaurant or restaurant vouchers as well as social and cultural activities provided by the social and economic committee (CSE).</p>
-                    <p className="text-[14px] opacity-90 leading-relaxed">The intern benefits from the reimbursement of part of public transport costs under the same conditions as employees (50% of the subscription cost).</p>
+                    <h4 className="font-bold text-[18px] uppercase tracking-wide">Coverage of expenses</h4>
+                    <p className="text-[14px] opacity-90 leading-relaxed">
+                      Interns have access to the company restaurant or meal vouchers, as well as social and cultural activities organized by the Social and Economic Committee (CSE).
+                    </p>
+                    <p className="text-[14px] opacity-90 leading-relaxed">
+                      Interns are entitled to reimbursement of a portion of their public transportation costs under the same conditions as employees (50% of the cost of a monthly pass).
+                    </p>
                   </div>
 
                   <div className="space-y-4">
                     <Plus size={48} strokeWidth={1} className="opacity-80 p-2 bg-white/10 rounded-full w-16 h-16" />
-                    <h4 className="font-bold text-[18px] uppercase tracking-wide">Aids for each situation</h4>
+                    <h4 className="font-bold text-[18px] uppercase tracking-wide">Assistance for every situation</h4>
                   </div>
                 </div>
               </div>
 
-              {/* Duties Column - Full Width Below */}
               <div className="bg-[#333333] p-10 text-white space-y-12">
-                <h3 className="text-[42px] font-bold border-b border-white/20 pb-4">Duties</h3>
-                
+                <h3 className="text-[42px] font-bold border-b border-white/20 pb-4">Responsibilities</h3>
+
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
                   <div className="space-y-4">
                     <CalendarCheck size={48} strokeWidth={1} className="opacity-80 p-2 bg-white/10 rounded-full w-16 h-16" />
-                    <h4 className="font-bold text-[18px] uppercase tracking-wide">Work, Training and Attendance</h4>
-                    <p className="text-[14px] opacity-90 leading-relaxed">The intern must be invested in an establishment and perform the tasks entrusted by the company.</p>
+                    <h4 className="font-bold text-[18px] uppercase tracking-wide">Work, training, and attendance</h4>
+                    <p className="text-[14px] opacity-90 leading-relaxed">
+                      The intern must be enrolled in an educational institution and perform the tasks assigned by their company.
+                    </p>
                   </div>
 
                   <div className="space-y-4">
                     <FileEdit size={48} strokeWidth={1} className="opacity-80 p-2 bg-white/10 rounded-full w-16 h-16" />
-                    <h4 className="font-bold text-[18px] uppercase tracking-wide">Respect of Rules</h4>
-                    <p className="text-[14px] opacity-90 leading-relaxed">The intern must respect the rules of the host company and the training center (internal regulations) as well as hygiene and safety rules.</p>
+                    <h4 className="font-bold text-[18px] uppercase tracking-wide">Compliance with rules</h4>
+                    <p className="text-[14px] opacity-90 leading-relaxed">
+                      Interns must comply with the rules of their host company and training center (internal regulations) as well as hygiene rules and safety instructions.
+                    </p>
                   </div>
 
                   <div className="space-y-4">
                     <Briefcase size={48} strokeWidth={1} className="opacity-80 p-2 bg-white/10 rounded-full w-16 h-16" />
-                    <h4 className="font-bold text-[18px] uppercase tracking-wide">Professional Attitude</h4>
-                    <p className="text-[14px] opacity-90 leading-relaxed">To develop a positive image and prove their ability to integrate into the company, the apprentice must respect working hours.</p>
-                    <p className="text-[14px] opacity-90 leading-relaxed">In case of absence, the intern must provide the company and the school with justification; otherwise, the absence will be unjustified.</p>
-                    <p className="text-[14px] opacity-90 leading-relaxed font-bold">The intern must be loyal and in good faith with their employer and school.</p>
+                    <h4 className="font-bold text-[18px] uppercase tracking-wide">Professional conduct</h4>
+                    <p className="text-[14px] opacity-90 leading-relaxed">
+                      To develop a positive image and prove their ability to fit into the company, apprentices must adhere to the work schedule.
+                    </p>
+                    <p className="text-[14px] opacity-90 leading-relaxed">
+                      In the event of absence, interns must provide the company and the school with supporting documentation, otherwise the absence will be considered unjustified.
+                    </p>
+                    <p className="text-[14px] opacity-90 leading-relaxed font-bold">
+                      Interns must be loyal and act in good faith toward their employer and their school.
+                    </p>
                   </div>
                 </div>
               </div>
@@ -433,68 +324,55 @@ export default function InitialTrainingPageEN() {
           </div>
         </section>
 
-        {/* Section 4: Reference site */}
-        <section id="reference-site" className="scroll-mt-32 space-y-8">
-          <h2 className="text-[32px] md:text-[42px] font-bold text-primary-red uppercase tracking-tight leading-tight">
-            REFERENCE SITE
-          </h2>
-          <a 
-            href="https://www.service-public.fr/particuliers/vosdroits/F20559" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="text-[18px] text-black underline hover:text-primary-red transition-colors font-medium"
-          >
-            Internship in a professional environment
-          </a>
-        </section>
-
-        {/* Section 5: Internship program */}
+        {/* Section 4: Internship program */}
         <section id="internship-program" className="scroll-mt-32 space-y-12">
           <h2 className="text-[32px] md:text-[42px] font-bold text-primary-red uppercase tracking-tight leading-tight">
             GRAND SUD INTERNSHIP PROGRAM
           </h2>
-          
+
           <div className="space-y-10 text-[15px] text-gray-700 leading-relaxed">
             <p>
-              Thanks to a partner specialist in the sector, we can offer an <span className="font-bold text-black">internship in catering</span> for a duration of <span className="font-bold text-black">3 to 6 months</span>, with negotiated benefits:
+              Thanks to a partner specializing in the sector, we can offer an internship in catering lasting 3 to 6 months, with negotiated benefits:
             </p>
 
             <ul className="space-y-3">
               <li className="flex items-start gap-2">
-                <span className="font-bold text-black">• Indemnity:</span> 650 € per month
+                <span className="font-bold text-black">Allowance:</span> €650 per month
               </li>
               <li className="flex items-start gap-2">
-                <span className="font-bold text-black">• Accommodation covered</span> in a shared room
+                <span className="font-bold text-black">Accommodation:</span> provided in a shared room
               </li>
               <li className="flex items-start gap-2">
-                <span className="font-bold text-black">• Meals:</span> provided during work days (generally lunch and dinner)
+                <span className="font-bold text-black">Meals:</span> provided on working days (usually lunch and dinner)
               </li>
               <li className="flex items-start gap-2">
-                <span className="font-bold text-black">• Transport:</span> coverage up to the nearest station or airport
+                <span className="font-bold text-black">Transport:</span> provided to the nearest train station or airport
               </li>
               <li className="flex items-start gap-2">
-                <span className="font-bold text-black">• Refund:</span> 100 % if visa refused (on presentation of the refusal and after verification)
+                <span className="font-bold text-black">Reimbursement:</span> 100% if visa is refused (upon presentation of the refusal and after verification)
               </li>
             </ul>
 
             <div className="space-y-4">
-              <p className="font-bold text-black">Profile sought:</p>
+              <p className="font-bold text-black">Required profile:</p>
               <ul className="space-y-2 list-disc list-outside pl-5">
-                <li>Minimum experience of <span className="font-bold text-black">6 months in kitchen or catering</span></li>
-                <li><span className="font-bold text-black">English level B2</span> required with very good communication skills</li>
-                <li>French is not mandatory, except for a <span className="font-bold text-black">Front Desk</span> position, where perfect mastery is necessary</li>
+                <li>Minimum 6 months&apos; experience in cooking or catering</li>
+                <li>Level of English B2 required with very good communication skills</li>
+                <li>
+                  French is not mandatory, except for a position at the Front Desk, where perfect fluency is required
+                </li>
               </ul>
             </div>
 
             <p>
-              <span className="font-bold text-black">Eligibility:</span> any student from one of our campuses on one of our Hospitality Management titles, aged 18 to 28.
+              <span className="font-bold text-black">Eligibility:</span> any student from one of our campuses enrolled in one of our Hospitality Management programs, aged 18 to 28.
             </p>
 
             <p>
-              This opportunity allows you to <span className="font-bold text-black">develop your skills in an international environment</span>, while benefiting from support and practical advantages for your stay.
+              This opportunity allows you to develop your skills in an international environment, while benefiting from support and practical advantages for your stay.
             </p>
 
-            <p className="italic font-bold">Get in touch with your campus team to know the details!</p>
+            <p className="italic font-bold">Contact your campus team to find out more!</p>
           </div>
         </section>
       </CourseDetailLayout>

@@ -52,7 +52,7 @@ export default function BachelorITPage() {
   const programYears = [
     {
       id: "year1",
-      title: "Year 1 - 602 hours",
+      title: "Year 1",
       hours: "602 hours",
       content: [
         {
@@ -95,7 +95,7 @@ export default function BachelorITPage() {
     },
     {
       id: "year2",
-      title: "Year 2 - 602 hours",
+      title: "Year 2",
       hours: "602 hours",
       content: [
         {
@@ -138,7 +138,7 @@ export default function BachelorITPage() {
     },
     {
       id: "year3",
-      title: "Year 3 - 602 hours",
+      title: "Year 3",
       hours: "602 hours",
       content: [
         {
@@ -206,7 +206,7 @@ export default function BachelorITPage() {
       {
         title: "Step 1: Application",
         items: [
-          { text: "Download your application form." },
+          { text: "Download your application form.", isLink: true, linkText: "Download your application form.", linkHref: "/en/apply" },
           { text: "Send your completed application by email, remembering to include all the required attachments!" },
           { text: "Application fee: €300, non-refundable", isItalic: true }
         ]
@@ -230,8 +230,8 @@ export default function BachelorITPage() {
     ],
     prices: {
       title: "Initial tuition fees:",
-      initialLabel: "Per year:",
-      initialPrice: "€12,500\nScholarships are available. Contact your admissions officer for more information.",
+      initialLabel: "Per year: €12,500",
+      initialPrice: "\nScholarships are available. Contact your admissions officer for more information.",
       visaNote: "",
       workStudyLabel: "",
       workStudyPrice: "",
@@ -247,8 +247,6 @@ export default function BachelorITPage() {
     details: {
       assessmentTitle: "Assessment methods",
       assessmentText: "Written and oral exams.",
-      downloadFrameworkLabel: "Télécharger le guide de validation",
-      downloadFrameworkHref: "/assets/validation-guide.pdf",
       certificationTitle: "Certification",
       diplomaName: "Responsable de développement touristique territorial (RDTT) – Certified bachelor's degree",
       rncpLabel: "RNCP 35706",
@@ -306,11 +304,12 @@ export default function BachelorITPage() {
 
   return (
     <main className="bg-white">
-      <CourseBanner 
-        title={bannerData.title} 
-        image={bannerData.image} 
-        details={bannerData.details} 
+      <CourseBanner
+        title={bannerData.title}
+        image={bannerData.image}
+        details={bannerData.details}
         logos={bannerData.logos}
+        certificationBadge="State Certified Title"
       />
 
       <CourseDetailLayout 

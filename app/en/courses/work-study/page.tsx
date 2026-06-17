@@ -21,7 +21,12 @@ export default function WorkStudyPage() {
   return (
     <main className="bg-white">
       <PageBanner 
-        title="Complete your course with a work-study training program" 
+         title={
+          <>
+            Complete your course with a<br />
+            work-study training program
+          </>
+        }
         image="/assets/pexels-olly-3769021-scaled.jpg" 
       />
 
