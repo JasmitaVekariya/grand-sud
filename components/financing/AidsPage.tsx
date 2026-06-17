@@ -1,22 +1,21 @@
 "use client";
 
-import { useRef } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
-import { 
-  Briefcase, 
-  Banknote, 
-  Wallet, 
-  GraduationCap, 
-  Search, 
-  Home, 
-  Flag, 
-  ShieldCheck, 
-  Building, 
-  TrainFront, 
-  Bike, 
-  Bus, 
-  Accessibility, 
-  Layers 
+import {
+  Briefcase,
+  Banknote,
+  Wallet,
+  GraduationCap,
+  MapPin,
+  Home,
+  Flag,
+  ShieldCheck,
+  Building,
+  TrainFront,
+  Bike,
+  Bus,
+  Accessibility,
+  Layers,
+  type LucideIcon,
 } from "lucide-react";
 import CourseDetailLayout from "@/components/courses/CourseDetailLayout";
 import PageBanner from "@/components/common/PageBanner";
@@ -25,21 +24,55 @@ interface AidsPageProps {
   lang: "en" | "fr";
 }
 
-const AidBlock = ({ item }: { item: any }) => {
+type AidItem = {
+  icon: LucideIcon;
+  title: string;
+  desc: string;
+  variant: "gray" | "red";
+};
+
+const AidBlock = ({ item }: { item: AidItem }) => {
+  const Icon = item.icon;
+  const bgColor = item.variant === "red" ? "bg-[#802020]" : "bg-[#333333]";
+  const iconColor = item.variant === "red" ? "text-[#f0b4ad]" : "text-white";
+
   return (
-    <div className={`${item.bgColor} text-white p-6 sm:p-8 md:p-10 flex flex-col items-center text-center space-y-4 h-full min-h-[220px] md:min-h-[280px]`}>
-      <div className="text-white/90">
-        <div className="scale-75 md:scale-100">
-          {item.icon}
-        </div>
-      </div>
-      <div className="space-y-2 md:space-y-3">
-        <h3 className="text-[13px] sm:text-[15px] md:text-[18px] font-semibold uppercase leading-tight tracking-tight">
-          {item.title}
-        </h3>
-        <p className="text-[11px] sm:text-[12px] md:text-[13px] leading-relaxed opacity-90 font-medium">
-          {item.desc}
-        </p>
+    <div
+      className={`${bgColor} text-white p-8 md:p-10 flex flex-col items-center justify-start text-center space-y-4 w-full h-full min-h-[260px] md:min-h-[300px]`}
+    >
+      <Icon size={48} strokeWidth={1} className={`${iconColor} shrink-0`} />
+      <h3 className="text-[16px] md:text-[18px] font-bold leading-tight tracking-tight">{item.title}</h3>
+      <p className="text-[13px] md:text-[14px] leading-relaxed opacity-95 font-medium whitespace-pre-line">
+        {item.desc}
+      </p>
+    </div>
+  );
+};
+
+const AidSection = ({
+  title,
+  grid,
+  columns = 3,
+}: {
+  title: string;
+  grid: AidItem[];
+  columns?: 2 | 3;
+}) => {
+  return (
+    <div className="space-y-6">
+      <h2 className="text-[32px] md:text-[42px] font-bold text-primary-red uppercase tracking-tight leading-none">
+        {title}
+      </h2>
+      <div
+        className={`grid grid-cols-1 gap-2 bg-white auto-rows-fr ${
+          columns === 2 ? "md:grid-cols-2" : "md:grid-cols-3"
+        }`}
+      >
+        {grid.map((item, idx) => (
+          <div key={idx} className="h-full min-h-[260px] md:min-h-[300px]">
+            <AidBlock item={item} />
+          </div>
+        ))}
       </div>
     </div>
   );
@@ -48,8 +81,12 @@ const AidBlock = ({ item }: { item: any }) => {
 export default function AidsPage({ lang }: AidsPageProps) {
   const t = {
     en: {
-      title: "FINANCIAL HELP",
-      heroTitle: "FINANCE YOUR STUDIES",
+      heroTitle: (
+        <>
+          Pay your studies with
+          <br /> financial help
+        </>
+      ),
       sidebar: [
         { id: "assistance", label: "FINANCIAL ASSISTANCE" },
         { id: "housing", label: "HOUSING BENEFITS" },
@@ -59,133 +96,136 @@ export default function AidsPage({ lang }: AidsPageProps) {
       intro: [
         "Whether you are starting or continuing your higher education, navigating the complex world of student aid can be challenging.",
         "Fortunately, many resources are available to support you in your journey. Scholarships, loans, various aids... this page is designed to enlighten you on all the existing devices.",
-        "The objective is to provide you with the keys to serenely finance your studies and fully focus on your success!"
+        "The objective is to provide you with the keys to serenely finance your studies and fully focus on your success!",
       ],
       sections: [
         {
           id: "assistance",
           title: "FINANCIAL ASSISTANCE",
+          columns: 3 as const,
           grid: [
             {
-              icon: <Briefcase className="w-10 h-10" />,
+              icon: Briefcase,
               title: "Activity bonus",
               desc: "It is social aid paid by the CAF to supplement the income of employees and apprentices",
-              bgColor: "bg-[#333333]"
+              variant: "gray" as const,
             },
             {
-              icon: <Banknote className="w-10 h-10" />,
+              icon: Banknote,
               title: "State-guaranteed student loan",
               desc: "The state-guaranteed student loan allows students under 28 years of age to borrow up to 20,000 euros from a partner bank without personal guarantee or means conditions.",
-              bgColor: "bg-[#8B2318]"
+              variant: "red" as const,
             },
             {
-              icon: <Wallet className="w-10 h-10" />,
+              icon: Wallet,
               title: "Youth Assistance Fund",
-              desc: "The Youth Assistance Fund (FAJ) is a scheme managed by the Departmental Council of Haute-Garonne which offers last resort financial aid to young people aged 18 to 25.",
-              bgColor: "bg-[#333333]"
+              desc: "The Youth Assistance Fund (FAJ) is a scheme managed by the Departmental Council of Haute-Garonne (or Toulouse Métropole depending on the place of residence) which offers last resort financial aid to young people aged 18 to 25, in situations of great social or professional difficulty.",
+              variant: "gray" as const,
             },
             {
-              icon: <GraduationCap className="w-10 h-10" />,
+              icon: GraduationCap,
               title: "School grant",
-              desc: "Depending on your personal situation, your education and your campus, Grand Sud can offer scholarships in the form of tuition fee reductions.",
-              bgColor: "bg-[#8B2318]"
+              desc: "Depending on your personal situation, your education and your campus, Grand Sud can offer scholarships in the form of tuition fee reductions. More information is available from our team.",
+              variant: "red" as const,
             },
             {
-              icon: <Search className="w-10 h-10" />,
+              icon: MapPin,
               title: "Local aid",
-              desc: "Depending on your region of origin, it is possible that aid exists to finance your studies! For example, the Passport for Study Mobility for Overseas Students.",
-              bgColor: "bg-[#333333]"
-            }
-          ]
+              desc: "Depending on your region of origin, it is possible that aid exists to finance your studies! For example, the Passport for Study Mobility for Overseas Students",
+              variant: "gray" as const,
+            },
+          ],
         },
         {
           id: "housing",
           title: "HOUSING BENEFITS",
+          columns: 3 as const,
           grid: [
             {
-              icon: <Home className="w-10 h-10" />,
+              icon: Home,
               title: "APL/ALS/ALF",
-              desc: "CAF housing grants (APL, ALS, ALF) are social benefits intended to reduce the amount of rent for students, subject to means conditions.",
-              bgColor: "bg-[#333333]"
+              desc: "CAF housing grants (APL, ALS, ALF) are social benefits, not cumulative, intended to reduce the amount of rent for students, subject to means conditions, the composition of the household and the type of housing.",
+              variant: "gray" as const,
             },
             {
-              icon: <Flag className="w-10 h-10" />,
+              icon: Flag,
               title: "Mobili Jeune",
-              desc: "A subsidy from Action Logement that covers part of the rent for young people under 30 in work-study training (apprenticeship or professionalization contract).",
-              bgColor: "bg-[#8B2318]"
+              desc: "The Mobili-Jeune grant is a subsidy from Action Logement that covers part of the rent for young people under 30 in work-study training (apprenticeship or professionalization contract) in a company in the private non-agricultural sector.",
+              variant: "red" as const,
             },
             {
-              icon: <ShieldCheck className="w-10 h-10" />,
+              icon: ShieldCheck,
               title: "Visale Guarantee",
-              desc: "A free service of Action Logement that serves as a guarantee for young people under 30 years old, facilitating access to housing.",
-              bgColor: "bg-[#333333]"
+              desc: "The Visale guarantee is a free service of Action Logement that serves as a guarantee for young people under 30 years old (as well as other profiles under conditions) and students, thus reassuring the owners and facilitating access to housing.",
+              variant: "gray" as const,
             },
             {
-              icon: <Wallet className="w-10 h-10" />,
+              icon: Wallet,
               title: "Advance Loca-Pass",
-              desc: "A zero-rate loan granted by Action Logement to finance the security deposit required by the owner upon entry into a dwelling.",
-              bgColor: "bg-[#8B2318]"
+              desc: "The Loca-Pass advance is a zero-rate loan, without administrative fees, granted by Action Logement to finance the security deposit required by the owner upon entry into a dwelling.",
+              variant: "red" as const,
             },
             {
-              icon: <Building className="w-10 h-10" />,
+              icon: Building,
               title: "Instal'Toit",
-              desc: "Aid offered by the Toulouse City Hall for young people aged 18 to 29 to finance their move into housing up to 500 euros.",
-              bgColor: "bg-[#333333]"
-            }
-          ]
+              desc: "The Install'Toit aid is a zero-interest loan, without administrative fees, offered by the Toulouse City Hall for young people aged 18 to 29, particularly students, in order to finance their move into housing (security deposit, rent, furniture) up to 500 euros.",
+              variant: "gray" as const,
+            },
+          ],
         },
         {
           id: "mobility",
           title: "MOBILITY AIDS",
+          columns: 3 as const,
           grid: [
             {
-              icon: <TrainFront className="w-10 h-10" />,
+              icon: TrainFront,
               title: "SNCF Reduced rate",
-              desc: "Are you a student under 21, a student under 26 or an apprentice under 29? Take advantage of the offers reserved for you.",
-              bgColor: "bg-[#333333]"
+              desc: "Are you a student under 21, a student under 26 or an apprentice under 29? Do you make at least one AR trip per week on your home-study or learning location journey? Take advantage of the offers reserved for you.",
+              variant: "gray" as const,
             },
             {
-              icon: <Bike className="w-10 h-10" />,
+              icon: Bike,
               title: "Eco-check mobility",
-              desc: "This aid from the Occitanie Region is intended for individuals to purchase bicycles or a hybrid/electric car to encourage sustainable transport.",
-              bgColor: "bg-[#8B2318]"
+              desc: "This aid from the Occitanie Region is intended for individuals to purchase bicycles or a hybrid or electric car, in order to encourage more sustainable modes of transport.",
+              variant: "red" as const,
             },
             {
-              icon: <TrainFront className="w-10 h-10" />,
+              icon: TrainFront,
               title: "Subscriptions LiO train/TER -26 years",
               desc: "You can benefit from a reduced rate subscription for your journey by TER/LiO train in the Occitanie region.",
-              bgColor: "bg-[#333333]"
+              variant: "gray" as const,
             },
             {
-              icon: <Bus className="w-10 h-10" />,
+              icon: Bus,
               title: "Tisseo subscription",
-              desc: "Public transport is accessible at a preferential rate for students under 26 years old in the Toulouse area.",
-              bgColor: "bg-[#8B2318]"
-            }
-          ]
+              desc: "Public transport is accessible at a preferential rate for students under 26 years old. Depending on your personal situation, other offers may be more suitable as well.",
+              variant: "red" as const,
+            },
+          ],
         },
         {
           id: "various",
           title: "VARIOUS AID",
+          columns: 2 as const,
           grid: [
             {
-              icon: <Accessibility className="w-10 h-10" />,
+              icon: Accessibility,
               title: "Students with disabilities",
               desc: "Many aids exist: AAH, PCH, AGEFIPH, 100% Handinamique... Contact your disability referent to learn more!",
-              bgColor: "bg-[#333333]"
+              variant: "gray" as const,
             },
             {
-              icon: <Layers className="w-10 h-10" />,
+              icon: Layers,
               title: "Other",
-              desc: "There are probably other aids to which you can claim, we advise you to inquire carefully to find all the solutions!",
-              bgColor: "bg-[#8B2318]"
-            }
-          ]
-        }
-      ]
+              desc: "There are probably other aids to which you can claim, we advise you to inquire carefully to find all the solutions that could apply to your situation!",
+              variant: "red" as const,
+            },
+          ],
+        },
+      ],
     },
     fr: {
-      title: "AIDES FINANCIÈRES",
       heroTitle: "FINANCER SES ÉTUDES",
       sidebar: [
         { id: "assistance", label: "ASSISTANCE FINANCIÈRE" },
@@ -196,144 +236,144 @@ export default function AidsPage({ lang }: AidsPageProps) {
       intro: [
         "Que vous commenciez ou poursuiviez vos études supérieures, naviguer dans le monde complexe des aides étudiantes peut être un défi.",
         "Heureusement, de nombreuses ressources sont disponibles pour vous accompagner dans votre parcours. Bourses, prêts, aides diverses... cette page est conçue pour vous éclairer sur tous les dispositifs existants.",
-        "L'objectif est de vous donner les clés pour financer sereinement vos études et vous concentrer pleinement sur votre réussite !"
+        "L'objectif est de vous donner les clés pour financer sereinement vos études et vous concentrer pleinement sur votre réussite !",
       ],
       sections: [
         {
           id: "assistance",
           title: "ASSISTANCE FINANCIÈRE",
+          columns: 3 as const,
           grid: [
             {
-              icon: <Briefcase className="w-10 h-10" />,
+              icon: Briefcase,
               title: "Prime d'activité",
               desc: "C'est une aide sociale versée par la CAF pour compléter les revenus des salariés et des apprentis.",
-              bgColor: "bg-[#333333]"
+              variant: "gray" as const,
             },
             {
-              icon: <Banknote className="w-10 h-10" />,
+              icon: Banknote,
               title: "Prêt étudiant garanti par l'État",
               desc: "Le prêt étudiant garanti par l'État permet aux étudiants de moins de 28 ans d'emprunter jusqu'à 20 000 euros sans caution personnelle ni conditions de ressources.",
-              bgColor: "bg-[#8B2318]"
+              variant: "red" as const,
             },
             {
-              icon: <Wallet className="w-10 h-10" />,
+              icon: Wallet,
               title: "Fonds d'Aide aux Jeunes",
-              desc: "Le FAJ est un dispositif géré par le Conseil Départemental de la Haute-Garonne qui offre une aide financière de dernier recours aux jeunes de 18 à 25 ans.",
-              bgColor: "bg-[#333333]"
+              desc: "Le FAJ est un dispositif géré par le Conseil Départemental de la Haute-Garonne (ou Toulouse Métropole selon le lieu de résidence) qui offre une aide financière de dernier recours aux jeunes de 18 à 25 ans, en situation de grande difficulté sociale ou professionnelle.",
+              variant: "gray" as const,
             },
             {
-              icon: <GraduationCap className="w-10 h-10" />,
+              icon: GraduationCap,
               title: "Bourse d'école",
-              desc: "Selon votre situation personnelle et votre campus, Grand Sud peut proposer des bourses sous forme de réductions de frais de scolarité.",
-              bgColor: "bg-[#8B2318]"
+              desc: "Selon votre situation personnelle, votre formation et votre campus, Grand Sud peut proposer des bourses sous forme de réductions de frais de scolarité. Plus d'informations auprès de notre équipe.",
+              variant: "red" as const,
             },
             {
-              icon: <Search className="w-10 h-10" />,
+              icon: MapPin,
               title: "Aides locales",
               desc: "Selon votre région d'origine, des aides peuvent exister pour financer vos études ! Par exemple, le Passeport pour la Mobilité des Études pour les Outre-mer.",
-              bgColor: "bg-[#333333]"
-            }
-          ]
+              variant: "gray" as const,
+            },
+          ],
         },
         {
           id: "housing",
           title: "AIDES AU LOGEMENT",
+          columns: 3 as const,
           grid: [
             {
-              icon: <Home className="w-10 h-10" />,
+              icon: Home,
               title: "APL/ALS/ALF",
-              desc: "Les aides au logement de la CAF sont des prestations sociales destinées à réduire le montant du loyer des étudiants, sous conditions de ressources.",
-              bgColor: "bg-[#333333]"
+              desc: "Les aides au logement de la CAF (APL, ALS, ALF) sont des prestations sociales, non cumulables, destinées à réduire le montant du loyer des étudiants, sous conditions de ressources, de composition du foyer et de type de logement.",
+              variant: "gray" as const,
             },
             {
-              icon: <Flag className="w-10 h-10" />,
+              icon: Flag,
               title: "Mobili Jeune",
-              desc: "Une subvention d'Action Logement qui prend en charge une partie du loyer des jeunes de moins de 30 ans en formation en alternance.",
-              bgColor: "bg-[#8B2318]"
+              desc: "La subvention Mobili-Jeune d'Action Logement prend en charge une partie du loyer des jeunes de moins de 30 ans en alternance (contrat d'apprentissage ou de professionnalisation) dans une entreprise du secteur privé non agricole.",
+              variant: "red" as const,
             },
             {
-              icon: <ShieldCheck className="w-10 h-10" />,
+              icon: ShieldCheck,
               title: "Garantie Visale",
-              desc: "Un service gratuit d'Action Logement qui sert de caution pour les jeunes de moins de 30 ans, facilitant l'accès au logement.",
-              bgColor: "bg-[#333333]"
+              desc: "La garantie Visale est un service gratuit d'Action Logement qui sert de caution pour les jeunes de moins de 30 ans (ainsi que d'autres profils sous conditions) et les étudiants, rassurant ainsi les propriétaires et facilitant l'accès au logement.",
+              variant: "gray" as const,
             },
             {
-              icon: <Wallet className="w-10 h-10" />,
+              icon: Wallet,
               title: "Avance Loca-Pass",
-              desc: "Un prêt à taux zéro accordé par Action Logement pour financer le dépôt de garantie demandé par le propriétaire à l'entrée dans un logement.",
-              bgColor: "bg-[#8B2318]"
+              desc: "L'avance Loca-Pass est un prêt à taux zéro, sans frais de dossier, accordé par Action Logement pour financer le dépôt de garantie demandé par le propriétaire à l'entrée dans un logement.",
+              variant: "red" as const,
             },
             {
-              icon: <Building className="w-10 h-10" />,
+              icon: Building,
               title: "Instal'Toit",
-              desc: "Aide proposée par la Mairie de Toulouse pour les jeunes de 18 à 29 ans pour financer leur emménagement jusqu'à 500 euros.",
-              bgColor: "bg-[#333333]"
-            }
-          ]
+              desc: "L'aide Instal'Toit est un prêt sans intérêt, sans frais de dossier, proposé par la Mairie de Toulouse pour les jeunes de 18 à 29 ans, particulièrement les étudiants, afin de financer leur emménagement (dépôt de garantie, loyer, mobilier) jusqu'à 500 euros.",
+              variant: "gray" as const,
+            },
+          ],
         },
         {
           id: "mobility",
           title: "AIDES À LA MOBILITÉ",
+          columns: 3 as const,
           grid: [
             {
-              icon: <TrainFront className="w-10 h-10" />,
+              icon: TrainFront,
               title: "Tarif réduit SNCF",
-              desc: "Vous êtes étudiant de moins de 21 ans, étudiant de moins de 26 ans ou apprenti de moins de 29 ans ? Profitez des offres réservées pour vous.",
-              bgColor: "bg-[#333333]"
+              desc: "Vous êtes étudiant de moins de 21 ans, étudiant de moins de 26 ans ou apprenti de moins de 29 ans ? Effectuez-vous au moins un aller-retour par semaine sur votre trajet domicile-études ou lieu d'apprentissage ? Profitez des offres réservées pour vous.",
+              variant: "gray" as const,
             },
             {
-              icon: <Bike className="w-10 h-10" />,
+              icon: Bike,
               title: "Éco-chèque mobilité",
-              desc: "Cette aide de la Région Occitanie est destinée aux particuliers pour l'achat de vélos ou d'une voiture hybride/électrique pour encourager les transports durables.",
-              bgColor: "bg-[#8B2318]"
+              desc: "Cette aide de la Région Occitanie est destinée aux particuliers pour l'achat de vélos ou d'une voiture hybride ou électrique, afin d'encourager des modes de transport plus durables.",
+              variant: "red" as const,
             },
             {
-              icon: <TrainFront className="w-10 h-10" />,
+              icon: TrainFront,
               title: "Abonnements LiO train/TER -26 ans",
               desc: "Vous pouvez bénéficier d'un abonnement à tarif réduit pour vos trajets en train TER/LiO dans la région Occitanie.",
-              bgColor: "bg-[#333333]"
+              variant: "gray" as const,
             },
             {
-              icon: <Bus className="w-10 h-10" />,
+              icon: Bus,
               title: "Abonnement Tisseo",
-              desc: "Les transports en commun sont accessibles à un tarif préférentiel pour les étudiants de moins de 26 ans dans l'agglomération toulousaine.",
-              bgColor: "bg-[#8B2318]"
-            }
-          ]
+              desc: "Les transports en commun sont accessibles à un tarif préférentiel pour les étudiants de moins de 26 ans. Selon votre situation personnelle, d'autres offres peuvent également être plus adaptées.",
+              variant: "red" as const,
+            },
+          ],
         },
         {
           id: "various",
           title: "AIDES DIVERSES",
+          columns: 2 as const,
           grid: [
             {
-              icon: <Accessibility className="w-10 h-10" />,
+              icon: Accessibility,
               title: "Étudiants en situation de handicap",
               desc: "De nombreuses aides existent : AAH, PCH, AGEFIPH, 100% Handinamique... Contactez votre référent handicap pour en savoir plus !",
-              bgColor: "bg-[#333333]"
+              variant: "gray" as const,
             },
             {
-              icon: <Layers className="w-10 h-10" />,
+              icon: Layers,
               title: "Autres",
-              desc: "Il existe probablement d'autres aides auxquelles vous pouvez prétendre, nous vous conseillons de vous renseigner soigneusement !",
-              bgColor: "bg-[#8B2318]"
-            }
-          ]
-        }
-      ]
-    }
+              desc: "Il existe probablement d'autres aides auxquelles vous pouvez prétendre, nous vous conseillons de vous renseigner soigneusement pour trouver toutes les solutions qui pourraient s'appliquer à votre situation !",
+              variant: "red" as const,
+            },
+          ],
+        },
+      ],
+    },
   }[lang];
 
   return (
     <main className="bg-white">
-      <PageBanner 
-        title={t.heroTitle}
-        image="/assets/card-aides.jpg"
-      />
+      <PageBanner title={t.heroTitle} image="/assets/card-aides.jpg" />
 
       <div className="pt-4">
         <CourseDetailLayout sections={t.sidebar}>
           <div className="pb-8 space-y-16">
-            {/* Intro Section */}
             <section className="space-y-4">
               {t.intro.map((para, idx) => (
                 <p key={idx} className="text-[#333] text-[14px] md:text-[15px] leading-relaxed font-medium">
@@ -342,31 +382,9 @@ export default function AidsPage({ lang }: AidsPageProps) {
               ))}
             </section>
 
-            {/* Content Sections */}
             {t.sections.map((section) => (
-              <section key={section.id} id={section.id} className="scroll-mt-32 space-y-8">
-                <h2 className="text-[#dc4b3b] text-[18px] sm:text-[20px] md:text-[28px] font-semibold uppercase leading-tight tracking-tight">
-                  {section.title}
-                </h2>
-
-                <div className="flex flex-wrap">
-                  {section.grid.map((item, idx) => (
-                    <div 
-                      key={idx} 
-                      className={`w-full ${
-                        section.grid.length % 3 === 0 
-                          ? "md:w-1/2 lg:w-1/3" 
-                          : section.grid.length === 2
-                            ? "md:w-1/2"
-                            : idx < 3 
-                              ? "md:w-1/2 lg:w-1/3" 
-                              : "md:w-1/2"
-                      }`}
-                    >
-                      <AidBlock item={item} />
-                    </div>
-                  ))}
-                </div>
+              <section key={section.id} id={section.id} className="scroll-mt-32">
+                <AidSection title={section.title} grid={section.grid} columns={section.columns} />
               </section>
             ))}
           </div>

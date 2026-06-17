@@ -31,7 +31,7 @@ export default function StudentJobPage({ lang }: StudentJobPageProps) {
   const t = {
     en: {
       title: "STUDENT JOB",
-      heroTitle: "WORKING WHILE STUDYING",
+      heroTitle: <>finance your studies with a<br /> student job</>,
       sidebar: [
         { id: "hours", label: "WORKING HOURS AND DAYS" },
         { id: "advantages", label: "THE ADVANTAGES OF A STUDENT JOB" },

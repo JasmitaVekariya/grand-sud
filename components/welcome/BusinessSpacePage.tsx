@@ -1,16 +1,11 @@
 "use client";
 
-import Image from "next/image";
-import Link from "next/link";
-import { motion, useScroll, useTransform } from "framer-motion";
 import { 
   Calendar, 
   FileText, 
   Upload, 
   FileSignature, 
-  Phone,
-  Handshake,
-  Briefcase
+  Phone
 } from "lucide-react";
 
 interface BusinessSpacePageProps {
@@ -58,14 +53,7 @@ export default function BusinessSpacePage({ lang }: BusinessSpacePageProps) {
           desc: "To discuss your search with them: profiles, pre-selection, etc. We act as a recruitment agency to provide you with the best possible support.",
           bgColor: "bg-[#333333]"
         }
-      ],
-      cta: {
-        bgImage: "/assets/pexels-pixabay-532173-scaled.jpg",
-        buttons: [
-          { label: "Create an account", href: `/${lang}/welcome/create-a-company-account`, icon: <Handshake className="w-6 h-6" /> },
-          { label: "Login", href: `/${lang}/welcome/company-login`, icon: <Briefcase className="w-6 h-6" /> }
-        ]
-      }
+      ]
     },
     fr: {
       title: "ESPACE\nENTREPRISES",
@@ -106,20 +94,9 @@ export default function BusinessSpacePage({ lang }: BusinessSpacePageProps) {
           desc: "Pour échanger avec eux sur votre recherche : profils, pré-sélection, etc. Nous agissons comme un cabinet de recrutement pour vous apporter le meilleur support possible.",
           bgColor: "bg-[#333333]"
         }
-      ],
-      cta: {
-        bgImage: "/assets/pexels-pixabay-532173-scaled.jpg",
-        buttons: [
-          { label: "Créer un compte", href: `/${lang}/welcome/create-a-company-account`, icon: <Handshake className="w-6 h-6" /> },
-          { label: "Connexion", href: `/${lang}/welcome/company-login`, icon: <Briefcase className="w-6 h-6" /> }
-        ]
-      }
+      ]
     }
   }[lang];
-
-  const { scrollY } = useScroll();
-  const imageScale = useScroll().scrollYProgress; // We can use a simpler scroll zoom or just reuse the logic
-  const zoomScale = useTransform(scrollY, [0, 1000], [1, 1.2]);
 
   return (
     <div className="flex flex-col lg:flex-row min-h-screen bg-white">
@@ -176,40 +153,6 @@ export default function BusinessSpacePage({ lang }: BusinessSpacePageProps) {
               </div>
             </div>
           ))}
-        </div>
-
-        {/* Bottom CTA with Background Zoom */}
-        <div className="relative w-full h-[350px] md:h-[450px] overflow-hidden flex items-center justify-center p-6">
-          <motion.div 
-            style={{ scale: zoomScale }}
-            className="absolute inset-0 w-full h-full"
-          >
-            <Image 
-              src={t.cta.bgImage} 
-              alt="Recruitment Background" 
-              fill
-                sizes="(max-width: 1024px) 100vw, 60vw" 
-              className="object-cover" 
-            />
-          </motion.div>
-          <div className="absolute inset-0 bg-black/20" />
-          
-          <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-4 w-full max-w-4xl">
-            {t.cta.buttons.map((btn, idx) => (
-              <Link 
-                key={idx}
-                href={btn.href}
-                className={`${idx === 0 ? "bg-[#8B2318]" : "bg-[#333333]"} text-white p-8 md:p-10 flex flex-col items-center justify-center space-y-4 transition-all hover:scale-[1.02] shadow-2xl`}
-              >
-                <div className="text-white/90">
-                  {btn.icon}
-                </div>
-                <span className="text-[18px] md:text-[20px] font-bold uppercase tracking-wide text-center">
-                  {btn.label}
-                </span>
-              </Link>
-            ))}
-          </div>
         </div>
       </div>
     </div>

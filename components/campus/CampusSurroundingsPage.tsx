@@ -24,6 +24,10 @@ interface CampusSurroundingsPageProps {
   lang: "en" | "fr";
 }
 
+const CAMPUS_MAP_LINK =
+  "https://www.google.com/maps?cid=6638451043788040812&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAMYASAF&hl=en-US&source=embed";
+const CAMPUS_MAP_EMBED = "https://www.google.com/maps?cid=6638451043788040812&output=embed";
+
 export default function CampusSurroundingsPage({ lang }: CampusSurroundingsPageProps) {
   const [activeAccordion, setActiveAccordion] = useState<string | null>("bus");
 
@@ -100,6 +104,7 @@ export default function CampusSurroundingsPage({ lang }: CampusSurroundingsPageP
       access: {
         title: "ACCESS AND TRANSPORT",
         subtitle: "Location",
+        mapLinkLabel: "View on Google Maps",
         publicTitle: "Public transportation",
         accordions: {
           bus: {
@@ -241,6 +246,7 @@ export default function CampusSurroundingsPage({ lang }: CampusSurroundingsPageP
       access: {
         title: "ACCÈS ET TRANSPORT",
         subtitle: "Localisation",
+        mapLinkLabel: "Voir sur Google Maps",
         publicTitle: "Transports en commun",
         accordions: {
           bus: {
@@ -427,18 +433,30 @@ export default function CampusSurroundingsPage({ lang }: CampusSurroundingsPageP
             <h3 className="text-[28px] md:text-[36px] font-bold text-[#333]">
               {t.access.subtitle}
             </h3>
-            {/* Map Placeholder */}
-            <div className="relative w-full aspect-[16/9] bg-gray-100 border border-gray-200 overflow-hidden group">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2891.9547517174624!2d1.4988773124806495!3d43.54460595924761!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12aebce580665f8d%3A0x6b44569947f68282!2sGrand%20Sud%2C%20Upper%20School%20Tourism%20And%20Management!5e0!3m2!1sen!2sfr!4v1715745000000!5m2!1sen!2sfr"
-                width="100%"
-                height="100%"
-                style={{ border: 0 }}
-                allowFullScreen={true}
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                className="grayscale hover:grayscale-0 transition-all duration-500"
-              ></iframe>
+            {/* Map */}
+            <div className="space-y-4">
+              <div className="relative w-full aspect-[16/9] bg-gray-100 border border-gray-200 overflow-hidden group">
+                <iframe
+                  src={CAMPUS_MAP_EMBED}
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen={true}
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  className="grayscale hover:grayscale-0 transition-all duration-500"
+                  title={t.access.subtitle}
+                />
+              </div>
+              <a
+                href={CAMPUS_MAP_LINK}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-[14px] md:text-[15px] font-bold text-primary-red underline hover:text-[#802020] transition-colors"
+              >
+                <MapPin size={16} />
+                {t.access.mapLinkLabel}
+              </a>
             </div>
           </div>
 

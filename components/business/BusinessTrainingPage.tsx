@@ -11,7 +11,7 @@ export default function BusinessTrainingPage({ lang }: BusinessTrainingPageProps
   const t = {
     en: {
       title: "TRAIN YOUR TEAMS",
-      heroTitle: "TRAINING FOR YOUR TEAMS",
+      heroTitle: <>Train your team with Grand <br /> Sud</>,
       bannerImage: "/assets/pexels-fauxels-3183173-scaled.jpg",
       sidebar: [
         { id: "degree", label: "DEGREE COURSES" },

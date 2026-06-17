@@ -1,4 +1,4 @@
-import PageBanner from "@/components/common/PageBanner";
+import CampusBanner from "@/components/campus/CampusBanner";
 import CampusSurroundingsPage from "@/components/campus/CampusSurroundingsPage";
 
 export const metadata = {
@@ -7,16 +7,15 @@ export const metadata = {
 };
 
 export default function SurroundingsPageFR() {
-  const banner = {
-    title: "Le campus et ses alentours",
-    image: "/assets/campus-toulouse.jpg"
-  };
-
   return (
     <main className="bg-white">
-      <PageBanner 
-        title={banner.title} 
-        image={banner.image} 
+      <CampusBanner
+        title="Le campus Toulouse-Labège et ses alentours"
+        image="/assets/campus-toulouse.jpg"
+        postalLabel="Adresse postale"
+        postalAddress="Bâtiment 6 - 21 rue du Village d'Entreprises - 31670 Labège (FRANCE)"
+        programsLabel="Formations disponibles"
+        programs="l'ensemble des formations est disponible sur ce campus"
       />
       <CampusSurroundingsPage lang="fr" />
     </main>

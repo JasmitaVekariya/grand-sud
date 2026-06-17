@@ -1,7 +1,5 @@
 "use client";
 
-import Image from "next/image";
-import Link from "next/link";
 import {
   Calendar,
   Pencil,
@@ -14,8 +12,6 @@ import {
   User,
   Briefcase,
   Clock,
-  GraduationCap,
-  Users
 } from "lucide-react";
 import CourseDetailLayout from "@/components/courses/CourseDetailLayout";
 
@@ -77,12 +73,6 @@ export default function CareerCenterPage({ lang }: CareerCenterPageProps) {
             { icon: Clock, title: "Freelance", subtitle: "for those in search of one-off missions", bgColor: "bg-[#8B2318]" },
           ]
         },
-        access: {
-          student: "Student and graduate access",
-          faculty: "Faculty access",
-          studentHref: `/${lang}/campus/career-center/student-login`,
-          facultyHref: `/${lang}/campus/career-center/faculty-login`
-        }
       }
     },
     fr: {
@@ -137,12 +127,6 @@ export default function CareerCenterPage({ lang }: CareerCenterPageProps) {
             { icon: Clock, title: "Freelance", subtitle: "pour ceux en quête de missions ponctuelles", bgColor: "bg-[#8B2318]" },
           ]
         },
-        access: {
-          student: "Accès étudiants et diplômés",
-          faculty: "Accès intervenants",
-          studentHref: `/${lang}/campus/career-center/student-login`,
-          facultyHref: `/${lang}/campus/career-center/faculty-login`
-        }
       }
     }
   }[lang];
@@ -232,37 +216,6 @@ export default function CareerCenterPage({ lang }: CareerCenterPageProps) {
                     </p>
                   </div>
                 ))}
-              </div>
-            </div>
-
-            {/* Access Buttons Overlay */}
-            <div className="relative h-[500px] md:h-[450px] w-full rounded-sm overflow-hidden shadow-2xl group">
-              <Image
-                src="/assets/pexels-pixabay-532173-scaled.jpg"
-                alt="Career Access"
-                fill
-                sizes="100vw"
-                className="object-cover brightness-50"
-              />
-              <div className="absolute inset-0 flex flex-col md:flex-row items-center justify-center p-8 md:p-12 gap-0">
-                <Link
-                  href={t.career.access.studentHref}
-                  className="w-full md:w-1/2 h-[220px] md:h-full bg-[#8B2318]/90 flex flex-col items-center justify-center gap-6 hover:opacity-70 transition-opacity border-r border-white/10"
-                >
-                  <GraduationCap size={64} className="text-white" />
-                  <span className="text-white text-[20px] md:text-[24px] font-bold uppercase tracking-tight text-center px-4">
-                    {t.career.access.student}
-                  </span>
-                </Link>
-                <Link
-                  href={t.career.access.facultyHref}
-                  className="w-full md:w-1/2 h-[220px] md:h-full bg-[#333333]/90 flex flex-col items-center justify-center gap-6 hover:opacity-70 transition-opacity"
-                >
-                  <Users size={64} className="text-white" />
-                  <span className="text-white text-[20px] md:text-[24px] font-bold uppercase tracking-tight text-center px-4">
-                    {t.career.access.faculty}
-                  </span>
-                </Link>
               </div>
             </div>
           </section>

@@ -4,7 +4,7 @@ import CampusToulousePage from "@/components/campus/CampusToulousePage";
 export default function LivingInToulousePage() {
   const t = {
     title: "Living in Toulouse",
-    image: "/assets/campus-toulouse.jpg"
+    image: "/assets/pexels-tbd-traveller-2149583744-30753255-min-scaled.jpg"
   };
 
   return (

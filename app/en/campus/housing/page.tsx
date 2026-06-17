@@ -8,8 +8,8 @@ export const metadata = {
 
 export default function HousingPageEN() {
   const banner = {
-    title: "Housing around the campus",
-    image: "/assets/campus-toulouse.jpg"
+    title: <>STAYING AROUND THE <br /> TOULOUSE</>,
+    image: "/assets/pexels-harriet-b-392993362-14768387-min-scaled.jpg"
   };
 
   return (
