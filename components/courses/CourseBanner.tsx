@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
+import CourseCertificationBadge from "./CourseCertificationBadge";
 
 interface CourseDetail {
   label: string;
@@ -14,6 +15,7 @@ interface CourseBannerProps {
   details: CourseDetail[];
   additionalInfo?: string;
   logos?: string[];
+  certificationBadge?: string;
 }
 
 export default function CourseBanner({ 
@@ -21,7 +23,8 @@ export default function CourseBanner({
   image, 
   details, 
   additionalInfo,
-  logos 
+  logos,
+  certificationBadge 
 }: CourseBannerProps) {
   return (
     <section className="relative w-full bg-[#cb3329]">
@@ -86,10 +89,9 @@ export default function CourseBanner({
                     />
                   </div>
                 ))}
-                {/* Placeholder for National Diploma logo if needed */}
-                <div className="relative w-20 h-20 border-2 border-white/30 rounded-full flex items-center justify-center text-[8px] font-bold text-center uppercase p-1">
-                  National Education Diploma
-                </div>
+                {certificationBadge && (
+                  <CourseCertificationBadge text={certificationBadge} />
+                )}
               </div>
             </motion.div>
           </div>

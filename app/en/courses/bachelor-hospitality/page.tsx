@@ -316,11 +316,12 @@ export default function BachelorHospitalityPage() {
         details={bannerData.details} 
         additionalInfo={bannerData.additionalInfo}
         logos={bannerData.logos}
+        certificationBadge="State Certified Title"
       />
       
       <CourseDetailLayout 
         sections={sections}
-        applyButton={{ label: "Apply", href: "/en/apply" }}
+        applyButton={{ label: "Apply (French only)", href: "/fr/candidater" }}
       >
         {/* Description Section */}
         <section id="description" className="scroll-mt-32 space-y-16">

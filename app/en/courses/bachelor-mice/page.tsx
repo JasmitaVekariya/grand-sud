@@ -13,7 +13,7 @@ import { CheckCircle2, Search, PenTool, Users, Briefcase, MonitorPlay } from "lu
 export default function BachelorMiceDesignerPage() {
   const bannerData = {
     title: "Bachelor MICE Designer",
-    image: "/assets/Gemini_Generated_Image_d6oi0gd6oi0gd6oi-scaled-e1756648261219.png", // Will need to replace with correct image if provided, using placeholder for now
+    image: "/assets/Gemini_Generated_Image_gl11shgl11shgl11-scaled-e1756651535869.png", // Will need to replace with correct image if provided, using placeholder for now
     details: [
       { label: "Language of instruction", value: "French" },
       { label: "Level", value: "6 (bac+3)" },

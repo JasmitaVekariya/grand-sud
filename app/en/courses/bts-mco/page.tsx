@@ -12,21 +12,21 @@ import { GraduationCap, CheckCircle2, Search, PenTool, Users, Briefcase, Monitor
 export default function BtsMcoPage() {
   const bannerData = {
     title: "BTS MCO",
-    image: "/assets/Gemini_Generated_Image_d6oi0gd6oi0gd6oi-scaled-e1756648261219.png", // Placeholder
+    image: "/assets/Gemini_Generated_Image_99uv1u99uv1u99uv-e1756911385254.png", // Placeholder
     details: [
-      { label: "Language of instruction", value: "French" },
-      { label: "Level", value: "5 (bac+2)" },
+      { label: "Language of instruction", value: "English" },
+      { label: "Level", value: "5 (two years of postsecondary education)" },
       { label: "Status", value: "student, apprentice, job seeker, and employee (CPF transition)" },
-      { label: "Schedule", value: "initial or work-study – 1 week at the training center/2 week at the company" },
-      { label: "Duration", value: "2 years – 1,197 hours" },
+      { label: "Schedule", value: "full-time or work-study—1 week at the training center/2 week at the company" },
+      { label: "Duration", value: "2 years—1,162 hours" },
     ],
     additionalInfo: "Training accessible through VAE (validation of acquired experience)",
     logos: ["/assets/logo-france-competences.png"]
   };
 
   const sections = [
-    { id: "description", label: "DESCRIPTION" },
-    { id: "programm", label: "PROGRAM" },
+    { id: "objectives", label: "OBJECTIVES" },
+    { id: "general-culture-and-expression", label: "GENERAL CULTURE AND EXPRESSION" },
     { id: "admissions", label: "ADMISSIONS" },
     { id: "validation", label: "VALIDATION" },
     { id: "jobs", label: "JOB OPPORTUNITIES" },
@@ -129,9 +129,9 @@ export default function BtsMcoPage() {
       periodTitle: "Admission period",
       periodText: "All year round",
       intakesTitle: "Intakes",
-      nextYearLabel: "Next academic year:",
+      nextYearLabel: "Next academic year",
       nextYearValue: "October 2025",
-      deferredLabel: "Deferred academic year:",
+      deferredLabel: "Deferred academic year",
       deferredValue: "February 2026"
     },
     processTitle: "Admission process",
@@ -278,10 +278,10 @@ export default function BtsMcoPage() {
         applyButton={{ label: "Apply (French only)", href: "/fr/candidater" }}
       >
         {/* Description Section */}
-        <section id="description" className="scroll-mt-32 space-y-16">
+        <section id="objectives" className="scroll-mt-32 space-y-16">
           <div className="space-y-8">
             <h2 className="text-[32px] md:text-[42px] font-bold text-primary-red uppercase tracking-tight leading-none mt-[-2px]">
-              DESCRIPTION
+              OBJECTIVES
             </h2>
             <div className="space-y-6 text-[16px] text-black leading-relaxed font-medium max-w-4xl">
               <p>The BTS Operational Commercial Management (BTS MCO) aims to allow you to take operational responsibility for all or part of a commercial unit. In a context of increasingly digitized commercial activities, the BTS MCO will teach you to be more versatile.</p>
@@ -353,9 +353,9 @@ export default function BtsMcoPage() {
         </section>
 
         {/* Program Section */}
-        <section id="programm" className="scroll-mt-32">
+        <section id="general-culture-and-expression" className="scroll-mt-32">
           <CourseProgram 
-            title="PROGRAM"
+            title="GENERAL CULTURE AND EXPRESSION"
             years={programYears}
             downloadButton={{ label: "Download the full program (French only)", href: "/assets/Programme-pedagogique_BTS-Tourisme_2025-2027.pdf" }}
           />
