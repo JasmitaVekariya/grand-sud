@@ -77,18 +77,18 @@ export default function Footer() {
                 decoding="async"
               />
             </div>
-            <p className="text-[12px] md:text-[13px] leading-relaxed max-w-full font-[400] opacity-90">
+            <p className="text-[14px] md:text-[15px] leading-relaxed max-w-full font-[400] opacity-90">
               <span className="font-[700] uppercase">Grand Sud</span> {t.description.replace("Grand Sud ", "")}
             </p>
             <div className="flex flex-col items-start gap-2 mt-2">
-              <span className="text-[11px] font-[500] uppercase opacity-80">{t.aSchoolOf}</span>
-              <div className="relative w-[110px] h-8 bg-white rounded-full shadow-sm inline-flex items-center justify-center">
+              <span className="text-[13px] font-[500] uppercase opacity-80">{t.aSchoolOf}</span>
+              <div className="relative w-[100px] h-12 bg-white rounded-full shadow-sm inline-flex items-center justify-center">
                 <Image 
                   src="/assets/logo-supdeform.png"
                   alt="Supdeform"
                   fill
-                  sizes="110px"
-                  className="object-contain p-1"
+                  sizes="80px"
+                  className="object-contain"
                 />
               </div>
             </div>
@@ -96,8 +96,8 @@ export default function Footer() {
 
           {/* Center Column */}
           <div className="flex flex-col gap-4">
-            <h3 className="text-[14px] md:text-[15px] font-bold tracking-tight opacity-95">{t.explore}</h3>
-            <ul className="flex flex-col gap-2 text-[12px] md:text-[13px] font-[400] opacity-90">
+            <h3 className="text-[16px] md:text-[17px] font-bold tracking-tight opacity-95">{t.explore}</h3>
+            <ul className="flex flex-col gap-2 text-[14px] md:text-[15px] font-[400] opacity-90">
               <li><Link href={`/${lang}/explore/news`} className="hover:opacity-100 transition-opacity">{t.links.news}</Link></li>
               <li><Link href={lang === "en" ? "/en/school/meetus" : "/fr/lecole/rencontrer"} className="hover:opacity-100 transition-opacity">{t.links.meetUs}</Link></li>
               <li><Link href={lang === "en" ? "/en/contact" : "/fr/contact"} className="hover:opacity-100 transition-opacity">{t.links.contactUs}</Link></li>
@@ -109,26 +109,26 @@ export default function Footer() {
 
           {/* Right Column */}
           <div className="flex flex-col gap-4 relative">
-            <h3 className="text-[14px] md:text-[15px] font-bold tracking-tight opacity-95">{t.privateSpaces}</h3>
-            <ul className="flex flex-col gap-2 text-[12px] md:text-[13px] font-[400] opacity-90">
+            <h3 className="text-[16px] md:text-[17px] font-bold tracking-tight opacity-95">{t.privateSpaces}</h3>
+            <ul className="flex flex-col gap-2 text-[14px] md:text-[15px] font-[400] opacity-90">
               <li><Link href={`/${lang}/welcome/company-login`} className="hover:opacity-100 transition-opacity">{t.links.company}</Link></li>
               <li><Link href={`/${lang}/campus/career-center/student-login`} className="hover:opacity-100 transition-opacity">{t.links.student}</Link></li>
               <li><Link href={`/${lang}/campus/career-center/faculty-login`} className="hover:opacity-100 transition-opacity">{t.links.faculty}</Link></li>
             </ul>
 
             {/* Social Icons */}
-            <div className="flex items-center gap-4 mt-8 md:mt-12">
+            <div className="flex items-center gap-5 mt-8 md:mt-12">
               <Link href="https://www.facebook.com/ecolegrandsud/" target="_blank" className="hover:opacity-70 transition-opacity">
-                <FaFacebookF size={18} />
+                <FaFacebookF size={24} />
               </Link>
               <Link href="https://www.instagram.com/ecolegrandsud/" target="_blank" className="hover:opacity-70 transition-opacity">
-                <FaInstagram size={20} />
+                <FaInstagram size={26} />
               </Link>
               <Link href="https://www.youtube.com/@ecolegrandsud" target="_blank" className="hover:opacity-70 transition-opacity">
-                <FaYoutube size={20} />
+                <FaYoutube size={28} />
               </Link>
               <Link href="https://www.linkedin.com/school/ecolegrandsud/" target="_blank" className="hover:opacity-70 transition-opacity">
-                <FaLinkedinIn size={18} />
+                <FaLinkedinIn size={24} />
               </Link>
             </div>
 
@@ -161,7 +161,7 @@ export default function Footer() {
 
       {/* Bottom Bar */}
       <div className="bg-[#7A1F1B] py-3 px-6 mt-8">
-        <div className="max-w-[1440px] mx-auto flex flex-col md:flex-row items-center justify-center gap-3 md:gap-8 text-[10px] md:text-[11px] font-[500] tracking-wider opacity-70 uppercase text-center">
+        <div className="max-w-[1440px] mx-auto flex flex-col md:flex-row items-center justify-center gap-3 md:gap-8 text-[12px] md:text-[13px] font-[500] tracking-wider opacity-70 uppercase text-center">
           <Link href="#" className="hover:text-white transition-colors">{t.legal.notices}</Link>
           <span className="hidden md:block opacity-20">•</span>
           <Link href="#" className="hover:text-white transition-colors">{t.legal.terms}</Link>

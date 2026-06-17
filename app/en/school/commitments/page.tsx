@@ -44,12 +44,7 @@ export default function CommitmentsPage() {
   }, []);
 
   const t = {
-    title: (
-      <>
-        Our <br />
-        Commitments
-      </>
-    ),
+    title: "Commitments of Grand Sud",
     image: "/assets/pexels-gold7k-69004-1536x1024.jpg",
     intro: [
       "We place individualized support, diversity, inclusion, and transparency at the heart of our teaching approach, convinced that each unique journey enriches the collective life of the school. Creating a respectful, open, and caring environment for all our students is one of our priorities!",

@@ -44,12 +44,7 @@ export default function InternationalPage() {
   }, []);
 
   const t = {
-    title: (
-      <>
-        Go global with <br />
-        Grand Sud
-      </>
-    ),
+    title: "Go global with Grand Sud",
     image: "/assets/pexels-christine-renard-198055-615060-scaled.jpg",
     intro: "Grand Sud Formation has always been open to the world. We are convinced that international openness is a major asset for our students and apprentices. It allows them to develop their curiosity, their open-mindedness, and their professional skills in an increasingly globalized tourism sector."
   };

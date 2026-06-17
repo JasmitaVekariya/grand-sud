@@ -52,7 +52,7 @@ export default function PageBanner({
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="flex justify-center translate-x-[8%] lg:translate-x-[12%]"
           >
-            <h1 className="text-white text-left text-[28px] sm:text-[32px] md:text-4xl lg:text-5xl font-bold uppercase leading-tight tracking-tight text-balance break-words max-w-[700px] pointer-events-auto">
+            <h1 className="text-white text-left text-[28px] sm:text-[32px] md:text-4xl lg:text-5xl font-bold uppercase leading-tight tracking-tight pointer-events-auto whitespace-nowrap">
               {title}
             </h1>
 

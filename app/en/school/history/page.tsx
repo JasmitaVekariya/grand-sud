@@ -126,8 +126,7 @@ export default function HistoryPage() {
   const t = {
     title: (
       <>
-        History of the <br />
-        School
+        The history of Grand Sud Tourism school
       </>
     ),
     image: "/assets/pexels-gold7k-69004-1536x1024.jpg"
