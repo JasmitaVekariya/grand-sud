@@ -251,7 +251,7 @@ export default function BachelorHospitalityPage() {
       assessmentTitle: "Assessment methods",
       assessmentText: "Written and oral exams.",
       downloadFrameworkLabel: "Download the full framework (French only)",
-      downloadFrameworkHref: "/assets/framework-pdf.pdf", // Placeholder href
+      downloadFrameworkHref: "/assets/Programme_pedagogique_Bachelor_Hospitality_Management.pdf",
       certificationTitle: "Certification",
       diplomaName: "Responsable de développement touristique territorial (RDTT) – Certified bachelor’s degree",
       rncpLabel: "RNCP 35706",
@@ -342,6 +342,7 @@ export default function BachelorHospitalityPage() {
           <CourseProgram 
             title="PROGRAM"
             years={programYears}
+            downloadButton={{ label: "Download the full program (French only)", href: "/assets/Programme_pedagogique_Bachelor_Hospitality_Management.pdf" }}
           />
         </section>
 
