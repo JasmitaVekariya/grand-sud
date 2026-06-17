@@ -64,7 +64,7 @@ export default function Hero() {
       </div>
 
       {/* Main Content Area - Overlapping Both Sections */}
-      <div className="flex-1 flex items-center z-20 w-full pt-32 pb-12 pointer-events-none">
+      <div className="flex-1 flex items-center z-20 w-full pt-20 md:pt-24 pb-4 pointer-events-none">
         <div className="max-w-[1440px] mx-auto w-full px-6 md:px-16 lg:px-24 xl:px-[200px]">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -72,26 +72,26 @@ export default function Hero() {
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="flex flex-col items-center md:items-start w-full pointer-events-auto"
           >
-            <h1 className="text-white text-center md:text-left text-4xl md:text-5xl lg:text-7xl xl:text-8xl font-bold leading-tight tracking-tight uppercase mb-6 text-balance break-words">
+            <h1 className="text-white text-center md:text-left text-4xl md:text-5xl lg:text-7xl xl:text-8xl font-bold leading-none tracking-tighter uppercase mb-4">
               {lang === "fr" ? "« " : "\""}
               {t.heading1} {t.heading2}
               {lang === "fr" ? " »" : "\""}
             </h1>
             
-            <p className="text-white text-center md:text-left text-lg md:text-xl lg:text-2xl font-medium mb-10 max-w-2xl opacity-95 leading-relaxed tracking-wide text-balance">
+            <p className="text-white text-center md:text-left text-lg md:text-xl lg:text-2xl font-medium mb-6 max-w-2xl opacity-95 leading-relaxed tracking-wide text-balance">
               {t.subtitle}
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 md:gap-6">
               <Link 
                 href={t.applyHref}
-                className="bg-primary-red text-white font-bold px-12 py-4 rounded-full text-center text-base md:text-lg hover:bg-[#8B2318] transition-all shadow-xl tracking-widest uppercase"
+                className="bg-primary-red text-white font-bold px-8 md:px-10 py-2.5 md:py-3 rounded-full text-center text-sm md:text-base hover:bg-[#8B2318] transition-all shadow-xl tracking-widest uppercase"
               >
                 {t.apply}
               </Link>
               <Link 
                 href={t.brochureHref}
-                className="bg-primary-red text-white font-bold px-12 py-4 rounded-full text-center text-base md:text-lg hover:bg-[#8B2318] transition-all shadow-xl tracking-widest uppercase"
+                className="bg-primary-red text-white font-bold px-8 md:px-10 py-2.5 md:py-3 rounded-full text-center text-sm md:text-base hover:bg-[#8B2318] transition-all shadow-xl tracking-widest uppercase"
               >
                 {t.brochure}
               </Link>
@@ -101,23 +101,23 @@ export default function Hero() {
       </div>
 
       {/* Structured Logo Strip - Bottom Aligned */}
-      <div className="w-full z-30 pb-8 md:pb-12 mt-auto pointer-events-none">
+      <div className="w-full z-30 pb-4 md:pb-6 mt-auto pointer-events-none">
         <div className="max-w-[1440px] mx-auto px-6 md:px-16 lg:px-24 xl:px-[200px]">
-          <div className="flex flex-wrap items-center justify-center lg:justify-end gap-3 md:gap-6 lg:mr-16 pointer-events-auto">
+          <div className={`flex flex-wrap items-center gap-3 md:gap-5 pointer-events-auto ${lang === "fr" ? "justify-center md:justify-start" : "justify-center md:justify-end"}`}>
             {PARTNER_LOGOS.map((logo, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5, delay: 0.4 + index * 0.1 }}
-                className="relative w-12 h-12 md:w-20 md:h-20 flex items-center justify-center transition-all duration-300 group"
+                className="relative w-[5rem] h-[5rem] md:w-[7rem] md:h-[7rem] flex items-center justify-center transition-all duration-300 group"
               >
-                <div className="relative w-full h-full bg-white rounded-md p-2 transition-transform duration-300 group-hover:scale-105 shadow-sm">
+                <div className="relative w-full h-full bg-white p-2 transition-transform duration-300 group-hover:scale-105 shadow-sm">
                   <Image
                     src={logo.src}
                     alt={logo.alt}
                     fill
-                    sizes="(max-width: 768px) 3rem, 5rem"
+                    sizes="(max-width: 768px) 5rem, 7rem"
                     className="object-contain"
                   />
                 </div>

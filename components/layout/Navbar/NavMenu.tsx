@@ -24,8 +24,8 @@ export default function NavMenu({ lang }: NavMenuProps) {
     <nav className="bg-primary-red sticky top-0 z-50">
       <div className="max-w-[1440px] mx-auto px-6 md:px-16 lg:px-24 xl:px-[200px]">
         <div className="flex items-center justify-between h-16 md:h-20">
-          <Link href={`/${lang}`} className="relative z-50 translate-y-2 min-[880px]:translate-y-3 -mb-10 hover:opacity-80 transition-opacity">
-            <div className="w-32 h-32 min-[880px]:w-40 min-[880px]:h-40 relative">
+          <Link href={`/${lang}`} className="relative z-50 flex shrink-0 items-center hover:opacity-80 transition-opacity">
+            <div className="w-20 h-20 min-[880px]:w-24 min-[880px]:h-24 relative">
               <Image
                 src="/assets/logo.jpg"
                 alt="Grand Sud Logo"

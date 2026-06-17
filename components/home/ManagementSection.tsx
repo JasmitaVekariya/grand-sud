@@ -6,14 +6,14 @@ import { useLanguage } from "@/context/LanguageContext";
 
 function Counter({ value }: { value: number }) {
   const [count, setCount] = useState(0);
-  const ref = useRef<HTMLSpanElement>(null);
-  const isInView = useInView(ref, { once: true, amount: 0.1 });
+  const ref = useRef<HTMLDivElement>(null);
+  const isInView = useInView(ref, { once: true, amount: 0.3 });
 
   useEffect(() => {
     if (isInView) {
       let start = 0;
       const end = value;
-      const duration = 2000; // 2 seconds animation
+      const duration = 2000;
       let startTime: number | null = null;
       let animationFrameId: number;
 
@@ -21,7 +21,6 @@ function Counter({ value }: { value: number }) {
         if (!startTime) startTime = timestamp;
         const progress = Math.min((timestamp - startTime) / duration, 1);
         
-        // Cubic ease-out formula for smooth slowing down at the end
         const easeOutCubic = (t: number) => 1 - Math.pow(1 - t, 3);
         const current = Math.floor(easeOutCubic(progress) * (end - start) + start);
         
@@ -37,7 +36,7 @@ function Counter({ value }: { value: number }) {
     }
   }, [isInView, value]);
 
-  return <span ref={ref}>{count}%</span>;
+  return <div ref={ref}>{count}%</div>;
 }
 
 export default function ManagementSection() {
@@ -45,7 +44,7 @@ export default function ManagementSection() {
 
   const content = {
     en: {
-      title: "100% MANAGEMENT TOURISM SCHOOL SINCE 1991",
+      title: ["100% MANAGEMENT", "TOURISM SCHOOL", "SINCE 1991"],
       description: "Our comprehensive range of courses covers the diversity of the management & tourism sector: leisure, travel, events, tourism promotion, hospitality, business tourism, commerce, management and more. Our students can enroll in a five-year professional training program (BTS-Bachelor-Mastere) to develop their skills.",
       counters: [
         { label: "specialized" },
@@ -54,7 +53,7 @@ export default function ManagementSection() {
       ],
     },
     fr: {
-      title: "L'ÉCOLE 100% MANAGEMENT ET TOURISME DEPUIS 1991",
+      title: ["L'ÉCOLE 100% MANAGEMENT", "ET TOURISME", "DEPUIS 1991"],
       description: "Notre offre complète de formations couvre la diversité du secteur du management et tourisme : loisirs, voyages, évènementiel, promotion de l'offre touristique, hôtellerie, tourisme d'affaires, commerce et management... Nos étudiants peuvent se former sur un cursus diplômant et professionnalisant en 5 ans BTS-Bachelor-Mastère, pour monter en compétences.",
       counters: [
         { label: "spécialisé" },
@@ -82,7 +81,9 @@ export default function ManagementSection() {
             <div className="absolute inset-0 border-l-[4px] border-t-[4px] border-b-[4px] border-white w-[80px] md:w-[100px]" />
             
             <h2 className="text-2xl md:text-3xl lg:text-[34px] font-bold leading-[1.05] tracking-tight uppercase">
-              {t.title}
+              {t.title.map((line, i) => (
+                <span key={i} className="block">{line}</span>
+              ))}
             </h2>
           </motion.div>
 

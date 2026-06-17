@@ -12,15 +12,15 @@ const slides = [
       en: {
         title: "BTS - Associate's degrees (BAC+2)",
         items: [
-          { flag: "🇫🇷", text: "Tourism" },
-          { flag: "🇫🇷", text: "Communication" },
+          { flag: "fr", text: "Tourism" },
+          { flag: "fr", text: "Communication" },
         ],
       },
       fr: {
         title: "BTS - Diplômes d'associé (BAC+2)",
         items: [
-          { flag: "🇫🇷", text: "Tourisme" },
-          { flag: "🇫🇷", text: "Communication" },
+          { flag: "fr", text: "Tourisme" },
+          { flag: "fr", text: "Communication" },
         ],
       },
     },
@@ -31,23 +31,23 @@ const slides = [
       en: {
         title: "Bachelors - BAC+3",
         items: [
-          { flag: "🇫🇷", text: "Hospitality Management" },
-          { flag: "🇫🇷", text: "MICE Designer" },
-          { flag: "🇫🇷", text: "Sustainable Tourism Development Manager" },
-          { flag: "🇬🇧", text: "Hospitality Management" },
-          { flag: "🇬🇧", text: "Business & Tourism" },
-          { flag: "🇬🇧", text: "IT & Tourism" },
+          { flag: "fr", text: "Hospitality Management" },
+          { flag: "fr", text: "MICE Designer" },
+          { flag: "fr", text: "Sustainable Tourism Development Manager" },
+          { flag: "gb", text: "Hospitality Management" },
+          { flag: "gb", text: "Business & Tourism" },
+          { flag: "gb", text: "IT & Tourism" },
         ],
       },
       fr: {
         title: "Bachelors - BAC+3",
         items: [
-          { flag: "🇫🇷", text: "Hospitality Management" },
-          { flag: "🇫🇷", text: "MICE Designer" },
-          { flag: "🇫🇷", text: "Responsable du développement touristique durable et digital" },
-          { flag: "🇬🇧", text: "Hospitality Management" },
-          { flag: "🇬🇧", text: "Business & Tourism" },
-          { flag: "🇬🇧", text: "IT & Tourism" },
+          { flag: "fr", text: "Hospitality Management" },
+          { flag: "fr", text: "MICE Designer" },
+          { flag: "fr", text: "Responsable du développement touristique durable et digital" },
+          { flag: "gb", text: "Hospitality Management" },
+          { flag: "gb", text: "Business & Tourism" },
+          { flag: "gb", text: "IT & Tourism" },
         ],
       },
     },
@@ -58,19 +58,19 @@ const slides = [
       en: {
         title: "Masters - BAC+5",
         items: [
-          { flag: "🇫🇷", text: "Tourism Strategy Manager" },
-          { flag: "🇬🇧", text: "Business & Tourism" },
-          { flag: "🇬🇧", text: "Hospitality Management" },
-          { flag: "🇬🇧", text: "IT & Tourism" },
+          { flag: "fr", text: "Tourism Strategy Manager" },
+          { flag: "gb", text: "Business & Tourism" },
+          { flag: "gb", text: "Hospitality Management" },
+          { flag: "gb", text: "IT & Tourism" },
         ],
       },
       fr: {
         title: "Mastères - BAC+5",
         items: [
-          { flag: "🇫🇷", text: "Manager en Stratégies Touristiques" },
-          { flag: "🇬🇧", text: "Business & Tourism" },
-          { flag: "🇬🇧", text: "Hospitality Management" },
-          { flag: "🇬🇧", text: "IT & Tourism" },
+          { flag: "fr", text: "Manager en Stratégies Touristiques" },
+          { flag: "gb", text: "Business & Tourism" },
+          { flag: "gb", text: "Hospitality Management" },
+          { flag: "gb", text: "IT & Tourism" },
         ],
       },
     },
@@ -103,8 +103,8 @@ export default function CurriculumSlider() {
   };
 
   const t = {
-    en: { heading: ["CURRICULUM OPEN TO THE", "WORLD"] },
-    fr: { heading: ["UN CURSUS OUVERT SUR LE", "MONDE"] },
+    en: { heading: "CURRICULUM OPEN TO THE WORLD" },
+    fr: { heading: "UN CURSUS OUVERT SUR LE MONDE" },
   }[lang];
 
   const slideVariants = {
@@ -134,10 +134,9 @@ export default function CurriculumSlider() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="text-primary-red text-3xl md:text-5xl lg:text-6xl font-bold uppercase tracking-tighter leading-[0.9] max-w-4xl"
+            className="text-primary-red text-2xl md:text-4xl lg:text-5xl xl:text-6xl font-bold uppercase tracking-tighter leading-[0.9] whitespace-nowrap"
           >
-            {t.heading[0]} <br />
-            <span className="block">{t.heading[1]}</span>
+            {t.heading}
           </motion.h2>
         </div>
 
@@ -188,7 +187,7 @@ export default function CurriculumSlider() {
                           transition={{ delay: 0.5 + idx * 0.05, duration: 0.4 }}
                           className="flex items-center gap-3 text-sm md:text-base lg:text-lg font-bold"
                         >
-                          <span className="flex-shrink-0 drop-shadow-md">{item.flag}</span>
+                          <img src={`https://flagcdn.com/w40/${item.flag}.png`} alt={item.flag} className="w-6 h-auto flex-shrink-0 drop-shadow-md" />
                           <span className="drop-shadow-md leading-tight tracking-wide">{item.text}</span>
                         </motion.li>
                       ))}
