@@ -22,7 +22,7 @@ export default function MegaMenu({ type, data, isOpen }: MegaMenuProps) {
         <ul className="flex flex-col gap-3">
           {data.leftLinks.map((link: any, idx: number) => (
             <li key={idx}>
-              <Link href={link.href} className="flex items-center text-[15px] font-[500] text-gray-900 hover:text-primary-red transition-colors">
+              <Link href={link.href} prefetch={false} className="flex items-center text-[15px] font-[500] text-gray-900 hover:text-primary-red transition-colors">
                 <span className="w-2.5 h-2.5 bg-primary-red mr-3 flex-shrink-0" /> {link.label}
               </Link>
             </li>
@@ -60,7 +60,7 @@ export default function MegaMenu({ type, data, isOpen }: MegaMenuProps) {
           );
 
           return section.href ? (
-            <Link key={idx} href={section.href} className="flex-1">
+            <Link key={idx} href={section.href} prefetch={false} className="flex-1">
               {Content}
             </Link>
           ) : (
@@ -79,7 +79,7 @@ export default function MegaMenu({ type, data, isOpen }: MegaMenuProps) {
         <p className="text-[14px] font-[500] leading-relaxed mb-8 opacity-90">
           {data.description}
         </p>
-        <Link href={data.button.href} className="relative group w-fit">
+        <Link href={data.button.href} prefetch={false} className="relative group w-fit">
           <div className="bg-white text-primary-red font-[700] py-2.5 px-8 rounded-full text-center tracking-widest text-[13px] transition-all overflow-hidden relative">
             <span className="relative z-20 uppercase">{data.button.label}</span>
             <div className="absolute inset-0 bg-primary-red/0 group-hover:bg-primary-red/30 transition-colors duration-300 z-10" />
@@ -95,7 +95,7 @@ export default function MegaMenu({ type, data, isOpen }: MegaMenuProps) {
             <ul className="flex flex-col gap-3">
               {col.links.map((link: any, lIdx: number) => (
                 <li key={lIdx}>
-                  <Link href={link.href} className="flex items-center text-[13px] font-[500] text-gray-800 hover:text-primary-red transition-colors leading-tight">
+                  <Link href={link.href} prefetch={false} className="flex items-center text-[13px] font-[500] text-gray-800 hover:text-primary-red transition-colors leading-tight">
                     <span className="w-2.5 h-2.5 bg-primary-red mr-3 flex-shrink-0" /> {link.label}
                   </Link>
                 </li>
@@ -109,7 +109,7 @@ export default function MegaMenu({ type, data, isOpen }: MegaMenuProps) {
                 <ul className="flex flex-col gap-3">
                   {col.extra.links.map((link: any, lIdx: number) => (
                     <li key={lIdx}>
-                      <Link href={link.href} className="flex items-center text-[13px] font-[500] text-gray-800 hover:text-primary-red transition-colors">
+                      <Link href={link.href} prefetch={false} className="flex items-center text-[13px] font-[500] text-gray-800 hover:text-primary-red transition-colors">
                         <span className="w-2.5 h-2.5 bg-primary-red mr-3 flex-shrink-0" /> {link.label}
                       </Link>
                     </li>
@@ -134,7 +134,7 @@ export default function MegaMenu({ type, data, isOpen }: MegaMenuProps) {
           {/* Left Images with Red Overlay */}
           <div className="flex flex-col gap-3 mb-6">
             {data.leftSection.href ? (
-              <Link href={data.leftSection.href} className="relative w-full h-20 overflow-hidden border border-white/20 group cursor-pointer block">
+              <Link href={data.leftSection.href} prefetch={false} className="relative w-full h-20 overflow-hidden border border-white/20 group cursor-pointer block">
                 <Image
                   src={data.leftSection.image}
                   alt="Toulouse"
@@ -184,7 +184,7 @@ export default function MegaMenu({ type, data, isOpen }: MegaMenuProps) {
         </div>
         <div className="px-8 pb-8 flex flex-col gap-3">
           {data.leftSection.links.map((link: any, idx: number) => (
-            <Link key={idx} href={link.href} className="flex items-center gap-3 text-[12px] font-[600] uppercase tracking-widest hover:text-[#3d1311] transition-colors">
+            <Link key={idx} href={link.href} prefetch={false} className="flex items-center gap-3 text-[12px] font-[600] uppercase tracking-widest hover:text-[#3d1311] transition-colors">
               {link.icon === "map" && <Map size={16} />}
               {link.icon === "home" && <Home size={16} />}
               {link.icon === "map-signs" && <MapIcon size={16} />}
@@ -197,7 +197,7 @@ export default function MegaMenu({ type, data, isOpen }: MegaMenuProps) {
         <ul className="flex flex-col gap-4 mb-8">
           {data.rightLinks.map((link: any, idx: number) => (
             <li key={idx}>
-              <Link href={link.href} className="flex items-center text-[15px] font-[500] text-gray-900 hover:text-primary-red transition-colors">
+              <Link href={link.href} prefetch={false} className="flex items-center text-[15px] font-[500] text-gray-900 hover:text-primary-red transition-colors">
                 <span className="w-2.5 h-2.5 bg-primary-red mr-3 flex-shrink-0" /> {link.label}
               </Link>
             </li>
@@ -227,7 +227,7 @@ export default function MegaMenu({ type, data, isOpen }: MegaMenuProps) {
               );
 
               return card.href ? (
-                <Link key={idx} href={card.href}>
+                <Link key={idx} href={card.href} prefetch={false}>
                   {CardContent}
                 </Link>
               ) : (
@@ -248,7 +248,7 @@ export default function MegaMenu({ type, data, isOpen }: MegaMenuProps) {
         {data.links.map((link: any, idx: number) => (
           <li key={idx}>
             {link.href ? (
-              <Link href={link.href} className="flex items-center text-[15px] font-[500] text-gray-900 hover:text-primary-red transition-colors">
+              <Link href={link.href} prefetch={false} className="flex items-center text-[15px] font-[500] text-gray-900 hover:text-primary-red transition-colors">
                 <span className="w-2.5 h-2.5 bg-primary-red mr-3 flex-shrink-0" /> {link.label}
               </Link>
             ) : (
@@ -279,7 +279,7 @@ export default function MegaMenu({ type, data, isOpen }: MegaMenuProps) {
           );
 
           return card.href ? (
-            <Link key={idx} href={card.href}>
+            <Link key={idx} href={card.href} prefetch={false}>
               {CardContent}
             </Link>
           ) : (
@@ -291,6 +291,7 @@ export default function MegaMenu({ type, data, isOpen }: MegaMenuProps) {
         {/* Business Space Fixed Card - 4th Box */}
         <Link 
           href={data.rightBox.href}
+          prefetch={false}
           className="bg-primary-red relative group overflow-hidden aspect-[16/8] cursor-pointer flex items-center justify-center text-white hover:brightness-110 transition-all shadow-md"
         >
           <div className="flex items-center gap-5 px-6">

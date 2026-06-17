@@ -123,6 +123,39 @@ export default function TopBar({ lang, setLang }: TopBarProps) {
     router.push(targetPath);
   };
 
+  const computeTargetPath = (newLang: "fr" | "en"): string => {
+    if (newLang === lang) return pathname;
+
+    const normalizedPath = pathname.endsWith("/") && pathname.length > 1 ? pathname.slice(0, -1) : pathname;
+
+    const manualRouteMappings: Record<string, string> = {
+      "/en/school/recruitments": "/fr/lecole/recrutement",
+      "/fr/lecole/recrutement": "/en/school/recruitments",
+      "/en/apply": "/fr/candidater",
+      "/fr/candidater": "/en/apply",
+      "/en/welcome/business/dedicated-page-for-businesses": "/fr/welcome/business/espace-dedie-aux-entreprises",
+      "/fr/welcome/business/espace-dedie-aux-entreprises": "/en/welcome/business/dedicated-page-for-businesses"
+    };
+
+    if (manualRouteMappings[normalizedPath]) {
+      return manualRouteMappings[normalizedPath];
+    }
+
+    const currentPrefix = `/${lang}`;
+    const targetPrefix = `/${newLang}`;
+    if (pathname === currentPrefix || pathname === `${currentPrefix}/`) {
+      return targetPrefix;
+    } else if (pathname.startsWith(`${currentPrefix}/`)) {
+      return pathname.replace(currentPrefix, targetPrefix);
+    }
+    return targetPrefix;
+  };
+
+  const handlePrefetch = (newLang: "fr" | "en") => {
+    if (newLang === lang) return;
+    router.prefetch(computeTargetPath(newLang));
+  };
+
   return (
     <div className="bg-[#3d1311] text-white border-b border-black/20">
       <div className="max-w-[1440px] mx-auto px-6 md:px-16 lg:px-24 xl:px-[200px] h-8 md:h-9 flex items-center justify-between gap-4">
@@ -151,13 +184,15 @@ export default function TopBar({ lang, setLang }: TopBarProps) {
           <div className="flex items-center gap-2">
             <button
               onClick={() => handleLanguageChange("en")}
-              className={`transition-all duration-300 ${lang === "en" ? "opacity-100 scale-110" : "opacity-40 hover:opacity-100"}`}
+              onMouseEnter={() => handlePrefetch("en")}
+              className={`cursor-pointer transition-all duration-300 ${lang === "en" ? "opacity-100 scale-110" : "opacity-40 hover:opacity-100"}`}
             >
               <img src="https://flagcdn.com/w40/gb.png" alt="English" className="w-6 h-auto shadow-sm" />
             </button>
             <button
               onClick={() => handleLanguageChange("fr")}
-              className={`transition-all duration-300 ${lang === "fr" ? "opacity-100 scale-110" : "opacity-40 hover:opacity-100"}`}
+              onMouseEnter={() => handlePrefetch("fr")}
+              className={`cursor-pointer transition-all duration-300 ${lang === "fr" ? "opacity-100 scale-110" : "opacity-40 hover:opacity-100"}`}
             >
               <img src="https://flagcdn.com/w40/fr.png" alt="Français" className="w-6 h-auto shadow-sm" />
             </button>
