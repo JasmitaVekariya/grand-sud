@@ -46,7 +46,7 @@ export default function BachelorSustainablePage() {
   const programYears = [
     {
       id: "year1",
-      title: "Year 1 - 518 hours",
+      title: "Year 1",
       hours: "518 hours",
       content: [
         {
@@ -119,7 +119,7 @@ export default function BachelorSustainablePage() {
       {
         title: "Step 1: Application",
         items: [
-          { text: "Download your application form by clicking here (French only).", isLink: true, linkText: "clicking here (French only)." },
+          { text: "Download your application form by clicking here (French only).", isLink: true, linkText: "clicking here (French only).", linkHref: "/fr/candidater" },
           { text: "Send your completed application by email, remembering to include all the required attachments!" },
           { text: "There is no application fee.", isItalic: true }
         ]
@@ -161,7 +161,7 @@ export default function BachelorSustainablePage() {
       assessmentTitle: "Assessment methods",
       assessmentText: "Written and oral exams.",
       downloadFrameworkLabel: "Download the validation framework (French only)",
-      downloadFrameworkHref: "/assets/framework-pdf.pdf",
+      downloadFrameworkHref: "/assets/Guide-de-validation-RDTT_2025-20261.pdf",
       certificationTitle: "Certification",
       diplomaName: "Responsable de développement touristique territorial (RDTT) – Certified bachelor's degree",
       rncpLabel: "RNCP 35706",
@@ -213,22 +213,23 @@ export default function BachelorSustainablePage() {
   const educationData = {
     title: "FURTHER EDUCATION",
     links: [
-      { label: "Mastère Manager en Stratégies Touristiques", href: "/en/courses/mastere-tourism", flag: "FR" as const },
+      { label: "Mastère Tourism Strategy Management", href: "/en/courses/mastere-tourism", flag: "FR" as const },
       { label: "Mastère Business & Tourism", href: "/en/courses/mastere-business", flag: "UK" as const },
       { label: "Mastère Hospitality Management", href: "/en/courses/mastere-hospitality", flag: "UK" as const },
-      { label: "In general, all level 7 titles", href: "#" }
+      { label: "In general, all level 7 titles", href: "" }
     ],
     jobs: []
   };
 
   return (
     <main className="bg-white">
-      <CourseBanner 
-        title={bannerData.title} 
-        image={bannerData.image} 
-        details={bannerData.details} 
+      <CourseBanner
+        title={bannerData.title}
+        image={bannerData.image}
+        details={bannerData.details}
         additionalInfo={bannerData.additionalInfo}
         logos={bannerData.logos}
+        certificationBadge="State Certified Title"
       />
       
       <CourseDetailLayout 
@@ -260,7 +261,7 @@ export default function BachelorSustainablePage() {
           <CourseProgram 
             title="PROGRAM"
             years={programYears}
-            downloadButton={{ label: "Download the full program (French only)", href: "/assets/Programme-pedagogique_BTS-Tourisme_2025-2027.pdf" }}
+            downloadButton={{ label: "Download the full program (French only)", href: "/assets/Programme-pedagogique_Bachelor-Responsable-developpement-touristique-durable-et-digital_2025-2026100.pdf" }}
           />
         </section>
 

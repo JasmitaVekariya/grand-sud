@@ -297,7 +297,7 @@ export default function BachelorBusinessPageFR() {
       { label: "Mastère Business & Tourism", href: "/fr/formations/mastere-business", flag: "UK" as const },
       { label: "Mastère Hospitality Management", href: "/fr/formations/mastere-hospitality", flag: "UK" as const },
       { label: "Mastère Management Stratégique du Tourisme", href: "/fr/formations/mastere-projets", flag: "FR" as const },
-      { label: "De manière générale, tous les titres de niveau 7", href: "/fr/formations" }
+      { label: "De manière générale, tous les titres de niveau 7", href: "" }
     ],
     jobs: []
   };

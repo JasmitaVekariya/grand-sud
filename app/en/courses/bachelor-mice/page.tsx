@@ -46,7 +46,7 @@ export default function BachelorMiceDesignerPage() {
   const programYears = [
     {
       id: "year1",
-      title: "Year 1 - 560 hours",
+      title: "Year 1",
       hours: "560 hours",
       content: [
         {
@@ -123,7 +123,7 @@ export default function BachelorMiceDesignerPage() {
       {
         title: "Step 1: Application",
         items: [
-          { text: "Download your application form by clicking here(French only).", isLink: true, linkText: "clicking here(French only)." },
+          { text: "Download your application form by clicking here(French only).", isLink: true, linkText: "clicking here(French only).", linkHref: "/fr/candidater" },
           { text: "Send your completed application by email, remembering to include all the required attachments!" },
           { text: "There is no application fee.", isItalic: true }
         ]
@@ -165,7 +165,7 @@ export default function BachelorMiceDesignerPage() {
       assessmentTitle: "Assessment methods",
       assessmentText: "Written and oral exams.",
       downloadFrameworkLabel: "Download the validation framework (French only)",
-      downloadFrameworkHref: "/assets/framework-pdf.pdf",
+      downloadFrameworkHref: "/assets/Guide-de-validation-RDTT_2025-20261.pdf",
       certificationTitle: "Certification",
       diplomaName: "Responsable de développement touristique territorial (RDTT) – Certified bachelor's degree",
       rncpLabel: "RNCP 35706",
@@ -220,19 +220,20 @@ export default function BachelorMiceDesignerPage() {
       { label: "Mastère Tourism Strategy Management", href: "/en/courses/mastere-tourism", flag: "FR" as const },
       { label: "Mastère Business & Tourism", href: "/en/courses/mastere-business", flag: "UK" as const },
       { label: "Mastère Hospitality Management", href: "/en/courses/mastere-hospitality", flag: "UK" as const },
-      { label: "In general, all level 7 titles", href: "#" }
+      { label: "In general, all level 7 titles", href: "" }
     ],
     jobs: []
   };
 
   return (
     <main className="bg-white">
-      <CourseBanner 
-        title={bannerData.title} 
-        image={bannerData.image} 
-        details={bannerData.details} 
+      <CourseBanner
+        title={bannerData.title}
+        image={bannerData.image}
+        details={bannerData.details}
         additionalInfo={bannerData.additionalInfo}
         logos={bannerData.logos}
+        certificationBadge="State Certified Title"
       />
       
       <CourseDetailLayout 
@@ -264,7 +265,7 @@ export default function BachelorMiceDesignerPage() {
           <CourseProgram 
             title="PROGRAM"
             years={programYears}
-            downloadButton={{ label: "Download the full program (French only)", href: "/assets/Programme-pedagogique_BTS-Tourisme_2025-2027.pdf" }}
+            downloadButton={{ label: "Download the full program (French only)", href: "/assets/Programme_pedagogique_Bachelor_MICE_Designer.pdf" }}
           />
         </section>
 

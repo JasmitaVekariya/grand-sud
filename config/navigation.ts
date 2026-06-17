@@ -140,7 +140,6 @@ export const navigationData = {
               { label: "Bachelor MICE Designer", href: "/en/courses/bachelor-mice" },
               { label: "Bachelor Sustainable and Digital Tourism Development", href: "/en/courses/bachelor-sustainable" },
               { label: "Mastere in Event and Tourism Project Management", href: "/en/courses/mastere-tourism" },
-              { label: "Apply (only French)", href: "/fr/candidater" },
             ],
             extra: { title: "Intensive courses", links: [{ label: "GDS Amadeus", href: "/en/courses/amadeus" }] }
           },
