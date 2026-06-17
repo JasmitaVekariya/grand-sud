@@ -199,7 +199,7 @@ export default function ApplyPage() {
       intakes: ["September/October", "January", "Spring Intake"],
     },
     fr: {
-      heading: "POSTULEZ À NOS FORMATIONS",
+      heading: "CANDIDATER À NOS FORMATIONS",
       topText: "Pour télécharger le dossier de candidature, il vous suffit de compléter le formulaire ci-dessous.\nVous le recevrez alors par mail, il faudra nous le renvoyer accompagné des pièces justificatives demandées pour nous permettre d'étudier votre profil et de vous proposer un entretien d'admission.",
       fields: {
         firstName: "FIRST NAME",
