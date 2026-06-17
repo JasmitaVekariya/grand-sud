@@ -50,14 +50,20 @@ export default function CourseFurtherEducation({ title, links, jobs }: CourseFur
                 </div>
               )}
               
-              <Link 
-                href={link.href}
-                className={`text-[18px] font-bold transition-all duration-300 hover:translate-x-1
-                  ${link.isHighlighted ? "text-primary-red hover:text-primary-red/80" : "text-black hover:text-primary-red"}
-                `}
-              >
-                {link.label}
-              </Link>
+              {link.href ? (
+                <Link 
+                  href={link.href}
+                  className={`text-[18px] font-bold transition-all duration-300 hover:translate-x-1
+                    ${link.isHighlighted ? "text-primary-red hover:text-primary-red/80" : "text-black hover:text-primary-red"}
+                  `}
+                >
+                  {link.label}
+                </Link>
+              ) : (
+                <span className="text-[18px] font-bold text-black">
+                  {link.label}
+                </span>
+              )}
             </div>
           </div>
         ))}

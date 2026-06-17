@@ -24,6 +24,7 @@ interface ProcessStep {
     text: string;
     isLink?: boolean;
     linkText?: string;
+    linkHref?: string;
     isItalic?: boolean;
   }[];
 }
@@ -138,7 +139,7 @@ export default function CourseAdmissions({
                       {item.isLink ? (
                         <>
                           {item.text.split(item.linkText || "")[0]}
-                          <a href="#" className="underline font-bold text-black hover:text-primary-red transition-colors">
+                          <a href={item.linkHref || "#"} className="underline font-bold text-black hover:text-primary-red transition-colors">
                             {item.linkText}
                           </a>
                           {item.text.split(item.linkText || "")[1]}

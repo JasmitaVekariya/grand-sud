@@ -50,7 +50,7 @@ export default function MastereBusinessPage() {
   const programYears = [
     {
       id: "year1",
-      title: "Year 1 - 602 hours",
+      title: "Year 1",
       hours: "602 hours",
       content: [
         {
@@ -93,7 +93,7 @@ export default function MastereBusinessPage() {
     },
     {
       id: "year2",
-      title: "Year 2 - 602 hours",
+      title: "Year 2",
       hours: "602 hours",
       content: [
         {
@@ -161,7 +161,7 @@ export default function MastereBusinessPage() {
       {
         title: "Step 1: Application",
         items: [
-          { text: "Download your application form.", isLink: true, linkText: "Download your application form." },
+          { text: "Download your application form.", isLink: true, linkText: "Download your application form.", linkHref: "/en/apply" },
           { text: "Send your completed application by email, remembering to include all the required attachments!" },
           { text: "Application fee: €300, non-refundable", isItalic: true }
         ]
@@ -185,8 +185,8 @@ export default function MastereBusinessPage() {
     ],
     prices: {
       title: "Initial tuition fee:",
-      initialLabel: "Per year:",
-      initialPrice: "€14,500\nScholarships are available. Contact your admissions officer for details.",
+      initialLabel: "Per year: €14,500",
+      initialPrice: "\nScholarships are available. Contact your admissions officer for details.",
       visaNote: "",
       workStudyLabel: "",
       workStudyPrice: "",
@@ -246,6 +246,7 @@ export default function MastereBusinessPage() {
         image={bannerData.image} 
         details={bannerData.details} 
         logos={bannerData.logos}
+        certificationBadge="State Certified Title"
       />
 
       <CourseDetailLayout 

@@ -12,13 +12,13 @@ import { CheckCircle2, Search, PenTool, Users, Briefcase, MonitorPlay } from "lu
 export default function MastereEventPage() {
   const bannerData = {
     title: "Mastère in Event and Tourism Project Management",
-    image: "/assets/Gemini_Generated_Image_ae35ae35ae35ae35-scaled.png", // Placeholder
+    image: "/assets/Gemini_Generated_Image_j1wcudj1wcudj1wc-scaled-e1756654688857.png",
     details: [
-      { label: "Language of instruction", value: "French" },
+      { label: "Language of the course", value: "French" },
       { label: "Level", value: "7 (bac+5)" },
       { label: "Status", value: "student, apprentice, job seeker, and employee (CPF transition)" },
-      { label: "Schedule", value: "initial or work-study – 1 week at the training center/2 week at the company" },
-      { label: "Duration", value: "2 years – 1,148 hours" },
+      { label: "Schedule", value: "initial or work-study—1 week at the training center/3 week at the company" },
+      { label: "Duration", value: "2 years—1,148 hours" },
     ],
     additionalInfo: "Training accessible through VAE (validation of acquired experience)",
     logos: ["/assets/logo-france-competences.png"]
@@ -48,7 +48,7 @@ export default function MastereEventPage() {
   const programYears = [
     {
       id: "year1",
-      title: "Year 1 - 574 hours",
+      title: "Year 1",
       hours: "574 hours",
       content: [
         {
@@ -75,7 +75,7 @@ export default function MastereEventPage() {
     },
     {
       id: "year2",
-      title: "Year 2 - 574 hours",
+      title: "Year 2",
       hours: "574 hours",
       content: [
         {
@@ -171,7 +171,7 @@ export default function MastereEventPage() {
       assessmentTitle: "Assessment methods",
       assessmentText: "Written and oral exams according to FEDE standards.",
       downloadFrameworkLabel: "Download the reference framework (French only)",
-      downloadFrameworkHref: "/assets/framework-pdf.pdf",
+      downloadFrameworkHref: "/assets/Management-et-strategie-dentreprise_Referentiel_v02.2025.pdf",
       certificationTitle: "Certification",
       diplomaName: "Mastère Degree – Titre de niveau bac +5,",
       rncpLabel: "RNCP41997",
@@ -211,6 +211,7 @@ export default function MastereEventPage() {
         details={bannerData.details} 
         additionalInfo={bannerData.additionalInfo}
         logos={bannerData.logos}
+        certificationBadge="State Certified Title"
       />
       
       <CourseDetailLayout 
@@ -235,7 +236,6 @@ export default function MastereEventPage() {
           <CourseProgram 
             title="PROGRAM"
             years={programYears}
-            downloadButton={{ label: "Download the educational program (French only)", href: "/assets/Programme-pedagogique_BTS-Tourisme_2025-2027.pdf" }}
           />
         </section>
 

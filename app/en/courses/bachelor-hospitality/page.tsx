@@ -36,148 +36,68 @@ export default function BachelorHospitalityPage() {
 
   const advantagesData = {
     title: "The advantages of Grand Sud",
-    subtitle: "With nearly 35 years of experience in education, Grand Sud School knows the keys to success in providing its students with what they need to succeed.",
-    bottomHighlight: "A guaranteed internship in the restaurant industry, lasting 3 to 6 months, in France",
-    bottomHighlightIcon: Plus,
+    subtitle: "With over 30 years of experience in preparing students for numerous qualifications, Grand Sud School knows the keys to success for passing this Level 6 qualification.",
     advantages: [
       { icon: CheckCircle2, text: "100% tourism expertise since 1991", isDarkRed: false },
-      { icon: Search, text: "support in finding an internship", isDarkRed: true },
-      { icon: PenTool, text: "Two mock exam sessions per year / professional juries", isDarkRed: false },
+      { icon: Search, text: "support in finding work-study programs or internships", isDarkRed: true },
+      { icon: PenTool, text: "exam preparation throughout the year", isDarkRed: false },
       { icon: Users, text: "workshop with real partners and real issues", isDarkRed: true },
       { icon: Briefcase, text: "real-life business cases studied in class", isDarkRed: false },
       { icon: MonitorPlay, text: "professional speakers", isDarkRed: true },
-      { icon: BookOpen, text: "a program tailored to the needs of businesses", isDarkRed: false },
-      { icon: Globe, text: "an internationally oriented program", isDarkRed: true },
-      { icon: Handshake, text: "students from diverse backgrounds, vectors of cultural richness", isDarkRed: false },
     ]
   };
 
   const programYears = [
     {
       id: "year1",
-      title: "Year 1 - 602 hours",
-      hours: "602 hours",
+      title: "Year 1",
+      hours: "580 hours",
       content: [
         {
-          unit: "Skills Unit 1 – Cross-disciplinary skills",
+          unit: "Skills Unit 1 – Developing general knowledge of tourism",
           items: [
-            { label: "Welcome Days", description: "Back-to-school integration and team-building seminar" },
-            { label: "Tourism English", description: "Welcoming and assisting foreign customers, selling French tourism products to foreign customers, selling foreign tourism products to French customers, accompanying foreign tourists, monitoring and retaining foreign customers" },
-            { label: "French", description: "Learning to communicate in order to meet basic and specific needs (level A1)" },
-            { label: "French culture", description: "Understanding and mastering French culture" }
+            { label: "General knowledge", description: "Developing general knowledge that can be applied in your professional activity" },
+            { label: "Tourist destinations", description: "Knowing the main tourist destinations around the world" },
+            { label: "Case study and project", description: "Professional scenario involving concrete responses to a customer need" }
           ]
         },
         {
-          unit: "Skills Unit 2 – Tourism culture",
+          unit: "Skills Unit 2 – Managing the financial strategy of a tourism business",
           items: [
-            { label: "Tourism product design", description: "Mastering the concepts from the analysis and implementation phase through to marketing" },
-            { label: "Overview of global tourism", description: "Understanding the specific features and trends of different types of tourism, understanding the main tourist destinations around the world" },
-            { label: "Amadeus", description: "Mastering the functioning of the Amadeus GDS (Global Distribution Systems), the reservation system for the airline and rail ecosystem" },
-            { label: "Tourism information management", description: "Mastering the main tools and software for collecting, processing, and publishing tourism information" }
+            { label: "Tourism project management", description: "Be able to manage a tourism development project for a region, event, or site or facility development" },
+            { label: "Team management", description: "Master the basics of project team management" },
+            { label: "Financial feasibility Creating a professional and financial dossier", description: "Mastering financial indicators specific to tourism and analyzing a company's accounting performance" },
+            { label: "Company law", description: "Identifying the different types of companies under French law and knowing how to choose between them" },
+            { label: "Office automation", description: "Mastering Word & Excel and the tools commonly used in business" }
           ]
         },
         {
-          unit: "Skills Unit 3 – User experience",
+          unit: "Skills Unit 3 – Defining and implementing the marketing and sales strategy of a tourism organization",
           items: [
-            { label: "Commercial management", description: "Build quality relationships to ensure long-term customer loyalty" },
-            { label: "Marketing", description: "Understand the basic rules of marketing" },
-            { label: "Tourism marketing", description: "Master the fundamentals of tourism marketing" },
-            { label: "Communication strategy", description: "Be able to build a 360° communication strategy" }
+            { label: "Analytical and strategic marketing", description: "Analyzing a situation and defining a marketing strategy" },
+            { label: "Marketing plan", description: "Developing and implementing a marketing plan" },
+            { label: "Marketing a tourism project", description: "Mastering the basics of commercial negotiation in the tourism sector, while adhering to a quality approach" }
           ]
         },
         {
-          unit: "Skills Unit 4 – Customer Experience",
+          unit: "Skills Unit 4 – Hospitality Management Specialization",
           items: [
-            { label: "Luxury codes", description: "Understand and master the codes of luxury" },
-            { label: "Overview of hospitality", description: "Know the different structures, trends, and challenges in catering and hospitality" },
-            { label: "Housekeeping team management", description: "Master the fundamentals of supervising housekeeping teams" },
-            { label: "Events", description: "Know how to organize an event" }
-          ]
-        }
-      ]
-    },
-    {
-      id: "year2",
-      title: "Year 2 - 602 hours",
-      hours: "602 hours",
-      content: [
-        {
-          unit: "Skills Unit 1 – Cross-disciplinary skills",
-          items: [
-            { label: "Welcome Days", description: "Back-to-school integration seminar and team building" },
-            { label: "Tourism English", description: "Welcoming and assisting foreign customers, selling French tourism products to foreign customers, selling foreign tourism products to French customers, accompanying foreign tourists, monitoring and retaining foreign customers" },
-            { label: "French", description: "Understanding the main points of written texts in everyday language: emails, brochures, articles, film reviews; ability to write simple, connected texts on familiar topics (intermediate level B1)" },
-            { label: "French culture", description: "Knowledge and mastery of French culture" }
+            { label: "Fundamentals of catering and accommodation", description: "Understand the different existing structures, trends, and challenges in accommodation and catering" },
+            { label: "Catering and accommodation marketing", description: "Understand the marketing mix of an accommodation structure" },
+            { label: "Events", description: "Master the rules for organizing an event" },
+            { label: "Management of an accommodation structure", description: "Understand the specific HR, legal, and financial aspects of an accommodation structure" }
           ]
         },
         {
-          unit: "Skills Unit 2 – Tourism culture",
+          unit: "Skills Unit 5 – Preparing for professional integration",
           items: [
-            { label: "Tourism product design", description: "Mastery of concepts from the analysis and implementation phase through to marketing" },
-            { label: "Eco-responsible tourism", description: "Understanding the environmental, social, and economic issues related to sustainable tourism" },
-            { label: "Sustainable development in the hotel and restaurant industry", description: "Explore strategies to minimize food waste and promote recycling" },
-            { label: "Tourism information management", description: "Master the main tools and software for collecting, processing, and publishing tourism information" }
-          ]
-        },
-        {
-          unit: "Skills Unit 3 – User experience",
-          items: [
-            { label: "Economic and legal environment", description: "Understanding the legal basis for running a business" },
-            { label: "Marketing in the hotel and restaurant industry", description: "Understanding the specific features of the marketing mix for an accommodation or restaurant establishment (adapting the offering to different customers, yield management, distribution, 3Ps of services)" },
-            { label: "Hotel operations management", description: "Identifying the different departments of a hotel, explaining the interactions between these departments, applying management methods to optimize performance" },
-            { label: "Social media", description: "Being able to carry out a social media campaign" }
-          ]
-        },
-        {
-          unit: "Skills Unit 4 – Management",
-          items: [
-            { label: "Managing a sales team", description: "Understanding the rules of management" },
-            { label: "Intercultural management", description: "Analyzing intercultural interaction in professional situations using different conceptual approaches" },
-            { label: "Public speaking", description: "Being able to create an engaging speech" },
-            { label: "Commercial negotiation", description: "Understanding the basics of commercial negotiation (role play)" }
-          ]
-        }
-      ]
-    },
-    {
-      id: "year3",
-      title: "Year 3 - 602 hours",
-      hours: "602 hours",
-      content: [
-        {
-          unit: "Skills Unit 1 – Cross-disciplinary skills",
-          items: [
-            { label: "Welcome Days", description: "Back-to-school integration seminar and team building" },
-            { label: "Tourism English", description: "Welcoming and assisting foreign customers, selling French tourism products to foreign customers, selling foreign tourism products to French customers, accompanying foreign tourists, monitoring and retaining foreign customers" },
-            { label: "French", description: "Understanding texts written in everyday language: emails, brochures, articles, film reviews; ability to write more complex texts on familiar topics (intermediate level B2)" },
-            { label: "French culture", description: "Knowledge and mastery of French culture" }
-          ]
-        },
-        {
-          unit: "Skills Unit 2 – Business and economics",
-          items: [
-            { label: "Tourism project management", description: "Understand project management" },
-            { label: "Financial management", description: "Analyze a company's accounting performance" },
-            { label: "Analytical and strategic marketing", description: "Choose a marketing strategy in the tourism sector and set objectives" },
-            { label: "Marketing plan", description: "Plan a digital communication plan in the tourism sector" }
-          ]
-        },
-        {
-          unit: "Skills Unit 3 – User experience",
-          items: [
-            { label: "Restaurant and accommodation marketing", description: "Understanding the specific features of the marketing mix for an accommodation or catering establishment (adapting the offering to different customers, yield management, distribution, 3Ps of services)" },
-            { label: "Local tourism and events management", description: "Understand the principles of local tourism and know how to set up a project" },
-            { label: "Territorial development", description: "Carry out a territorial diagnosis, develop a territorial project taking into account sustainable development and CSR" },
-            { label: "Management of an accommodation establishment", description: "Understanding the specific HR, legal, and financial aspects of a hotel establishment (managing the operating budget and planning investments, hotel/restaurant KPIs, regulations, HR management, front and back office management)" }
-          ]
-        },
-        {
-          unit: "Skills Unit 4 – Management",
-          items: [
-            { label: "Management fundamentals", description: "Understand different management methods" },
-            { label: "Intercultural management", description: "Analyze intercultural interaction in professional situations using different conceptual approaches" },
-            { label: "Team management", description: "Mobilize the individual energies of team members" },
-            { label: "Management and CSR", description: "Integrate CSR into management methods" }
+            { label: "Start", description: "Back-to-school integration and team-building seminar" },
+            { label: "Workshop", description: "Challenging professional scenarios involving concrete responses to customer needs, transforming needs into concrete solutions within a given time frame, developing adaptability, creativity, and collective intelligence in random multidisciplinary teams" },
+            { label: "Artificial Intelligence", description: "Using AI to improve skills" },
+            { label: "Soft skills (theater workshop)", description: "Developing eloquence, learning to verbalize and communicate needs and expectations" },
+            { label: "English", description: "Preparing a satisfaction or motivation questionnaire in English for English-speaking visitors; creating a regional promotion document in French and English, in paper and digital formats" },
+            { label: "Spanish", description: "Prepare a satisfaction or motivation questionnaire in Spanish for Spanish-speaking visitors; create a regional promotional document in French and Spanish in paper and digital formats" },
+            { label: "Title preparation", description: "Understand the certifier's expectations and prepare submissions that comply with them" }
           ]
         }
       ]
@@ -189,10 +109,9 @@ export default function BachelorHospitalityPage() {
     prerequisite: {
       title: "Prerequisite",
       items: [
-        "High school diploma or equivalent",
-        "Sufficient English language skills to follow the program (minimum B2), as demonstrated by official results from an English language test or equivalent (TOEIC, BULATS, TOEFL, IELTS, CAMBRIDGE, etc.), except for native English speakers or candidates who have studied for at least two years in a program taught in English (candidates must provide supporting documents).",
-        "Good academic level",
-        "If high school diploma level: candidates must pass the missing exams as independent candidates during the first year of the program"
+        "Two years of postsecondary education",
+        "Sufficient French language skills to follow the program",
+        "Languages: English and one other language of your choice"
       ]
     },
     intakes: {
@@ -200,48 +119,48 @@ export default function BachelorHospitalityPage() {
       periodText: "All year",
       intakesTitle: "Intakes",
       nextYearLabel: "Next start date:",
-      nextYearValue: "October 6, 2025",
+      nextYearValue: "October 2025",
       deferredLabel: "Deferred start date:",
-      deferredValue: "February 9, 2026"
+      deferredValue: "February 2026"
     },
-    processTitle: "Admission process",
+    processTitle: "Admission requirements",
     processSteps: [
       {
         title: "Step 1: Application",
         items: [
-          { text: "Download your application form." },
+          { text: "Download your application form by clicking here. (French only).", isLink: true, linkText: "clicking here", linkHref: "/fr/candidater" },
           { text: "Send your completed application by email, remembering to include all the required attachments!" },
-          { text: "Application fee: €300, non-refundable", isItalic: true }
+          { text: "There is no application fee.", isItalic: true }
         ]
       },
       {
         title: "Step 2: Selection",
         items: [
           { text: "Review of your application and verification of prerequisites for the desired program: level of education and foreign languages, professional experience," },
-          { text: "Individual appointment: remote motivation interview (via video)" },
-          { text: "Admissions committee review: our team will review your application as a whole" },
+          { text: "Individual appointment: motivational interview at the school or remotely (via video conference)" },
+          { text: "Admissions committee review: our team will review your application in its entirety" },
           { text: "Response within 48 business hours: favorable or unfavorable", isItalic: true }
         ]
       },
       {
         title: "Step 3: enrollment",
         items: [
-          { text: "Signing of the education contract" },
-          { text: "Support with financing options and internship searches" }
+          { text: "Validation of your status: Student / Job seeker / Vocational training intern / Employee" },
+          { text: "Support with financing options and finding a company" }
         ]
       }
     ],
     prices: {
-      title: "Initial tuition fees:",
-      initialLabel: "Per year:",
-      initialPrice: "€12,500\nScholarships are available. Contact your admissions officer for more information.",
-      visaNote: "",
-      workStudyLabel: "",
-      workStudyPrice: "",
-      workStudyNote: "",
-      seminarLabel: "",
-      seminarPrice: "",
-      seminarNote: ""
+      title: "Prices",
+      initialLabel: "Initial price:",
+      initialPrice: "€7,500",
+      visaNote: "*For students requiring assistance with visas (first entry into the EU) : €7,500",
+      workStudyLabel: "Work-study program fee:",
+      workStudyPrice: "€8,688",
+      workStudyNote: "In the work-study program, training costs are covered by the OPCO. This will be discussed with the company when the contract is signed.",
+      seminarLabel: "Seminar: \"The Tourism Landscape in France and Occitanie\":",
+      seminarPrice: "€1,050",
+      seminarNote: "This module is mandatory for students from outside the European Union during their first year in France. Its cost is added to the cost of the first year of the chosen program."
     }
   };
 
@@ -251,7 +170,7 @@ export default function BachelorHospitalityPage() {
       assessmentTitle: "Assessment methods",
       assessmentText: "Written and oral exams.",
       downloadFrameworkLabel: "Download the full framework (French only)",
-      downloadFrameworkHref: "/assets/Programme_pedagogique_Bachelor_Hospitality_Management.pdf",
+      downloadFrameworkHref: "/assets/Guide-de-validation-RDTT_2025-20261.pdf",
       certificationTitle: "Certification",
       diplomaName: "Responsable de développement touristique territorial (RDTT) – Certified bachelor’s degree",
       rncpLabel: "RNCP 35706",
@@ -303,7 +222,7 @@ export default function BachelorHospitalityPage() {
       { label: "Mastère Tourism Strategy Management", href: "/en/courses/mastere-tourism", flag: "FR" as const },
       { label: "Mastère Business & Tourism", href: "/en/courses/mastere-business", flag: "UK" as const },
       { label: "Mastère Hospitality Management", href: "/en/courses/mastere-hospitality", flag: "UK" as const },
-      { label: "In general, all level 7 titles", href: "#" }
+      { label: "In general, all level 7 titles", href: "" }
     ],
     jobs: []
   };
@@ -330,9 +249,9 @@ export default function BachelorHospitalityPage() {
               DESCRIPTION
             </h2>
             <div className="space-y-6 text-[16px] text-black leading-relaxed font-medium max-w-4xl">
-              <p>This Bachelor's degree, designed for students with international ambitions, trains them in the challenges of tourism, French culture, and specific areas of hospitality in the hotel and restaurant industry.</p>
-              <p>Graduates obtain a certified Level 6 professional qualification, enabling them to access a variety of positions in the tourism sector.</p>
-              <p>It is designed for students who are passionate about travel, culture, and customer relations, who have a high school diploma (or equivalent) and are looking for a career in international tourism, as well as for European and international students seeking to study in France in an international learning environment.</p>
+              <p>The Bachelor's degree in Hospitality Management is a three-year degree (level 6) that trains professionals to manage, promote, and develop tourism and hotel facilities.</p>
+              <p>This comprehensive program covers a variety of topics such as tourism project management, marketing and business strategy, team management, events, accommodation and catering, and law and finance applied to tourism.</p>
+              <p>Designed to combine technical expertise and interpersonal skills, it emphasizes professional development through concrete projects, practical workshops, role-playing exercises, and internships: students thus acquire solid field experience and develop the skills sought by employers.</p>
             </div>
           </div>
           <CourseAdvantages {...advantagesData} />
