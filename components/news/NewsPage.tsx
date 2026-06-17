@@ -43,9 +43,12 @@ export default function NewsPage() {
   }, [pathname, setLang]);
 
   // Calendar State
-  const [currentDate, setCurrentDate] = useState(new Date(2026, 4, 1)); // May 2026
+  const [currentDate, setCurrentDate] = useState(() => {
+    const now = new Date();
+    return new Date(now.getFullYear(), now.getMonth(), 1);
+  });
   const [isSelectorOpen, setIsSelectorOpen] = useState(false);
-  const [selectedYear, setSelectedYear] = useState(2026);
+  const [selectedYear, setSelectedYear] = useState(() => new Date().getFullYear());
 
   const t = {
     en: {
@@ -220,7 +223,7 @@ export default function NewsPage() {
             {/* Sticky Controls Wrapper */}
             <div className="relative">
               {/* Controls Bar */}
-              <div className="flex flex-wrap items-center justify-start gap-4 mb-8 bg-[#F5F5F5]/80 backdrop-blur-sm py-2 px-4 rounded-xl">
+              <div className="relative z-20 flex flex-wrap items-center justify-start gap-4 mb-8 bg-[#F5F5F5]/80 backdrop-blur-sm py-2 px-4 rounded-xl">
                 <div className="flex items-center gap-2">
                   <button 
                     onClick={() => changeMonth(-1)}
@@ -245,7 +248,10 @@ export default function NewsPage() {
 
                 <div className="relative">
                   <button 
-                    onClick={() => setIsSelectorOpen(!isSelectorOpen)}
+                    onClick={() => {
+                      setSelectedYear(currentDate.getFullYear());
+                      setIsSelectorOpen(!isSelectorOpen);
+                    }}
                     className="flex items-center gap-2 px-4 py-2 text-[20px] md:text-[24px] font-[700] text-[#2B2B2B] hover:text-[#F23A2E] transition-colors"
                   >
                     {monthLabels[currentDate.getMonth()]} {currentDate.getFullYear()}
@@ -259,7 +265,7 @@ export default function NewsPage() {
                         initial={{ opacity: 0, y: 10 }}
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: 10 }}
-                        className="absolute left-0 top-full mt-2 bg-white shadow-2xl rounded-2xl p-6 z-50 w-[300px] border border-[#E5E5E5]"
+                        className="absolute left-0 top-full mt-2 z-50 w-[300px] rounded-2xl border border-[#E5E5E5] bg-white p-6 shadow-2xl isolate"
                       >
                         <div className="flex items-center justify-between mb-4 pb-4 border-b border-[#E5E5E5]">
                           <button onClick={() => setSelectedYear(selectedYear - 1)} className="p-1 hover:bg-gray-100 rounded-lg">

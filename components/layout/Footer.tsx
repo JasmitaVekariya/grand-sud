@@ -29,7 +29,7 @@ export default function Footer() {
         complaint: "Complaint form",
         company: "Company login",
         student: "Student and alumni login",
-        faculty: "Speaker login"
+        faculty: "Faculty login"
       },
       legal: {
         notices: "LEGAL NOTICES AND PRIVACY POLICY",

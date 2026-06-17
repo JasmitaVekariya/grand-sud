@@ -123,11 +123,11 @@ export default function ContactPage() {
       openingHours: [
         "From Monday to Friday: 8:30 am - 6 pm",
         "Summer time: June, 15 to September, 1: 9:15 am - 5:15pm",
-        "Campus is closed during weekends and holidays, and from December, 18 to January, 4 and August 1 to 17"
+        "Campus is closed during weekends and holidays, and from December, 19 to January, 4 and August 1 to 17"
       ],
       phoneTitle: "Phone number",
       phoneSubtitle: "Campus Toulouse-Labège",
-      phone: "+33 (0) 5 37 37 37 36",
+      phone: "+33 (0) 5 37 17 01 06",
       emailTitle: "Email",
       emailSubtitle: (
         <>
@@ -167,7 +167,7 @@ export default function ContactPage() {
       ],
       phoneTitle: "Numéro de téléphone",
       phoneSubtitle: "Campus Toulouse-Labège",
-      phone: "+33 (0) 5 37 37 37 36",
+      phone: "+33 (0) 5 37 17 01 06",
       emailTitle: "E-mail",
       emailSubtitle: (
         <>
@@ -477,7 +477,7 @@ export default function ContactPage() {
             {/* Google Map iframe */}
             <div className="w-full md:w-[600px] aspect-[16/9] border border-white/10 rounded-sm overflow-hidden shadow-lg relative">
               <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2891.9547517174624!2d1.4988773124806495!3d43.54460595924761!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12aebce580665f8d%3A0x6b44569947f68282!2sGrand%20Sud%2C%20Upper%20School%20Tourism%20And%20Management!5e0!3m2!1sen!2sfr!4v1715745000000!5m2!1sen!2sfr" 
+                src="https://www.google.com/maps?cid=6638451043788040812&output=embed"
                 width="100%" 
                 height="100%" 
                 style={{ border: 0 }} 
@@ -485,6 +485,7 @@ export default function ContactPage() {
                 loading="lazy" 
                 referrerPolicy="no-referrer-when-downgrade"
                 className="w-full h-full"
+                title="Grand Sud Campus Toulouse-Labège"
               ></iframe>
             </div>
 

@@ -20,7 +20,7 @@ export default function GenericLoginPage({ lang, type }: GenericLoginPageProps) 
   const t = {
     en: {
       student: "STUDENT AND ALUMNI LOGIN",
-      faculty: "SPEAKER LOGIN",
+      faculty: "FACULTY LOGIN",
       username: "Username or Email Address",
       password: "Password",
       remember: "Remember Me",
