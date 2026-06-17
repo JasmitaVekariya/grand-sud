@@ -25,22 +25,23 @@ const MOCK_EVENTS = [
 
 export default function CalendarSection() {
   const { lang } = useLanguage();
-  const [currentDate, setCurrentDate] = useState(() => new Date());
+  const [currentDate, setCurrentDate] = useState(() => {
+    const now = new Date();
+    return new Date(now.getFullYear(), now.getMonth(), 1);
+  });
   const [isSelectorOpen, setIsSelectorOpen] = useState(false);
-  const [selectedYear, setSelectedYear] = useState(2026);
+  const [selectedYear, setSelectedYear] = useState(() => new Date().getFullYear());
 
   const t = {
     en: {
       subtitle: "OPEN DAYS, IMMERSION DAYS, WEBINARS...",
       title: "NEXT EVENTS",
       thisMonth: "This month",
-      meetUs: "MEET US"
     },
     fr: {
       subtitle: "JOURNÉES PORTES OUVERTES, JOURNÉES D'IMMERSION, WEBINAIRES...",
-      title: "ÉVÉNEMENTS À VENIR",
+      title: "PROCHAINES ÉVÈNEMENTS",
       thisMonth: "Ce mois-ci",
-      meetUs: "RECONTRER NOUS"
     }
   }[lang];
 
@@ -114,15 +115,29 @@ export default function CalendarSection() {
           <span className="text-[#2B2B2B]/60 text-[12px] md:text-[14px] font-[600] tracking-[0.2em] uppercase block mb-3">
             {t.subtitle}
           </span>
-          <h2 className="text-[#F23A2E] text-[40px] md:text-[64px] font-bold tracking-tight uppercase leading-none">
+          <h2 className={`text-[#F23A2E] text-[40px] md:text-[64px] font-bold tracking-tight leading-none ${lang === "en" ? "uppercase" : "normal-case"}`}>
             {t.title}
           </h2>
+
+          {lang === "fr" && (
+            <div className="mt-8 flex justify-center">
+              <Link href="/fr/lecole/rencontrer">
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="bg-[#F23A2E] text-white px-10 py-4 rounded-full font-bold text-[15px] uppercase tracking-widest hover:bg-[#666666] transition-all duration-300 shadow-lg"
+                >
+                  NOUS RENCONTRER
+                </motion.button>
+              </Link>
+            </div>
+          )}
         </div>
 
         {/* Sticky Controls Wrapper */}
         <div className="relative">
           {/* Controls Bar - Sticky within section */}
-          <div className="sticky top-4 z-30 flex items-center justify-start gap-4 mb-8 bg-[#F5F5F5]/80 backdrop-blur-sm py-2 px-4 rounded-xl">
+          <div className="sticky top-4 relative z-20 flex items-center justify-start gap-4 mb-8 bg-[#F5F5F5]/80 backdrop-blur-sm py-2 px-4 rounded-xl">
             <div className="flex items-center gap-2">
               <button 
                 onClick={() => changeMonth(-1)}
@@ -147,7 +162,10 @@ export default function CalendarSection() {
 
             <div className="relative">
               <button 
-                onClick={() => setIsSelectorOpen(!isSelectorOpen)}
+                onClick={() => {
+                  setSelectedYear(currentDate.getFullYear());
+                  setIsSelectorOpen(!isSelectorOpen);
+                }}
                 className="flex items-center gap-2 px-4 py-2 text-[20px] md:text-[24px] font-[700] text-[#2B2B2B] hover:text-[#F23A2E] transition-colors"
               >
                 {monthLabels[currentDate.getMonth()]} {currentDate.getFullYear()}
@@ -245,18 +263,19 @@ export default function CalendarSection() {
           </div>
         </div>
 
-        {/* Footer Button */}
-        <div className="mt-12 flex justify-center">
-          <Link href={lang === 'en' ? "/en/school/meetus" : "/fr/lecole/rencontrer"}>
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="bg-[#F23A2E] text-white px-10 py-4 rounded-full font-bold text-[15px] uppercase tracking-widest hover:bg-[#666666] transition-all duration-300 shadow-lg"
-            >
-              {t.meetUs}
-            </motion.button>
-          </Link>
-        </div>
+        {lang === "en" && (
+          <div className="mt-12 flex justify-center">
+            <Link href="/en/school/meetus">
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="bg-[#F23A2E] text-white px-10 py-4 rounded-full font-bold text-[15px] uppercase tracking-widest hover:bg-[#666666] transition-all duration-300 shadow-lg"
+              >
+                MEET US
+              </motion.button>
+            </Link>
+          </div>
+        )}
 
       </div>
     </section>
