@@ -41,7 +41,7 @@ export default function EventsSection() {
   const t = {
     en: {
       news: "NEWS",
-      upcoming: "UPCOMING EVENTS",
+      upcoming: "",
       leftDate: "4 OCTOBER 2025",
       leftTitle: ["REFORM OF", "APPRENTICESHIP", "S FROM JULY 1,", "2025"]
     },
@@ -85,11 +85,11 @@ export default function EventsSection() {
                 />
               </div>
 
-              <div className="flex flex-col gap-0.5">
-                <span className="text-[10px] font-[600] text-[#2B2B2B]/60 uppercase tracking-widest">
+              <div className="flex flex-col gap-1">
+                <span className="text-[11px] md:text-[12px] font-[600] text-[#2B2B2B]/60 uppercase tracking-widest">
                   {t.leftDate}
                 </span>
-                <h3 className="text-[16px] md:text-[20px] font-bold text-[#7A1F1B] leading-[1.1] uppercase">
+                <h3 className="text-[20px] md:text-[24px] font-bold text-[#7A1F1B] leading-[1.1] uppercase">
                   {t.leftTitle.map((line, i) => (
                     <span key={i} className="block">{line}</span>
                   ))}
@@ -116,13 +116,13 @@ export default function EventsSection() {
               <div className="absolute inset-0 overflow-hidden">
                 <motion.div
                   animate={scrollControls}
-                  className="flex flex-col p-[12px] md:p-[15px] gap-[14px]"
+                  className="flex flex-col p-4 md:p-5 gap-4"
                 >
                   {allEvents.map((event, idx) => (
                     <motion.div
                       key={idx}
                       whileHover={{ x: 10 }}
-                      className="flex items-center gap-4 px-4 rounded-xl border-l-[6px] border-[#7A1F1B] bg-white shadow-sm hover:shadow-md transition-all duration-300 cursor-pointer w-full h-[70px] shrink-0"
+                      className="flex items-center gap-5 px-5 py-3 rounded-xl border-l-[6px] border-[#7A1F1B] bg-white shadow-sm hover:shadow-md transition-all duration-300 cursor-pointer w-full min-h-[70px] shrink-0"
                     >
                       {/* Date Block */}
                       <div className="flex flex-col items-center justify-center bg-[#7A1F1B] text-white min-w-[50px] py-1 rounded-lg">

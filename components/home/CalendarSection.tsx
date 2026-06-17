@@ -25,7 +25,7 @@ const MOCK_EVENTS = [
 
 export default function CalendarSection() {
   const { lang } = useLanguage();
-  const [currentDate, setCurrentDate] = useState(new Date(2026, 4, 1)); // May 2026
+  const [currentDate, setCurrentDate] = useState(() => new Date());
   const [isSelectorOpen, setIsSelectorOpen] = useState(false);
   const [selectedYear, setSelectedYear] = useState(2026);
 
