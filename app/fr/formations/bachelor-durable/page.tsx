@@ -22,7 +22,8 @@ export default function BachelorSustainablePageFR() {
       { label: "Durée", value: "1 an – 518 heures" },
     ],
     additionalInfo: "Formation accessible par le biais de la VAE",
-    logos: ["/assets/logo-france-competences.png"]
+    logos: ["/assets/logo-france-competences.png"],
+    certificationBadge: "TITRE CERTIFIÉ PAR L'ÉTAT",
   };
 
   const sections = [
@@ -35,12 +36,12 @@ export default function BachelorSustainablePageFR() {
   ];
 
   const advantages = [
-    { icon: CheckCircle2, text: "Une expertise 100% tourisme depuis 1991", isDarkRed: false },
-    { icon: Search, text: "Accompagnement dans la recherche d'alternance ou de stage", isDarkRed: true },
-    { icon: PenTool, text: "Préparation aux examens tout au long de l'année", isDarkRed: false },
-    { icon: Users, text: "Atelier avec de vrais partenaires et de vraies problématiques", isDarkRed: true },
-    { icon: Briefcase, text: "Cas d'entreprise réels étudiés en classe", isDarkRed: false },
-    { icon: MonitorPlay, text: "Intervenants professionnels", isDarkRed: true },
+    { icon: CheckCircle2, text: "une expertise 100% tourisme depuis 1991", isDarkRed: false },
+    { icon: Search, text: "accompagnement à la recherche d'alternance ou de stage", isDarkRed: true },
+    { icon: PenTool, text: "des entraînements à l'examen tout au long de l'année", isDarkRed: false },
+    { icon: Users, text: "workshop avec des partenaires et des problématiques réels", isDarkRed: true },
+    { icon: Briefcase, text: "des cas réels d'entreprise étudiés en cours", isDarkRed: false },
+    { icon: MonitorPlay, text: "des intervenants professionnels", isDarkRed: true },
   ];
 
   const programYears = [
@@ -50,45 +51,45 @@ export default function BachelorSustainablePageFR() {
       hours: "518 heures",
       content: [
         {
-          unit: "Bloc de compétences 1 – Développer la culture générale du tourisme",
+          unit: "Unité de Compétences 1 – Développer sa culture générale touristique",
           items: [
-            { label: "Culture générale", description: "Développer une culture générale applicable à votre activité professionnelle" },
-            { label: "Start", description: "Séminaire d'intégration de rentrée et team building" },
-            { label: "Workshop", description: "Mises en situation professionnelle stimulantes impliquant des réponses concrètes à des besoins clients, transformer des besoins en solutions concrètes dans un temps imparti, développer l'adaptabilité, la créativité et l'intelligence collective au sein d'équipes pluridisciplinaires aléatoires" },
+            { label: "Culture générale", description: "Développer une culture générale globale réutilisable dans son activité professionnelle" },
+            { label: "Start", description: "Séminaire d'intégration de rentrée et teambuilding" },
+            { label: "Workshop", description: "Mise en situation professionnelle challenging de réponses concrètes à un besoin client, transformation du besoin en solution concrète en un temps imparti, développement de la capacité d'adaptation, créativité, intelligence collective en équipe aléatoire pluridisciplinaire" },
           ]
         },
         {
-          unit: "Bloc de compétences 2 – Piloter la stratégie financière d'une entreprise touristique",
+          unit: "Unité de Compétences 2 – Piloter la stratégie financière d'une entreprise touristique",
           items: [
-            { label: "Gestion de projet touristique", description: "Capacité à piloter un projet de développement touristique pour un territoire, un événement, ou l'aménagement d'un site" },
-            { label: "Management d'équipe", description: "Maîtriser les bases du management d'une équipe projet" },
-            { label: "Faisabilité financière (Création d'un dossier professionnel et financier)", description: "Maîtriser les indicateurs financiers spécifiques au tourisme et analyser les performances comptables d'une entreprise" },
-            { label: "Bureautique", description: "Maîtriser Word & Excel et les outils couramment utilisés en entreprise" },
+            { label: "Gestion d'un projet touristique", description: "Être en capacité de gérer un projet de développement touristique d'un territoire, évènementiel ou aménagement d'un site ou d'une structure" },
+            { label: "Gestion et management d'équipes", description: "Maîtriser les bases du management d'équipe projet" },
+            { label: "Faisabilité financière Création d'un dossier professionnel et financier", description: "Maîtriser les indicateurs financiers propres au tourisme et analyser les performances comptables d'une entreprise" },
+            { label: "Bureautique", description: "Maîtriser Word & Excel et les outils couramment employés en entreprise" },
           ]
         },
         {
-          unit: "Bloc de compétences 3 – Définir et mettre en œuvre la stratégie marketing et commerciale d'une organisation touristique",
+          unit: "Unité de Compétences 3 – Définir et conduire la stratégie marketing et commerciale d'une organisation touristique",
           items: [
             { label: "Marketing analytique et stratégique", description: "Analyser une situation et définir une stratégie marketing" },
-            { label: "Plan d'action commercial", description: "Élaborer et mettre en œuvre un plan marketing" },
-            { label: "IA et tourisme", description: "Intégrer l'IA dans une approche touristique" },
+            { label: "Plan marketing", description: "Elaborer et piloter un plan marketing" },
+            { label: "IA et tourisme", description: "Intégrer l'IA dans une démarche touristique" },
           ]
         },
         {
-          unit: "Bloc de compétences 4 – Développement durable et tourisme 3.0",
+          unit: "Unité de Compétences 4 – Développement durable et tourisme 3.0",
           items: [
-            { label: "Destinations touristiques, tendances et veille", description: "Analyser les tendances, comprendre les techniques d'identification, de collecte et d'analyse des informations liées au tourisme" },
-            { label: "Tourisme et développement durable", description: "Maîtriser les concepts permettant de minimiser les impacts négatifs du tourisme sur l'environnement et les communautés locales, tout en favorisant des retombées économiques et sociales positives." },
-            { label: "Tourisme 3.0", description: "Intégrer les nouvelles technologies pour rendre le tourisme plus durable." },
+            { label: "Destinations touristiques, tendances et veille", description: "Analyser les tendances, comprendre les techniques pour repérer, collecter, analyser l'information liée à l'activité touristique" },
+            { label: "Tourisme et développement durable", description: "Maitriser les concepts qui permettent de minimiser les impacts négatifs du tourisme sur l'environnement et les communautés locales, tout en favorisant les retombées économiques et sociales positives." },
+            { label: "Tourisme 3.0", description: "Intégrer les nouvelles technologies afin de rendre le tourisme plus durable." },
           ]
         },
         {
-          unit: "Bloc de compétences 5 – Préparation à l'intégration professionnelle",
+          unit: "Unité de Compétences 5 – Préparer son insertion professionnelle",
           items: [
-            { label: "Soft skills (atelier théâtre)", description: "Développer l'élocution, apprendre à verbaliser et communiquer ses besoins et attentes" },
-            { label: "Anglais", description: "Préparer un questionnaire de satisfaction ou de motivation en anglais pour des visiteurs anglophones ; créer un document de promotion territoriale en français et en anglais, sur supports papier et numérique" },
-            { label: "Espagnol", description: "Préparer un questionnaire de satisfaction ou de motivation en espagnol pour des visiteurs hispanophones ; créer un document de promotion territoriale en français et en espagnol sur supports papier et numérique" },
-            { label: "Préparation au titre", description: "Comprendre les attentes du certificateur et préparer des rendus conformes" },
+            { label: "Soft skills (atelier thêatre)", description: "Développer son élocution, apprendre à verbaliser et faire savoir ses besoins et ses attentes" },
+            { label: "Anglais", description: "Préparer un questionnaire de satisfaction ou de motivation en anglais, destiné aux visiteurs anglophones ; créer un document de promotion territoriale en français et en anglais, en version papier et en version numérique" },
+            { label: "Espagnol", description: "Préparer un questionnaire de satisfaction ou de motivation en espagnol, destiné aux visiteurs hispanophones ; créer un document de promotion territoriale en français et en espagnol en version papier et en version numérique" },
+            { label: "Préparation titre", description: "Comprendre les attentes du certificateur et préparer les rendus conformes à ces dernières" },
           ]
         }
       ]
@@ -98,60 +99,59 @@ export default function BachelorSustainablePageFR() {
   const admissionsData = {
     title: "ADMISSIONS",
     prerequisite: {
-      title: "Prérequis",
+      title: "Pré-requis",
       items: [
-        "Deux années d'études supérieures",
-        "Niveau de langue française suffisant pour suivre le programme",
-        "Langues : Anglais et une autre langue de votre choix"
+        "Bac+2",
+        "Un niveau de français suffisant pour permettre de suivre la formation",
+        "Langues : anglais et une autre langue au choix"
       ]
     },
     intakes: {
       periodTitle: "Période d'admission",
       periodText: "Toute l'année",
       intakesTitle: "Rentrées",
-      nextYearLabel: "Prochaine rentrée :",
-      nextYearValue: "Octobre 2025",
-      deferredLabel: "Rentrée décalée :",
-      deferredValue: "Février 2026"
+      nextYearLabel: "Prochaine rentrée",
+      nextYearValue: "octobre 2026",
+      deferredLabel: "Rentrée décalée",
+      deferredValue: "février 2027"
     },
-    processTitle: "Conditions d'admission",
+    processTitle: "Modalités d'admission",
     processSteps: [
       {
-        title: "Étape 1 : Candidature",
+        title: "Etape 1 : Dépôt de candidature",
         items: [
           { text: "Téléchargez votre dossier de candidature en cliquant ici.", isLink: true, linkText: "cliquant ici." },
-          { text: "Envoyez votre dossier complété par email, en pensant à joindre toutes les pièces demandées !" },
-          { text: "Il n'y a pas de frais de candidature.", isItalic: true }
+          { text: "Envoyez votre dossier complété par mail en n'oubliant pas les pièces jointes à fournir !" },
+          { text: "Il n'y a pas de frais de dossier." }
         ]
       },
       {
-        title: "Étape 2 : Sélection",
+        title: "Etape 2 : sélection",
         items: [
-          { text: "Étude de votre dossier et vérification des prérequis pour le programme souhaité : niveau d'études et langues étrangères, expérience professionnelle," },
-          { text: "Entretien individuel : entretien de motivation à l'école ou à distance (visio)" },
-          { text: "Examen par le comité d'admission : notre équipe examinera votre candidature dans son intégralité" },
-          { text: "Réponse sous 48 heures ouvrées : avis favorable ou défavorable", isItalic: true }
+          { text: "Etude de votre dossier de candidature et vérification des pré-requis selon la formation souhaitée : niveau d'études et langues étrangères, expérience professionnelle," },
+          { text: "Rendez-vous individuel : entretien de motivation à l'école ou à distance (en visio)" },
+          { text: "Passage en commission d'admission : notre équipe étudie votre dossier dans son ensemble" },
+          { text: "Réponse sous 48h ouvrée : avis favorable ou défavorable" }
         ]
       },
       {
-        title: "Étape 3 : Inscription",
+        title: "Etape 3 : inscription",
         items: [
-          { text: "Validation de votre statut : Étudiant / Demandeur d'emploi / Stagiaire de la formation professionnelle / Salarié" },
-          { text: "Accompagnement sur les options de financement et la recherche d'entreprise" }
+          { text: "Validation de votre statut : Étudiant / Demandeur d'Emploi / Stagiaire de la formation professionnelle / Salarié" },
+          { text: "Accompagnement sur les dispositifs de financement et la recherche d'entreprise" }
         ]
       }
     ],
     prices: {
       title: "Tarifs",
-      initialLabel: "Tarif initial :",
-      initialPrice: "7 500 €",
-      visaNote: "*Pour les étudiants nécessitant une aide aux visas (première entrée dans l'UE) : 7 500 €",
+      initialLabel: "Tarif en initial :",
+      initialPrice: "6 500 €",
       workStudyLabel: "Tarif en alternance :",
       workStudyPrice: "8 688 €",
-      workStudyNote: "*Dans le cadre de l'alternance, les frais de formation sont pris en charge par l'OPCO. Cela sera discuté avec l'entreprise lors de la signature du contrat.",
-      seminarLabel: "Séminaire : \"Le paysage touristique en France et en Occitanie\"",
+      workStudyNote: "En alternance, les frais de formation sont pris en charge par l'OPCO. Celle-ci sera abordée avec l'entreprise à la signature du contrat.",
+      seminarLabel: "Séminaire « Le paysage touristique en France et en Occitanie » :",
       seminarPrice: "1 050 €",
-      seminarNote: "Ce module est obligatoire pour les étudiants hors Union Européenne lors de leur première année en France. Son coût s'ajoute au coût de la première année du programme choisi."
+      seminarNote: "Ce module est obligatoire pour les étudiants hors Union Européenne, pour la première année en France. Son coût s'ajoute au montant de la première année de la formation choisie."
     }
   };
 
@@ -160,51 +160,48 @@ export default function BachelorSustainablePageFR() {
     details: {
       assessmentTitle: "Modalités d'évaluation",
       assessmentText: "Épreuves écrites et orales.",
-      downloadFrameworkLabel: "Télécharger le référentiel de validation",
-      downloadFrameworkHref: "/assets/framework-pdf.pdf",
+      downloadFrameworkLabel: "Télécharger le guide de validation",
+      downloadFrameworkHref: "/assets/Guide-de-validation-RDTT_2025-20261.pdf",
       certificationTitle: "Certification",
-      diplomaName: "Responsable de développement touristique territorial (RDTT) – Titre certifié de niveau 6 (bac+3)",
+      diplomaName: "Responsable de développement touristique territorial (RDTT) – Titre certifié de niveau bac +3",
       rncpLabel: "RNCP 35706",
       rncpLink: "https://www.francecompetences.fr/recherche/rncp/35706/",
       diplomaCodeLabel: "Code diplôme",
       diplomaCode: "36T33403",
-      ministry: "Ministère du Travail, du plein emploi et de l'insertion",
+      ministry: "Ministère du travail, du plein emploi et de l'insertion",
       expirationLabel: "Date d'échéance :",
-      expirationDate: "08/02/2026",
-      certificationNote: "Ce titre professionnel est composé de quatre blocs de compétences appelés « certificats de compétences professionnelles » (CCP). Il peut être obtenu par capitalisation de CCP ou à l'issue d'un parcours de formation.",
-      equivalencesTitle: "Équivalences",
+      expirationDate: "02/08/2026",
+      certificationNote: "Ce titre est composé de quatre blocs de compétences dénommés « certificats de compétences professionnelles » (CCP). Il est accessible par capitalisation de CCP ou suite à un parcours de formation.",
+      equivalencesTitle: "Equivalences",
       equivalencesItems: [
-        "Le CCP « Accompagner le développement marketing d'un territoire » du titre RDTT est équivalent au CCP « Commercialiser un établissement touristique dans une démarche omnicanale » du titre professionnel « Manager d'établissement touristique ».",
-        "Le CCP « Assurer la faisabilité financière d'une initiative touristique » du titre RDTT est équivalent au CCP « Assurer la gestion opérationnelle et planifier les investissements d'un établissement touristique » du titre professionnel « Manager d'établissement touristique »."
+        "Le CCP « Accompagner le développement marketing d'un territoire » du titre RDTT est équivalent au CCP « Commercialiser un établissement touristique avec une démarche multicanale » du titre professionnel « Responsable d'établissement touristique ».",
+        "Le CCP « Assurer la faisabilité financière d'une action touristique » du titre RDTT est équivalent au CCP « Assurer la gestion opérationnelle d'exploitation et prévoir les investissements d'un établissement touristique » du titre professionnel « Responsable d'établissement touristique »."
       ]
     }
   };
 
   const jobsData = {
     title: "DÉBOUCHÉS",
-    intro: "Le secteur du tourisme offre de nombreuses opportunités <strong>en France et à l'étranger</strong> aux titulaires du Bachelor Développement touristique durable et digital.",
+    intro: "Le secteur du tourisme offre un large panel d'opportunités <strong>en France et à l'Étranger</strong> pour les titulaires du Bachelor Responsable du développement touristique durable et digital",
     categories: [
       {
         jobs: [
-          { label: "Chef de produit touristique", isDarkRed: false },
+          { label: "Chef de produits touristiques", isDarkRed: false },
           { label: "Concepteur de produits touristiques", isDarkRed: true },
-          { label: "Coordinateur d'offres de tourisme responsable", isDarkRed: false },
-          { label: "Commercial en agence BtoB", isDarkRed: true },
-          
-          { label: "Commercial groupe BtoC", isDarkRed: true },
-          { label: "Responsable Grands Comptes", isDarkRed: false },
-          { label: "Responsable du développement du tourisme durable", isDarkRed: true },
-          { label: "Responsable Marketing Touristique Digital", isDarkRed: false },
-          
-          { label: "Chef de projet Tourisme Durable", isDarkRed: false },
+          { label: "Coordinateur d'offres touristiques responsables", isDarkRed: false },
+          { label: "Commercial agences BtoB", isDarkRed: true },
+          { label: "Commercial groupes BtoC", isDarkRed: true },
+          { label: "Responsable grands comptes", isDarkRed: false },
+          { label: "Responsable développement touristique durable", isDarkRed: true },
+          { label: "Responsable marketing touristique digital", isDarkRed: false },
+          { label: "Chargé de mission tourisme durable", isDarkRed: false },
           { label: "Chargé de promotion touristique", isDarkRed: true },
           { label: "Consultant en stratégie digitale et durable appliquée au tourisme", isDarkRed: false },
-          { label: "Responsable Partenariats et Labels (Tourisme Durable)", isDarkRed: true },
-          
+          { label: "Responsable partenariats et labels (tourisme durable)", isDarkRed: true },
           { label: "Responsable webmarketing touristique", isDarkRed: true },
-          { label: "Chef de projet digital en organisme de tourisme", isDarkRed: false },
-          { label: "Responsable communication digitale pour une destination", isDarkRed: true },
-          { label: "Responsable Innovation et Tourisme 3.0", isDarkRed: false },
+          { label: "Chargé de projets numériques pour structures touristiques", isDarkRed: false },
+          { label: "Responsable communication digitale d'une destination", isDarkRed: true },
+          { label: "Responsable innovation et tourisme 3.0", isDarkRed: false },
         ]
       }
     ]
@@ -229,6 +226,7 @@ export default function BachelorSustainablePageFR() {
         details={bannerData.details} 
         additionalInfo={bannerData.additionalInfo}
         logos={bannerData.logos}
+        certificationBadge={bannerData.certificationBadge}
       />
       
       <CourseDetailLayout 
@@ -242,15 +240,15 @@ export default function BachelorSustainablePageFR() {
               DESCRIPTION
             </h2>
             <div className="space-y-6 text-[16px] text-black leading-relaxed font-medium max-w-4xl">
-              <p>Le Bachelor Développement touristique durable et digital est un diplôme en trois ans (niveau 6) qui prépare les professionnels à concevoir, promouvoir et gérer des projets touristiques intégrant les enjeux de durabilité et les outils numériques.</p>
-              <p>Ce programme complet couvre divers sujets tels que la conception d'offres de tourisme responsable, la gestion de projets et d'équipes, le webmarketing et la stratégie commerciale, l'utilisation des technologies 3.0, l'analyse de données, et les principes du tourisme durable appliqués à différents territoires.</p>
-              <p>Conçu pour allier savoir-faire technique et compétences interpersonnelles, il met l'accent sur la professionnalisation à travers des projets concrets, des ateliers pratiques, des jeux de rôle et des stages : les étudiants acquièrent ainsi une solide expérience de terrain et développent les compétences recherchées dans un secteur en pleine mutation.</p>
+              <p>Le Bachelor Responsable du développement touristique durable et digital est un diplôme de niveau Bac+3 (niveau 6) qui prépare des professionnels capables de concevoir, promouvoir et piloter des projets touristiques intégrant les enjeux de durabilité et les outils numériques.</p>
+              <p>Ce cursus complet aborde des thématiques variées telles que la conception d'offres touristiques responsables, la gestion de projets et d'équipes, le webmarketing et la stratégie commerciale, l'utilisation des technologies 3.0, l'analyse de données, ainsi que les principes du tourisme durable appliqués aux territoires.</p>
+              <p>Conçu pour allier savoir-faire technique et compétences relationnelles, il met l'accent sur la professionnalisation grâce à des projets concrets, des ateliers pratiques, des mises en situation et des périodes en entreprise : les étudiants acquièrent ainsi une solide expérience de terrain et développent les compétences recherchées dans un secteur en pleine transformation</p>
             </div>
           </div>
 
           <CourseAdvantages 
-            title="Les avantages de Grand Sud"
-            subtitle="Forte de plus de 30 ans d'expérience dans la préparation des étudiants à de nombreuses qualifications, l'école Grand Sud possède les clés de la réussite pour cette qualification de niveau 6."
+            title="Les plus de Grand Sud"
+            subtitle="Avec plus de 30 ans d'expérience dans la préparation de nombreux titres, l'école Grand Sud connaît les clefs du succès pour réussir ce titre de niveau 6."
             advantages={advantages}
           />
         </section>
@@ -260,7 +258,7 @@ export default function BachelorSustainablePageFR() {
           <CourseProgram 
             title="PROGRAMME"
             years={programYears}
-            downloadButton={{ label: "Télécharger le programme complet", href: "/assets/Programme-pedagogique_BTS-Tourisme_2025-2027.pdf" }}
+            downloadButton={{ label: "Télécharger le programme pédagogique", href: "/assets/Programme-pedagogique_Bachelor-Responsable-developpement-touristique-durable-et-digital_2025-2026100.pdf" }}
           />
         </section>
 

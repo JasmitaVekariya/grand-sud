@@ -22,7 +22,7 @@ export default function CourseJobs({ title, intro, categories }: CourseJobsProps
         {title}
       </h2>
 
-      <div className="space-y-6 text-[15px] text-gray-700 leading-relaxed max-w-4xl">
+      <div className="space-y-6 text-[16px] text-black leading-relaxed max-w-4xl">
         <p dangerouslySetInnerHTML={{ __html: intro }} />
       </div>
 
@@ -35,12 +35,12 @@ export default function CourseJobs({ title, intro, categories }: CourseJobsProps
               </h3>
             )}
 
-            <div className="grid grid-cols-2 md:grid-cols-4 w-full items-stretch">
+            <div className="grid grid-cols-2 md:grid-cols-4 w-full items-stretch gap-0">
               {category.jobs.map((job, i) => (
                 <div 
                   key={i}
-                  className={`flex items-center justify-center px-4 py-8 text-center text-white text-[13px] md:text-[14px] font-bold uppercase tracking-wider leading-tight min-h-[80px] h-full
-                    ${job.isDarkRed ? "bg-[#4D1B19]" : "bg-[#3F3F3F]"}
+                  className={`flex items-center justify-center px-4 py-8 text-center text-[12px] md:text-[14px] font-bold uppercase tracking-wide leading-tight min-h-[90px] h-full
+                    ${job.isDarkRed ? "bg-[#8B2525] text-[#E28C8C]" : "bg-[#2D2D2D] text-white"}
                   `}
                 >
                   {job.label}
