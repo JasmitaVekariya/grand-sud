@@ -5,13 +5,13 @@ import PageBanner from "@/components/common/PageBanner";
 import { motion } from "framer-motion";
 
 const sections = [
-  { id: "absence", label: "Note sur l'absence de chiffres avant 2026" },
+  { id: "absence", label: "note sur l'absence de chiffres avant 2026" },
   { id: "satisfaction", label: "Taux de satisfaction" },
-  { id: "success", label: "Taux de réussite" },
+  { id: "obtention", label: "Taux d'obtention" },
   { id: "continuation", label: "Taux de poursuite d'études à 6 mois" },
   { id: "dropout", label: "Taux d'abandon" },
-  { id: "breakup", label: "Taux de rupture des contrats d'apprentissage" },
-  { id: "employment", label: "Taux d'insertion professionnelle" },
+  { id: "breakup", label: "Taux DE RUPTURE DES CONTRATS EN ALTERNANCE" },
+  { id: "employment", label: "Taux d'insertion dans l'emploi" },
 ];
 
 export default function ChiffresClesPage() {
@@ -53,12 +53,14 @@ export default function ChiffresClesPage() {
     title, 
     items, 
     height = "140px", 
-    isDropout = false 
+    isDropout = false,
+    isApprenti = false,
   }: { 
     title?: string, 
     items: { label: string, value: string, color: string }[], 
     height?: string,
-    isDropout?: boolean
+    isDropout?: boolean,
+    isApprenti?: boolean,
   }) => (
     <div className="mb-12">
       {title && <h3 className="text-[28px] font-bold text-black/80 mb-6">{title}</h3>}
@@ -84,11 +86,13 @@ export default function ChiffresClesPage() {
             {isDropout && (
               <div className="w-full text-left space-y-2 pt-2 border-t border-white/10">
                 <div className="flex flex-col">
-                  <p className="text-[11px] text-white/70 uppercase tracking-wider font-bold">Nombre d'apprenants :</p>
+                  <p className="text-[11px] text-white/70 uppercase tracking-wider font-bold">
+                    {isApprenti ? "Nombre d'apprentis :" : "Nombre d'apprenants :"}
+                  </p>
                   <p className="text-[13px] text-white font-medium">—</p>
                 </div>
                 <div className="flex flex-col">
-                  <p className="text-[11px] text-white/70 uppercase tracking-wider font-bold">Motifs d'abandon :</p>
+                  <p className="text-[11px] text-white/70 uppercase tracking-wider font-bold">Causes des abandons :</p>
                   <p className="text-[13px] text-white font-medium">—</p>
                 </div>
               </div>
@@ -103,8 +107,12 @@ export default function ChiffresClesPage() {
     <main className="bg-white">
       <div className="w-full">
         <PageBanner 
-          title={<>Chiffres clés</>} 
-          image="/assets/Gemini_Generated_Image_moyjrqmoyjrqmoyj-scaled-e1756663814308.png" 
+          title={
+          <>Les chiffres clés de Grand<br />
+          Sud Formation
+          </>
+        } 
+          image="/assets/pexels-goumbik-590022-scaled.jpg" 
           height="h-[450px]" 
         />
       </div>
@@ -122,7 +130,7 @@ export default function ChiffresClesPage() {
                   className="flex items-start gap-4 group w-full text-left transition-all duration-300"
                 >
                   <div className={`w-4 h-4 mt-1 flex-shrink-0 transition-colors duration-300 ${activeSection === section.id ? "bg-primary-red" : "bg-gray-300 group-hover:bg-red-200"}`} />
-                  <span className={`text-[12px] font-bold uppercase tracking-wider leading-relaxed transition-colors duration-300 ${activeSection === section.id ? "text-primary-red" : "text-gray-400 group-hover:text-red-300"}`}>
+                  <span className={`text-[12px] font-bold tracking-wider leading-relaxed transition-colors duration-300 ${activeSection === section.id ? "text-primary-red" : "text-gray-400 group-hover:text-red-300"}`}>
                     {section.label}
                   </span>
                 </button>
@@ -136,13 +144,13 @@ export default function ChiffresClesPage() {
             {/* Intro Header */}
             <div className="space-y-6 mb-16">
               <p className="text-[14px] text-black leading-relaxed font-medium">
-                Afin de garantir la qualité de ses formations et la satisfaction des entreprises et des apprenants, l'école utilise des indicateurs de performance qui lui permettent d'évaluer ses actions.
+                Pour s&apos;assurer de la qualité de ses formations et de la satisfaction des entreprises et de ses apprenants, l&apos;école utilise des indicateurs de performances qui lui permettent de juger de ses actions.
               </p>
               <p className="text-[14px] text-black leading-relaxed font-medium">
-                Ces indicateurs vous sont présentés en toute transparence car ils sont aussi pour vous un gage de qualité !
+                Ces indicateurs vous sont présentés de façon transparente car ils sont, aussi, gage de qualité pour vous !
               </p>
               <p className="text-[14px] text-gray-400 italic text-right">
-                Dernière mise à jour le 1er mai 2025
+                Dernière mise à jour le 01/05/2025
               </p>
             </div>
 
@@ -154,15 +162,15 @@ export default function ChiffresClesPage() {
                   Note sur l'absence de chiffres avant 2026
                 </h2>
                 <div className="space-y-6 text-[14px] text-black leading-relaxed font-medium">
-                  <p>Fondée en 1991, l'école a connu une riche histoire faite de succès mais aussi de hauts et de bas...</p>
+                  <p>Créée en 1991, l&apos;école a vécu une riche histoire pleine de réussites mais aussi d&apos;aléas…</p>
                   <p>
-                    Malheureusement, avant que SUPDEFORM ne reprenne la direction de l'école en mai 2025, les chiffres présentés étaient obsolètes, la dernière enquête qualité remontant à 2023 ; et il n'est pas facile de donner une vision claire et honnête des chiffres de l'école quand on n'arrive qu'en fin d'année scolaire...
+                    Malheureusement, avant l&apos;arrivée de SUPDEFORM en mai 2025 à la tête de l&apos;école, les chiffres présentés étaient datés, la dernière enquête de qualité datant de 2023 ; et il n&apos;est pas évident d&apos;élaborer un panorama clair et honnête des chiffres de l&apos;école lorsque l&apos;on n&apos;arrive qu&apos;en fin d&apos;année scolaire….
                   </p>
                   <p>
-                    Nous aurions pu choisir de donner des chiffres approximatifs, mas ils auraient été faussés. Notre politique étant la transparence, la décision a donc été prise de ne communiquer que des chiffres concrets, vérifiables et vérifiés, et donc d'attendre 2025-2026 pour mettre à jour cette page.
+                    Nous aurions pu choisir de donner des chiffres approximatifs mais ils auraient été faussés. Notre politique étant d&apos;être transparents, la décision a donc été prise de ne communiquer que sur des chiffres concrets, vérifiables et vérifiés et donc d&apos;attendre l&apos;année 2025-2026 pour mettre à jour cette page.
                   </p>
                   <p>
-                    En attendant, vous pouvez tout de même jeter un œil aux indicateurs que nous utiliserons pour les années à venir, et nous vous remercions par avance de votre compréhension...
+                    En attendant, vous pouvez tout de même prendre connaissance des indicateurs que nous allons utiliser pour les années à venir et nous vous remercions, par avance, pour votre compréhension…
                   </p>
                 </div>
               </section>
@@ -173,11 +181,11 @@ export default function ChiffresClesPage() {
                   Taux de satisfaction
                 </h2>
                 <p className="text-[14px] text-black font-medium mb-12">
-                  Le taux de satisfaction correspond au pourcentage d'apprenants ayant attribué une note de satisfaction supérieure à 5 sur 10 à la formation lors de l'entretien individuel annuel.
+                  Le taux de satisfaction correspond au pourcentage d&apos;apprenants ayant donné une note de satisfaction de la formation supérieure à 5 sur 10 lors de l&apos;entretien individuel annuel
                 </p>
                 
                 <RateGrid 
-                  title="Étudiants"
+                  title="Apprenants"
                   items={[
                     { label: "BTS Tourisme", value: "0%", color: "#333" },
                     { label: "Bachelors", value: "0%", color: "#7D1F1F" },
@@ -195,17 +203,17 @@ export default function ChiffresClesPage() {
                 />
               </section>
 
-              {/* Success Rate */}
-              <section id="success" className="scroll-mt-32">
+              {/* Obtention Rate */}
+              <section id="obtention" className="scroll-mt-32">
                 <h2 className="text-[32px] md:text-[42px] font-bold text-primary-red uppercase tracking-tight leading-tight mb-4">
-                  Taux de réussite
+                  Taux d&apos;obtention
                 </h2>
                 <p className="text-[14px] text-black font-medium mb-12">
-                  Le taux de réussite correspond au pourcentage d'apprenants inscrits à l'examen ayant obtenu la certification.
+                  Le taux d&apos;obtention correspond au pourcentage d&apos;apprenants inscrits à l&apos;examen ayant obtenu la certification.
                 </p>
                 
                 <RateGrid 
-                  title="Étudiants"
+                  title="Apprenants"
                   items={[
                     { label: "BTS Tourisme", value: "0%", color: "#333" },
                     { label: "Bachelors", value: "0%", color: "#7D1F1F" },
@@ -229,11 +237,11 @@ export default function ChiffresClesPage() {
                   Taux de poursuite d'études à 6 mois
                 </h2>
                 <p className="text-[14px] text-black font-medium mb-12">
-                  Ce pourcentage est obtenu suite à une enquête menée six mois après la validation de la certification et représente la poursuite d'études au sein de Grand Sud ou ailleurs.
+                  Ce pourcentage est obtenu après enquête 6 mois après validation de la certification, et représente la poursuite d&apos;étude à Grand Sud ou ailleurs.
                 </p>
                 
                 <RateGrid 
-                  title="Étudiants"
+                  title="Apprenants"
                   items={[
                     { label: "BTS Tourisme", value: "0%", color: "#333" },
                     { label: "Bachelors", value: "0%", color: "#7D1F1F" },
@@ -257,11 +265,11 @@ export default function ChiffresClesPage() {
                   Taux d'abandon
                 </h2>
                 <p className="text-[14px] text-black font-medium mb-12">
-                  Ce pourcentage est calculé sur la base du nombre d'apprenants présents en début d'année scolaire par rapport au nombre d'apprenants présents en fin de cursus.
+                  Ce pourcentage est obtenu par rapport au nombre d&apos;apprenants présents à la rentrée en rapport avec le nombre d&apos;apprenants présents à la fin des cours.
                 </p>
                 
                 <RateGrid 
-                  title="Étudiants"
+                  title="Apprenants"
                   isDropout={true}
                   items={[
                     { label: "BTS Tourisme", value: "0%", color: "#333" },
@@ -273,6 +281,7 @@ export default function ChiffresClesPage() {
                 <RateGrid 
                   title="Apprentis"
                   isDropout={true}
+                  isApprenti={true}
                   items={[
                     { label: "BTS Tourisme", value: "0%", color: "#333" },
                     { label: "Bachelors", value: "0%", color: "#7D1F1F" },
@@ -284,10 +293,10 @@ export default function ChiffresClesPage() {
               {/* Work-study breakup Rate */}
               <section id="breakup" className="scroll-mt-32">
                 <h2 className="text-[32px] md:text-[42px] font-bold text-primary-red uppercase tracking-tight leading-tight mb-4">
-                  Taux de rupture des contrats d'apprentissage
+                  Taux DE RUPTURE DES CONTRATS EN ALTERNANCE
                 </h2>
                 <p className="text-[14px] text-black font-medium mb-12">
-                  Ce pourcentage est calculé sur la base du nombre de contrats signés par rapport au nombre de contrats résiliés.
+                  Ce pourcentage est obtenu par rapport au nombre de contrats signés par rapport au nombre de contrats rompus.
                 </p>
                 <RateGrid 
                   items={[
@@ -301,13 +310,13 @@ export default function ChiffresClesPage() {
               {/* Employment Placement Rate */}
               <section id="employment" className="scroll-mt-32 pb-20">
                 <h2 className="text-[32px] md:text-[42px] font-bold text-primary-red uppercase tracking-tight leading-tight mb-4">
-                  Taux d'insertion professionnelle
+                  Taux d&apos;insertion dans l&apos;emploi
                 </h2>
                 <p className="text-[14px] text-black font-medium mb-12">
-                  Le taux d'insertion professionnelle concerne les apprenants ayant validé la certification visée.
+                  Le taux d&apos;insertion concerne les apprenants ayant validé le titre visé.
                 </p>
                 <RateGrid 
-                  title="Étudiants"
+                  title="Apprenants"
                   items={[
                     { label: "BTS Tourisme", value: "0%", color: "#333" },
                     { label: "Bachelors", value: "0%", color: "#7D1F1F" },
