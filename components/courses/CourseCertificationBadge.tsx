@@ -3,23 +3,24 @@ interface CourseCertificationBadgeProps {
 }
 
 export default function CourseCertificationBadge({ text }: CourseCertificationBadgeProps) {
-  const id = `cert-arc-${text.replace(/\s+/g, "-").toLowerCase()}`;
+  const id = `cert-arc-${text.replace(/[^a-zA-Z0-9]+/g, "-").toLowerCase()}`;
+  const fontSize = text.length > 35 ? 9 : text.length > 25 ? 11 : 16;
+  const letterSpacing = text.length > 35 ? 1.5 : text.length > 25 ? 2 : 4;
 
   return (
-    <svg viewBox="0 0 200 200" className="w-32 h-32" aria-label={text}>
+    <svg viewBox="0 0 200 200" className="h-32 w-32 shrink-0" aria-label={text}>
       <defs>
         <path
           id={id}
-          d="M 15 140 A 85 85 0 1 1 185 140"
+          d="M 12 145 A 88 88 0 1 1 188 145"
           fill="none"
         />
       </defs>
-      <circle cx="100" cy="100" r="4" fill="white" />
       <text
         fill="white"
-        fontSize="16"
+        fontSize={fontSize}
         fontWeight="700"
-        letterSpacing="4"
+        letterSpacing={letterSpacing}
         fontFamily="sans-serif"
       >
         <textPath href={`#${id}`} startOffset="50%" textAnchor="middle">

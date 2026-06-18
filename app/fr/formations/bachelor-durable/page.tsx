@@ -12,7 +12,7 @@ import { CheckCircle2, Search, PenTool, Users, Briefcase, MonitorPlay } from "lu
 
 export default function BachelorSustainablePageFR() {
   const bannerData = {
-    title: "Bachelor Développement touristique durable et digital",
+    title: "Bachelor RESPONSABLE DU DÉVELOPPEMENT TOURISTIQUE DURABLE ET DIGITAL",
     image: "/assets/Gemini_Generated_Image_ae35ae35ae35ae35-scaled.png",
     details: [
       { label: "Langue de la formation", value: "français" },

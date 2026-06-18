@@ -15,14 +15,15 @@ export default function BTSTourismePage() {
     title: "BTS TOURISME",
     image: "/assets/eiffeltower-1536x838.png",
     details: [
-      { label: "Langue d'enseignement", value: "Français" },
-      { label: "Niveau", value: "5 (Bac +2)" },
-      { label: "Statut", value: "Étudiant, apprenti, demandeur d'emploi et salarié (Transition CPF)" },
-      { label: "Rythme", value: "Temps plein ou alternance – 1 semaine en centre / 2 semaines en entreprise" },
-      { label: "Durée", value: "2 ans – 1 197 heures" },
+      { label: "Langue de la formation", value: "français" },
+      { label: "Niveau", value: "5 (bac+2)" },
+      { label: "Statut", value: "étudiant, apprenti, demandeur d'emploi et salarié (CPF de transition)" },
+      { label: "Rythme", value: "initial ou alternance – 1 semaine en centre de formation/2 semaine en entreprise" },
+      { label: "Durée", value: "2 ans – 1350 heures" },
     ],
-    additionalInfo: "Formation accessible par la VAE (Validation des Acquis de l'Expérience)",
-    logos: ["/assets/logo-france-competences.png"]
+    additionalInfo: "Formation accessible par le biais de la VAE",
+    logos: ["/assets/logo-france-competences.png"],
+    certificationBadge: "• DIPLÔME D'ÉTAT DE L'ÉDUCATION NATIONALE",
   };
 
   const sections = [
@@ -282,6 +283,7 @@ export default function BTSTourismePage() {
         details={bannerData.details} 
         additionalInfo={bannerData.additionalInfo}
         logos={bannerData.logos}
+        certificationBadge={bannerData.certificationBadge}
       />
       
       <CourseDetailLayout 
