@@ -47,77 +47,77 @@ export default function HistoirePage() {
     {
       date: "janvier 1991",
       title: "Grand Sud Formation est née",
-      text: "Avec l'essor des voyages et des vacances, il existe un réel besoin de personnel qualifié... Pour répondre à ce besoin, Danielle Chevallier fonde l'école de tourisme Grand Sud Formation, la première école de formation aux métiers du tourisme à Toulouse.",
+      text: "Face à l'essor des voyages et des séjours, un réel besoin en personnel qualifié existe... Pour répondre à ce besoin, Danielle Chevallier fonde l'école de tourisme Grand Sud Formation, la première école de formation aux métiers du Tourisme à Toulouse. Elle prépare aux diplômes accompagnateur et d'animateur.",
       icon: <Calendar className="w-5 h-5 text-white" />,
       side: "right"
     },
     {
       date: "septembre 1999",
-      title: "Ouverture du BTS Tourisme",
-      text: "L'ADN de l'école, axé sur la rigueur, le professionnalisme et l'excellence, s'applique au diplôme de référence de la profession : le BTS, qui fait désormais partie du catalogue de formation de Grand Sud.",
+      title: "Lancement du BTS Tourisme",
+      text: "L'ADN de l'école, centré sur la rigueur, la professionnalisation et l'excellence est appliqué au diplôme de référence dans le secteur : le BTS, qui rejoint le catalogue de formation de Grand Sud.",
       icon: <GraduationCap className="w-5 h-5 text-white" />,
       side: "left"
     },
     {
       date: "septembre 2010",
-      title: "Ouverture des spécialisations professionnelles",
-      text: "En réponse à la demande de compétences spécifiques, Grand Sud Formation propose des spécialisations professionnelles sous forme de formations courtes et intensives conçues pour répondre à des besoins précis.",
+      title: "Ouverture de spécialisations métiers",
+      text: "Face à une demande en compétences précises, Grand Sud Formation propose des spécialisations métiers sous forme de formations intensives et courtes pour répondre à des besoins spécifiques.",
       icon: <GraduationCap className="w-5 h-5 text-white" />,
       side: "right"
     },
     {
       date: "janvier 2011",
-      title: "Anniversaire des 20 ans",
-      text: "En présence de près de 700 personnes, dont de nombreux professionnels du tourisme, l'école a fêté son 20ème anniversaire lors d'une soirée exceptionnelle.",
+      title: "L'école fête ses 20 ans",
+      text: "En présence de près de 700 personnes, dont de nombreux professionnels du tourisme, l'école fête son 20ème anniversaire à l'occasion d'une soirée exceptionnelle.",
       icon: <Star className="w-5 h-5 text-white" />,
       side: "left"
     },
     {
       date: "octobre 2015",
       title: "Ouverture du premier Mastère de l'école",
-      text: "Auparavant centrée sur les diplômes de Bac+2 et Bac+3, l'école franchit une nouvelle étape en permettant aux étudiants de poursuivre leurs études jusqu'au Bac+5 !",
+      text: "Jusqu'à présent consacrée aux Bac+2 et Bac+3, l'école prend un nouvel élan en permettant une poursuite d'étude jusqu'en Bac+5 !",
       icon: <GraduationCap className="w-5 h-5 text-white" />,
       side: "right"
     },
     {
       date: "janvier 2019",
-      title: "L'excellence du programme BTS Tourisme",
-      text: "Le programme BTS Tourisme a reçu le label « excellence de la formation aux métiers du tourisme » par la CFET. Preuve de la qualité de nos programmes de formation.",
+      title: "Le BTS Tourisme est labellisé \"formation d'excellence aux métiers du Tourisme\" par la CFET",
+      text: "Preuve s'il en fallait de la qualité de nos formations, le BTS Tourisme s'est vu reconnaître par la Conférence des Formations d'Excellence au Tourisme",
       icon: <Star className="w-5 h-5 text-white" />,
       side: "left"
     },
     {
       date: "2019-2021",
-      title: "L'école reste forte face au COVID-19",
-      text: "Malgré les difficultés rencontrées par le secteur du tourisme, Grand Sud Formation a poursuivi et adapté ses activités. 80 % des étudiants trouvent un stage ou une alternance.",
+      title: "L'école tient bon face au COVID-19",
+      text: "Malgré des difficultés rencontrées par le secteur du tourisme, en lien avec les restrictions en place (confinement, restrictions d'ouverture et d'accès...), Grand Sud Formation a poursuivi et adaptée son activité. 80% des étudiants trouvent un stage ou une alternance, malgré un contexte morose.",
       icon: <Flag className="w-5 h-5 text-white" />,
       side: "right"
     },
     {
       date: "juin 2024",
       title: "Le Campus de Toulouse déménage à Labège",
-      text: "Après 30 ans, Grand Sud Formation s'installe dans des locaux répondant aux exigences d'aujourd'hui et de demain. C'est la fin d'un chapitre et le début d'un nouveau.",
+      text: "Après 30 ans, Grand Sud Formation quitte les allées Jean Jaurès et déménage au 21 rue du village d'entreprises à Labège. Une page se tourne pour en écrire une nouvelle, dans un cadre agréable plus adapté à la formation qui permet d'accueillir étudiants et professionnels dans des locaux qui répondent aux exigences d'aujourd'hui et de demain.",
       icon: <Building2 className="w-5 h-5 text-white" />,
       side: "left"
     },
     {
       date: "mai 2025",
       title: "Grand Sud rejoint le groupe SUPDEFORM",
-      text: "Avec ce changement, l'école se redynamise et entreprend une refonte complète de ses opérations, avec l'introduction d'une dimension résolument humaine et internationale.",
+      text: "Avec ce changement, l'école se redynamise et voit une refonte complète de son fonctionnement, avec la mise en place d'une dimension résolument humaine et internationale, souhaits des dirigeants du groupe.",
       icon: <Flag className="w-5 h-5 text-white" />,
       side: "right"
     },
     {
       date: "août 2025",
       title: "Obtention de la certification Qualiopi",
-      text: "Gage de qualité, l'école a obtenu la certification Qualiopi pour ses programmes de formation et d'apprentissage.",
+      text: "Gage de qualité, l'école a pu être certifiée Qualiopi pour ses actions de formations et de formations par apprentissage.",
       icon: <Star className="w-5 h-5 text-white" />,
       side: "left"
     },
     {
       date: "octobre 2025",
-      title: "Lancement de six nouveaux diplômes enseignés en anglais",
-      text: "Élargissement de notre portée internationale avec des programmes spécialisés conçus pour le marché mondial du tourisme.",
+      title: "Ouverture de 6 nouveaux diplômes délivrés 100% en anglais",
+      text: "",
       icon: <GraduationCap className="w-5 h-5 text-white" />,
       side: "right"
     }
@@ -126,8 +126,8 @@ export default function HistoirePage() {
   const t = {
     title: (
       <>
-        L'histoire de <br />
-        l'école
+L'histoire de Grand Sud <br />
+Formation
       </>
     ),
     image: "/assets/pexels-gold7k-69004-1536x1024.jpg"
@@ -195,7 +195,7 @@ export default function HistoirePage() {
                 LE TOURISME EN FRANCE
               </h2>
               <p className="text-[12px] text-black leading-relaxed">
-                Le tourisme est un secteur stratégique de l'économie locale, nationale et internationale. Chaque évolution de l'école est étroitement liée aux chiffres et aux tendances du tourisme.
+                Le tourisme est un secteur stratégique de l&apos;économie locale, nationale et internationale. Chaque développement de l&apos;école est intimement lié aux chiffres du tourisme et à ses évolutions.
               </p>
  
               {/* Stats Grid */}
@@ -206,7 +206,7 @@ export default function HistoirePage() {
                   <div className="space-y-3">
                     <span className="block text-xl font-bold">2 millions</span>
                     <p className="text-[10px] uppercase tracking-widest leading-relaxed text-gray-300 px-2">
-                      d'emplois dans la région dans le secteur du tourisme (tous types d'emplois confondus)
+                      d&apos;emplois sur le territoire dans le secteur du tourisme (tous types d&apos;emplois confondus)
                     </p>
                   </div>
                 </div>
@@ -214,9 +214,9 @@ export default function HistoirePage() {
                 <div className="bg-primary-red h-[277px] p-6 text-center text-white flex flex-col items-center justify-center gap-4">
                   <Globe className="w-10 h-10 text-white/50" />
                   <div className="space-y-3">
-                    <span className="block text-xl font-bold">100 millions de visiteurs mondiaux</span>
+                    <span className="block text-xl font-bold">100 millions de visiteurs internationaux</span>
                     <p className="text-[10px] uppercase tracking-widest leading-relaxed text-white/80 px-2">
-                      en France en 2024, avec des chiffres boostés par les Jeux Olympiques et Paralympiques
+                      en France en 2024, une fréquentation boostée par les Jeux Olympiques et Paralympiques
                     </p>
                   </div>
                 </div>
@@ -226,7 +226,7 @@ export default function HistoirePage() {
                   <div className="space-y-3">
                     <span className="block text-xl font-bold">7,5% du PIB français</span>
                     <p className="text-[10px] uppercase tracking-widest leading-relaxed text-gray-300 px-2">
-                      provient du tourisme, représentant 71,3 milliards d'euros de recettes internationales en 2024 (+8% par rapport à 2023)
+                      provient du tourisme soit 71,3 milliards d&apos;euros de recettes internationales en 2024 (+8% par rapport à 2023)
                     </p>
                   </div>
                 </div>
@@ -265,7 +265,9 @@ export default function HistoirePage() {
                             {/* Pointer - Top Left (mobile only) */}
                             <div className="block md:hidden absolute top-4 -left-2 w-4 h-4 bg-[#7D1F1F] transform rotate-45" />
                             <h3 className="text-base md:text-lg font-bold text-white mb-2 leading-tight uppercase">{item.title}</h3>
-                            <p className="text-[12px] text-white/90 leading-relaxed">{item.text}</p>
+                            {item.text && (
+                              <p className="text-[12px] text-white/90 leading-relaxed">{item.text}</p>
+                            )}
                           </div>
                         )}
                       </div>
@@ -279,7 +281,9 @@ export default function HistoirePage() {
                             {/* Pointer - Top Left */}
                             <div className="absolute top-4 -left-2 w-4 h-4 bg-[#7D1F1F] transform rotate-45" />
                             <h3 className="text-base md:text-lg font-bold text-white mb-2 leading-tight uppercase">{item.title}</h3>
-                            <p className="text-[12px] text-white/90 leading-relaxed">{item.text}</p>
+                            {item.text && (
+                              <p className="text-[12px] text-white/90 leading-relaxed">{item.text}</p>
+                            )}
                           </div>
                         )}
                       </div>

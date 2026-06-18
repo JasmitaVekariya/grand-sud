@@ -45,13 +45,13 @@ export default function Footer() {
       links: {
         news: "Actualités",
         meetUs: "Nous rencontrer",
-        contactUs: "Contact",
+        contactUs: "Nous contacter",
         recruitments: "Recrutements",
         rules: "Règlement intérieur",
         complaint: "Formulaire de réclamation",
-        company: "Connexion entreprise",
-        student: "Connexion étudiant et alumni",
-        faculty: "Connexion intervenant"
+        company: "Entreprise",
+        student: "Étudiant et diplômé",
+        faculty: "Intervenant"
       },
       legal: {
         notices: "MENTIONS LÉGALES ET POLITIQUE DE CONFIDENTIALITÉ",

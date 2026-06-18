@@ -46,8 +46,7 @@ export default function EngagementsPage() {
   const t = {
     title: (
       <>
-        Nos <br />
-        Engagements
+        Engagements de Grand Sud
       </>
     ),
     image: "/assets/pexels-gold7k-69004-1536x1024.jpg",
