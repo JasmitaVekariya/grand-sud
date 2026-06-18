@@ -41,13 +41,19 @@ export default function CourseValidation({ title, details }: CourseValidationPro
             <p className="text-[15px] text-gray-700 leading-relaxed max-w-3xl">
               {details.assessmentText}
             </p>
-            {details.downloadFrameworkLabel && details.downloadFrameworkHref && (
-              <a 
-                href={details.downloadFrameworkHref} 
-                className="inline-block bg-[#F24841] text-white px-8 py-3 rounded-full font-medium hover:bg-[#D13D37] transition-colors whitespace-nowrap"
-              >
-                {details.downloadFrameworkLabel}
-              </a>
+            {details.downloadFrameworkLabel && (
+              details.downloadFrameworkHref ? (
+                <a 
+                  href={details.downloadFrameworkHref} 
+                  className="inline-block bg-[#F24841] text-white px-8 py-3 rounded-full font-medium hover:bg-[#D13D37] transition-colors whitespace-nowrap"
+                >
+                  {details.downloadFrameworkLabel}
+                </a>
+              ) : (
+                <span className="inline-block bg-[#F24841] text-white px-8 py-3 rounded-full font-medium whitespace-nowrap">
+                  {details.downloadFrameworkLabel}
+                </span>
+              )
             )}
           </div>
         </div>
