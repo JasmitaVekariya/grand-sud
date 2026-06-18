@@ -97,7 +97,7 @@ export default function InitialTrainingPageFR() {
       diploma: "Titre RNCP - BAC+5",
       duration: "14 semaines de stage minimum par an (donc 28 semaines minimum au total)",
       color: "bg-[#333333]",
-      href: "/fr/formations/mastere-projets",
+      href: "/fr/formations/mastere-tourism",
       flag: "🇫🇷"
     },
     {

@@ -255,24 +255,7 @@ export default function BTSTourismePage() {
       { label: "Bachelor Business & Tourism", href: "/fr/formations/bachelor-business", flag: "UK" as const },
       { label: "D'une manière générale, titres de niveau 6", href: "/fr/formations" }
     ],
-    jobs: [
-      { label: "CHEF D'ENTREPRISE, CRÉATEUR OU REPRENEUR D'ENTREPRISES", isDarkRed: false },
-      { label: "DIRECTEUR MEMBRE DU COMITÉ DE DIRECTION", isDarkRed: true },
-      { label: "DIRECTEUR FONCTIONNEL (COMMERCIAL, MARKETING, JURIDIQUE, FINANCE, RESSOURCES HUMAINES, SUPPLY CHAIN, LOGISTIQUE, EXPORT)", isDarkRed: false },
-      { label: "DIRECTEUR D'UNITÉS OPÉRATIONNELLES AU NIVEAU UNITAIRE, RÉGIONAL, NATIONAL OU MONDIAL", isDarkRed: true },
-      { label: "DIRECTEUR / MANAGER DE ZONE, FILIALE, D'UNITÉ, DE SERVICES", isDarkRed: true },
-      { label: "DIRECTEUR GÉNÉRAL ADJOINT", isDarkRed: false },
-      { label: "GÉRANT", isDarkRed: true },
-      { label: "DIRECTEUR DE SERVICE, DÉPARTEMENT, UNITÉ, D'AGENCE", isDarkRed: false },
-      { label: "DIRECTEUR DE PROJET / MANAGER DE PROJET", isDarkRed: false },
-      { label: "DIRECTEUR DU DEVELOPPEMENT", isDarkRed: true },
-      { label: "DIRECTEUR DES VENTES", isDarkRed: false },
-      { label: "MANAGER DES ORGANISATIONS", isDarkRed: true },
-      { label: "MANAGER INTERNATIONAL", isDarkRed: true },
-      { label: "CONSULTANT DANS DES CABINETS DE CONSEIL ORIENTÉS", isDarkRed: false },
-      { label: "DIRECTEUR GÉNÉRAL DE FILIALE", isDarkRed: true },
-      { label: "DIRECTEUR ADJOINT", isDarkRed: false },
-    ]
+    jobs: []
   };
 
   return (

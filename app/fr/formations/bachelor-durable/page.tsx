@@ -47,7 +47,7 @@ export default function BachelorSustainablePageFR() {
   const programYears = [
     {
       id: "year1",
-      title: "Année 1 - 518 heures",
+      title: "Année 1",
       hours: "518 heures",
       content: [
         {

@@ -33,7 +33,7 @@ export const navigationData = {
               { label: "Bachelor Hospitality Management", href: "/fr/formations/bachelor-hospitality" },
               { label: "Bachelor MICE Designer", href: "/fr/formations/bachelor-mice" },
               { label: "Bachelor Tourisme Durable", href: "/fr/formations/bachelor-durable" },
-              { label: "Mastère Manager de projets", href: "/fr/formations/mastere-projets" },
+              { label: "Mastère Manager en Stratégies Touristiques", href: "/fr/formations/mastere-tourism" },
             ],
             extra: { title: "COURS INTENSIFS", links: [{ label: "GDS Amadeus", href: "/fr/formations/amadeus" }] }
           },
