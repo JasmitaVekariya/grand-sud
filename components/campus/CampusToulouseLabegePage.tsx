@@ -46,20 +46,20 @@ export default function CampusToulouseLabegePage() {
     },
     fr: {
       heading: "CAMPUS TOULOUSE-\nLABEGE",
-      p1: "Le campus Toulouse-Labège est le nouveau campus de l'école depuis 2024, après plusieurs années en plein centre de Toulouse.",
-      p2: "Fini les difficultés pour se garer en centre-ville, les terrasses et restaurants bondés le midi, place à un campus plus grand, au cœur d'une zone d'activité diversifiée et d'espaces verts !",
-      p3: "Il est idéalement situé, proche de la ville, accessible en transports en commun et facile d'accès en voiture.",
+      p1: "Le campus de Toulouse-Labège est le nouveau campus de l'école depuis 2024, après plusieurs années au centre de Toulouse.",
+      p2: "Exit les difficultés pour se garer en centre ville, les terrasses et restaurants bondés le midi, place à un campus plus vaste, au centre d'une zone d'activités diversifiée et d'espaces verts !",
+      p3: "Il est idéalement situé, proche de la ville, accessible en transports en commun et pratique à rejoindre en voiture.",
       box1: {
         title: "Le campus et ses environs",
-        subtitle: "Découvrez le campus en détail ainsi que les points de restauration autour"
+        subtitle: "Découvrez le campus en détails ainsi que les points de vie autour de celui-ci"
       },
       box2: {
-        title: "Se loger près du campus",
-        subtitle: "Quelques adresses pour vous aider à trouver votre futur chez-vous plus près de l'école !"
+        title: "Se loger autour du campus",
+        subtitle: "Quelques adresses pour vous aider à trouver votre futur chez vous au plus proche de l'école !"
       },
       box3: {
         title: "La ville de Toulouse",
-        subtitle: "Proche du campus, il est important de connaître quelques détails sur la vie toulousaine"
+        subtitle: "A deux pas du campus, il est important de connaître quelques détails sur la vie toulousaine"
       }
     },
   }[lang];

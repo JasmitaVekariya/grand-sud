@@ -46,12 +46,17 @@ export default function InternationalPage() {
   const t = {
     title: (
       <>
-        S'ouvrir au monde <br />
-        avec Grand Sud
+        L'international avec<br />
+        Grand Sud
       </>
     ),
     image: "/assets/pexels-christine-renard-198055-615060-scaled.jpg",
-    intro: "Grand Sud Formation a toujours été ouvert sur le monde. Nous sommes convaincus que l'ouverture internationale est un atout majeur pour nos étudiants et apprentis. Elle leur permet de développer leur curiosité, leur ouverture d'esprit et leurs compétences professionnelles dans un secteur du tourisme de plus en plus mondialisé."
+    intro: (
+      <>
+        Plus que jamais Grand Sud Formation vous fait partager le monde ! <br />
+        Etudiants internationaux, mobilité internationale et partenariats aux quatre coins du monde sont autant de chances pour celles et ceux qui nous rejoignent de découvrir d&apos;autres cultures, d&apos;autres pays et de développer un réseau mondial.
+      </>
+    ),
   };
 
   const partners = [
@@ -143,7 +148,7 @@ export default function InternationalPage() {
                         5 continents
                       </p>
                       <p className="text-[12px] text-white/60 uppercase tracking-widest font-medium">
-                        d'où viennent nos étudiants
+                        desquels nos étudiants proviennent
                       </p>
                     </div>
                   </div>
@@ -174,32 +179,36 @@ export default function InternationalPage() {
                   </div>
                   <div className="md:w-1/2 p-10 md:p-12 flex flex-col justify-center space-y-8">
                     <div className="space-y-6">
-                      <p className="text-[14px] text-white leading-relaxed font-medium italic opacity-90">"Oui, l'apprentissage peut rimer avec départ à l'étranger !"</p>
+                      <p className="text-[14px] text-white leading-relaxed font-medium italic opacity-90">
+                        Oui, l&apos;apprentissage peut être synonyme de départ à l&apos;étranger !
+                      </p>
                       <div className="space-y-4">
                         <p className="text-[14px] text-white leading-relaxed">
-                          Le programme de mobilité internationale pour les apprentis est une opportunité de vivre une expérience personnelle et professionnelle enrichissante.
+                          Le dispositif de mobilité internationale des apprentis, c&apos;est l&apos;occasion de vivre une expérience personnelle et professionnelle enrichissante.
                         </p>
                         <p className="text-[14px] text-white leading-relaxed">
-                          Chez Grand Sud Formation, ce programme est ouvert à tous les apprentis pour une période de 12 à 26 semaines.
+                          A Grand Sud Formation, ce dispositif est ouvert à tous les apprentis, pour une durée de 12 à 26 semaines.
                         </p>
                         <p className="text-[14px] text-white leading-relaxed">
-                          Notre conseiller mobilité est à votre disposition pour répondre à toutes vos questions sur les différentes options possibles.
+                          Notre référent mobilité est à votre disposition pour répondre à vos interrogations sur les différentes modalités.
                         </p>
                       </div>
                       
                       <div className="space-y-2">
-                        <p className="text-[14px] text-white font-bold uppercase tracking-wider mb-2">Que fait le conseiller ?</p>
-                        <p className="text-[14px] text-white leading-relaxed">Promeut les programmes d'études à l'étranger pour les apprentis.</p>
-                        <p className="text-[14px] text-white leading-relaxed">Accompagne les apprentis dans leur recherche d'une entreprise d'accueil internationale.</p>
-                        <p className="text-[14px] text-white leading-relaxed">Suit leur progression tout au long du programme de mobilité.</p>
+                        <p className="text-[14px] text-white font-bold tracking-wider mb-2">Ses missions ?</p>
+                        <p className="text-[14px] text-white leading-relaxed">favoriser la démarche d&apos;un cursus à l&apos;étranger pour les apprentis</p>
+                        <p className="text-[14px] text-white leading-relaxed">accompagner les apprentis dans leur recherche d&apos;entreprise d&apos;accueil à l&apos;international</p>
+                        <p className="text-[14px] text-white leading-relaxed">suivre leur cursus tout au long de la mobilité</p>
                       </div>
 
                       <div className="space-y-2 pt-2">
-                        <p className="text-[14px] text-white font-bold uppercase tracking-wider mb-2">En pratique, si vous voulez profiter pleinement du programme, vous devez :</p>
-                        <p className="text-[14px] text-white leading-relaxed">contacter notre conseiller mobilité</p>
-                        <p className="text-[14px] text-white leading-relaxed">signer une convention de mobilité avec l'entreprise partenaire</p>
-                        <p className="text-[14px] text-white leading-relaxed">avoir une carte européenne d'assurance maladie ou informer votre caisse d'assurance maladie en cas de mobilité hors Union Européenne</p>
-                        <p className="text-[14px] text-white leading-relaxed">travailler avec le conseiller mobilité pour explorer les aides à la mobilité disponibles (CFA, région, etc.).</p>
+                        <p className="text-[14px] text-white font-bold tracking-wider mb-2">
+                          En pratique, si vous souhaitez profiter à plein du dispositif, il vous faut :
+                        </p>
+                        <p className="text-[14px] text-white leading-relaxed">prendre contact avec notre référent mobilité</p>
+                        <p className="text-[14px] text-white leading-relaxed">signer une convention de mobilité avec l&apos;entreprise partenaire,</p>
+                        <p className="text-[14px] text-white leading-relaxed">détenir une carte européenne d&apos;assurance maladie ou aviser avec votre caisse en cas de mobilité hors Union Européenne,</p>
+                        <p className="text-[14px] text-white leading-relaxed">étudier à l&apos;aide du référent mobilité les aides à la mobilité disponible (CFA, région, etc.).</p>
                       </div>
                     </div>
 
@@ -215,7 +224,7 @@ export default function InternationalPage() {
                       </div>
                       <div className="space-y-0.5">
                         <h4 className="text-xl font-extrabold text-white leading-tight uppercase tracking-tight">Christophe <br />PEOTTA</h4>
-                        <p className="text-[12px] text-white/80 uppercase tracking-[0.2em] font-medium">Conseiller Mobilité</p>
+                        <p className="text-[12px] text-white/80 uppercase tracking-[0.2em] font-medium">Référent mobilité</p>
                       </div>
                     </div>
                   </div>
@@ -239,10 +248,10 @@ export default function InternationalPage() {
                   <div className="absolute inset-0 bg-black/20" />
                   <div className="relative lg:absolute lg:top-1/2 lg:left-12 lg:-translate-y-1/2 max-w-[450px] w-full bg-white/90 p-6 md:p-8 shadow-xl z-10">
                     <p className="text-[14px] text-black leading-relaxed font-medium mb-4">
-                      Grand Sud établit régulièrement des partenariats à l'étranger pour faciliter la mobilité des étudiants.
+                      Régulièrement, Grand Sud noue des partenariats à l&apos;étranger pour faciliter la mobilité de ses étudiants.
                     </p>
                     <p className="text-[14px] text-black leading-relaxed">
-                      Universités, écoles privées, institutions et acteurs économiques sont autant de partenaires importants du développement international !
+                      Universités, écoles privées, institutions ou encore acteurs de la vie économique sont autant de relations importantes dans le développement international !
                     </p>
                   </div>
                 </div>
@@ -273,36 +282,36 @@ export default function InternationalPage() {
               {/* Section 4: Sites de référence (Exact Match to Reference Image) */}
               <section id="reference" className="pt-20">
                 <h2 className="text-[32px] font-bold text-primary-red uppercase tracking-tight mb-8">
-                  SITES DE RÉFÉRENCE
+                  Sites de référence
                 </h2>
                 <div className="space-y-4">
                   <p className="text-[14px] text-black font-medium">
-                    Pour les étudiants internationaux, voici quelques sites web à consulter :
+                    A destination des étudiants internationaux, voici quelques sites (en anglais) à consulter :
                   </p>
                   <ul className="list-disc pl-5 space-y-2.5 text-[14px] text-black">
                     <li>
-                      <a href="https://www.inde.campusfrance.org/enjoy-student-benefits-in-france" target="_blank" className="hover:text-primary-red underline">Aides financières pour étudier en France</a>
+                      <a href="https://www.inde.campusfrance.org/enjoy-student-benefits-in-france" target="_blank" rel="noopener noreferrer" className="hover:text-primary-red underline">Aides aux études en France</a>
                     </li>
                     <li>
-                      <a href="https://www.inde.campusfrance.org/why-study-in-france" target="_blank" className="hover:text-primary-red underline">Pourquoi étudier en France</a>
+                      <a href="https://www.inde.campusfrance.org/why-study-in-france" target="_blank" rel="noopener noreferrer" className="hover:text-primary-red underline">Pourquoi étudier en France</a>
                     </li>
                     <li>
-                      <a href="https://cvec.etudiant.gouv.fr/" target="_blank" className="hover:text-primary-red underline">CVEC</a>
+                      <a href="https://cvec.etudiant.gouv.fr/" target="_blank" rel="noopener noreferrer" className="hover:text-primary-red underline">CVEC</a>
                     </li>
                     <li>
                       Logement (
-                      <a href="https://www.campusfrance.org/en/student-housing-france" target="_blank" className="hover:text-primary-red underline">site 1</a>, 
-                      <a href="#" className="hover:text-primary-red underline ml-1">site 2</a>, 
-                      <a href="#" className="hover:text-primary-red underline ml-1">Website 3</a>, 
-                      <a href="#" className="hover:text-primary-red underline ml-1">Website 4</a>, 
-                      <a href="#" className="hover:text-primary-red underline ml-1">Website 5</a>, 
-                      <a href="#" className="hover:text-primary-red underline ml-1">Website 6</a>)
+                      <a href="https://www.campusfrance.org/en/student-housing-france" target="_blank" rel="noopener noreferrer" className="hover:text-primary-red underline">site 1</a>,{" "}
+                      <a href="#" className="hover:text-primary-red underline">site 2</a>,{" "}
+                      <a href="#" className="hover:text-primary-red underline">site 3</a>,{" "}
+                      <a href="#" className="hover:text-primary-red underline">site 4</a>,{" "}
+                      <a href="#" className="hover:text-primary-red underline">site 5</a>,{" "}
+                      <a href="#" className="hover:text-primary-red underline">site 6</a>)
                     </li>
                     <li>
-                      <a href="https://etudiant-etranger.ameli.fr/" target="_blank" className="hover:text-primary-red underline">Sécurité sociale</a>
+                      <a href="https://etudiant-etranger.ameli.fr/" target="_blank" rel="noopener noreferrer" className="hover:text-primary-red underline">Sécurité sociale</a>
                     </li>
                     <li>
-                      <a href="https://www.fle.fr/" target="_blank" className="hover:text-primary-red underline">Französisch lernen</a>
+                      <a href="https://www.fle.fr/" target="_blank" rel="noopener noreferrer" className="hover:text-primary-red underline">Apprendre le français</a>
                     </li>
                     <li>
                       <a href="#" className="hover:text-primary-red underline">Transports en commun</a>
@@ -317,7 +326,7 @@ export default function InternationalPage() {
                       <a href="#" className="hover:text-primary-red underline">Lutte contre les discriminations</a>
                     </li>
                     <li>
-                      <a href="#" className="hover:text-primary-red underline">Égalité femmes-hommes et lutte contre les violences sexuelles</a>
+                      <a href="#" className="hover:text-primary-red underline">Discriminations liées au genre et abus sexuels</a>
                     </li>
                   </ul>
                 </div>
