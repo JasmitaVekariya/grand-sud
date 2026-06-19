@@ -17,81 +17,81 @@ export default function BusinessSpacePage({ lang }: BusinessSpacePageProps) {
     en: {
       title: "BUSINESSES\nSPACE",
       intro: [
-        "This dedicated private page is an essential tool for supporting companies in their recruitment efforts.",
+        "The company space is an essential tool for supporting companies in their recruitment efforts.",
         "It is a platform dedicated to job, internship, and work-study searches, with offers made available online by companies and our school to our students and graduates.",
         "It also serves as a practical guide for work-study programs and internships, centralizing the necessary information and contractual documents.",
-        "Our corporate relations managers and coaches are there to support you on a daily basis to ensure successful recruitment!"
+        "Our corporate relations managers and coaches support you on a daily basis for successful recruitment!",
       ],
       features: [
         {
           icon: <Calendar className="w-8 h-8" />,
-          title: "See annual schedules",
-          desc: "To find the proper rhythm for your business",
-          bgColor: "bg-[#333333]"
+          title: "View annual schedules",
+          desc: "To find the work-study or internship rhythm that suits you.",
+          bgColor: "bg-[#333333]",
         },
         {
           icon: <FileText className="w-8 h-8" />,
-          title: "Check the CV of our students",
-          desc: "To pick the ones you're interested in.",
-          bgColor: "bg-[#8B2318]"
+          title: "Browse the CV library",
+          desc: "To select the profiles that interest you.",
+          bgColor: "bg-[#8B2318]",
         },
         {
           icon: <Upload className="w-8 h-8" />,
-          title: "Publish and manage job offers",
-          desc: "Permanent contracts, fixed-term contracts, temporary work, freelance work, work-study programs, internships, student jobs: post your job offer and receive applications directly from our students and graduates!",
-          bgColor: "bg-[#333333]"
+          title: "Post and manage your offers",
+          desc: "Permanent contracts, fixed-term contracts, temporary work, freelance, work-study, internships, student jobs: post your offer and receive applications directly from our students and graduates!",
+          bgColor: "bg-[#333333]",
         },
         {
           icon: <FileSignature className="w-8 h-8" />,
-          title: "Find all contractual documents",
+          title: "Discover contractual documents",
           desc: "Useful for securing an internship or work-study program with one of our young people",
-          bgColor: "bg-[#8B2318]"
+          bgColor: "bg-[#8B2318]",
         },
         {
           icon: <Phone className="w-8 h-8" />,
           title: "Contact our corporate relations team",
-          desc: "To discuss your search with them: profiles, pre-selection, etc. We act as a recruitment agency to provide you with the best possible support.",
-          bgColor: "bg-[#333333]"
-        }
-      ]
+          desc: "To discuss your search with them: profiles, pre-selection... We act as a recruitment agency to provide you with the best possible support.",
+          bgColor: "bg-[#333333]",
+        },
+      ],
     },
     fr: {
       title: "ESPACE\nENTREPRISES",
       intro: [
-        "Cette page privée dédiée est un outil essentiel pour accompagner les entreprises dans leurs efforts de recrutement.",
-        "Il s'agit d'une plateforme dédiée à la recherche d'emploi, de stage et d'alternance, avec des offres mises en ligne par les entreprises et notre école auprès de nos étudiants et diplômés.",
-        "Elle sert également de guide pratique pour l'alternance et les stages, centralisant les informations et documents contractuels nécessaires.",
-        "Nos chargés de relations entreprises et coachs sont là pour vous accompagner au quotidien pour garantir la réussite de vos recrutements !"
+        "L'espace entreprise est un outil essentiel pour accompagner les entreprises dans leurs recrutements",
+        "C'est une plateforme dédiée à la recherche d'emploi, de stage et d'alternance avec des offres qui sont mises à disposition en ligne par des entreprises et notre école, à destination de nos étudiants et diplômés.",
+        "Il sert aussi de guide pratique pour l'alternance et le stage, centralisant les informations et les documents contractuels nécessaires.",
+        "Nos chargés de relations entreprises et coachs, vous accompagnent au quotidien, pour un recrutement réussi !",
       ],
       features: [
         {
           icon: <Calendar className="w-8 h-8" />,
-          title: "Consulter les calendriers annuels",
-          desc: "Pour trouver le bon rythme pour votre entreprise",
+          title: "Consultez les plannings annuels",
+          desc: "Pour trouver le rythme d'alternance ou de stage qui vous convient.",
           bgColor: "bg-[#333333]"
         },
         {
           icon: <FileText className="w-8 h-8" />,
-          title: "Consulter les CV de nos étudiants",
+          title: "Consultez la CVthèque",
           desc: "Pour sélectionner les profils qui vous intéressent.",
           bgColor: "bg-[#8B2318]"
         },
         {
           icon: <Upload className="w-8 h-8" />,
-          title: "Diffuser et gérer vos offres",
-          desc: "CDI, CDD, intérim, freelance, alternance, stage, job étudiant : déposez votre offre et recevez directement les candidatures de nos étudiants et diplômés !",
+          title: "Postez et gérez vos offres",
+          desc: "CDI, CDD, intérim, freelance, alternance, stage, jobs étudiants : proposez votre offre et recevez directement les candidatures de nos étudiants et diplômés !",
           bgColor: "bg-[#333333]"
         },
         {
           icon: <FileSignature className="w-8 h-8" />,
-          title: "Retrouver les documents contractuels",
-          desc: "Utile pour sécuriser un stage ou une alternance avec l'un de nos jeunes",
+          title: "Découvrez les documents contractuels",
+          desc: "Utiles pour concrétiser un stage ou une alternance avec l'un de nos jeunes",
           bgColor: "bg-[#8B2318]"
         },
         {
           icon: <Phone className="w-8 h-8" />,
-          title: "Contacter l'équipe relations entreprises",
-          desc: "Pour échanger avec eux sur votre recherche : profils, pré-sélection, etc. Nous agissons comme un cabinet de recrutement pour vous apporter le meilleur support possible.",
+          title: "Contactez notre équipe relations entreprises",
+          desc: "Pour échanger avec elle sur votre recherche : profils, pré-sélection... Nous intervenons tel un cabinet de recrutement pour mieux vous accompagner.",
           bgColor: "bg-[#333333]"
         }
       ]
@@ -116,13 +116,8 @@ export default function BusinessSpacePage({ lang }: BusinessSpacePageProps) {
         {/* Intro */}
         <div className="space-y-4 max-w-4xl">
           {t.intro.map((text, idx) => (
-            <p key={idx} className={`text-[#333] text-[14px] md:text-[15px] leading-relaxed ${idx === 1 || idx === 2 ? "font-bold" : "font-medium"}`}>
-              {text.split("platform dedicated to job, internship, and work-study").map((part, i, arr) => (
-                <span key={i}>
-                  {part}
-                  {i < arr.length - 1 && <span className="font-bold underline">platform dedicated to job, internship, and work-study</span>}
-                </span>
-              ))}
+            <p key={idx} className="text-[#333] text-[14px] md:text-[15px] leading-relaxed font-medium">
+              {text}
             </p>
           ))}
         </div>

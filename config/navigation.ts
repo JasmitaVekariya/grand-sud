@@ -99,7 +99,7 @@ export const navigationData = {
         cards: [
           { title: "STAGIAIRE", image: "/assets/card-stagiaire.jpg", href: "/fr/business/stagiaire" },
           { title: "ALTERNANT", image: "/assets/card-alternant.jpg", href: "/fr/business/alternant" },
-          { title: "DIPLÔMÉ", image: "/assets/card-alumni.jpg", href: "/fr/business/diplome" },
+          { title: "ALUMNI", image: "/assets/pexels-teddyjmodel-2955375-scaled.jpg", href: "/fr/business/diplome" },
         ],
         rightBox: { title: "ESPACE ENTREPRISE", icon: "briefcase", href: "/fr/welcome/business/espace-dedie-aux-entreprises" }
       }
