@@ -1,0 +1,16 @@
+cPanel upload instructions
+=======================
+
+Drag-and-drop in cPanel File Manager often fails for folders with many files.
+Use ZIP upload + Extract instead:
+
+1. cPanel > File Manager
+2. Open public/assets on the server
+3. Upload assets-full.zip
+   (if that fails, upload assets-part-01, 02, 03... one by one)
+4. Select the zip file > Extract
+5. Files must end up directly in public/assets/
+6. Delete zip files after extraction
+
+Generated: 2026-06-19T09:10:09.675714+00:00
+Files: 151

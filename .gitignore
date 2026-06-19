@@ -23,6 +23,8 @@
 # misc
 .DS_Store
 *.pem
+public/assets.zip
+/deploy/cpanel-assets/*.zip
 
 # debug
 npm-debug.log*
