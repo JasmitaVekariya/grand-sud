@@ -127,6 +127,15 @@ export default function InitialTrainingPageFR() {
       flag: "UK" as const
     },
     {
+      icon: PieChart,
+      title: "BACHELOR Business Marketing and Communication",
+      diploma: "Titre RNCP - BAC+3 – RNCP42050",
+      duration: "8 semaines de stage minimum par an",
+      color: "bg-[#333333]",
+      href: "/fr/formations/bachelor-marketing",
+      flag: "UK" as const
+    },
+    {
       icon: TrendingUp,
       title: "MASTERE Business & Tourism",
       diploma: "Titre RNCP - BAC+5",

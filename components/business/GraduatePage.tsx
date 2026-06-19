@@ -88,11 +88,13 @@ const programsFr: ProgramItem[] = [
   { icon: Globe, title: "Conseiller Voyage", diploma: "Formation certifiante", variant: "red", flag: "FR" },
   { icon: Send, title: "GDS Amadeus", diploma: "Formation certifiante", variant: "gray", flag: "FR" },
   { icon: PieChart, title: "BACHELOR Business & Tourism", diploma: "Titre RNCP - BAC+3", variant: "red", flag: "UK", href: "/fr/formations/bachelor-business" },
+  { icon: LineChart, title: "BACHELOR Business Marketing and Communication", diploma: "Titre RNCP - BAC+3 – RNCP42050", variant: "gray", flag: "UK", href: "/fr/formations/bachelor-marketing" },
   { icon: Building, title: "BACHELOR Hospitality Management", diploma: "Titre RNCP - BAC+3", variant: "gray", flag: "UK", href: "/fr/formations/bachelor-hospitality-en" },
   { icon: Code, title: "BACHELOR IT & Tourism", diploma: "Titre RNCP - BAC+3", variant: "red", flag: "UK", href: "/fr/formations/bachelor-it" },
   { icon: Briefcase, title: "MASTERE Hospitality Management", diploma: "Titre RNCP - BAC+5", variant: "gray", flag: "UK", href: "/fr/formations/mastere-hospitality" },
   { icon: Laptop, title: "MASTERE IT & Tourism", diploma: "Titre RNCP - BAC+5", variant: "red", flag: "UK", href: "/fr/formations/mastere-it" },
   { icon: LineChart, title: "MASTERE Business & Tourism", diploma: "Titre RNCP - BAC+5", variant: "gray", flag: "UK", href: "/fr/formations/mastere-business" },
+  { icon: Briefcase, title: "MASTERE Business Marketing and Communication", diploma: "Titre RNCP - BAC+5 – RNCP38504", variant: "red", flag: "UK", href: "/fr/formations/mastere-marketing" },
   { title: "et bien d'autres...", variant: "red", isMore: true },
 ];
 
@@ -106,11 +108,13 @@ const programsEn: ProgramItem[] = [
   { icon: Globe, title: "Travel Advisor", diploma: "Certification training", variant: "red", flag: "FR" },
   { icon: Send, title: "GDS Amadeus", diploma: "Certification training", variant: "gray", flag: "FR" },
   { icon: PieChart, title: "BACHELOR Business & Tourism", diploma: "RNCP qualification - BAC+3", variant: "red", flag: "UK", href: "/en/courses/bachelor-business" },
+  { icon: LineChart, title: "BACHELOR Business Marketing and Communication", diploma: "RNCP qualification - BAC+3 – RNCP42050", variant: "gray", flag: "UK", href: "/en/courses/bachelor-marketing" },
   { icon: Building, title: "BACHELOR Hospitality Management", diploma: "RNCP qualification - BAC+3", variant: "gray", flag: "UK", href: "/en/courses/bachelor-hospitality-en" },
   { icon: Code, title: "BACHELOR IT & Tourism", diploma: "RNCP qualification - BAC+3", variant: "red", flag: "UK", href: "/en/courses/bachelor-it" },
   { icon: Briefcase, title: "MASTERE Hospitality Management", diploma: "RNCP qualification - BAC+5", variant: "gray", flag: "UK", href: "/en/courses/mastere-hospitality" },
   { icon: Laptop, title: "MASTERE IT & Tourism", diploma: "RNCP qualification - BAC+5", variant: "red", flag: "UK", href: "/en/courses/mastere-it" },
   { icon: LineChart, title: "MASTERE Business & Tourism", diploma: "RNCP qualification - BAC+5", variant: "gray", flag: "UK", href: "/en/courses/mastere-business" },
+  { icon: Briefcase, title: "MASTERE Business Marketing and Communication", diploma: "RNCP qualification - BAC+5 – RNCP38504", variant: "red", flag: "UK", href: "/en/courses/mastere-marketing" },
   { title: "and many more...", variant: "red", isMore: true },
 ];
 
