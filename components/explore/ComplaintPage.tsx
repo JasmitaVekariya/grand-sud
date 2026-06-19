@@ -244,7 +244,7 @@ export default function ComplaintPage() {
             className="absolute inset-0 w-full h-full"
           >
             <Image
-              src="/assets/pexels-pixabay-532173-scaled (1).jpg"
+              src="/assets/pexels-pixabay-532173-scaled-1.jpg"
               alt="Complaint Background"
               fill
               className="object-cover"
