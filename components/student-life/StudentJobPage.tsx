@@ -133,49 +133,49 @@ export default function StudentJobPage({ lang }: StudentJobPageProps) {
     },
     fr: {
       title: "JOB ÉTUDIANT",
-      heroTitle: "TRAVAILLER PENDANT SES ÉTUDES",
+      heroTitle: <>Financer ses études avec un <br/> job étudiant</>,
       sidebar: [
-        { id: "hours", label: "HORAIRES ET JOURS" },
-        { id: "advantages", label: "AVANTAGES DU JOB ÉTUDIANT" },
-        { id: "where", label: "OÙ TROUVER UN JOB ÉTUDIANT ?" },
+        { id: "hours", label: "Horaires et jours de travail" },
+        { id: "advantages", label: "Les avantages d'un job étudiant" },
+        { id: "where", label: "Où trouver un job étudiant ?" },
       ],
       intro: [
-        "Pour un étudiant en formation initiale, le job étudiant est souvent un bon moyen de financer ses études et ses frais de vie.",
-        "C'est une expérience enrichissante, mais qui demande un bon sens de l'organisation.",
-        "Pour réussir à concilier les deux, il est essentiel de connaître ses options et d'adopter les bonnes stratégies pour trouver le bon équilibre."
+        "Pour un étudiant en formation initiale, le job étudiant est souvent une bonne manière de financer ses études et ses frais de vie.",
+        "C'est une expérience enrichissante, mais il demande un bon sens de l'organisation.",
+        "Pour réussir à concilier les deux, il est essentiel de connaître les possibilités qui s'offrent à vous et d'adopter les bonnes stratégies pour trouver un juste équilibre."
       ],
       workingHours: {
-        title: "HORAIRES ET JOURS DE TRAVAIL",
-        subtitle: "Si les contrats étudiants, qu'ils soient en CDI, CDD ou intérim, respectent généralement le droit du travail, certains points importants sont à connaître.",
+        title: "Horaires et jours de travail",
+        subtitle: "Si les contrats étudiants, en CDI, CDD ou intérim, respectent de façon générale le droit du travail, il existe quelques points importants à connaître.",
         grid: [
           {
             icon: <Building2 className="w-10 h-10" />,
-            title: "pas de durée hebdomadaire minimale pour les moins de 26 ans",
+            title: "pas de minimum d'heures hebdomadaire de travail pour les moins de 26 ans",
             desc: "mais un maximum quotidien (10h) et hebdomadaire (48h)",
             bgColor: "bg-[#333333]"
           },
           {
             icon: <Layers className="w-10 h-10" />,
             title: "le soir après les cours ou le week-end",
-            desc: "sont les moments habituels pour travailler en job étudiant",
+            desc: "sont les moments les plus propices pour travailler en job étudiant",
             bgColor: "bg-[#8B2318]"
           },
           {
             icon: <MonitorPlay className="w-10 h-10" />,
-            title: "des horaires flexibles",
-            desc: "pour s'adapter aux exigences de votre formation : cours, examens...",
+            title: "des horaires modulables",
+            desc: "pour vous adapter aux impératifs de votre formation : cours, examens...",
             bgColor: "bg-[#333333]"
           }
         ],
         bulletsTitle: "Votre travail ne doit pas vous pénaliser dans votre parcours de formation :",
         bullets: [
           "Communiquez votre emploi du temps : soyez transparent avec votre futur employeur sur vos disponibilités et vos contraintes de formation.",
-          "Ne surchargez pas votre emploi du temps : fixez-vous un nombre d'heures de travail raisonnable pour ne pas mettre en péril vos études. Un bon équilibre est la clé de la réussite !",
+          "Ne surchargez pas votre emploi du temps : fixez-vous un nombre d'heures de travail raisonnable pour ne pas compromettre vos études. Un équilibre sain est la clé de la réussite !",
           "Faites preuve de rigueur : organisez votre temps entre les cours, le travail et les révisions. La planification est votre meilleure alliée."
         ]
       },
       advantages: {
-        title: "LES AVANTAGES D'UN JOB ÉTUDIANT",
+        title: "Les avantages d'un job étudiant",
         image: "/assets/pexels-edwardeyer-687824-scaled.jpg",
         accordions: [
           {
@@ -183,13 +183,13 @@ export default function StudentJobPage({ lang }: StudentJobPageProps) {
             title: "Avoir une rémunération",
             content: (
               <div className="space-y-4">
-                <p>Le salaire horaire minimum à verser à un étudiant salarié dépend de son âge et est régi par la loi :</p>
+                <p>Le salaire horaire minimum à verser à un étudiant employé dépend de son âge et est encadré par la loi :</p>
                 <ul className="list-disc pl-5 space-y-2">
                   <li>À partir de 18 ans : rémunération au SMIC horaire ;</li>
-                  <li>À 16 ou 17 ans : rémunération au SMIC horaire avec un abattement de 10 % ;</li>
+                  <li>À 16 ou 17 ans : rémunération au SMIC horaire avec une réduction de 10 % ;</li>
                   <li>À 14 ou 15 ans : rémunération au SMIC horaire avec une réduction de 20 %.</li>
                 </ul>
-                <p>Par ailleurs, dans le cadre d'un contrat étudiant effectué le week-end, la rémunération peut être plus élevée. Certaines conventions collectives prévoient en effet une majoration de salaire pour le travail dominical, notamment dans les secteurs du commerce de détail alimentaire spécialisé ou non.</p>
+                <p>Par ailleurs, dans le cadre d&apos;un contrat étudiant effectué le week-end, la rémunération peut être plus élevée. Certaines conventions collectives prévoient en effet une majoration du salaire pour le travail dominical, notamment dans les secteurs du commerce alimentaire de gros ou de détail.</p>
                 <p>Ces revenus vous permettent de financer votre formation ou vos frais de vie.</p>
               </div>
             )
@@ -199,37 +199,37 @@ export default function StudentJobPage({ lang }: StudentJobPageProps) {
             title: "Acquérir de l'expérience",
             content: (
               <div className="space-y-4">
-                <p>Au-delà de l'aspect financier, le job étudiant est une excellente opportunité de développer de nouvelles compétences.</p>
-                <p>C'est l'occasion d'acquérir une expérience professionnelle, de découvrir le monde du travail et de développer votre sens des responsabilités, votre autonomie et votre organisation.</p>
-                <p>C'est aussi un moyen de se créer un réseau professionnel et d'enrichir son CV.</p>
+                <p>Au-delà de l&apos;aspect financier, un job étudiant est une excellente opportunité de développer de nouvelles compétences.</p>
+                <p>C&apos;est l&apos;occasion d&apos;acquérir une expérience professionnelle, de découvrir le monde du travail et de développer votre sens des responsabilités, votre autonomie et votre organisation.</p>
+                <p>C&apos;est aussi un moyen de créer un réseau professionnel et d&apos;enrichir votre CV.</p>
               </div>
             )
           },
           {
             id: "meet",
-            title: "Faire des rencontres",
+            title: "Rencontrer du monde",
             content: (
               <div className="space-y-4">
-                <p>Parfois, quand on a le nez dans ses études, il peut arriver que l'on reste enfermé dans sa bulle…</p>
-                <p>Un job étudiant vous fera rencontrer des personnes de tous horizons, vous obligera à oublier vos études pendant quelques heures et vous permettra d'occuper votre esprit et votre corps à autre chose qu'à votre formation !</p>
+                <p>Parfois, lorsque l&apos;on est le nez dans ses études, il peut arriver que nous restions enfermés dans notre bulle…</p>
+                <p>Un job étudiant vous fera rencontrer des personnes de toutes origines, vous forcera à oublier vos études pendant quelques heures et vous permettra d&apos;occuper votre esprit et votre corps à autre chose qu&apos;à votre formation !</p>
               </div>
             )
           }
         ]
       },
       where: {
-        title: "OÙ TROUVER UN JOB ÉTUDIANT ?",
+        title: "Où trouver un job étudiant ?",
         image: "/assets/pexels-kampus-8422725-scaled.jpg",
         overlay: [
-          "Utilisez les plateformes dédiées, telles que les sites d'emploi, les agences d'intérim, les réseaux sociaux professionnels, les sites des entreprises de votre zone géographique. Ou encore notre Career Center, sur lequel des offres sont régulièrement postées.",
-          "Soyez proactif : n'hésitez pas à démarcher directement les entreprises et à déposer des CV, même si elles n'ont pas d'offres en ligne !",
-          "Pour ne pas perdre de temps, privilégiez vos recherches sur les secteurs qui recrutent le plus d'étudiants :"
+          "Utilisez les plateformes dédiées, comme les sites d'offres d'emploi, les agences d'intérim, les réseaux sociaux professionnels, les sites des entreprises de votre région. Ou bien encore notre Career Center, sur lequel des offres sont régulièrement postées.",
+          "Soyez proactif : n'hésitez pas à postuler directement auprès des entreprises et à déposer des CV, même si elles n'ont pas d'offres en ligne !",
+          "Pour ne pas perdre de temps, focalisez vos recherches sur les secteurs qui recrutent le plus d'étudiants :"
         ],
         sectors: [
-          { label: "Bars - Restaurants - Hôtellerie", bgColor: "bg-[#8B2318]" },
-          { label: "Commerces - Vente", bgColor: "bg-[#333333]" },
-          { label: "Soutien scolaire - Service à la personne", bgColor: "bg-[#8B2318]" },
-          { label: "Logistique - Préparation de commandes", bgColor: "bg-[#333333]" }
+          { label: "Bars - Restaurants - Hôtels", bgColor: "bg-[#8B2318]" },
+          { label: "Commerces - grande distribution", bgColor: "bg-[#333333]" },
+          { label: "Soutien scolaire - service à la personne", bgColor: "bg-[#8B2318]" },
+          { label: "Logistique - préparation de commandes", bgColor: "bg-[#333333]" }
         ]
       }
     }

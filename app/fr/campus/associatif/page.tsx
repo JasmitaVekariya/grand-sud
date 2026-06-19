@@ -3,7 +3,7 @@ import PageBanner from "@/components/common/PageBanner";
 
 export default function VieAssociativePageFR() {
   const t = {
-    title: "VIE ASSOCIATIVE",
+    title: "La vie associative chez Grand Sud",
     image: "/assets/Gemini_Generated_Image_ug7he5ug7he5ug7h-scaled-e1754316372260-1536x894.png"
   };
 

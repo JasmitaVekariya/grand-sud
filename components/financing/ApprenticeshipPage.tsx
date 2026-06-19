@@ -123,62 +123,61 @@ export default function ApprenticeshipPage({ lang }: ApprenticeshipPageProps) {
     fr: {
       title: "FINANCEMENT / ALTERNANCE",
       sidebar: [
-        { id: "costs", label: "COÛTS DE FORMATION" },
-        { id: "health", label: "SANTÉ ET ALIMENTATION" },
-        { id: "transport", label: "TRANSPORT ET LOGEMENT" },
+        { id: "costs", label: "Frais de formation" },
+        { id: "health", label: "Santé et repas" },
+        { id: "transport", label: "Transport et logement" },
       ],
-      heroTitle: "PAYEZ VOS ÉTUDES GRÂCE À L'ALTERNANCE",
+      heroTitle: <>Financer ses études avec <br/> l&apos;alternance</>,
       intro: [
-        "Après une année en France, pour les étudiants hors UE, vous pouvez prétendre à l'apprentissage si votre cursus propose ce type de rythme.",
-        "Passerelle vers l'emploi et l'insertion professionnelle, l'alternance est un rythme qui permet à l'étudiant de conjuguer temps de formation et travail en entreprise, dans le but de se former à un métier et de s'intégrer plus facilement à la vie et à la culture de l'entreprise.",
-        "Avec un statut de salarié et un cadre réglementaire particulier, l'alternance permet de financer ses études et présente de nombreux avantages !"
+        "Passerelle vers l'emploi et l'insertion professionnelle, l'alternance est un rythme qui permet à l'étudiant d'allier temps de formation et travail en entreprise, dans le but de se former à un métier et de s'intégrer plus facilement à la vie et la culture de l'entreprise.",
+        "Avec un statut salarié et un cadre réglementaire particulier, l'alternance vous permet de financer vos études et présente de nombreux avantages !"
       ],
       sections: [
         {
           id: "costs",
-          title: "COÛTS DE FORMATION",
+          title: "Frais de formation",
           bgColor: "bg-[#333333]",
           textColor: "text-white",
           image: "/assets/pexels-fauxels-3184465-768x512.jpg",
           imageLeft: true,
           content: [
-            "En alternance, sous contrat de professionnalisation ou d'apprentissage, l'apprenant n'a aucun frais de formation à sa charge, hormis les éventuelles options qu'il souhaite suivre.",
-            "C'est l'entreprise, par l'intermédiaire de son OPCO, qui prend directement en charge l'intégralité des frais de formation.",
-            "Bonus : la possibilité de bénéficier, sous conditions, d'une aide au premier équipement d'un montant maximum de 500€, pour l'achat d'un ordinateur vous permettant de suivre vos cours et de réaliser vos travaux nécessaires à la formation."
+            "En alternance, sous contrat de professionnalisation ou d'apprentissage, l'apprenant n'a aucun frais de formation à sa charge, à l'exception d'éventuelles options que celui-ci souhaite suivre.",
+            "C'est l'entreprise, par le biais de son OPCO, qui prend directement en charge la totalité des frais de formation.",
+            "Bonus : la possibilité de bénéficier, sous conditions, de l'aide au premier équipement d'un montant maximum de 500€, pour l'achat d'un ordinateur vous permettant de noter vos cours et de réaliser vos travaux nécessaires à la formation."
           ]
         },
         {
           id: "health",
-          title: "SANTÉ ET ALIMENTATION",
+          title: "Santé et repas",
           bgColor: "bg-[#8B2318]",
           textColor: "text-white",
           image: "/assets/pexels-shkrabaanthony-5215017-768x1152.jpg",
           imageLeft: false,
           content: [
-            "L'apprenti est assuré et bénéficie de la même protection sociale que les autres salariés (sans être soumis à cotisations : maladie, maternité, invalidité, vieillesse, accidents du travail et maladies professionnelles). La prise en charge concerne les arrêts maladie, les accidents du travail, les maladies professionnelles, etc. De plus, l'employeur doit proposer une mutuelle à son apprenti.",
-            "Lors de votre premier emploi, votre employeur doit effectuer une déclaration préalable à l'embauche – DPAE. De votre côté, vous devez informer la Caisse d'Assurance Maladie de votre nouveau statut d'apprenti.",
-            "Vous bénéficiez d'une visite médicale dans les deux mois suivant l'embauche (visite d'embauche auprès de la médecine du travail).",
-            "Autre avantage : si l'entreprise met à disposition des salariés des tickets restaurant ou une cantine, alors l'apprenti en bénéficie également !"
+            "L'apprenti est assuré social et bénéficie de la même protection sociale que les autre salariés (sans être assujetti aux cotisations : assurance maladie, maternité, invalidité, vieillesse, accidents du travail et maladies professionnelles). La prise en charge concerne les congés maladie, les accidents de travail, maladies professionnelles, etc. De plus, l'employeur doit proposer une mutuelle à son apprenti.",
+            "Lors de votre premier emploi, votre employeur doit faire une déclaration préalable à l'embauche – DPAE. De votre côté, vous devez informer la Caisse d'Assurance Maladie de votre nouveau statut d'apprenti.",
+            "Vous bénéficiez d'un examen médical dans les deux mois qui suivent l'embauche (visite d'embauche auprès de la médecine du travail).",
+            "Autre avantage : si l'entreprise met à la disposition des salariés des tickets restaurant ou une cantine, alors l'apprenti en bénéficie également !"
           ]
         },
         {
           id: "transport",
-          title: "TRANSPORT ET LOGEMENT",
+          title: "Transport et logement",
           bgColor: "bg-[#dc4b3b]",
           textColor: "text-white",
           image: "/assets/pexels-d123x-946281-768x1152.jpg",
           imageLeft: true,
           content: [
-            "L'employeur doit prendre en charge 50% des trajets professionnels effectués en transports en commun.",
-            "Pour les frais liés à un véhicule personnel, la prise en charge dépend des entreprises.",
-            "Certaines structures peuvent vous proposer un logement, selon des modalités à définir avec votre employeur : c'est souvent le cas des campings et des hôtels par exemple !",
-            "Bonus : vous pouvez bénéficier, sous certaines conditions, d'une aide au permis de conduire, d'un montant de 500 €, pour vous permettre d'obtenir votre permis de conduire."
+            "L'employeur doit prendre en charge 50% des déplacements professionnels effectués en transport en commun.",
+            "Pour les frais liés à un véhicule personnel, la prise en charge dépend en revanche des entreprises.",
+            "Certaines structures peuvent vous proposer un logement, selon des modalités à définir avec votre employeur : c'est souvent le cas des campings et hôtels par exemple !",
+            "Bonus : vous pouvez bénéficier, sous conditions, de l'aide au permis de conduire, d'un montant de 500€, pour vous permettre d'obtenir votre permis de conduire."
           ]
         }
       ],
       closing: [
-        "À Grand Sud, la grande majorité de nos jeunes sont en alternance !",
-        "Un accompagnement spécifique par des coachs pour la recherche d'alternance est prévu dès l'admission à l'école, puis un suivi régulier est effectué pour s'assurer que l'alternance est bénéfique tant pour notre apprenant que pour l'entreprise."
+        "Chez Grand Sud, la grande majorité de nos jeunes sont en alternance !",
+        "Un accompagnement spécifique par des coachs pour la recherche d'alternance est prévu dès l'admission à l'école puis un suivi régulier est fait afin de nous assurer que l'alternance soit bénéfique tant pour notre apprenant que pour l'entreprise."
       ]
     }
   }[lang];

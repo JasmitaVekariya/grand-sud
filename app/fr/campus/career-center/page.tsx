@@ -4,7 +4,7 @@ import PageBanner from "@/components/common/PageBanner";
 export default function CareerCenterPageFr() {
   const t = {
     title: "E-CAMPUS & CAREER CENTER",
-    image: "/assets/pexels-pixabay-532173-scaled.jpg"
+    image: "/assets/pexels-marta-klement-636760-1438081-scaled.jpg"
   };
 
   return (

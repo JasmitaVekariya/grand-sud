@@ -51,10 +51,10 @@ export const navigationData = {
           {
             title: "MODALITÉS",
             links: [
-              { label: "Alternance", href: "/fr/formations/alternance" },
-              { label: "Initial", href: "/fr/formations/initial" },
+              { label: "Formation en alternance", href: "/fr/formations/alternance" },
+              { label: "Formation en initial", href: "/fr/formations/initial" },
               { label: "Formation continue", href: "/fr/formations/continue" },
-              { label: "VAE", href: "/fr/formations/vae" },
+              { label: "Validation des Acquis de l'Expérience (VAE)", href: "/fr/formations/vae" },
             ]
           }
         ]

@@ -21,7 +21,8 @@ export default function BachelorITPageFR() {
       { label: "RYTHME", value: "initial" },
       { label: "DURÉE", value: "3 ans – 1 806 heures" },
     ],
-    logos: ["/assets/logo-france-competences.png", "/assets/logo-diploma.png"]
+    logos: ["/assets/logo-france-competences.png"],
+    certificationBadge: "TITRE CERTIFIÉ PAR L'ÉTAT",
   };
 
   const sections = [
@@ -34,147 +35,147 @@ export default function BachelorITPageFR() {
   ];
 
   const advantagesData = {
-    title: "Les atouts Grand Sud",
-    subtitle: "Avec près de 35 ans d'expérience dans l'éducation, l'École Grand Sud connaît les clés du succès pour fournir à ses étudiants ce dont ils ont besoin pour réussir.",
+    title: "Les plus de Grand Sud",
+    subtitle: "Avec une expérience de la formation depuis bientôt 35 ans, l'école Grand Sud connaît les clefs du succès pour apporter à ses étudiants le nécessaire pour réussir.",
     advantages: [
-      { icon: CheckCircle2, text: "100% d'expertise touristique depuis 1991", isDarkRed: false },
+      { icon: CheckCircle2, text: "une expertise 100% tourisme depuis 1991", isDarkRed: false },
       { icon: Search, text: "accompagnement à la recherche de stage", isDarkRed: true },
-      { icon: PenTool, text: "Deux sessions d'examens blancs par an / jurys professionnels", isDarkRed: false },
-      { icon: Users, text: "workshop avec de vrais partenaires et de vraies problématiques", isDarkRed: true },
-      { icon: Briefcase, text: "des cas réels d'entreprise étudiés en classe", isDarkRed: false },
+      { icon: PenTool, text: "2 sessions par an d'examens blancs / jurys professionnels", isDarkRed: false },
+      { icon: Users, text: "workshop avec des partenaires et des problématiques réels", isDarkRed: true },
+      { icon: Briefcase, text: "des cas réels d'entreprise étudiés en cours", isDarkRed: false },
       { icon: MonitorPlay, text: "des intervenants professionnels", isDarkRed: true },
-      { icon: BookOpen, text: "un programme adapté aux besoins des entreprises", isDarkRed: false },
-      { icon: Globe, text: "un programme tourné vers l'international", isDarkRed: true },
-      { icon: Handshake, text: "étudiants d'horizons divers, vecteurs de richesse culturelle", isDarkRed: false },
+      { icon: BookOpen, text: "un programme adapté à la demande des entreprises", isDarkRed: false },
+      { icon: Globe, text: "un programme à visée internationale", isDarkRed: true },
+      { icon: Handshake, text: "des étudiants aux origines diverses, vecteurs de richesse culturelle", isDarkRed: false },
     ]
   };
 
   const programYears = [
     {
       id: "year1",
-      title: "Année 1 - 602 heures",
+      title: "Année 1",
       hours: "602 heures",
       content: [
         {
-          unit: "Bloc de compétences 1 – Compétences transversales",
+          unit: "Unité de Compétences 1 – Compétences transversales",
           items: [
-            { label: "Welcome Days", description: "Séminaire d'intégration de rentrée et team building" },
-            { label: "Anglais du tourisme", description: "Accueillir et assister les clients étrangers, vendre des produits touristiques français aux clients étrangers, vendre des produits touristiques étrangers aux clients français, accompagner les touristes étrangers, suivre et fidéliser les clients étrangers" },
-            { label: "Français", description: "Apprendre à communiquer pour répondre aux besoins basiques et spécifiques (niveau A1)" },
-            { label: "Culture française", description: "Comprendre et maîtriser la culture française" }
+            { label: "Welcome Days", description: "Séminaire d'intégration de rentrée et teambuilding" },
+            { label: "Anglais touristique", description: "Accueillir et prendre en charge des clients étrangers, vendre à des clients étrangers des produits touristiques français, vendre des produits touristiques étrangers à une clientèle française, accompagner des touristes étrangers, suivre et fidéliser la clientèle étrangère" },
+            { label: "Français", description: "Apprendre à communiquer afin de répondre à des besoins basiques et concrets (niveau A1)" },
+            { label: "Culture française", description: "Connaître et maîtriser la culture française" },
           ]
         },
         {
-          unit: "Bloc de compétences 2 – Culture touristique",
+          unit: "Unité de Compétences 2 – Culture touristique",
           items: [
-            { label: "Panorama du tourisme français", description: "Comprendre les spécificités et les tendances du tourisme en France" },
-            { label: "Panorama du tourisme mondial", description: "Comprendre les caractéristiques spécifiques et les tendances du tourisme dans le monde" },
-            { label: "Économie française", description: "Maîtriser l'économie du secteur" },
-            { label: "Intelligence artificielle", description: "Maîtriser le fonctionnement de l'IA" }
+            { label: "Panorama du tourisme français", description: "Connaître les spécificités et tendances du tourisme en France" },
+            { label: "Panorama du tourisme mondial", description: "Connaître les spécificités et tendances du tourisme dans le monde" },
+            { label: "Economie française", description: "Maîtriser l'économie du secteur" },
+            { label: "Intelligence Artificielle", description: "Maîtriser le fonctionnement de l'IA" },
           ]
         },
         {
-          unit: "Bloc de compétences 3 – Développement",
+          unit: "Unité de Compétences 3 – Développement",
           items: [
-            { label: "Framework HTML/CSS/JS", description: "Savoir créer un site web" },
-            { label: "Concepts Full Stack", description: "Maîtriser les principaux concepts Full Stack" },
-            { label: "Développement iOS et Android", description: "Maîtriser les technologies nécessaires à la création d'un site web responsive" },
-            { label: "Algorithmes", description: "Comprendre les bases des algorithmes" }
+            { label: "HTML/CSS/JS framework", description: "Savoir créer un site internet" },
+            { label: "Notions de Full Stack", description: "Maîtriser les principaux concepts Full Stack" },
+            { label: "Développement iOS et Android", description: "Maîtriser les technologies pour créer un site responsive" },
+            { label: "Algorithme", description: "Comprendre les bases des algorithmes" },
           ]
         },
         {
-          unit: "Bloc de compétences 4 – Sécurisation d'un réseau au sein d'une organisation touristique",
+          unit: "Unité de Compétences 4 – Sécuriser un réseau au sein d'une structure touristique",
           items: [
-            { label: "Architecture réseau (CCNA 1)", description: "Comprendre les bases de la création d'un réseau informatique (certification CNA 1)" },
+            { label: "Architecture réseau (CCNA 1)", description: "Comprendre les bases de la création d'un réseau informatique (Certification CNA 1)" },
             { label: "Sécurité réseau", description: "Maîtriser les bases de la sécurisation d'un réseau" },
-            { label: "Gestion informatique et de parc", description: "Gérer un système d'information" },
-            { label: "Bases de données", description: "Savoir gérer des bases de données" }
+            { label: "Informatique et gestions d'assets", description: "Gérer un système informatique" },
+            { label: "Base de données", description: "Savoir gérer des bases de données" },
           ]
         }
       ]
     },
     {
       id: "year2",
-      title: "Année 2 - 602 heures",
+      title: "Année 2",
       hours: "602 heures",
       content: [
         {
-          unit: "Bloc de compétences 1 – Compétences transversales",
+          unit: "Unité de Compétences 1 – Compétences transversales",
           items: [
-            { label: "Welcome Days", description: "Séminaire d'intégration de rentrée et team building" },
-            { label: "Anglais du tourisme", description: "Accueillir et assister les clients étrangers, vendre des produits touristiques français aux clients étrangers, vendre des produits touristiques étrangers aux clients français, accompagner les touristes étrangers, suivre et fidéliser les clients étrangers" },
-            { label: "Français", description: "Comprendre l'essentiel de textes écrits en langage courant : e-mails, brochures, articles, critiques de films ; capacité à rédiger des textes simples et cohérents sur des sujets familiers (niveau intermédiaire B1)" },
-            { label: "Culture française", description: "Connaissance et maîtrise de la culture française" }
+            { label: "Welcome Days", description: "Séminaire d'intégration de rentrée et teambuilding" },
+            { label: "Anglais touristique", description: "Accueillir et prendre en charge des clients étrangers, vendre à des clients étrangers des produits touristiques français, vendre des produits touristiques étrangers à une clientèle française, accompagner des touristes étrangers, suivre et fidéliser la clientèle étrangère" },
+            { label: "Français", description: "Comprendre l'essentiel des textes écrits dans le langage de tous les jours : mails, brochures, articles, critiques de films ; possibilité d'écrire des textes simples, connectés sur des sujets familiers (niveau intermédiaire B1)" },
+            { label: "Culture française", description: "Connaître et maîtriser la culture française" },
           ]
         },
         {
-          unit: "Bloc de compétences 2 – Culture touristique",
+          unit: "Unité de Compétences 2 – Culture touristique",
           items: [
-            { label: "Panorama du tourisme français", description: "Connaître les spécificités et les tendances du tourisme en France" },
-            { label: "Panorama du tourisme mondial", description: "Connaître les spécificités et les tendances du tourisme dans le monde" },
-            { label: "Économie française", description: "Maîtriser l'économie du secteur" },
-            { label: "Intelligence Artificielle", description: "Maîtriser le fonctionnement de l'IA" }
+            { label: "Panorama du tourisme français", description: "Connaître les spécificités et tendances du tourisme en France" },
+            { label: "Panorama du tourisme mondial", description: "Connaître les spécificités et tendances du tourisme dans le monde" },
+            { label: "Economie française", description: "Maîtriser l'économie du secteur" },
+            { label: "Intelligence Artificielle", description: "Maîtriser le fonctionnement de l'IA" },
           ]
         },
         {
-          unit: "Bloc de compétences 3 – Développement",
+          unit: "Unité de Compétences 3 – Développement",
           items: [
             { label: "Flutter", description: "Savoir créer une application" },
-            { label: "Concepts Full Stack", description: "Maîtriser les principaux concepts Full Stack" },
-            { label: "React Native", description: "Maîtriser les technologies pour créer un site web responsive" },
-            { label: "Algorithmes", description: "Comprendre les bases des algorithmes" }
+            { label: "Notions de Full Stack", description: "Maîtriser les principaux concepts Full Stack" },
+            { label: "React Native", description: "Maîtriser les technologies pour créer un site responsive" },
+            { label: "Algorithme", description: "Comprendre les bases des algorithmes" },
           ]
         },
         {
-          unit: "Bloc de compétences 4 – Développement et Sécurité",
+          unit: "Unité de Compétences 4 – Développement et sécurisation",
           items: [
-            { label: "Architecture réseau (CCNA 2)", description: "Comprendre les bases de la création d'un réseau informatique (certification CNA 2)" },
-            { label: "Sécurité avancée", description: "Maîtriser les bases de la sécurité réseau" },
+            { label: "Architecture réseau (CCNA 2)", description: "Comprendre les bases de la création d'un réseau informatique (Certification CNA 2)" },
+            { label: "Sécurité avancée", description: "Maîtriser les bases de la sécurisation d'un réseau" },
             { label: "Programmation orientée objet", description: "Savoir programmer" },
-            { label: "Développement Backend", description: "Savoir concevoir les outils nécessaires à l'administration d'un site web" }
+            { label: "Développement Backend", description: "Savoir concevoir les outils nécessaires à l'administration d'un site" },
           ]
         }
       ]
     },
     {
       id: "year3",
-      title: "Année 3 - 602 heures",
+      title: "Année 3",
       hours: "602 heures",
       content: [
         {
-          unit: "Bloc de compétences 1 – Compétences transversales",
+          unit: "Unité de Compétences 1 – Compétences transversales",
           items: [
-            { label: "Welcome Days", description: "Séminaire d'intégration de rentrée et team building" },
-            { label: "Anglais du tourisme", description: "Accueillir et assister les clients étrangers, vendre des produits touristiques français aux clients étrangers, vendre des produits touristiques étrangers aux clients français, accompagner les touristes étrangers, suivre et fidéliser les clients étrangers" },
-            { label: "Français", description: "Comprendre des textes écrits en langage courant : e-mails, brochures, articles, critiques de films ; capacité à rédiger des textes plus complexes et liés sur des sujets familiers (niveau intermédiaire B2)" },
-            { label: "Préparation à la certification", description: "Comprendre les attentes du certificateur et savoir y répondre" }
+            { label: "Welcome Days", description: "Séminaire d'intégration de rentrée et teambuilding" },
+            { label: "Anglais touristique", description: "Accueillir et prendre en charge des clients étrangers, vendre à des clients étrangers des produits touristiques français, vendre des produits touristiques étrangers à une clientèle française, accompagner des touristes étrangers, suivre et fidéliser la clientèle étrangère" },
+            { label: "Français", description: "Comprendre des textes écrits dans le langage courant : mails, brochures, articles, critiques de films ; possibilité d'écrire des textes plus complexes, connectés sur des sujets familiers (niveau intermédiaire B2)" },
+            { label: "Préparation du titre", description: "Connaître les attentes du certificateur et savoir y répondre" },
           ]
         },
         {
-          unit: "Bloc de compétences 2 – Business et Économie",
+          unit: "Unité de Compétences 2 – Commerce et économie",
           items: [
-            { label: "Veille et Business Intelligence", description: "Collecte de données, analyse stratégique et utilisation de la business intelligence pour prendre des décisions éclairées et obtenir des avantages concurrentiels" },
-            { label: "E-commerce", description: "Appliquer les techniques du e-commerce" },
-            { label: "CRM et analyse de données", description: "Stratégies de gestion de la relation client via l'utilisation d'outils technologiques et l'exploitation des données" },
-            { label: "Growth Hacking", description: "Utiliser les canaux numériques pour identifier des opportunités de croissance rapide et efficace" }
+            { label: "Monitoring et Business Intelligence", description: "La collecte de données, l'analyse stratégique et l'utilisation de l'intelligence d'affaires pour prendre des décisions éclairées et obtenir des avantages concurrentiels" },
+            { label: "E-commerce", description: "Appliquer les techniques de e-commerce" },
+            { label: "CRM et analyse de données", description: "Stratégies de gestion de la relation client par l'utilisation d'outils technologiques et l'exploitation des données" },
+            { label: "Growth Hacking", description: "Utiliser les canaux numériques pour identifier des opportunités de croissance rapide et efficace" },
           ]
         },
         {
-          unit: "Bloc de compétences 3 – Développement",
+          unit: "Unité de Compétences 3 – Développement",
           items: [
             { label: "Devops", description: "Comprendre les pratiques agiles et le développement incrémental" },
-            { label: "Docker & Kubernetes", description: "Créer des applications mobiles riches en fonctionnalités avec une intégration d'API sécurisée" },
-            { label: "Technologies multiplateformes", description: "Maîtriser les technologies multiplateformes" },
-            { label: "Déploiement d'une application mobile", description: "Développer, tester et déployer des applications mobiles hybrides multiplateformes" }
+            { label: "Docker & Kubernetes", description: "Créez des applications mobiles riches en fonctionnalités avec une intégration API sécurisée" },
+            { label: "Technologies cross-platformes", description: "Maîtriser les technologies cross-plateformes" },
+            { label: "Déployer une application mobile", description: "Développer, tester et déployer des applications mobiles hybrides multiplateformes" },
           ]
         },
         {
-          unit: "Bloc de compétences 4 – Développement et Sécurité",
+          unit: "Unité de Compétences 4 – Développement et sécurisation",
           items: [
-            { label: "Web Hacking", description: "Comprendre et maîtriser les techniques utilisées par les pirates pour tester et protéger vos systèmes" },
-            { label: "Sécurité des applications mobiles", description: "Développer l'architecture des applications, créer des maquettes et des prototypes" },
-            { label: "Développement Front-end", description: "Créer une maquette graphique du site permettant au client de visualiser l'interface fonctionnelle et graphique de la plateforme web" },
-            { label: "Développement Back-end", description: "Utiliser divers outils, frameworks et langages pour déterminer la meilleure façon de développer des prototypes intuitifs et conviviaux et de les transformer en sites web" }
+            { label: "Web Hacking", description: "Comprendre et maîtriser les techniques utilisées par les hackers pour tester et protéger vos systèmes" },
+            { label: "Sécurité des applications mobiles", description: "Développer l'architecture de l'application, créer des maquettes et des prototypes" },
+            { label: "Développement front-end", description: "Créer un modèle graphique du site permettant au client de visualiser l'interface fonctionnelle et graphique de la plateforme Web" },
+            { label: "Développement back-end", description: "Utiliser divers outils, cadres et langages pour déterminer la meilleure façon de développer des prototypes intuitifs et conviviaux et de les transformer en sites web" },
           ]
         }
       ]
@@ -184,112 +185,106 @@ export default function BachelorITPageFR() {
   const admissionsData = {
     title: "ADMISSIONS",
     prerequisite: {
-      title: "Prérequis",
+      title: "Pré-requis",
       items: [
-        "Baccalauréat ou équivalent",
-        "Compétences suffisantes en anglais pour suivre le programme (minimum B2), démontrées par des résultats officiels (TOEIC, BULATS, TOEFL, IELTS, CAMBRIDGE, etc.), sauf pour les anglophones natifs ou les candidats ayant étudié au moins deux ans dans un programme enseigné en anglais (les candidats doivent fournir des justificatifs).",
+        "Bac ou équivalent",
+        "Un niveau d'anglais suffisant pour permettre de suivre la formation (au minimum B2), justifié par des résultats officiels d'un test d'anglais ou équivalent (TOEIC, BULATS, TOEFL, IELTS, CAMBRIDGE…), sauf pour les anglophones (langue maternelle anglaise) ou les candidats qui ont étudié au moins 2 ans dans un programme enseigné en anglais (le candidat devra fournir des documents justificatifs)",
         "Bon niveau académique",
-        "Si niveau baccalauréat : les candidats doivent passer les examens manquants en candidat libre durant la première année du programme"
-      ]
+        "Si niveau bac : le candidat devra valider les épreuves manquantes en candidat libre lors de la 1ère année du programme",
+      ],
     },
     intakes: {
       periodTitle: "Période d'admission",
       periodText: "Toute l'année",
       intakesTitle: "Rentrées",
-      nextYearLabel: "Prochaine rentrée :",
+      nextYearLabel: "Prochaine rentrée",
       nextYearValue: "6 octobre 2025",
-      deferredLabel: "Rentrée décalée :",
-      deferredValue: "9 février 2026"
+      deferredLabel: "Rentrée décalée",
+      deferredValue: "9 février 2026",
     },
-    processTitle: "Processus d'admission",
+    processTitle: "Modalités d'admission",
     processSteps: [
       {
-        title: "Étape 1 : Candidature",
+        title: "Etape 1 : Dépôt de candidature",
         items: [
-          { text: "Téléchargez votre dossier de candidature." },
-          { text: "Envoyez votre dossier complet par email, sans oublier toutes les pièces jointes demandées !" },
-          { text: "Frais de dossier : 300 €, non remboursables", isItalic: true }
-        ]
+          { text: "Téléchargez votre dossier de candidature sur la version anglaise de notre site internet.", isLink: true, linkText: "version anglaise de notre site internet", linkHref: "/en/apply" },
+          { text: "Envoyez votre dossier complété par mail en n'oubliant pas les pièces jointes à fournir !" },
+          { text: "Frais de dossier : 300€, non remboursables", isItalic: true },
+        ],
       },
       {
-        title: "Étape 2 : Sélection",
+        title: "Etape 2 : sélection",
         items: [
-          { text: "Étude de votre dossier et vérification des prérequis pour le programme souhaité : niveau d'études et langues étrangères, expérience professionnelle." },
-          { text: "Entretien individuel : entretien de motivation à distance (via vidéo)" },
-          { text: "Passage en commission d'admission : notre équipe étudiera votre candidature dans son ensemble" },
-          { text: "Réponse sous 48h ouvrées : favorable ou défavorable", isItalic: true }
-        ]
+          { text: "Etude de votre dossier de candidature et vérification des pré-requis selon la formation souhaitée : niveau d'études et langues étrangères, expérience professionnelle," },
+          { text: "Rendez-vous individuel : entretien de motivation à distance (en visio)" },
+          { text: "Passage en commission d'admission : notre équipe étudie votre dossier dans son ensemble" },
+          { text: "Réponse sous 48h ouvrée : avis favorable ou défavorable" },
+        ],
       },
       {
-        title: "Étape 3 : Inscription",
+        title: "Etape 3 : inscription",
         items: [
-          { text: "Signature du contrat d'études" },
-          { text: "Accompagnement dans les options de financement et la recherche de stage" }
-        ]
-      }
+          { text: "Signature du contrat d'enseignement" },
+          { text: "Accompagnement sur les dispositifs de financement et la recherche de stage" },
+        ],
+      },
     ],
     prices: {
-      title: "Frais de scolarité initiaux :",
-      initialLabel: "Par an :",
-      initialPrice: "12 500 €\nDes bourses sont disponibles. Contactez votre chargé d'admissions pour plus d'informations.",
-      visaNote: "",
+      title: "Tarifs",
+      initialLabel: "Tarif en initial :",
+      initialPrice: "Par an : 12 500 €\nDes bourses sont disponibles, contactez votre chargé d'admissions pour connaître les modalités",
       workStudyLabel: "",
       workStudyPrice: "",
       workStudyNote: "",
-      seminarLabel: "",
-      seminarPrice: "",
-      seminarNote: ""
-    }
+    },
   };
 
   const validationData = {
     title: "VALIDATION",
     details: {
       assessmentTitle: "Modalités d'évaluation",
-      assessmentText: "Examens écrits et oraux.",
+      assessmentText: "Épreuves écrites et orales",
       downloadFrameworkLabel: "Télécharger le guide de validation",
-      downloadFrameworkHref: "/assets/validation-guide.pdf",
+      downloadFrameworkHref: "/assets/Guide-de-validation-RDTT_2025-20261.pdf",
       certificationTitle: "Certification",
-      diplomaName: "Responsable de développement touristique territorial (RDTT) – Titre certifié de niveau 6",
+      diplomaName: "Responsable de développement touristique territorial (RDTT) – Titre certifié de niveau bac +3",
       rncpLabel: "RNCP 35706",
       rncpLink: "https://www.francecompetences.fr/recherche/rncp/35706/",
       diplomaCodeLabel: "Code diplôme",
       diplomaCode: "36T33403",
       ministry: "Ministère du travail, du plein emploi et de l'insertion",
       expirationLabel: "Date d'échéance :",
-      expirationDate: "08/02/2026",
-      certificationNote: "Cette certification est constituée de quatre blocs de compétences appelés « certificats de compétences professionnelles » (CCP). Elle peut être obtenue par capitalisation des CCP ou à l'issue d'un parcours de formation.",
-      equivalencesTitle: "Équivalences",
+      expirationDate: "02/08/2026",
+      certificationNote: "Ce titre est composé de quatre blocs de compétences dénommés « certificats de compétences professionnelles » (CCP). Il est accessible par capitalisation de CCP ou suite à un parcours de formation.",
+      equivalencesTitle: "Equivalences",
       equivalencesItems: [
-        "Le CCP « Accompagner le développement marketing d'un territoire » de la certification RDTT est équivalent au CCP « Commercialiser un établissement touristique dans une approche multicanale » du titre professionnel « Directeur d'établissement touristique ».",
-        "Le CCP « Assurer la faisabilité financière d'une action touristique » de la certification RDTT est équivalent au CCP « Assurer la gestion opérationnelle et planifier les investissements d'un établissement touristique » du titre professionnel « Directeur d'établissement touristique »."
-      ]
-    }
+        "Le CCP « Accompagner le développement marketing d'un territoire » du titre RDTT est équivalent au CCP « Commercialiser un établissement touristique avec une démarche multicanale » du titre professionnel « Responsable d'établissement touristique ».",
+        "Le CCP « Assurer la faisabilité financière d'une action touristique » du titre RDTT est équivalent au CCP « Assurer la gestion opérationnelle d'exploitation et prévoir les investissements d'un établissement touristique » du titre professionnel « Responsable d'établissement touristique ».",
+      ],
+    },
   };
 
   const jobsData = {
     title: "DÉBOUCHÉS",
-    intro: "Après l'obtention de ce bachelor international, le monde vous appartiendra et vous aurez d'excellentes opportunités de carrière !",
+    intro: "Après ce bachelor international, le monde s'ouvre à vous et les débouchés sont intéressants !",
     categories: [
       {
         jobs: [
-          { label: "DÉVELOPPEUR WEB FULL STACK", isDarkRed: false },
-          { label: "DÉVELOPPEUR D'APPLICATIONS MOBILES", isDarkRed: true },
-          { label: "INGÉNIEUR DEVOPS", isDarkRed: false },
-          { label: "SPÉCIALISTE EN CYBERSÉCURITÉ", isDarkRed: true },
-          
-          { label: "ADMINISTRATEUR SYSTÈMES ET RÉSEAUX", isDarkRed: true },
-          { label: "GROWTH HACKER", isDarkRed: false },
-          { label: "DATA ANALYST", isDarkRed: true },
-          { label: "SPÉCIALISTE E-COMMERCE", isDarkRed: false },
-          
-          { label: "MARKÉTEUR DIGITAL", isDarkRed: false },
-          { label: "CHEF DE PROJET TOURISME DIGITAL", isDarkRed: true },
-          { label: "CONSULTANT EN TRANSFORMATION DIGITALE POUR L'HÔTELLERIE", isDarkRed: false },
-          { label: "SPÉCIALISTE EN DÉVELOPPEMENT DE PRODUITS TOURISTIQUES", isDarkRed: true },
-        ]
-      }
-    ]
+          { label: "Développeur Web Full Stack", isDarkRed: false },
+          { label: "Développeur d'applications mobiles", isDarkRed: true },
+          { label: "Ingénieur DevOps", isDarkRed: false },
+          { label: "Spécialiste en cybersécurité", isDarkRed: true },
+          { label: "Administrateur Systèmes et Réseaux", isDarkRed: true },
+          { label: "Growth Hacker", isDarkRed: false },
+          { label: "Analyste de données", isDarkRed: true },
+          { label: "Spécialiste en e-commerce", isDarkRed: false },
+          { label: "Responsable marketing digital", isDarkRed: false },
+          { label: "Chef de projet digital touristique", isDarkRed: true },
+          { label: "Consultant en transformation digitale pour l'hôtellerie", isDarkRed: false },
+          { label: "Spécialiste en développement de produits touristiques", isDarkRed: true },
+        ],
+      },
+    ],
   };
 
   const educationData = {
@@ -306,16 +301,17 @@ export default function BachelorITPageFR() {
 
   return (
     <main className="bg-white">
-      <CourseBanner 
-        title={bannerData.title} 
-        image={bannerData.image} 
-        details={bannerData.details} 
+      <CourseBanner
+        title={bannerData.title}
+        image={bannerData.image}
+        details={bannerData.details}
         logos={bannerData.logos}
+        certificationBadge={bannerData.certificationBadge}
       />
 
       <CourseDetailLayout 
         sections={sections}
-        applyButton={{ label: "Candidater", href: "/fr/candidature" }}
+        applyButton={{ label: "Candidater", href: "/fr/candidater" }}
       >
         <section id="description" className="scroll-mt-32 space-y-16">
           <div className="space-y-8">
@@ -323,9 +319,9 @@ export default function BachelorITPageFR() {
               DESCRIPTION
             </h2>
             <div className="space-y-6 text-[16px] text-black leading-relaxed font-medium max-w-4xl">
-              <p>Ce bachelor, destiné aux étudiants visant des carrières internationales, les forme aux enjeux du tourisme, à la culture française et à la maîtrise des systèmes informatiques spécifiques au secteur du tourisme.</p>
-              <p>Les diplômés obtiennent une certification professionnelle de niveau 6 leur permettant d'accéder à une variété de postes dans l'industrie du tourisme.</p>
-              <p>Il s'adresse aux étudiants passionnés par les voyages et l'informatique, titulaires d'un baccalauréat (ou équivalent) et souhaitant faire carrière dans le tourisme international, ainsi qu'aux étudiants européens et internationaux souhaitant étudier en France dans un environnement d'apprentissage international.</p>
+              <p>Ce Bachelor, formulé pour les étudiants visant l&apos;international et les métiers, les forme aux enjeux du tourisme, à la culture française et à la maîtrise des systèmes informatiques propres au domaine du tourisme.</p>
+              <p>Les diplômés obtiennent un titre professionnel certifié de niveau 6 leur permettant d&apos;accéder à des postes variés dans l&apos;univers du tourisme.</p>
+              <p>Il est fait pour les étudiants passionnés par les voyages et l&apos;informatique, diplômés d&apos;un bac (ou équivalent) à la recherche d&apos;une carrière dans le tourisme international ainsi que pour les étudiants européens et internationaux cherchant à étudier en France dans un environnement d&apos;apprentissage international.</p>
             </div>
           </div>
           <CourseAdvantages {...advantagesData} />

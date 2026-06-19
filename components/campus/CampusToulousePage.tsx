@@ -152,41 +152,41 @@ export default function CampusToulousePage({ lang }: CampusToulousePageProps) {
     },
     fr: {
       sections: [
-        { id: "life-is-good", label: "TOULOUSE, UNE VILLE OÙ IL FAIT BON VIVRE" },
-        { id: "tourism-focus", label: "FOCUS SUR LE TOURISME À TOULOUSE ET SA RÉGION" },
-        { id: "discover", label: "POUR DÉCOUVRIR LA VILLE ET LA RÉGION" },
+        { id: "life-is-good", label: "Toulouse, une ville où il fait bon vivre" },
+        { id: "tourism-focus", label: "focus sur le tourisme à Toulouse et dans sa région" },
+        { id: "discover", label: "Pour découvrir la ville et la région" },
       ],
       intro: {
-        text1: "Capitale européenne de l'aéronautique et de l'espace, Toulouse en région Occitanie ouvre les portes d'une ville dynamique où l'innovation est omniprésente.",
-        text2: "Avec ses 150 000 étudiants, elle se classe parmi les plus grandes villes étudiantes de France, et offre un cadre de vie ensoleillé, une richesse culturelle et une ambiance conviviale. Entre ses rues animées, ses briques roses et sa paisible Garonne, la « Ville Rose » est le lieu idéal pour étudier, s'épanouir et débuter une vie professionnelle riche en opportunités."
+        text1: "En tant que capitale européenne de l'aéronautique et du spatial, Toulouse, en région Occitanie, vous ouvre les portes d'une ville dynamique où l'innovation est omniprésente.",
+        text2: "Avec ses 150 000 étudiants, elle se classe parmi les plus grandes villes universitaires de France, et offre un cadre de vie ensoleillé, une richesse culturelle et une ambiance conviviale. Entre ses rues animées, ses briques roses et sa Garonne paisible, la « Ville rose » est le lieu idéal pour faire ses études, s'épanouir et démarrer une vie professionnelle riche en opportunités."
       },
       stats: [
         { value: "1ère", label: "ville étudiante de France", bgColor: "bg-[#333]" },
-        { value: "1 080 000", label: "habitants à Toulouse", bgColor: "bg-[#8B2318]" },
-        { value: "15,9 milliards d'€", label: "de retombées économiques pour le tourisme en Occitanie", bgColor: "bg-[#333]" },
+        { value: "1 080 000", label: "habitants en métropole toulousaine", bgColor: "bg-[#8B2318]" },
+        { value: "15.9", label: "milliards d'€\nde retombées économiques pour le tourisme en Occitanie", bgColor: "bg-[#333]" },
       ],
       lifeIsGood: {
-        title: "TOULOUSE, UNE VILLE OÙ IL FAIT BON VIVRE",
+        title: "Toulouse, une ville où il fait bon vivre",
         bullets: [
           {
             title: "Accessibilité et qualité de vie :",
-            text: "Toulouse est une métropole à taille humaine. Le coût de la vie y est abordable, que ce soit pour le logement, les loisirs ou les sorties. De plus, la ville est bien desservie par un réseau de transports en commun efficace."
+            text: "Toulouse est une métropole à échelle humaine. Le coût de la vie y est abordable, que ce soit pour le logement, les loisirs ou les sorties. De plus, la ville est bien desservie par un réseau de transports publics efficace."
           },
           {
             title: "Environnement naturel et climat :",
-            text: "Surnommée la « Ville Rose », Toulouse bénéficie d'un climat ensoleillé avec plus de 2000 heures d'ensoleillement par an. C'est aussi une ville verte, avec 170 parcs et jardins, et traversée par la Garonne et le Canal du Midi, offrant de nombreux espaces de promenade au bord de l'eau."
+            text: "Surnommée la « Ville rose », Toulouse bénéficie d'un climat ensoleillé avec plus de 2000 heures d'ensoleillement par an. Elle est également une ville verte, avec 170 parcs et jardins, et est traversée par la Garonne et le canal du Midi, offrant de nombreux espaces de promenade au bord de l'eau."
           },
           {
             title: "Patrimoine et culture :",
-            text: "Avec plus de 2000 ans d'histoire, Toulouse possède un patrimoine exceptionnel, dont trois sites classés au patrimoine mondial de l'UNESCO : le Canal du Midi, la basilique Saint-Sernin et l'Hôtel-Dieu Saint-Jacques."
+            text: "Riche de plus de 2000 ans d'histoire, Toulouse possède un patrimoine exceptionnel, dont trois sites classés au patrimoine mondial de l'UNESCO : le canal du Midi, la basilique Saint-Sernin et l'Hôtel-Dieu Saint-Jacques."
           },
           {
             title: "Situation géographique idéale :",
-            text: "La position de Toulouse est un atout majeur. La ville est située à seulement 1h30 de la mer Méditerranée et des Pyrénées, offrant un accès facile à une grande variété d'activités."
+            text: "La position de Toulouse est un atout majeur. La ville se trouve à seulement 1h30 de la mer Méditerranée et des montagnes des Pyrénées, offrant un accès facile à une grande variété d'activités."
           },
           {
             title: "Découverte de la région :",
-            text: "Capitale de l'Occitanie, Toulouse est le point de départ idéal pour explorer les trésors de la région. On peut y découvrir des sites emblématiques comme Carcassonne, Albi ou Auch, ainsi que 9 sites UNESCO, 8 parcs régionaux, 43 stations de ski et 45 des plus beaux villages de France."
+            text: "En tant que capitale de l'Occitanie, Toulouse est le point de départ idéal pour explorer les trésors de la région. Vous pourrez y découvrir des sites emblématiques comme Carcassonne, Albi ou Auch, ainsi que 9 sites UNESCO, 8 parcs régionaux, 43 stations de ski et 45 des plus beaux villages de France."
           }
         ]
       },
@@ -197,51 +197,51 @@ export default function CampusToulousePage({ lang }: CampusToulousePageProps) {
           items: [
             { title: "Bibliothèques universitaires :", text: "Ces lieux sont le choix principal pour un environnement calme et propice à la concentration." },
             { title: "Cafés et salons de thé :", text: "De nombreux établissements, comme Le Florida sur la place du Capitole, offrent un cadre plus convivial pour travailler." },
-            { title: "Espaces de coworking :", text: "La Cantine Toulouse, près de la gare Matabiau, propose des espaces de travail modernes aux horaires flexibles." },
-            { title: "Parcs et jardins :", text: "Idéal pour étudier en extérieur quand la météo le permet, comme sur les bords de la Garonne ou à la Prairie des Filtres." }
+            { title: "Espaces de coworking :", text: "La Cantine Toulouse, près de la gare Matabiau, propose des espaces de travail modernes avec des horaires flexibles." },
+            { title: "Parcs et jardins :", text: "Parfaits pour étudier en plein air quand le temps le permet, comme sur les quais de la Garonne ou à la Prairie des Filtres." }
           ]
         },
         {
           id: "leisure",
-          title: "Lieux de loisirs et sorties",
+          title: "Lieux de loisirs et de sorties",
           items: [
-            { title: "Bars et clubs :", text: "Le quartier Saint-Pierre est un incontournable des soirées étudiantes, avec des bars comme le Basque Bar ou Chez Tonton. D'autres lieux comme La Couleur de la Culotte ou Le Saint des Seins sont également très populaires." },
-            { title: "Quartiers animés :", text: "Outre Saint-Pierre, les quartiers Saint-Cyprien et Jean Jaurès sont également réputés pour leur ambiance festive et leurs nombreux bars et restaurants." },
-            { title: "Activités culturelles et de loisirs :", text: "Les étudiants peuvent profiter de la Cité de l'Espace, des nombreux musées (Musée des Abattoirs) et théâtres (Théâtre Garonne) de la ville, ou participer aux événements et festivals organisés par le Crous." },
-            { title: "Sport :", text: "La ville met à disposition des équipements sportifs en accès libre, des piscines, et propose des activités variées via le Crous (yoga, danse, escalade, etc.). La colline de Pech-David offre également un espace vert idéal pour les activités de plein air." },
-            { title: "La Turbine Université de Toulouse :", text: "Un tiers-lieu étudiant qui propose des activités et un accompagnement de projets." }
+            { title: "Bars et clubs :", text: "Le quartier de Saint-Pierre est un lieu incontournable pour les soirées étudiantes, avec des bars comme le Bar Basque ou Chez Tonton. D'autres lieux comme La Couleur de la Culotte ou Le Saint des Seins sont aussi très appréciés." },
+            { title: "Quartiers animés :", text: "Outre Saint-Pierre, les quartiers de Saint-Cyprien et Jean Jaurès sont également réputés pour leur ambiance festive et leurs nombreux bars et restaurants." },
+            { title: "Activités culturelles et de détente :", text: "Les étudiants peuvent profiter de la Cité de l'Espace, des nombreux musées (Musée des Abattoirs) et théâtres (Théâtre Garonne) de la ville, ou encore participer à des événements et festivals organisés par le Crous." },
+            { title: "Sport :", text: "La ville met à disposition des équipements sportifs en libre accès, des piscines, et propose des activités variées via le Crous (yoga, danse, escalade, etc.). La colline de Pech-David offre également un espace vert idéal pour les activités de plein air." },
+            { title: "La Turbine Université de Toulouse :", text: "Un tiers-lieu étudiant qui propose des activités et un accompagnement pour les projets." }
           ]
         }
       ],
       tourismFocus: {
-        title: "FOCUS SUR LE TOURISME À TOULOUSE ET SA RÉGION",
+        title: "focus sur le tourisme à Toulouse et dans sa région",
         toulouse: {
           title: "Toulouse",
           paragraphs: [
-            "Le tourisme à Toulouse s'affirme comme un pilier économique majeur, bénéficiant d'une attractivité croissante et diversifiée.",
-            "La « Ville rose » charme par son riche patrimoine historique, illustré par des monuments emblématiques tels que la basilique Saint-Sernin, classée au patrimoine mondial de l'UNESCO, et le Capitole.",
-            "Au-delà de son histoire, Toulouse s'est positionnée comme une capitale européenne de l'aéronautique et de l'espace, avec des sites comme la Cité de l'Espace ou les visites d'Airbus, qui attirent des visiteurs du monde entier, passionnés de technologies.",
+            "Le tourisme à Toulouse se révèle être un pilier économique majeur, bénéficiant d'une attractivité croissante et diversifiée.",
+            "La « Ville rose » séduit par son riche patrimoine historique, illustré par des monuments emblématiques tels que la basilique Saint-Sernin, inscrite au patrimoine mondial de l'UNESCO, et le Capitole.",
+            "Au-delà de son histoire, Toulouse a su se positionner comme une capitale européenne de l'aéronautique et du spatial, avec des sites comme la Cité de l'Espace ou les visites d'Airbus, qui attirent des visiteurs du monde entier, passionnés de technologie.",
             "Ce tourisme d'affaires et industriel génère des retombées économiques significatives pour l'hôtellerie, la restauration et le commerce local.",
-            "Par ailleurs, la ville mise sur son art de vivre, sa gastronomie et sa culture occitane, séduisant ainsi un tourisme de loisirs familial et individuel.",
-            "Cette alliance entre patrimoine, innovation et douceur de vivre fait de Toulouse une destination complète et dynamique, contribuant à la création d'emplois et au développement de l'économie locale."
+            "En outre, la ville capitalise sur sa douceur de vivre, sa gastronomie et sa culture occitane, attirant ainsi un tourisme de loisirs familial et individuel.",
+            "Cette combinaison de patrimoine, d'innovation et d'art de vivre fait de Toulouse une destination complète et dynamique, contribuant à la création d'emplois et au développement de l'économie locale."
           ]
         },
         occitanie: {
           title: "Région Occitanie",
           paragraphs: [
             "Le tourisme représente une composante essentielle de l'économie de l'Occitanie, se positionnant comme un secteur stratégique pour le développement régional.",
-            "Cette vaste région, la deuxième plus grande de France métropolitaine, jouit d'une diversité de paysages et de patrimoines qui attirent une clientèle variée.",
-            "Du littoral méditerranéen et ses stations balnéaires prisées comme Palavas-les-Flots, à la côte sauvage de l'Aude, en passant par les sommets des Pyrénées propices aux sports d'hiver et à la randonnée, l'offre touristique est extrêmement riche.",
-            "Le patrimoine historique et culturel, avec des sites comme la cité de Carcassonne, le Pont du Gard et les nombreux villages médiévaux, constitue un autre atout majeur.",
+            "Cette vaste région, la deuxième plus grande de France métropolitaine, bénéficie d'une diversité de paysages et de patrimoines qui attirent une clientèle variée.",
+            "De la côte méditerranéenne et de ses stations balnéaires prisées comme Palavas-les-Flots, au littoral sauvage de l'Aude, en passant par les sommets des Pyrénées propices aux sports d'hiver et à la randonnée, l'offre touristique est extrêmement riche.",
+            "Le patrimoine historique et culturel, avec des sites comme la Cité de Carcassonne, le pont du Gard et les nombreux villages médiévaux, est un autre atout majeur.",
             "L'œnotourisme et la gastronomie, symbolisés par les vins du Languedoc-Roussillon et les spécialités locales, contribuent également à l'attractivité de la région.",
-            "Cette effervescence touristique génère des emplois directs et indirects, dynamise l'économie locale et régionale, et favorise la valorisation du patrimoine naturel et culturel de l'Occitanie."
+            "Cette effervescence touristique génère des emplois directs et indirects, stimule l'économie locale et régionale, et favorise la valorisation du patrimoine naturel et culturel de l'Occitanie."
           ]
         }
       },
       discover: {
-        title: "POUR DÉCOUVRIR LA VILLE ET LA RÉGION",
+        title: "Pour découvrir la ville et la région",
         bgText: "Quelques sites utiles pour découvrir votre nouveau lieu de vie !",
-        heading1: "Découvrez la ville de Toulouse et la Région Occitanie",
+        heading1: "Découvrir la ville de Toulouse et la Région Occitanie",
         heading2: "Connaître les bonnes adresses de la vie étudiante à Toulouse",
         logos: [
           { name: "Toulouse Tourisme", icon: "/assets/tou.png", subLabel: "Office de Tourisme Toulouse" },
@@ -272,7 +272,7 @@ export default function CampusToulousePage({ lang }: CampusToulousePageProps) {
                 className={`${stat.bgColor} p-10 text-white flex flex-col items-center text-center justify-center min-h-[200px] border-r border-white/10 last:border-0`}
               >
                 <span className="text-[36px] font-black mb-3">{stat.value}</span>
-                <span className="text-[15px] font-bold uppercase tracking-widest opacity-90 leading-tight">
+                <span className="text-[15px] font-bold uppercase tracking-widest opacity-90 leading-tight whitespace-pre-line">
                   {stat.label}
                 </span>
               </div>

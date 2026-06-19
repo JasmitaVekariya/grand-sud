@@ -5,13 +5,39 @@ import { AnimatePresence, motion } from "framer-motion";
 import { CalendarX2, ChevronDown, ChevronLeft, ChevronRight } from "lucide-react";
 
 const DAYS_FR = ["LUN", "MAR", "MER", "JEU", "VEN", "SAM", "DIM"];
+const DAYS_EN = ["MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN"];
 
 const MONTHS_FR = [
   "janvier", "février", "mars", "avril", "mai", "juin",
   "juillet", "août", "septembre", "octobre", "novembre", "décembre"
 ];
 
-export default function MeetUsEventsCalendar() {
+const MONTHS_EN = [
+  "January", "February", "March", "April", "May", "June",
+  "July", "August", "September", "October", "November", "December"
+];
+
+interface MeetUsEventsCalendarProps {
+  lang?: "fr" | "en";
+}
+
+export default function MeetUsEventsCalendar({ lang = "fr" }: MeetUsEventsCalendarProps) {
+  const daysLabels = lang === "fr" ? DAYS_FR : DAYS_EN;
+  const monthLabels = lang === "fr" ? MONTHS_FR : MONTHS_EN;
+  const t = {
+    fr: {
+      thisMonth: "Ce mois-ci",
+      noEvents: "Il n'y a pas d'évènements à venir.",
+      prevMonth: "Mois précédent",
+      nextMonth: "Mois suivant",
+    },
+    en: {
+      thisMonth: "This month",
+      noEvents: "There are no upcoming events.",
+      prevMonth: "Previous month",
+      nextMonth: "Next month",
+    },
+  }[lang];
   const today = new Date();
   const [currentDate, setCurrentDate] = useState(
     () => new Date(today.getFullYear(), today.getMonth(), 1)
@@ -97,7 +123,7 @@ export default function MeetUsEventsCalendar() {
             type="button"
             onClick={() => changeMonth(-1)}
             className="p-2 hover:bg-gray-100 rounded-full transition-colors border border-[#E5E5E5] bg-white"
-            aria-label="Mois précédent"
+            aria-label={t.prevMonth}
           >
             <ChevronLeft size={18} className="text-[#2B2B2B]/50" />
           </button>
@@ -105,7 +131,7 @@ export default function MeetUsEventsCalendar() {
             type="button"
             onClick={() => changeMonth(1)}
             className="p-2 hover:bg-gray-100 rounded-full transition-colors border border-[#E5E5E5] bg-white"
-            aria-label="Mois suivant"
+            aria-label={t.nextMonth}
           >
             <ChevronRight size={18} className="text-[#2B2B2B]/50" />
           </button>
@@ -116,7 +142,7 @@ export default function MeetUsEventsCalendar() {
           onClick={goToThisMonth}
           className="px-4 py-2 border border-[#E5E5E5] bg-white rounded-[8px] text-[13px] font-semibold text-[#2B2B2B] hover:border-[#F23A2E] transition-colors"
         >
-          Ce mois-ci
+          {t.thisMonth}
         </button>
 
         <div className="relative">
@@ -161,7 +187,7 @@ export default function MeetUsEventsCalendar() {
                   </button>
                 </div>
                 <div className="grid grid-cols-3 gap-2">
-                  {MONTHS_FR.map((m, idx) => (
+                  {monthLabels.map((m, idx) => (
                     <button
                       key={m}
                       type="button"
@@ -185,13 +211,13 @@ export default function MeetUsEventsCalendar() {
 
       <div className="flex items-center gap-3 border border-[#E5E5E5] bg-[#F5F5F5] px-4 py-3 text-[14px] text-[#2B2B2B]/70">
         <CalendarX2 size={18} className="shrink-0 text-[#2B2B2B]/40" />
-        <span>Il n&apos;y a pas d&apos;évènements à venir.</span>
+        <span>{t.noEvents}</span>
       </div>
 
       <div className="overflow-x-auto border border-[#E5E5E5] bg-white">
         <div className="min-w-[640px]">
           <div className="grid grid-cols-7 border-b border-[#E5E5E5]">
-            {DAYS_FR.map((day) => (
+            {daysLabels.map((day) => (
               <div
                 key={day}
                 className="py-3 text-center text-[11px] font-bold uppercase tracking-widest text-[#2B2B2B]/40"

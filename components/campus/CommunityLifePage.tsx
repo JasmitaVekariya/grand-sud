@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { FaInstagram } from "react-icons/fa";
 import CourseDetailLayout from "@/components/courses/CourseDetailLayout";
+import MeetUsEventsCalendar from "@/components/school/MeetUsEventsCalendar";
 
 interface CommunityLifePageProps {
   lang: "en" | "fr";
@@ -15,6 +16,7 @@ export default function CommunityLifePage({ lang }: CommunityLifePageProps) {
         { id: "bde", label: "STUDENTS OFFICE (BDE)" },
         { id: "humanitarian", label: "HUMANITARIAN ASSISTANCE" },
         { id: "ambassador", label: "AMBASSADOR'S CLUB" },
+        { id: "events", label: "Upcoming events" },
       ],
       intro: [
         "The involvement of students in the community life of their campus is important.",
@@ -50,6 +52,9 @@ export default function CommunityLifePage({ lang }: CommunityLifePageProps) {
           "The Ambassadors work closely with the Admissions and Communication teams of Grand Sud, thus acquiring concrete and rewarding experience."
         ],
         image: "/assets/IMG_0243-scaled-1-768x1024.jpeg"
+      },
+      events: {
+        title: "Upcoming events",
       }
     },
     fr: {
@@ -57,6 +62,7 @@ export default function CommunityLifePage({ lang }: CommunityLifePageProps) {
         { id: "bde", label: "BUREAU DES ÉTUDIANTS (BDE)" },
         { id: "humanitarian", label: "AIDE HUMANITAIRE" },
         { id: "ambassador", label: "CLUB DES AMBASSADEURS" },
+        { id: "events", label: "Prochains évènements" },
       ],
       intro: [
         "L'implication des étudiants dans la vie associative de leur campus est importante.",
@@ -92,6 +98,9 @@ export default function CommunityLifePage({ lang }: CommunityLifePageProps) {
           "Les ambassadeurs travaillent en étroite collaboration avec les équipes Admissions et Communication de Grand Sud, acquérant ainsi une expérience concrète et valorisante."
         ],
         image: "/assets/IMG_0243-scaled-1-768x1024.jpeg"
+      },
+      events: {
+        title: "Prochains évènements",
       }
     }
   }[lang];
@@ -192,6 +201,13 @@ export default function CommunityLifePage({ lang }: CommunityLifePageProps) {
             </div>
           </section>
         </div>
+
+        <section id="events" className="scroll-mt-32 pt-16 space-y-8">
+          <h2 className="text-[32px] md:text-[42px] font-bold uppercase tracking-tight text-[#2B2B2B]">
+            {t.events.title}
+          </h2>
+          <MeetUsEventsCalendar lang={lang} />
+        </section>
       </CourseDetailLayout>
     </div>
   );

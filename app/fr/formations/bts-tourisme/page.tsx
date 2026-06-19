@@ -253,7 +253,7 @@ export default function BTSTourismePage() {
       { label: "Bachelor Hospitality Management", href: "/fr/formations/bachelor-hospitality", flag: "FR" as const, isHighlighted: true },
       { label: "Bachelor Hospitality Management", href: "/fr/formations/bachelor-hospitality-en", flag: "UK" as const },
       { label: "Bachelor Business & Tourism", href: "/fr/formations/bachelor-business", flag: "UK" as const },
-      { label: "D'une manière générale, titres de niveau 6", href: "/fr/formations" }
+      { label: "D'une manière générale, titres de niveau 6", href: "" }
     ],
     jobs: []
   };

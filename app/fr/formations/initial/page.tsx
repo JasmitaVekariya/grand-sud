@@ -38,11 +38,11 @@ export default function InitialTrainingPageFR() {
   };
 
   const sections = [
-    { id: "accessible", label: "LES FORMATIONS ACCESSIBLES EN INITIAL" },
-    { id: "possible-internships", label: "LES DIFFÉRENTS STAGES POSSIBLES" },
-    { id: "rights-duties", label: "DROITS ET DEVOIRS DU STAGIAIRE" },
-    { id: "reference-site", label: "SITE DE RÉFÉRENCE" },
-    { id: "internship-program", label: "PROGRAMME DE STAGE GRAND SUD" },
+    { id: "accessible", label: "Les formations accessibles en initial" },
+    { id: "possible-internships", label: "Les différents stages possibles" },
+    { id: "rights-duties", label: "Droits et devoirs du stagiaire" },
+    { id: "reference-site", label: "Site de référence" },
+    { id: "internship-program", label: "Programme de stage Grand Sud" },
   ];
 
   const courses = [
@@ -52,8 +52,7 @@ export default function InitialTrainingPageFR() {
       diploma: "Diplôme d'Etat de l'Education Nationale - BAC+2",
       duration: "14 semaines de stage minimum par an (donc 28 semaines minimum au total)",
       color: "bg-[#8B2B23]",
-      href: "/fr/formations/bts-mco",
-      flag: "🇫🇷"
+      flag: "FR" as const
     },
     {
       icon: Send,
@@ -62,7 +61,7 @@ export default function InitialTrainingPageFR() {
       duration: "14 semaines de stage minimum par an (donc 28 semaines minimum au total)",
       color: "bg-[#333333]",
       href: "/fr/formations/bts-tourisme",
-      flag: "🇫🇷"
+      flag: "FR" as const
     },
     {
       icon: Leaf,
@@ -71,7 +70,7 @@ export default function InitialTrainingPageFR() {
       duration: "14 semaines de stage minimum",
       color: "bg-[#8B2B23]",
       href: "/fr/formations/bachelor-durable",
-      flag: "🇫🇷"
+      flag: "FR" as const
     },
     {
       icon: Hotel,
@@ -80,7 +79,7 @@ export default function InitialTrainingPageFR() {
       duration: "14 semaines de stage minimum",
       color: "bg-[#333333]",
       href: "/fr/formations/bachelor-hospitality",
-      flag: "🇫🇷"
+      flag: "FR" as const
     },
     {
       icon: Users,
@@ -89,7 +88,7 @@ export default function InitialTrainingPageFR() {
       duration: "14 semaines de stage minimum",
       color: "bg-[#8B2B23]",
       href: "/fr/formations/bachelor-mice",
-      flag: "🇫🇷"
+      flag: "FR" as const
     },
     {
       icon: User,
@@ -98,7 +97,7 @@ export default function InitialTrainingPageFR() {
       duration: "14 semaines de stage minimum par an (donc 28 semaines minimum au total)",
       color: "bg-[#333333]",
       href: "/fr/formations/mastere-tourism",
-      flag: "🇫🇷"
+      flag: "FR" as const
     },
     {
       icon: PieChart,
@@ -107,7 +106,7 @@ export default function InitialTrainingPageFR() {
       duration: "14 semaines de stage minimum par an (donc 42 semaines minimum au total)",
       color: "bg-[#333333]",
       href: "/fr/formations/bachelor-business",
-      flag: "🇬🇧"
+      flag: "UK" as const
     },
     {
       icon: Hotel,
@@ -115,8 +114,8 @@ export default function InitialTrainingPageFR() {
       diploma: "Titre RNCP - BAC+3",
       duration: "14 semaines de stage minimum par an (donc 42 semaines minimum au total)",
       color: "bg-[#8B2B23]",
-      href: "/fr/formations/bachelor-hospitality",
-      flag: "🇬🇧"
+      href: "/fr/formations/bachelor-hospitality-en",
+      flag: "UK" as const
     },
     {
       icon: Laptop,
@@ -125,7 +124,7 @@ export default function InitialTrainingPageFR() {
       duration: "14 semaines de stage minimum par an (donc 42 semaines minimum au total)",
       color: "bg-[#333333]",
       href: "/fr/formations/bachelor-it",
-      flag: "🇬🇧"
+      flag: "UK" as const
     },
     {
       icon: TrendingUp,
@@ -134,7 +133,7 @@ export default function InitialTrainingPageFR() {
       duration: "14 semaines de stage minimum par an (donc 28 semaines minimum au total)",
       color: "bg-[#8B2B23]",
       href: "/fr/formations/mastere-business",
-      flag: "🇬🇧"
+      flag: "UK" as const
     },
     {
       icon: Briefcase,
@@ -143,7 +142,7 @@ export default function InitialTrainingPageFR() {
       duration: "14 semaines de stage minimum par an (donc 28 semaines minimum au total)",
       color: "bg-[#333333]",
       href: "/fr/formations/mastere-hospitality",
-      flag: "🇬🇧"
+      flag: "UK" as const
     },
     {
       icon: Laptop,
@@ -152,14 +151,43 @@ export default function InitialTrainingPageFR() {
       duration: "14 semaines de stage minimum par an (donc 28 semaines minimum au total)",
       color: "bg-[#8B2B23]",
       href: "/fr/formations/mastere-it",
-      flag: "🇬🇧"
+      flag: "UK" as const
     }
   ];
+
+  const renderCourseCard = (course: (typeof courses)[number], index: number) => {
+    const inner = (
+      <div className={`${course.color} p-8 text-white flex flex-col items-center text-center space-y-6 min-h-[350px] transition-transform hover:scale-[1.02] hover:z-10 h-full ${course.href ? "cursor-pointer" : ""}`}>
+        <course.icon size={48} strokeWidth={1} className="opacity-80" />
+        <div className="space-y-2">
+          <div className="relative w-8 h-5 mx-auto overflow-hidden rounded-[2px] shadow-sm border border-white/20">
+            <img
+              src={course.flag === "FR" ? "/assets/1f1eb-1f1f7.svg" : "/assets/1f1ec-1f1e7.svg"}
+              alt={course.flag}
+              className="w-full h-full object-cover"
+            />
+          </div>
+          <h3 className="text-[16px] md:text-[17px] font-bold leading-tight uppercase">{course.title}</h3>
+        </div>
+        <p className="text-[13px] opacity-90">{course.diploma}</p>
+        <p className="text-[13px] font-bold pt-4 border-t border-white/20 w-full">{course.duration}</p>
+      </div>
+    );
+
+    if (course.href) {
+      return (
+        <Link key={index} href={course.href} className="h-full">
+          {inner}
+        </Link>
+      );
+    }
+    return <div key={index} className="h-full">{inner}</div>;
+  };
 
   return (
     <main className="bg-white">
       <PageBanner 
-        title="Réaliser sa formation en initial" 
+        title={<>Réaliser sa formation en <br/> initial</>} 
         image="/assets/pexels-danxavier-1239291-scaled.jpg" 
       />
 
@@ -168,68 +196,28 @@ export default function InitialTrainingPageFR() {
         <section id="accessible" className="scroll-mt-32 space-y-12">
           <div className="space-y-6">
             <p className="text-[15px] font-bold text-black leading-relaxed">
-              Une formation en initial est une solution adaptée pour ceux souhaitant un rythme plus scolaire que l'alternance. Ce rythme de formation permet à l'étudiant de suivre ses apprentissages théoriques puis de les mettre en application en entreprise, afin de s'immerger dans la culture professionnelle.
+              Une formation en initial est une solution adaptée pour ceux souhaitant un rythme plus scolaire que l&apos;alternance. Ce rythme de formation permet à l&apos;étudiant de suivre ses apprentissages théoriques puis de les mettre en application en entreprise, afin de s&apos;immerger dans la culture professionnelle.
             </p>
             <p className="text-[15px] text-gray-700 leading-relaxed font-medium">
-              Le statut de la personne choisissant une formation en initial est celui d'étudiant, et de stagiaire lors de la période en entreprise.
+              Le statut de la personne choisissant une formation en initial est celui d&apos;étudiant, et de stagiaire lors de la période en entreprise.
             </p>
           </div>
 
           <div className="space-y-8">
             <h2 className="text-[32px] md:text-[42px] font-bold text-primary-red uppercase tracking-tight leading-tight">
-              LES FORMATIONS ACCESSIBLES EN INITIAL
+              Les formations accessibles en initial
             </h2>
             <div className="space-y-6 text-[15px] text-gray-700 leading-relaxed font-medium">
               <p>Du BTS au Mastère, toutes nos formations sont accessible en formation initiale, que ce soit avec un stage alterné ou un stage de fin d'année.</p>
               <p>La signature d'une convention de stage vous permet de mettre en application les compétences et connaissances théoriques vue en cours.</p>
             </div>
 
-            {/* French Courses Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-0">
-              {courses.filter(c => c.flag === "🇫🇷").map((course, index) => (
-                <Link key={index} href={course.href}>
-                  <div className={`${course.color} p-8 text-white flex flex-col items-center text-center space-y-6 min-h-[350px] transition-transform hover:scale-[1.02] hover:z-10 h-full cursor-pointer`}>
-                    <course.icon size={48} strokeWidth={1} className="opacity-80" />
-                    <div className="space-y-2">
-                      <div className="flex items-center justify-center gap-2 text-[14px] font-bold uppercase tracking-wider mb-2">
-                        <span className="text-[18px]">{course.flag}</span>
-                        {course.title.split(' ')[0]}
-                      </div>
-                      <h3 className="text-[18px] font-bold leading-tight uppercase">
-                        {course.title.split(' ').slice(1).join(' ')}
-                      </h3>
-                    </div>
-                    <p className="text-[13px] opacity-90">{course.diploma}</p>
-                    <p className="text-[13px] font-bold pt-4 border-t border-white/20 w-full">
-                      {course.duration}
-                    </p>
-                  </div>
-                </Link>
-              ))}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 auto-rows-fr">
+              {courses.filter(c => c.flag === "FR").map(renderCourseCard)}
             </div>
 
-            {/* English Courses Grid - Starts from new row */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-0">
-              {courses.filter(c => c.flag === "🇬🇧").map((course, index) => (
-                <Link key={index} href={course.href}>
-                  <div className={`${course.color} p-8 text-white flex flex-col items-center text-center space-y-6 min-h-[350px] transition-transform hover:scale-[1.02] hover:z-10 h-full cursor-pointer`}>
-                    <course.icon size={48} strokeWidth={1} className="opacity-80" />
-                    <div className="space-y-2">
-                      <div className="flex items-center justify-center gap-2 text-[14px] font-bold uppercase tracking-wider mb-2">
-                        <span className="text-[18px]">{course.flag}</span>
-                        {course.title.split(' ')[0]}
-                      </div>
-                      <h3 className="text-[18px] font-bold leading-tight uppercase">
-                        {course.title.split(' ').slice(1).join(' ')}
-                      </h3>
-                    </div>
-                    <p className="text-[13px] opacity-90">{course.diploma}</p>
-                    <p className="text-[13px] font-bold pt-4 border-t border-white/20 w-full">
-                      {course.duration}
-                    </p>
-                  </div>
-                </Link>
-              ))}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 auto-rows-fr">
+              {courses.filter(c => c.flag === "UK").map(renderCourseCard)}
             </div>
           </div>
         </section>
@@ -238,7 +226,7 @@ export default function InitialTrainingPageFR() {
         <section id="possible-internships" className="scroll-mt-32 space-y-12">
           <div className="space-y-8">
             <h2 className="text-[32px] md:text-[42px] font-bold text-primary-red uppercase tracking-tight leading-tight">
-              LES DIFFÉRENTS STAGES POSSIBLES
+              Les différents stages possibles
             </h2>
             <div className="space-y-6 text-[15px] text-gray-700 leading-relaxed font-medium">
               <p>Votre année peut prendre 2 formes, selon la formation et vos choix personnels :</p>
@@ -321,7 +309,7 @@ export default function InitialTrainingPageFR() {
         <section id="rights-duties" className="scroll-mt-32 space-y-12">
           <div className="space-y-8">
             <h2 className="text-[32px] md:text-[42px] font-bold text-primary-red uppercase tracking-tight leading-tight">
-              DROITS ET DEVOIRS DU STAGIAIRE
+              Droits et devoirs du stagiaire
             </h2>
             
             {/* Header Image for Section */}
@@ -330,7 +318,7 @@ export default function InitialTrainingPageFR() {
               <div className="absolute inset-0 bg-black/40 flex items-center p-8">
                 <div className="max-w-2xl text-white space-y-4">
                   <p className="text-[15px] leading-relaxed">
-                    Si la réalisation d'un stage est un atout pour le parcours professionnel de l'étudiant, la loi impose un cadre.
+                    Si la réalisation d&apos;un stage est un atout pour le parcours professionnel de l&apos;étudiant, la législation impose un cadre.
                   </p>
                   <p className="font-bold text-[18px]">
                     Droits et devoirs sont à connaître avant de s'engager !
@@ -349,7 +337,7 @@ export default function InitialTrainingPageFR() {
                     <Clock size={48} strokeWidth={1} className="opacity-80 p-2 bg-white/10 rounded-full w-16 h-16" />
                     <h4 className="font-bold text-[18px] uppercase tracking-wide">Durée du stage</h4>
                     <p className="text-[14px] opacity-90 leading-relaxed">Le stage ne peut durer que 6 mois maximum dans la même entreprise pour chaque année d'enseignement (soit 924h).</p>
-                    <p className="text-[14px] opacity-90 leading-relaxed">La durée de stage est calculée en fonction du temps que réellement passé dans l'entreprise. Une journée de présence correspond à 7 heures, qu'elles soient consécutives ou non, un mois de présence est atteint après 22 jours dans l'entreprise.</p>
+                    <p className="text-[14px] opacity-90 leading-relaxed">La durée de stage est calculée en fonction du temps réellement passé dans l&apos;entreprise. Une journée de présence correspond à 7 heures, qu&apos;elles soient consécutives ou non, un mois de présence est atteint après 22 jours dans l&apos;entreprise.</p>
                   </div>
                   
                   <div className="space-y-4">
@@ -362,7 +350,7 @@ export default function InitialTrainingPageFR() {
                   <div className="space-y-4">
                     <Bed size={48} strokeWidth={1} className="opacity-80 p-2 bg-white/10 rounded-full w-16 h-16" />
                     <h4 className="font-bold text-[18px] uppercase tracking-wide">Temps de repos</h4>
-                    <p className="text-[14px] opacity-90 leading-relaxed">Le temps de repos hebdomadaire est au minimum de 24 heures consécutives, auxquels s'ajoute le temps de repos quotidien qui est au minimum de 11 heures consécutives. Le temps de pause quotidien est au minimum de 20 minutes pour 6 heures consécutives de travail.</p>
+                    <p className="text-[14px] opacity-90 leading-relaxed">Le temps de repos hebdomadaire est au minimum de 24 heures consécutives, auquel s&apos;ajoute le temps de repos quotidien qui est au minimum de 11 heures consécutives. Le temps de pause quotidien est au minimum de 20 minutes pour 6 heures consécutives de travail</p>
                   </div>
 
                   <div className="space-y-4">
@@ -370,7 +358,8 @@ export default function InitialTrainingPageFR() {
                     <h4 className="font-bold text-[18px] uppercase tracking-wide">Indemnité</h4>
                     <p className="text-[14px] opacity-90 leading-relaxed">Une gratification minimale est versée au stagiaire si la durée du stage est supérieure à 2 mois consécutifs (soit l'équivalent de 44 jours à 7 heures par jour, ou 309h) au cours de la même année scolaire ou universitaire.</p>
                     <p className="text-[14px] opacity-90 leading-relaxed">En dessous de ces seuils de durée, l'organisme d'accueil n'est pas obligé de verser une gratification.</p>
-                    <p className="text-[14px] opacity-90 leading-relaxed">Si le montant horaire de la gratification est inférieur à 4,35 €, le stagiaire est exonéré de cotisations sociales. La gratification peut être versée de 2 manières différentes : en fonction du nombre réel d'heures effectuées par mois ou par lissage par mois de la totalité des heures effectuées durant le stage.</p>
+                    <p className="text-[14px] opacity-90 leading-relaxed">Si le montant horaire de la gratification est inférieur à 4,35 €, le stagiaire est exonéré de cotisations sociales.</p>
+                    <p className="text-[14px] opacity-90 leading-relaxed">La gratification peut être versée de 2 manières différentes : en fonction du nombre réel d&apos;heures effectuées par mois ou par lissage par mois de la totalité des heures effectuées durant le stage</p>
                   </div>
                 </div>
 
@@ -386,14 +375,15 @@ export default function InitialTrainingPageFR() {
                     <Heart size={48} strokeWidth={1} className="opacity-80 p-2 bg-white/10 rounded-full w-16 h-16" />
                     <h4 className="font-bold text-[18px] uppercase tracking-wide">Couverture sociale</h4>
                     <p className="text-[14px] opacity-90 leading-relaxed">L'étudiant continue de bénéficier de sa mutuelle personnelle, souvent celle de ses parents.</p>
-                    <p className="text-[14px] opacity-90 leading-relaxed">N'étant pas salariés, ils ne bénéficient pas de la couverture sociale attribuée à ceux-ci. En revanche, la convention de stage étant tripartite et impliquant son école, il bénéficie de l'appui de celle-ci au quotidien durant toute la durée du stage.</p>
+                    <p className="text-[14px] opacity-90 leading-relaxed">N&apos;étant pas salariés, il ne bénéficie pas de la couverture sociale attribuée à ceux-ci.</p>
+                    <p className="text-[14px] opacity-90 leading-relaxed">En revanche, la convention de stage étant tripartite et impliquant son école, il bénéficie de l&apos;appui de celle-ci au quotidien durant toute la durée du stage.</p>
                   </div>
 
                   <div className="space-y-4">
                     <CreditCard size={48} strokeWidth={1} className="opacity-80 p-2 bg-white/10 rounded-full w-16 h-16" />
                     <h4 className="font-bold text-[18px] uppercase tracking-wide">Prise en charge des frais</h4>
-                    <p className="text-[14px] opacity-90 leading-relaxed">Le stagiaire a accès au restaurant d'entreprise ou aux titres-restaurant ainsi qu'aux activités sociales et culturelles prévues par le comité social et économique (CSE).</p>
-                    <p className="text-[14px] opacity-90 leading-relaxed">Le stagiaire bénéficie du remboursement d'une partie des frais de transport en commun dans les mêmes conditions que les salariés (50 % du coût de l'abonnement).</p>
+                    <p className="text-[14px] opacity-90 leading-relaxed">Le stagiaire a accès au restaurant d&apos;entreprise ou aux titres-restaurant ainsi qu&apos;aux activités sociales et culturelles prévues par le comité social et économique (CSE).</p>
+                    <p className="text-[14px] opacity-90 leading-relaxed">Le stagiaire bénéficie du remboursement d&apos;une part des frais de transport en commun dans les mêmes conditions des salariés (50% du coût de l&apos;abonnement).</p>
                   </div>
 
                   <div className="space-y-4">
@@ -411,7 +401,7 @@ export default function InitialTrainingPageFR() {
                   <div className="space-y-4">
                     <CalendarCheck size={48} strokeWidth={1} className="opacity-80 p-2 bg-white/10 rounded-full w-16 h-16" />
                     <h4 className="font-bold text-[18px] uppercase tracking-wide">Travail, formation et assiduité</h4>
-                    <p className="text-[14px] opacity-90 leading-relaxed">Le stagiaire doit être investi dans un établissement et effectuer les tâches confiées par son entreprise.</p>
+                    <p className="text-[14px] opacity-90 leading-relaxed">Le stagiaire doit être inscrit dans un établissement et effectuer les tâches confiées par son entreprise.</p>
                   </div>
 
                   <div className="space-y-4">
@@ -423,9 +413,9 @@ export default function InitialTrainingPageFR() {
                   <div className="space-y-4">
                     <Briefcase size={48} strokeWidth={1} className="opacity-80 p-2 bg-white/10 rounded-full w-16 h-16" />
                     <h4 className="font-bold text-[18px] uppercase tracking-wide">Attitude professionnelle</h4>
-                    <p className="text-[14px] opacity-90 leading-relaxed">Pour développer une image positive et prouver ses capacités à s'insérer dans l'entreprise, l'apprenti doit respecter les horaires de travail.</p>
-                    <p className="text-[14px] opacity-90 leading-relaxed">En cas d'absence, le stagiaire doit transmettre à l'entreprise et à l'école ses justificatifs, dans le cas contraire l'absence serait injustifiée.</p>
-                    <p className="text-[14px] opacity-90 leading-relaxed font-bold">Le stagiaire doit être loyal et de bonne foi avec son employeur et envers son école.</p>
+                    <p className="text-[14px] opacity-90 leading-relaxed">Pour développer une image positive et prouver ses capacités à s&apos;insérer dans l&apos;entreprise, l&apos;apprenti doit respecter les horaires de travail.</p>
+                    <p className="text-[14px] opacity-90 leading-relaxed">En cas d&apos;absence, le stagiaire doit transmettre à l&apos;entreprise et à l&apos;école ses justificatifs, dans le cas contraire l&apos;absence serait injustifiée.</p>
+                    <p className="text-[14px] opacity-90 leading-relaxed font-bold">Le stagiaire doit être loyal et de bonne foi avec son employeur et envers son école</p>
                   </div>
                 </div>
               </div>
@@ -436,7 +426,7 @@ export default function InitialTrainingPageFR() {
         {/* Section 4: Site de référence */}
         <section id="reference-site" className="scroll-mt-32 space-y-8">
           <h2 className="text-[32px] md:text-[42px] font-bold text-primary-red uppercase tracking-tight leading-tight">
-            SITE DE RÉFÉRENCE
+            Site de référence
           </h2>
           <a 
             href="https://www.service-public.fr/particuliers/vosdroits/F20559" 
@@ -451,7 +441,7 @@ export default function InitialTrainingPageFR() {
         {/* Section 5: Programme de stage */}
         <section id="internship-program" className="scroll-mt-32 space-y-12">
           <h2 className="text-[32px] md:text-[42px] font-bold text-primary-red uppercase tracking-tight leading-tight">
-            PROGRAMME DE STAGE GRAND SUD
+            Programme de stage Grand Sud
           </h2>
           
           <div className="space-y-10 text-[15px] text-gray-700 leading-relaxed">
@@ -464,7 +454,7 @@ export default function InitialTrainingPageFR() {
                 <span className="font-bold text-black">• Indemnité :</span> 650 € par mois
               </li>
               <li className="flex items-start gap-2">
-                <span className="font-bold text-black">• Hébergement pris en charge</span> en chambre partagée
+                <span className="font-bold text-black">• Hébergement :</span> pris en charge en chambre partagée
               </li>
               <li className="flex items-start gap-2">
                 <span className="font-bold text-black">• Repas :</span> pris en charge les jours travaillés (généralement déjeuner et dîner)

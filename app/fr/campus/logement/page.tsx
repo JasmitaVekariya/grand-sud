@@ -8,9 +8,9 @@ export const metadata = {
 
 export default function HousingPageFR() {
   const banner = {
-    title: "Se loger autour du campus",
-    image: "/assets/campus-toulouse.jpg"
-  };
+    title: <>Se loger autour de <br/> Toulouse-Labège</>,
+      image: "/assets/pexels-harriet-b-392993362-14768387-min-scaled.jpg"
+    };
 
   return (
     <main className="bg-white">

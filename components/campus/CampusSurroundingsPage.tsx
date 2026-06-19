@@ -175,49 +175,49 @@ export default function CampusSurroundingsPage({ lang }: CampusSurroundingsPageP
       }
     },
     fr: {
-      sidebar: ["ZOOM SUR LE CAMPUS", "ACCÈS ET TRANSPORT", "ENVIRONNEMENT"],
+      sidebar: ["focus sur le campus", "Accès et transports", "Environnement"],
       intro: {
-        line1: "Vivez l'expérience étudiante en rejoignant l'école sur son campus de Toulouse-Labège pour votre rentrée !",
-        line2: "Situé à environ 15 minutes du centre de Toulouse, à proximité du centre commercial Labège 2 et du lac de Labège, au cœur d'une zone d'activités, le Campus offre un cadre d'apprentissage agréable : les étudiants pourront profiter aussi bien des équipements du campus que des nombreuses infrastructures qui y sont rattachées."
+        line1: "Vivez l'expérience étudiante en intégrant l'école sur son campus de Toulouse-Labège pour votre rentrée !",
+        line2: "Situé à environ 15 minutes du centre de Toulouse, à deux pas du Centre Commercial Labège 2 et du lac de Labège, au coeur d'une zone d'activités, le Campus offre un terrain d'apprentissage agréable : les étudiants pourront autant bénéficier des aménagements du campus que des nombreuses facilités accolées à celui-ci."
       },
       focus: {
-        title: "ZOOM SUR LE CAMPUS",
-        subtitle: "Le bâtiment",
+        title: "focus sur le campus",
+        subtitle: "Les locaux",
         stats: [
           {
             icon: Building2,
-            title: "près de 1 000 m2 de surface",
+            title: "près de 1 000 m² de surface",
             desc: "dédiés à la formation et à l'accompagnement des apprenants dans leur parcours",
             bgColor: "bg-[#333333]"
           },
           {
             icon: Layers,
             title: "2 étages",
-            desc: "climatisés et connectés, équipés pour le confort de tous",
+            desc: "climatisés et connectés, aménagés pour le confort de toutes et tous",
             bgColor: "bg-[#8B2318]"
           },
           {
             icon: Presentation,
-            title: "8 salles de cours",
-            desc: "entièrement équipées et adaptées à tout type de cours et de travail.",
+            title: "8 salles de classes",
+            desc: "entièrement équipées et adaptées à toute typologie de cours et travaux.",
             bgColor: "bg-[#333333]"
           },
           {
             icon: Accessibility,
-            title: "Accessibilité maximale",
-            desc: "l'ensemble du campus est accessible aux personnes en situation de handicap, ainsi qu'à leur éventuel chien guide ou d'assistance",
+            title: "un maximum d'accessibilité",
+            desc: "l'ensemble du campus est accessible aux personnes en situation de handicap, ainsi qu'à leur éventuel chien-guide ou d'assistance",
             bgColor: "bg-[#8B2318]"
           },
           {
             icon: Car,
             title: "42 places de parking",
-            desc: "gratuit et privé, en extérieur, à disposition des apprenants, visiteurs et intervenants. Dont 4 places pour voiture électrique - EVZen",
+            desc: "gratuites et privées, en extérieur, à disposition des apprenants, visiteurs et intervenants.\n\nDont 4 places pour voiture électrique EVzen",
             bgColor: "bg-[#333333]"
           },
           {
             icon: Globe,
-            title: "Dimension internationale",
-            desc: "le bâtiment est conçu pour accueillir aussi bien des francophones que des anglophones",
+            title: "dimension internationale",
+            desc: "le bâtiment est pensé pour accueillir tant des personnes francophones qu'anglophones",
             bgColor: "bg-[#8B2318]"
           }
         ],
@@ -226,25 +226,25 @@ export default function CampusSurroundingsPage({ lang }: CampusSurroundingsPageP
           {
             icon: Utensils,
             title: "Cafétéria",
-            desc: "équipée de micro-ondes, de distributeurs de boissons chaudes et froides et de snacks et d'une fontaine à eau fraîche, la salle de restauration est pratique et conviviale",
+            desc: "équipée de micro-ondes, de distributeurs de boissons chaudes et froides et d'encas et d'une fontaine à eau fraiche, la salle de déjeuner est pratique et conviviale",
             bgColor: "bg-[#333333]"
           },
           {
             icon: Users,
-            title: "Accueil et salle de visioconférence",
-            desc: "pour accueillir de larges publics ou mener des webinaires dans le monde entier !",
+            title: "salle de réception et de visioconférence",
+            desc: "pour accueillir du public en nombre ou réaliser des webinaires dans le monde entier !",
             bgColor: "bg-[#8B2318]"
           },
           {
             icon: Gamepad2,
-            title: "Salle de pause",
-            desc: "pour se défouler avec des jeux en libre-service !",
+            title: "salle de pause",
+            desc: "défoulez-vous avec des jeux en libre-service !",
             bgColor: "bg-[#333333]"
           }
         ]
       },
       access: {
-        title: "ACCÈS ET TRANSPORT",
+        title: "Accès et transports",
         subtitle: "Localisation",
         mapLinkLabel: "Voir sur Google Maps",
         publicTitle: "Transports en commun",
@@ -259,17 +259,17 @@ export default function CampusSurroundingsPage({ lang }: CampusSurroundingsPageP
           },
           train: {
             title: "Train",
-            text: "TER Occitanie/liO Train : Gare de Labège Innopole SNCF"
+            text: "TER Occitanie/liO Train : gare Labège Innopole SNCF"
           },
           subway: {
             title: "Métro",
-            text: "Ligne C : arrêt Diagora (ouverture prévue en septembre 2027)"
+            text: "Ligne C : arrêt Diagora (ouverture prévisionnelle en septembre 2027)"
           }
         }
       },
       environment: {
-        title: "ENVIRONNEMENT",
-        intro: "Les espaces verts et les lacs ne sont qu'à un jet de pierre mais, surtout, de nombreux lieux de vie sont présents tout autour du campus, accessibles à pied ou en transports en commun. Nous vous avons listé quelques adresses, mais il y en a bien d'autres à découvrir !",
+        title: "Environnement",
+        intro: "Espaces verts et lacs sont à deux pas mais, surtout, de nombreux lieux de vie sont présents tout autour du campus, accessibles à pieds ou en transports.\n\nNous avons recensé pour vous quelques adresses, mais il y en a de nombreuses autres à découvrir !",
         categories: [
           {
             title: "Restauration",
@@ -389,7 +389,7 @@ export default function CampusSurroundingsPage({ lang }: CampusSurroundingsPageP
                     <h4 className="text-[20px] font-bold leading-tight uppercase tracking-tight">
                       {stat.title}
                     </h4>
-                    <p className="text-[14px] opacity-90 leading-relaxed font-medium">
+                    <p className="text-[14px] opacity-90 leading-relaxed font-medium whitespace-pre-line">
                       {stat.desc}
                     </p>
                   </div>
@@ -531,7 +531,7 @@ export default function CampusSurroundingsPage({ lang }: CampusSurroundingsPageP
             />
             <div className="absolute inset-0 bg-black/10" />
             <div className="absolute top-10 left-10 max-w-[600px] bg-white/90 backdrop-blur-sm p-8 border-l-4 border-primary-red">
-              <p className="text-[14px] md:text-[15px] font-medium leading-relaxed text-[#333]">
+              <p className="text-[14px] md:text-[15px] font-medium leading-relaxed text-[#333] whitespace-pre-line">
                 {t.environment.intro}
               </p>
             </div>
