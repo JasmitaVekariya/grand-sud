@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import {
   MessageCircle,
   Send,
@@ -7,10 +8,14 @@ import {
   Building,
   Users,
   User,
+  ChevronDown,
+  ChevronUp,
   type LucideIcon,
 } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 import CourseDetailLayout from "@/components/courses/CourseDetailLayout";
 import PageBanner from "@/components/common/PageBanner";
+import { getApprenticeRegulations } from "./apprenticeRegulationsData";
 
 interface ApprenticePageProps {
   lang: "en" | "fr";
@@ -23,6 +28,11 @@ type CourseItem = {
   rhythm: string;
   variant: "gray" | "red";
 };
+
+const btsRhythmFr =
+  "en moyenne 3 jours en école pour 2 jours en entreprise, avec une disponibilité à quasi temps plein durant la période estivale";
+const weekRhythmFr =
+  "en moyenne 1 semaine à l'école pour 1 semaine en entreprise, avec une disponibilité à quasi temps plein durant la période estivale";
 
 const CourseCard = ({ item }: { item: CourseItem }) => {
   const Icon = item.icon;
@@ -54,6 +64,9 @@ const CourseGrid = ({ items }: { items: CourseItem[] }) => (
 );
 
 export default function ApprenticePage({ lang }: ApprenticePageProps) {
+  const [openRegulation, setOpenRegulation] = useState<string | null>(null);
+  const regulations = getApprenticeRegulations(lang);
+
   const t = {
     en: {
       heroTitle: (
@@ -64,37 +77,36 @@ export default function ApprenticePage({ lang }: ApprenticePageProps) {
       ),
       bannerImage: "/assets/pexels-mikhail-nilov-7820321-scaled.jpg",
       sidebar: [
-        { id: "courses", label: "OUR LEARNERS' TRAINING COURSES" },
-        { id: "regulations", label: "APPLICABLE REGULATIONS" },
+        { id: "courses", label: "Our learners' training courses" },
+        { id: "regulations", label: "Applicable regulations" },
       ],
-      note: "Note : our apprentice are only coming from our french-speaking courses at this time.",
       intro:
-        "This page guides you through the training programs we offer and details the regulatory framework for work-study programs, as well as how to recruit one of our young people: make your search a success with our corporate relations managers!",
+        "This page guides you through the training programs we offer and details the regulatory framework for work-study programs, as well as how to recruit one of our young people: make your search a success with our corporate relations officers!",
       courses: {
-        title: "OUR LEARNERS' TRAINING COURSES",
+        title: "Our learners' training courses",
         grid: [
           {
             icon: MessageCircle,
             title: "BTS Communication",
-            qualification: "National Education Diploma - BAC+2",
+            qualification: "State Diploma from the French Ministry of Education - BAC+2",
             rhythm:
-              "On average, 3 days at school for every 2 days at work, with availability for almost full-time work during the summer period.",
+              "On average, 3 days at school for 2 days in a company, with near full-time availability during the summer period",
             variant: "red" as const,
           },
           {
             icon: Send,
             title: "BTS Tourism",
-            qualification: "National Education Diploma - BAC+2",
+            qualification: "State Diploma from the French Ministry of Education - BAC+2",
             rhythm:
-              "On average, 3 days at school for every 2 days at work, with availability for almost full-time work during the summer period.",
+              "On average, 3 days at school for 2 days in a company, with near full-time availability during the summer period",
             variant: "gray" as const,
           },
           {
             icon: Leaf,
-            title: "BACHELOR Sustainable and Digital Tourism Development",
+            title: "BACHELOR Sustainable and Digital Tourism Development Manager",
             qualification: "RNCP qualification - BAC+3",
             rhythm:
-              "On average, one week at school for every week in a company, with almost full-time availability during the summer period.",
+              "On average, 1 week at school for 1 week in a company, with near full-time availability during the summer period",
             variant: "red" as const,
           },
           {
@@ -102,7 +114,7 @@ export default function ApprenticePage({ lang }: ApprenticePageProps) {
             title: "BACHELOR Hospitality Management",
             qualification: "RNCP qualification - BAC+3",
             rhythm:
-              "On average, one week at school for every week in a company, with almost full-time availability during the summer period.",
+              "On average, 1 week at school for 1 week in a company, with near full-time availability during the summer period",
             variant: "gray" as const,
           },
           {
@@ -110,94 +122,85 @@ export default function ApprenticePage({ lang }: ApprenticePageProps) {
             title: "BACHELOR MICE Designer",
             qualification: "RNCP qualification - BAC+3",
             rhythm:
-              "On average, one week at school for every week in a company, with almost full-time availability during the summer period.",
+              "On average, 1 week at school for 1 week in a company, with near full-time availability during the summer period",
             variant: "red" as const,
           },
           {
             icon: User,
-            title: "MASTERE Tourism Strategy Manager",
+            title: "MASTERE Manager in Tourism Strategies",
             qualification: "RNCP qualification - BAC+5",
             rhythm:
-              "On average, one week at school for every week in a company, with almost full-time availability during the summer period.",
+              "On average, 1 week at school for 1 week in a company, with near full-time availability during the summer period",
             variant: "gray" as const,
           },
         ],
       },
       regulations: {
-        title: "APPLICABLE REGULATIONS",
-        paragraphs: [
-          "In France, work-study programs are governed by regulations designed to protect young people and ensure that this professional experience is of high quality. It also allows companies to benefit from subsidies for hiring this type of employee.",
-        ],
+        title: "Applicable regulations",
       },
     },
     fr: {
-      heroTitle: "RECRUTER LE BON ALTERNANT",
+      heroTitle: (
+        <>
+          Recrutez un alternant avec <br /> Grand Sud
+        </>
+      ),
       bannerImage: "/assets/pexels-mikhail-nilov-7820321-scaled.jpg",
       sidebar: [
-        { id: "courses", label: "LES FORMATIONS DE NOS APPRENANTS" },
-        { id: "regulations", label: "RÉGLEMENTATION APPLICABLE" },
+        { id: "courses", label: "Les formations de nos apprenants" },
+        { id: "regulations", label: "La règlementation applicable" },
       ],
-      note: "Note : nos alternants proviennent uniquement de nos cursus francophones pour le moment.",
       intro:
-        "Cette page vous guide à travers les programmes de formation que nous proposons et détaille le cadre réglementaire de l'alternance, ainsi que les modalités de recrutement de l'un de nos jeunes : faites de votre recherche un succès avec nos chargés de relations entreprises !",
+        "Cette page vous guide à travers les formations proposées et détaille le cadre réglementaire des alternances, ainsi que comment recruter l'un de nos jeunes : faites de votre recherche un succès avec nos chargés de relations entreprises !",
       courses: {
-        title: "LES FORMATIONS DE NOS APPRENANTS",
+        title: "Les formations de nos apprenants",
         grid: [
           {
             icon: MessageCircle,
             title: "BTS Communication",
-            qualification: "Diplôme de l'Éducation Nationale - BAC+2",
-            rhythm:
-              "En moyenne, 3 jours à l'école pour 2 jours en entreprise, avec une disponibilité quasi à temps plein durant la période estivale.",
+            qualification: "Diplôme d'Etat de l'Education Nationale - BAC+2",
+            rhythm: btsRhythmFr,
             variant: "red" as const,
           },
           {
             icon: Send,
             title: "BTS Tourisme",
-            qualification: "Diplôme de l'Éducation Nationale - BAC+2",
-            rhythm:
-              "En moyenne, 3 jours à l'école pour 2 jours en entreprise, avec une disponibilité quasi à temps plein durant la période estivale.",
+            qualification: "Diplôme d'Etat de l'Education Nationale - BAC+2",
+            rhythm: btsRhythmFr,
             variant: "gray" as const,
           },
           {
             icon: Leaf,
-            title: "BACHELOR Responsable du Développement Touristique Durable et Numérique",
+            title: "BACHELOR Responsable du Développement Touristique Durable et Digital",
             qualification: "Titre RNCP - BAC+3",
-            rhythm:
-              "En moyenne, une semaine à l'école pour une semaine en entreprise, avec une disponibilité quasi à temps plein durant la période estivale.",
+            rhythm: weekRhythmFr,
             variant: "red" as const,
           },
           {
             icon: Building,
-            title: "BACHELOR Management de l'Hôtellerie",
+            title: "BACHELOR Hospitality Management",
             qualification: "Titre RNCP - BAC+3",
-            rhythm:
-              "En moyenne, une semaine à l'école pour une semaine en entreprise, avec une disponibilité quasi à temps plein durant la période estivale.",
+            rhythm: weekRhythmFr,
             variant: "gray" as const,
           },
           {
             icon: Users,
             title: "BACHELOR MICE Designer",
             qualification: "Titre RNCP - BAC+3",
-            rhythm:
-              "En moyenne, une semaine à l'école pour une semaine en entreprise, avec une disponibilité quasi à temps plein durant la période estivale.",
+            rhythm: weekRhythmFr,
             variant: "red" as const,
           },
           {
             icon: User,
-            title: "MASTÈRE Manager en Stratégie Touristique",
+            title: "MASTERE Manager en Stratégies Touristiques",
             qualification: "Titre RNCP - BAC+5",
-            rhythm:
-              "En moyenne, une semaine à l'école pour une semaine en entreprise, avec une disponibilité quasi à temps plein durant la période estivale.",
+            rhythm: weekRhythmFr,
             variant: "gray" as const,
           },
         ],
       },
       regulations: {
-        title: "RÉGLEMENTATION APPLICABLE",
-        paragraphs: [
-          "En France, l'alternance est régie par une réglementation visant à protéger les jeunes et à garantir une expérience professionnelle de qualité. Elle permet également aux entreprises de bénéficier d'aides à l'embauche pour ce type de profil.",
-        ],
+        title: "La règlementation applicable",
       },
     },
   }[lang];
@@ -209,10 +212,7 @@ export default function ApprenticePage({ lang }: ApprenticePageProps) {
       <div className="pt-4">
         <CourseDetailLayout sections={t.sidebar}>
           <div className="pb-8 space-y-20">
-            <div className="space-y-6 max-w-4xl">
-              <p className="text-[#333] text-[14px] md:text-[15px] leading-relaxed font-bold italic">{t.note}</p>
-              <p className="text-[#333] text-[14px] md:text-[15px] leading-relaxed font-medium">{t.intro}</p>
-            </div>
+            <p className="text-[#333] text-[14px] md:text-[15px] leading-relaxed font-medium max-w-4xl">{t.intro}</p>
 
             <section id="courses" className="scroll-mt-32 space-y-8">
               <h2 className="text-[32px] md:text-[42px] font-bold text-primary-red uppercase tracking-tight leading-none">
@@ -222,15 +222,44 @@ export default function ApprenticePage({ lang }: ApprenticePageProps) {
             </section>
 
             <section id="regulations" className="scroll-mt-32 space-y-8 pb-12">
-              <h2 className="text-[32px] md:text-[42px] font-bold text-primary-red uppercase tracking-tight leading-none">
+              <h2 className="text-[32px] md:text-[42px] font-bold text-primary-red uppercase tracking-tight leading-tight">
                 {t.regulations.title}
               </h2>
-              <div className="space-y-6">
-                {t.regulations.paragraphs.map((para, idx) => (
-                  <p key={idx} className="text-[#333] text-[14px] md:text-[15px] leading-relaxed font-medium">
-                    {para}
-                  </p>
-                ))}
+              <p className="text-[#333] text-[14px] md:text-[15px] leading-relaxed font-medium">{regulations.intro}</p>
+
+              <div className="relative rounded-sm overflow-hidden p-6 md:p-12">
+                <div
+                  className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
+                  style={{ backgroundImage: `url("${regulations.backgroundImage}")` }}
+                />
+                <div className="relative z-10 space-y-0">
+                  {regulations.sections.map((section) => (
+                    <div key={section.id} className="overflow-hidden border-b border-white last:border-b-0">
+                      <button
+                        type="button"
+                        onClick={() => setOpenRegulation(openRegulation === section.id ? null : section.id)}
+                        className="w-full bg-[#E54841] text-white px-6 h-[60px] flex items-center justify-between group transition-colors hover:bg-primary-red/90"
+                      >
+                        <div className="flex items-center gap-4">
+                          {openRegulation === section.id ? <ChevronUp size={20} /> : <ChevronDown size={20} />}
+                          <span className="text-[16px] md:text-[18px] font-bold tracking-wide text-left">{section.title}</span>
+                        </div>
+                      </button>
+                      <AnimatePresence>
+                        {openRegulation === section.id && (
+                          <motion.div
+                            initial={{ height: 0, opacity: 0 }}
+                            animate={{ height: "auto", opacity: 1 }}
+                            exit={{ height: 0, opacity: 0 }}
+                            className="bg-white overflow-hidden"
+                          >
+                            {section.content}
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
+                    </div>
+                  ))}
+                </div>
               </div>
             </section>
           </div>
