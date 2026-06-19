@@ -1,16 +1,18 @@
 cPanel upload instructions
 =======================
 
-Drag-and-drop in cPanel File Manager often fails for folders with many files.
-Use ZIP upload + Extract instead:
+IMPORTANT: Drag-and-drop onto the cPanel file list does NOT work.
+Use the Upload button, or see deploy/CPANEL-DEPLOY.md for full guide.
 
+Quick steps:
 1. cPanel > File Manager
-2. Open public/assets on the server
-3. Upload assets-full.zip
-   (if that fails, upload assets-part-01, 02, 03... one by one)
-4. Select the zip file > Extract
-5. Files must end up directly in public/assets/
-6. Delete zip files after extraction
+2. Open public/assets inside your app root (where package.json lives)
+3. Click Upload (top toolbar) — do NOT drag onto the file list
+4. Upload assets-part-01-of-XX.zip, then 02, 03... one by one
+5. Select each zip > Extract
+6. Files must end up directly in public/assets/
+7. Delete zip files after extraction
+8. Verify: npm run verify:assets -- https://YOUR_DOMAIN
 
-Generated: 2026-06-19T09:10:09.675714+00:00
+Generated: 2026-06-19T09:18:23.473796+00:00
 Files: 151
