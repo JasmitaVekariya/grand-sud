@@ -10,6 +10,7 @@
     "optimize:assets": "node scripts/optimize-large-assets.mjs",
     "build:assets-zip": "python scripts/build-asset-upload-zips.py",
     "deploy:assets-zip": "python scripts/build-asset-upload-zips.py",
+    "upload:assets": "node scripts/upload-assets-ftp.mjs",
     "verify:assets": "node scripts/verify-assets-live.mjs"
   },
   "dependencies": {
@@ -26,6 +27,7 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "basic-ftp": "^6.0.1",
     "eslint": "^9",
     "eslint-config-next": "16.2.4",
     "tailwindcss": "^4",
