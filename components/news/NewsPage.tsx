@@ -53,9 +53,12 @@ export default function NewsPage() {
   const t = {
     en: {
       heading: "NEWS & EVENTS",
-      topText: "Stay up to date with the latest news, announcements, academic reforms, and upcoming events at Grand Sud. Explore our articles, schedule admission meetings, and participate in our upcoming orientation days.",
-      cardDate: "4 OCTOBER 2025",
-      cardTitle: ["REFORM OF", "APPRENTICESHIP", "S FROM JULY 1,", "2025"],
+      topText: [
+        "Stay up to date with the latest news from Grand Sud Formation!",
+        "Campus updates, innovations in our training programs, apprenticeship news, and student life events all offer a glimpse into the dynamic life of Grand Sud.",
+      ],
+      cardDate: "9 July 2025",
+      cardTitle: ["Apprenticeship reform from 1 July 2025"],
       calendarSubtitle: "OPEN DAYS, IMMERSION DAYS, WEBINARS...",
       calendarTitle: "NEXT EVENTS",
       thisMonth: "This month",
@@ -65,11 +68,14 @@ export default function NewsPage() {
     },
     fr: {
       heading: "ACTUALITÉS",
-      topText: "Restez informé des dernières actualités, annonces, réformes académiques et événements à venir chez Grand Sud. Découvrez nos articles, planifiez vos entretiens d'admission et participez à nos prochaines journées d'orientation.",
-      cardDate: "4 OCTOBRE 2025",
-      cardTitle: ["REFORME DE", "L'APPRENTISSAGE", "DÈS LE 1 JUILLET,", "2025"],
+      topText: [
+        "Retrouvez les dernières informations de la vie de Grand Sud Formation !",
+        "Nouveautés des campus, innovations dans nos programmes de formation, nouvelles de l'apprentissage, ou encore événements de la vie étudiante sont autant d'aperçu sur la dynamique de l'école Grand Sud",
+      ],
+      cardDate: "9 juillet 2025",
+      cardTitle: ["Réforme de l'apprentissage du 1er Juillet 2025"],
       calendarSubtitle: "JOURNÉES PORTES OUVERTES, JOURNÉES D'IMMERSION, WEBINAIRES...",
-      calendarTitle: "ÉVÉNEMENTS À VENIR",
+      calendarTitle: "PROCHAINES ÉVÈNEMENTS",
       thisMonth: "Ce mois-ci",
       meetUs: "NOUS RENCONTRER",
       meetUsHref: "/fr/lecole/rencontrer",
@@ -171,10 +177,12 @@ export default function NewsPage() {
       <div className="flex-1 px-6 pb-12 md:px-12 lg:pl-[35px] pt-[90px] flex flex-col items-start bg-white">
         <div className="max-w-[800px] w-full">
           {/* 1. Text */}
-          <div className="mb-10">
-            <p className="text-black text-[14px] md:text-[15px] font-medium leading-relaxed">
-              {t.topText}
-            </p>
+          <div className="mb-10 space-y-4">
+            {t.topText.map((paragraph, idx) => (
+              <p key={idx} className="text-black text-[14px] md:text-[15px] font-medium leading-relaxed">
+                {paragraph}
+              </p>
+            ))}
           </div>
 
           {/* 2. Clickable Card (Apprenticeship Reform) */}
