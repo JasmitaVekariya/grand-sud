@@ -26,6 +26,7 @@ import { AccessibilityProvider } from "@/context/AccessibilityContext";
 import AccessibilityWidget from "@/components/accessibility/AccessibilityWidget";
 import GlobalAccessibilityFeatures from "@/components/accessibility/GlobalAccessibilityFeatures";
 import CookieModal from "@/components/layout/CookieModal";
+import SiteIntro from "@/components/layout/SiteIntro";
 
 export default function RootLayout({
   children,
@@ -42,6 +43,7 @@ export default function RootLayout({
         <LanguageProvider>
           <CookieProvider>
             <AccessibilityProvider>
+              <SiteIntro />
               <Navbar />
               <main className="flex-1 flex flex-col pt-[var(--site-header-height)]">{children}</main>
               <Footer />

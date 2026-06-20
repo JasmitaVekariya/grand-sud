@@ -1,7 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { ChevronDown, Search, Menu, X } from "lucide-react";
 import { navigationData } from "@/config/navigation";
 import MegaMenu from "./MegaMenu";
@@ -15,16 +16,26 @@ interface NavMenuProps {
 }
 
 export default function NavMenu({ lang }: NavMenuProps) {
+  const pathname = usePathname();
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const { setIsOpen } = useAccessibility();
 
   const menuItems = navigationData[lang];
 
+  const closeMenus = useCallback(() => {
+    setActiveMenu(null);
+    setIsMobileMenuOpen(false);
+  }, []);
+
+  useEffect(() => {
+    closeMenus();
+  }, [pathname, closeMenus]);
+
   return (
     <nav className="bg-primary-red relative overflow-visible">
       <div className="max-w-[1440px] mx-auto px-6 md:px-16 lg:px-24 xl:px-[200px] relative overflow-visible">
-        <HeaderLogo lang={lang} />
+        <HeaderLogo lang={lang} onNavigate={closeMenus} />
         <div className="flex items-center justify-between h-16 md:h-20">
           <div className={headerLogoSpacerClass} aria-hidden="true" />
 
@@ -50,6 +61,7 @@ export default function NavMenu({ lang }: NavMenuProps) {
                     href={item.href}
                     className={`px-5 py-2 text-[14px] md:text-[15px] font-bold uppercase tracking-[0.05em] transition-all duration-200 flex items-center gap-2 ${activeMenu === item.title ? "text-[#3d1311]" : "text-white hover:bg-white/10"
                       }`}
+                    onClick={closeMenus}
                   >
                     {item.title}
                   </Link>
@@ -57,7 +69,7 @@ export default function NavMenu({ lang }: NavMenuProps) {
 
                 <AnimatePresence>
                   {activeMenu === item.title && item.megaMenu && (
-                    <MegaMenu type={item.megaMenu.type} data={item.megaMenu} isOpen={true} />
+                    <MegaMenu type={item.megaMenu.type} data={item.megaMenu} isOpen={true} onNavigate={closeMenus} />
                   )}
                 </AnimatePresence>
               </li>
@@ -102,8 +114,8 @@ export default function NavMenu({ lang }: NavMenuProps) {
           >
             <div className="p-6 flex flex-col h-full">
               <div className="flex justify-between items-center mb-10">
-                <HeaderLogo lang={lang} variant="mobile" />
-                <button onClick={() => setIsMobileMenuOpen(false)} className="text-white">
+                <HeaderLogo lang={lang} variant="mobile" onNavigate={closeMenus} />
+                <button onClick={closeMenus} className="text-white">
                   <X size={32} />
                 </button>
               </div>
@@ -207,7 +219,7 @@ export default function NavMenu({ lang }: NavMenuProps) {
                                         <Link
                                           href={sublink.href}
                                           className="text-lg font-medium text-white hover:text-white/80 transition-colors inline-flex items-center flex-wrap"
-                                          onClick={() => setIsMobileMenuOpen(false)}
+                                          onClick={closeMenus}
                                         >
                                           <NavLinkLabel label={sublink.label} isNew={sublink.isNew} variant="mobile" />
                                         </Link>
@@ -224,7 +236,7 @@ export default function NavMenu({ lang }: NavMenuProps) {
                       <Link
                         href={item.href}
                         className="text-2xl font-bold uppercase text-white hover:text-white/80"
-                        onClick={() => setIsMobileMenuOpen(false)}
+                        onClick={closeMenus}
                       >
                         {item.title}
                       </Link>
@@ -234,7 +246,7 @@ export default function NavMenu({ lang }: NavMenuProps) {
                 <li className="border-b border-white/10 pb-4">
                   <button
                     onClick={() => {
-                      setIsMobileMenuOpen(false);
+                      closeMenus();
                       setIsOpen(true);
                     }}
                     className="text-2xl font-bold uppercase text-white hover:text-white/80 text-left w-full cursor-pointer"

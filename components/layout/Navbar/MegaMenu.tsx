@@ -3,6 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import type { MouseEvent } from "react";
 import { MapPin, BarChart2, Calendar, Map, Home, MapIcon, Briefcase, ChevronRight } from "lucide-react";
 import NavLinkLabel from "./NavLinkLabel";
 
@@ -10,10 +11,18 @@ interface MegaMenuProps {
   type: string;
   data: any;
   isOpen: boolean;
+  onNavigate?: () => void;
 }
 
-export default function MegaMenu({ type, data, isOpen }: MegaMenuProps) {
+export default function MegaMenu({ type, data, isOpen, onNavigate }: MegaMenuProps) {
   if (!isOpen) return null;
+
+  const handleMenuClick = (event: MouseEvent<HTMLDivElement>) => {
+    const anchor = (event.target as HTMLElement).closest("a[href]");
+    if (anchor && onNavigate) {
+      onNavigate();
+    }
+  };
 
   const RedBullet = () => <span className="w-3 h-3 bg-primary-red inline-block mr-3 mt-1 flex-shrink-0" />;
 
@@ -311,6 +320,7 @@ export default function MegaMenu({ type, data, isOpen }: MegaMenuProps) {
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -20 }}
       transition={{ duration: 0.3, ease: "circOut" }}
+      onClick={handleMenuClick}
       className="absolute top-full left-0 w-full bg-white border-b-4 border-primary-red shadow-2xl z-50 overflow-hidden"
     >
       <div className="max-w-[1440px] mx-auto px-6 md:px-16 lg:px-24 xl:px-[200px]">
