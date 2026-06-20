@@ -6,6 +6,9 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useState, useEffect, useRef } from "react";
 import { ChevronDown } from "lucide-react";
+import { submitFormToApi } from "@/lib/submit-form-client";
+import { pickFieldOptions } from "@/lib/form-options-defaults";
+import { useFormOptions } from "@/lib/use-form-options";
 
 interface CustomSelectProps {
   label: string;
@@ -105,6 +108,10 @@ export default function ComplaintPage() {
 
   const [touched, setTouched] = useState<Record<string, boolean>>({});
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState("");
+
+  const { fields: optionFields } = useFormOptions("complaint", lang);
 
   // Scroll zoom animation
   const { scrollY } = useScroll();
@@ -145,6 +152,7 @@ export default function ComplaintPage() {
       button: "SEND COMPLAINT",
       successMsg: "Your complaint has been submitted successfully.",
       errorMsg: "This is required",
+      submitErrorMsg: "Something went wrong. Please try again.",
       selectCampus: "PICK THE CAMPUS",
     },
     fr: {
@@ -172,9 +180,13 @@ export default function ComplaintPage() {
       button: "ENVOYER LA RÉCLAMATION",
       successMsg: "Votre réclamation a été envoyée avec succès.",
       errorMsg: "Ce champ est requis",
+      submitErrorMsg: "Une erreur est survenue. Veuillez réessayer.",
       selectCampus: "CHOISISSEZ LE CAMPUS",
     },
   }[lang];
+
+  const campusOptions = pickFieldOptions(optionFields, "campus", t.campuses);
+  const userTypeOptions = pickFieldOptions(optionFields, "userType", t.userTypes);
 
   const handleBlur = (field: string) => {
     setTouched(prev => ({ ...prev, [field]: true }));
@@ -189,7 +201,7 @@ export default function ComplaintPage() {
     return "";
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
     // Mark all required fields as touched to trigger validation messages
@@ -211,27 +223,34 @@ export default function ComplaintPage() {
     );
 
     if (hasErrors) {
-      // Scroll to the first error or show visually
-      console.log("Validation failed");
       return;
     }
 
-    console.log("Complaint form submitted:", formData);
-    setSubmitted(true);
-    // Reset form
-    setFormData({
-      campus: "",
-      userType: "",
-      firstName: "",
-      surname: "",
-      email: "",
-      phone: "",
-      studentInfo: "",
-      subject: "",
-      detail: "",
-    });
-    setTouched({});
-    setTimeout(() => setSubmitted(false), 5000);
+    setIsSubmitting(true);
+    setSubmitError("");
+    setSubmitted(false);
+
+    try {
+      await submitFormToApi("/api/forms/complaint", { ...formData, lang });
+      setSubmitted(true);
+      setFormData({
+        campus: "",
+        userType: "",
+        firstName: "",
+        surname: "",
+        email: "",
+        phone: "",
+        studentInfo: "",
+        subject: "",
+        detail: "",
+      });
+      setTouched({});
+      setTimeout(() => setSubmitted(false), 5000);
+    } catch {
+      setSubmitError(t.submitErrorMsg);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -287,7 +306,7 @@ export default function ComplaintPage() {
             <div className="w-full">
               <CustomSelect 
                 label={t.fields.campus}
-                options={t.campuses}
+                options={campusOptions}
                 value={formData.campus}
                 onChange={(val) => setFormData({ ...formData, campus: val })}
                 required
@@ -302,7 +321,7 @@ export default function ComplaintPage() {
                 {t.fields.userType} <span className="text-primary-red">*</span>
               </label>
               <div className="flex flex-col gap-3">
-                {t.userTypes.map((typeOption) => (
+                {userTypeOptions.map((typeOption) => (
                   <label key={typeOption} className="flex items-center gap-3 cursor-pointer group">
                     <input
                       type="radio"
@@ -458,12 +477,18 @@ export default function ComplaintPage() {
             </div>
 
             {/* Submit Button */}
-            <div className="pt-6">
+            <div className="pt-6 space-y-3">
+              {submitError && (
+                <div className="bg-red-500/10 px-4 py-3 border border-red-500/30">
+                  <p className="text-black text-[13px]">{submitError}</p>
+                </div>
+              )}
               <button
                 type="submit"
-                className="bg-[#dc4b3b] text-white px-10 py-4 text-[15px] font-bold uppercase tracking-widest hover:bg-[#c03d2f] transition-all shadow-none active:scale-95"
+                disabled={isSubmitting}
+                className="bg-[#dc4b3b] disabled:opacity-60 text-white px-10 py-4 text-[15px] font-bold uppercase tracking-widest hover:bg-[#c03d2f] transition-all shadow-none active:scale-95"
               >
-                {t.button}
+                {isSubmitting ? "..." : t.button}
               </button>
             </div>
           </form>

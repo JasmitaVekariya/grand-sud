@@ -6,6 +6,9 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useState, useEffect, useRef } from "react";
 import { ChevronDown, Mail, Clock, Phone, MapPin } from "lucide-react";
+import { submitFormToApi } from "@/lib/submit-form-client";
+import { pickFieldOptions } from "@/lib/form-options-defaults";
+import { useFormOptions } from "@/lib/use-form-options";
 
 interface CustomSelectProps {
   label: string;
@@ -102,6 +105,11 @@ export default function ContactPage() {
   });
 
   const [touched, setTouched] = useState<Record<string, boolean>>({});
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
+  const [submitError, setSubmitError] = useState("");
+
+  const { fields: optionFields } = useFormOptions("contact", lang);
 
   // Scroll zoom animation
   const { scrollY } = useScroll();
@@ -150,6 +158,8 @@ export default function ContactPage() {
       campuses: ["Toulouse-Labège", "Other"],
       button: "SEND",
       errorMsg: "This is required",
+      successMsg: "Your message has been sent successfully.",
+      submitErrorMsg: "Something went wrong. Please try again.",
       postalTitle: "Postal address",
       postalAddress: [
         "Campus de Toulouse-Labège :",
@@ -190,6 +200,8 @@ export default function ContactPage() {
       campuses: ["Toulouse-Labège", "Autre"],
       button: "ENVOYER",
       errorMsg: "Ce champ est requis",
+      successMsg: "Votre message a été envoyé avec succès.",
+      submitErrorMsg: "Une erreur est survenue. Veuillez réessayer.",
       postalTitle: "Adresse postale",
       postalAddress: [
         "Campus de Toulouse-Labège :",
@@ -198,6 +210,8 @@ export default function ContactPage() {
       ]
     }
   }[lang];
+
+  const campusOptions = pickFieldOptions(optionFields, "campus", t.campuses);
 
   const handleBlur = (field: string) => {
     setTouched(prev => ({ ...prev, [field]: true }));
@@ -210,7 +224,7 @@ export default function ContactPage() {
     return "";
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
     // Mark all fields as touched to trigger validation messages
@@ -233,11 +247,33 @@ export default function ContactPage() {
       formData.campus;
 
     if (!isFormValid) {
-      console.log("Contact Form validation failed.");
       return;
     }
 
-    console.log("Contact Form submitted:", formData);
+    setIsSubmitting(true);
+    setSubmitError("");
+    setSubmitted(false);
+
+    try {
+      const endpoint = lang === "fr" ? "/api/forms/contact-fr" : "/api/forms/contact-en";
+      await submitFormToApi(endpoint, formData);
+      setSubmitted(true);
+      setFormData({
+        firstName: "",
+        surname: "",
+        email: "",
+        phone: "",
+        message: "",
+        campus: "",
+        consent: false,
+      });
+      setTouched({});
+      setTimeout(() => setSubmitted(false), 5000);
+    } catch {
+      setSubmitError(t.submitErrorMsg);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -434,7 +470,7 @@ export default function ContactPage() {
             {/* Campus dropdown */}
             <CustomSelect
               label={t.fields.campus}
-              options={t.campuses}
+              options={campusOptions}
               value={formData.campus}
               onChange={(val) => setFormData({ ...formData, campus: val })}
               placeholder={t.campusPlaceholder}
@@ -443,12 +479,23 @@ export default function ContactPage() {
             />
 
             {/* Send Button */}
-            <div className="pt-4">
+            <div className="pt-4 space-y-3">
+              {submitted && (
+                <div className="bg-green-500/10 px-4 py-3 border border-green-500/30">
+                  <p className="text-black text-[13px]">{t.successMsg}</p>
+                </div>
+              )}
+              {submitError && (
+                <div className="bg-red-500/10 px-4 py-3 border border-red-500/30">
+                  <p className="text-black text-[13px]">{submitError}</p>
+                </div>
+              )}
               <button
                 type="submit"
-                className="bg-primary-red hover:bg-primary-red/90 text-white font-bold py-2.5 px-8 rounded-full uppercase tracking-wider text-[14px] transition-colors"
+                disabled={isSubmitting}
+                className="bg-primary-red hover:bg-primary-red/90 disabled:opacity-60 text-white font-bold py-2.5 px-8 rounded-full uppercase tracking-wider text-[14px] transition-colors"
               >
-                {t.button}
+                {isSubmitting ? "..." : t.button}
               </button>
             </div>
           </form>

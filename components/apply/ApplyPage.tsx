@@ -7,6 +7,9 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState, useEffect, useRef } from "react";
 import { ChevronDown } from "lucide-react";
+import { submitFormToApi } from "@/lib/submit-form-client";
+import { pickFieldOptions } from "@/lib/form-options-defaults";
+import { useFormOptions } from "@/lib/use-form-options";
 
 interface CustomSelectProps {
   label: string;
@@ -108,6 +111,12 @@ export default function ApplyPage() {
   });
 
   const [touched, setTouched] = useState<Record<string, boolean>>({});
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
+  const [submitError, setSubmitError] = useState("");
+
+  const formOptionsKey = lang === "fr" ? "candidater" : "apply";
+  const { fields: optionFields } = useFormOptions(formOptionsKey, lang);
 
   // Scroll zoom animation
   const { scrollY } = useScroll();
@@ -185,6 +194,8 @@ export default function ApplyPage() {
       },
       button: "GET THE ADMISSION FORM",
       errorMsg: "This is required",
+      successMsg: "Your request has been submitted successfully.",
+      submitErrorMsg: "Something went wrong. Please try again.",
       diplomas: [
         "Bachelor Business & Tourism",
         "Bachelor IT & Tourism",
@@ -215,8 +226,16 @@ export default function ApplyPage() {
       },
       button: "S'INSCRIRE",
       errorMsg: "Ce champ est requis",
+      successMsg: "Votre inscription a été enregistrée avec succès.",
+      submitErrorMsg: "Une erreur est survenue. Veuillez réessayer.",
     },
   }[lang];
+
+  const diplomaOptions = pickFieldOptions(optionFields, "diploma", t.diplomas || []);
+  const intakeOptions = pickFieldOptions(optionFields, "intake", t.intakes || []);
+  const formationOptions = pickFieldOptions(optionFields, "formationSouhaitee", formationsList);
+  const niveauOptions = pickFieldOptions(optionFields, "niveauActuel", niveauxList);
+  const evenementOptions = pickFieldOptions(optionFields, "dateEvenement", evenements);
 
   const handleBlur = (field: string) => {
     setTouched(prev => ({ ...prev, [field]: true }));
@@ -229,9 +248,38 @@ export default function ApplyPage() {
     return "";
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
+
+    setIsSubmitting(true);
+    setSubmitError("");
+    setSubmitted(false);
+
+    try {
+      const endpoint = lang === "fr" ? "/api/forms/candidater" : "/api/forms/apply";
+      await submitFormToApi(endpoint, formData);
+      setSubmitted(true);
+      setFormData({
+        firstName: "",
+        surname: "",
+        prenom: "",
+        email: "",
+        phone: "",
+        country: "",
+        diploma: "Bachelor Business & Tourism",
+        formationSouhaitee: "BTS Tourisme 1ère année",
+        niveauActuel: "BAC",
+        dateEvenement: "",
+        intake: "September/October",
+        consent: false,
+      });
+      setTouched({});
+      setTimeout(() => setSubmitted(false), 5000);
+    } catch {
+      setSubmitError(lang === "fr" ? "Une erreur est survenue. Veuillez réessayer." : "Something went wrong. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -364,7 +412,7 @@ export default function ApplyPage() {
                 <div className="w-full">
                   <CustomSelect 
                     label={t.fields.diploma!}
-                    options={t.diplomas!}
+                    options={diplomaOptions}
                     value={formData.diploma}
                     onChange={(val) => setFormData({ ...formData, diploma: val })}
                     required
@@ -375,7 +423,7 @@ export default function ApplyPage() {
                 <div className="w-full">
                   <CustomSelect 
                     label={t.fields.intake!}
-                    options={t.intakes!}
+                    options={intakeOptions}
                     value={formData.intake}
                     onChange={(val) => setFormData({ ...formData, intake: val })}
                     required
@@ -467,7 +515,7 @@ export default function ApplyPage() {
                 <div className="w-full">
                   <CustomSelect 
                     label={t.fields.formationSouhaitee!}
-                    options={formationsList}
+                    options={formationOptions}
                     value={formData.formationSouhaitee}
                     onChange={(val) => setFormData({ ...formData, formationSouhaitee: val })}
                   />
@@ -476,7 +524,7 @@ export default function ApplyPage() {
                 <div className="w-full">
                   <CustomSelect 
                     label={t.fields.niveauActuel!}
-                    options={niveauxList}
+                    options={niveauOptions}
                     value={formData.niveauActuel}
                     onChange={(val) => setFormData({ ...formData, niveauActuel: val })}
                   />
@@ -487,7 +535,7 @@ export default function ApplyPage() {
                     {t.fields.dateEvenement} <span className="text-primary-red">*</span>
                   </label>
                   <div className="space-y-3 pl-1">
-                    {evenements.map((evt, idx) => (
+                    {evenementOptions.map((evt, idx) => (
                       <div key={idx} className="flex items-start gap-3">
                         <input
                           type="radio"
@@ -526,12 +574,23 @@ export default function ApplyPage() {
             )}
 
             {/* Submit Button */}
-            <div className="pt-6">
+            <div className="pt-6 space-y-3">
+              {submitted && (
+                <div className="bg-green-500/10 px-4 py-3 border border-green-500/30">
+                  <p className="text-black text-[13px]">{lang === "en" ? "Your request has been submitted successfully." : "Votre inscription a été enregistrée avec succès."}</p>
+                </div>
+              )}
+              {submitError && (
+                <div className="bg-red-500/10 px-4 py-3 border border-red-500/30">
+                  <p className="text-black text-[13px]">{submitError}</p>
+                </div>
+              )}
               <button
                 type="submit"
-                className="bg-[#dc4b3b] text-white px-10 py-3 text-[14px] font-bold uppercase tracking-widest hover:bg-[#c03d2f] transition-all shadow-none active:scale-95"
+                disabled={isSubmitting}
+                className="bg-[#dc4b3b] disabled:opacity-60 text-white px-10 py-3 text-[14px] font-bold uppercase tracking-widest hover:bg-[#c03d2f] transition-all shadow-none active:scale-95"
               >
-                {t.button}
+                {isSubmitting ? "..." : t.button}
               </button>
             </div>
           </form>

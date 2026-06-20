@@ -17,6 +17,7 @@ import {
   LucideIcon,
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { submitFormToApi } from "@/lib/submit-form-client";
 import { executiveFormations, type ExecutiveFormation } from "./executiveFormationsData";
 
 interface BusinessTrainingPageProps {
@@ -188,6 +189,9 @@ export default function BusinessTrainingPage({ lang }: BusinessTrainingPageProps
     role: "",
     consent: false,
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
+  const [submitError, setSubmitError] = useState("");
 
   const t = {
     en: {
@@ -231,6 +235,8 @@ export default function BusinessTrainingPage({ lang }: BusinessTrainingPageProps
         },
         consent: "I agree to be contacted regarding my request. I can withdraw my consent at any time and register on Bloctel.",
         submit: "Be put in touch with our advisors",
+        successMsg: "Your request has been submitted successfully.",
+        submitErrorMsg: "Something went wrong. Please try again.",
       },
     },
     fr: {
@@ -274,13 +280,39 @@ export default function BusinessTrainingPage({ lang }: BusinessTrainingPageProps
         },
         consent: "J'accepte d'être recontacté dans le cadre de ma demande. Je peux retirer mon consentement à tout moment et m'inscrire sur Bloctel.",
         submit: "Être mis en relation avec nos conseillers",
+        successMsg: "Votre demande a été enregistrée avec succès.",
+        submitErrorMsg: "Une erreur est survenue. Veuillez réessayer.",
       },
     },
   }[lang];
 
-  const handleSubmit = (e: FormEvent) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     if (!formData.consent) return;
+
+    setIsSubmitting(true);
+    setSubmitError("");
+    setSubmitted(false);
+
+    try {
+      await submitFormToApi("/api/forms/business-training", { ...formData, lang });
+      setSubmitted(true);
+      setFormData({
+        company: "",
+        siret: "",
+        lastName: "",
+        firstName: "",
+        email: "",
+        mobile: "",
+        role: "",
+        consent: false,
+      });
+      setTimeout(() => setSubmitted(false), 5000);
+    } catch {
+      setSubmitError(t.contact.submitErrorMsg);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -442,10 +474,17 @@ export default function BusinessTrainingPage({ lang }: BusinessTrainingPageProps
 
                 <button
                   type="submit"
-                  className="bg-[#dc4b3b] text-white px-8 py-3 text-[13px] md:text-[14px] font-bold uppercase tracking-widest hover:bg-[#c03d2f] transition-all shadow-md"
+                  disabled={isSubmitting}
+                  className="bg-[#dc4b3b] disabled:opacity-60 text-white px-8 py-3 text-[13px] md:text-[14px] font-bold uppercase tracking-widest hover:bg-[#c03d2f] transition-all shadow-md"
                 >
-                  {t.contact.submit}
+                  {isSubmitting ? "..." : t.contact.submit}
                 </button>
+                {submitted && (
+                  <p className="text-[13px] text-green-700 font-medium pt-2">{t.contact.successMsg}</p>
+                )}
+                {submitError && (
+                  <p className="text-[13px] text-red-600 font-medium pt-2">{submitError}</p>
+                )}
               </form>
             </section>
           </div>

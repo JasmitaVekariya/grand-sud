@@ -7,6 +7,9 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState, useEffect, useRef } from "react";
 import { ChevronDown } from "lucide-react";
+import { submitFormToApi } from "@/lib/submit-form-client";
+import { pickFieldOptions } from "@/lib/form-options-defaults";
+import { useFormOptions } from "@/lib/use-form-options";
 
 interface CustomSelectProps {
   label: string;
@@ -103,6 +106,11 @@ export default function BrochurePage() {
   });
 
   const [touched, setTouched] = useState<Record<string, boolean>>({});
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
+  const [submitError, setSubmitError] = useState("");
+
+  const { fields: optionFields } = useFormOptions("brochure", lang);
 
   // Scroll zoom animation
   const { scrollY } = useScroll();
@@ -132,6 +140,8 @@ export default function BrochurePage() {
       },
       button: "GET THE BROCHURE",
       errorMsg: "This is required",
+      successMsg: "Your brochure request has been submitted successfully.",
+      submitErrorMsg: "Something went wrong. Please try again.",
       diplomas: [
         "Bachelor Business & Tourism",
         "Bachelor IT & Tourism",
@@ -158,6 +168,8 @@ export default function BrochurePage() {
       },
       button: "TÉLÉCHARGER LA BROCHURE",
       errorMsg: "Ce champ est requis",
+      successMsg: "Votre demande de brochure a été enregistrée avec succès.",
+      submitErrorMsg: "Une erreur est survenue. Veuillez réessayer.",
       diplomas: [
         "Bachelor Business & Tourism",
         "Bachelor IT & Tourism",
@@ -172,6 +184,8 @@ export default function BrochurePage() {
     },
   }[lang];
 
+  const diplomaOptions = pickFieldOptions(optionFields, "diploma", t.diplomas || []);
+
   const handleBlur = (field: string) => {
     setTouched(prev => ({ ...prev, [field]: true }));
   };
@@ -183,9 +197,32 @@ export default function BrochurePage() {
     return "";
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Brochure Form submitted:", formData);
+
+    setIsSubmitting(true);
+    setSubmitError("");
+    setSubmitted(false);
+
+    try {
+      await submitFormToApi("/api/forms/brochure", { ...formData, lang });
+      setSubmitted(true);
+      setFormData({
+        firstName: "",
+        surname: "",
+        email: "",
+        phone: "",
+        country: "",
+        diploma: "Bachelor Business & Tourism",
+        consent: false,
+      });
+      setTouched({});
+      setTimeout(() => setSubmitted(false), 5000);
+    } catch {
+      setSubmitError(t.submitErrorMsg);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -319,7 +356,7 @@ export default function BrochurePage() {
                 <div className="w-full md:w-[800px]">
                   <CustomSelect 
                     label={t.fields.diploma}
-                    options={t.diplomas}
+                    options={diplomaOptions}
                     value={formData.diploma}
                     onChange={(val) => setFormData({ ...formData, diploma: val })}
                     required
@@ -416,12 +453,23 @@ export default function BrochurePage() {
               </label>
             </div>
 
-            <div className="pt-6">
+            <div className="pt-6 space-y-3">
+              {submitted && (
+                <div className="bg-green-500/10 px-4 py-3 border border-green-500/30">
+                  <p className="text-black text-[13px]">{t.successMsg}</p>
+                </div>
+              )}
+              {submitError && (
+                <div className="bg-red-500/10 px-4 py-3 border border-red-500/30">
+                  <p className="text-black text-[13px]">{submitError}</p>
+                </div>
+              )}
               <button
                 type="submit"
-                className="bg-[#dc4b3b] text-white px-10 py-4 text-[15px] font-bold uppercase tracking-widest hover:bg-[#c03d2f] transition-all shadow-none active:scale-95"
+                disabled={isSubmitting}
+                className="bg-[#dc4b3b] disabled:opacity-60 text-white px-10 py-4 text-[15px] font-bold uppercase tracking-widest hover:bg-[#c03d2f] transition-all shadow-none active:scale-95"
               >
-                {t.button}
+                {isSubmitting ? "..." : t.button}
               </button>
             </div>
           </form>
