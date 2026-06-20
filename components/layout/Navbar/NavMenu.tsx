@@ -2,10 +2,11 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { ChevronDown, Search, Menu, X } from "lucide-react";
 import { navigationData } from "@/config/navigation";
 import MegaMenu from "./MegaMenu";
+import HeaderLogo, { headerLogoSpacerClass } from "./HeaderLogo";
+import NavLinkLabel from "./NavLinkLabel";
 import { AnimatePresence, motion } from "framer-motion";
 import { useAccessibility } from "@/context/AccessibilityContext";
 
@@ -21,22 +22,11 @@ export default function NavMenu({ lang }: NavMenuProps) {
   const menuItems = navigationData[lang];
 
   return (
-    <nav className="bg-primary-red sticky top-0 z-50">
-      <div className="max-w-[1440px] mx-auto px-6 md:px-16 lg:px-24 xl:px-[200px]">
+    <nav className="bg-primary-red relative overflow-visible">
+      <div className="max-w-[1440px] mx-auto px-6 md:px-16 lg:px-24 xl:px-[200px] relative overflow-visible">
+        <HeaderLogo lang={lang} />
         <div className="flex items-center justify-between h-16 md:h-20">
-          <Link href={`/${lang}`} className="relative z-50 flex shrink-0 items-center hover:opacity-80 transition-opacity">
-            <div className="w-20 h-20 min-[880px]:w-24 min-[880px]:h-24 relative">
-              <Image
-                src="/assets/logo.jpg"
-                alt="Grand Sud Logo"
-                fill
-                sizes="(max-width: 880px) 8rem, 10rem"
-                className="object-contain"
-                priority
-                loading="eager"
-              />
-            </div>
-          </Link>
+          <div className={headerLogoSpacerClass} aria-hidden="true" />
 
           {/* Desktop Menu */}
           <ul className="hidden min-[880px]:flex items-center gap-1 h-full">
@@ -112,9 +102,7 @@ export default function NavMenu({ lang }: NavMenuProps) {
           >
             <div className="p-6 flex flex-col h-full">
               <div className="flex justify-between items-center mb-10">
-                <div className="bg-white p-2">
-                  <Image src="/assets/logo.jpg" alt="Logo" width={100} height={40} className="object-contain" />
-                </div>
+                <HeaderLogo lang={lang} variant="mobile" />
                 <button onClick={() => setIsMobileMenuOpen(false)} className="text-white">
                   <X size={32} />
                 </button>
@@ -147,7 +135,7 @@ export default function NavMenu({ lang }: NavMenuProps) {
                             >
                               <ul className="mt-4 flex flex-col gap-3 pl-4 border-l border-white/20">
                                 {(() => {
-                                  const links: Array<{ label: string; href: string; isHeader?: boolean }> = [];
+                                  const links: Array<{ label: string; href: string; isHeader?: boolean; isNew?: boolean }> = [];
                                   
                                   // No overview links in submenus
 
@@ -166,12 +154,12 @@ export default function NavMenu({ lang }: NavMenuProps) {
                                     item.megaMenu.columns?.forEach((col: any) => {
                                       links.push({ label: col.title, href: "", isHeader: true });
                                       col.links?.forEach((l: any) => {
-                                        links.push({ label: l.label, href: l.href });
+                                        links.push({ label: l.label, href: l.href, isNew: l.isNew });
                                       });
                                       if (col.extra) {
                                         links.push({ label: col.extra.title, href: "", isHeader: true });
                                         col.extra.links?.forEach((l: any) => {
-                                          links.push({ label: l.label, href: l.href });
+                                          links.push({ label: l.label, href: l.href, isNew: l.isNew });
                                         });
                                       }
                                     });
@@ -218,10 +206,10 @@ export default function NavMenu({ lang }: NavMenuProps) {
                                       <li key={sIdx}>
                                         <Link
                                           href={sublink.href}
-                                          className="text-lg font-medium text-white hover:text-white/80 transition-colors"
+                                          className="text-lg font-medium text-white hover:text-white/80 transition-colors inline-flex items-center flex-wrap"
                                           onClick={() => setIsMobileMenuOpen(false)}
                                         >
-                                          {sublink.label}
+                                          <NavLinkLabel label={sublink.label} isNew={sublink.isNew} variant="mobile" />
                                         </Link>
                                       </li>
                                     );

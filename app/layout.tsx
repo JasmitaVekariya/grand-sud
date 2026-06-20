@@ -43,7 +43,7 @@ export default function RootLayout({
           <CookieProvider>
             <AccessibilityProvider>
               <Navbar />
-              <main className="flex-1 flex flex-col">{children}</main>
+              <main className="flex-1 flex flex-col pt-[var(--site-header-height)]">{children}</main>
               <Footer />
               <FloatingInfo />
               <AccessibilityWidget />

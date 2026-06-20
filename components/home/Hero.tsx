@@ -40,7 +40,7 @@ export default function Hero() {
   const t = content[lang];
 
   return (
-    <section className="relative w-full min-h-[calc(100vh-100px)] md:min-h-[calc(100vh-120px)] overflow-hidden flex flex-col justify-between">
+    <section className="relative w-full -mt-[var(--site-header-height)] min-h-[100vh] overflow-hidden flex flex-col justify-between">
       {/* Cinematic Full Background Video */}
       <div className="absolute inset-0 w-full h-full z-0">
         <motion.div 
@@ -63,8 +63,8 @@ export default function Hero() {
         <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/20 to-transparent" />
       </div>
 
-      {/* Main Content Area - Overlapping Both Sections */}
-      <div className="flex-1 flex items-center z-20 w-full pt-20 md:pt-24 pb-4 pointer-events-none">
+      {/* Main Content Area */}
+      <div className="flex-1 flex items-start z-20 w-full pt-[var(--site-hero-content-offset)] pb-8 pointer-events-none">
         <div className="max-w-[1440px] mx-auto w-full px-6 md:px-16 lg:px-24 xl:px-[200px]">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -72,7 +72,7 @@ export default function Hero() {
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="flex flex-col items-center md:items-start w-full pointer-events-auto"
           >
-            <h1 className="text-white text-center md:text-left text-4xl md:text-5xl lg:text-7xl xl:text-8xl font-bold leading-none tracking-tighter uppercase mb-4">
+            <h1 className="text-white text-center md:text-left text-4xl md:text-5xl lg:text-7xl xl:text-8xl font-bold leading-none tracking-tighter uppercase">
               {lang === "fr" ? "« " : "\""}
               {t.heading1} {t.heading2}
               {lang === "fr" ? " »" : "\""}
@@ -101,9 +101,9 @@ export default function Hero() {
       </div>
 
       {/* Structured Logo Strip - Bottom Aligned */}
-      <div className="w-full z-30 pb-4 md:pb-6 mt-auto pointer-events-none">
+      <div className="w-full z-30 pb-8 md:pb-10 mt-auto pointer-events-none">
         <div className="max-w-[1440px] mx-auto px-6 md:px-16 lg:px-24 xl:px-[200px]">
-          <div className={`flex flex-wrap items-center gap-3 md:gap-5 pointer-events-auto ${lang === "fr" ? "justify-center md:justify-start" : "justify-center md:justify-end"}`}>
+          <div className={`flex flex-wrap items-center gap-3 md:gap-5 pointer-events-auto justify-center md:justify-start`}>
             {PARTNER_LOGOS.map((logo, index) => (
               <motion.div
                 key={index}

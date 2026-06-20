@@ -29,7 +29,7 @@ export const navigationData = {
             title: "PROGRAMMES EN FRANÇAIS",
             links: [
               { label: "BTS Tourisme", href: "/fr/formations/bts-tourisme" },
-              { label: "BTS MCO", href: "/fr/formations/bts-mco" },
+              { label: "BTS MCO", href: "/fr/formations/bts-mco", isNew: true },
               { label: "Bachelor Hospitality Management", href: "/fr/formations/bachelor-hospitality" },
               { label: "Bachelor MICE Designer", href: "/fr/formations/bachelor-mice" },
               { label: "Bachelor Tourisme Durable", href: "/fr/formations/bachelor-durable" },
@@ -41,13 +41,13 @@ export const navigationData = {
             title: "PROGRAMMES EN ANGLAIS",
             links: [
               { label: "Bachelor Business & Tourism", href: "/fr/formations/bachelor-business" },
-              { label: "Bachelor Business Marketing and Communication", href: "/fr/formations/bachelor-marketing" },
+              { label: "Bachelor Business Marketing and Communication", href: "/fr/formations/bachelor-marketing", isNew: true },
               { label: "Bachelor Hospitality Management", href: "/fr/formations/bachelor-hospitality-en" },
               { label: "Bachelor IT & Tourism", href: "/fr/formations/bachelor-it" },
               { label: "Mastère Business & Tourism", href: "/fr/formations/mastere-business" },
               { label: "Mastère Hospitality Management", href: "/fr/formations/mastere-hospitality" },
               { label: "Mastère IT & Tourism", href: "/fr/formations/mastere-it" },
-              { label: "Mastère Business Marketing and Communication", href: "/fr/formations/mastere-marketing" },
+              { label: "Mastère Business Marketing and Communication", href: "/fr/formations/mastere-marketing", isNew: true },
             ]
           },
           {
@@ -137,7 +137,7 @@ export const navigationData = {
             title: "COURSES IN FRENCH",
             links: [
               { label: "BTS Tourism", href: "/en/courses/bts-tourism" },
-              { label: "BTS MCO", href: "/en/courses/bts-mco" },
+              { label: "BTS MCO", href: "/en/courses/bts-mco", isNew: true },
               { label: "Bachelor Hospitality Management", href: "/en/courses/bachelor-hospitality" },
               { label: "Bachelor MICE Designer", href: "/en/courses/bachelor-mice" },
               { label: "Bachelor Sustainable and Digital Tourism Development", href: "/en/courses/bachelor-sustainable" },
@@ -149,13 +149,13 @@ export const navigationData = {
             title: "COURSES IN ENGLISH",
             links: [
               { label: "Bachelor Business & Tourism", href: "/en/courses/bachelor-business" },
-              { label: "Bachelor in Business Marketing and Communication", href: "/en/courses/bachelor-marketing" },
+              { label: "Bachelor in Business Marketing and Communication", href: "/en/courses/bachelor-marketing", isNew: true },
               { label: "Bachelor Hospitality Management", href: "/en/courses/bachelor-hospitality-en" },
               { label: "Bachelor IT & Tourism", href: "/en/courses/bachelor-it" },
               { label: "Mastère Business & Tourism", href: "/en/courses/mastere-business" },
               { label: "Mastère Hospitality Management", href: "/en/courses/mastere-hospitality" },
               { label: "Mastère IT & Tourism", href: "/en/courses/mastere-it" },
-              { label: "Mastere in Business Marketing and Communication", href: "/en/courses/mastere-marketing" },
+              { label: "Mastere in Business Marketing and Communication", href: "/en/courses/mastere-marketing", isNew: true },
             ]
           },
           {

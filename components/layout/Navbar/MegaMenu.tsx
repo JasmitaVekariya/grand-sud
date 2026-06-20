@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { MapPin, BarChart2, Calendar, Map, Home, MapIcon, Briefcase, ChevronRight } from "lucide-react";
+import NavLinkLabel from "./NavLinkLabel";
 
 interface MegaMenuProps {
   type: string;
@@ -96,7 +97,8 @@ export default function MegaMenu({ type, data, isOpen }: MegaMenuProps) {
               {col.links.map((link: any, lIdx: number) => (
                 <li key={lIdx}>
                   <Link href={link.href} prefetch={false} className="flex items-center text-[13px] font-[500] text-gray-800 hover:text-primary-red transition-colors leading-tight">
-                    <span className="w-2.5 h-2.5 bg-primary-red mr-3 flex-shrink-0" /> {link.label}
+                    <span className="w-2.5 h-2.5 bg-primary-red mr-3 flex-shrink-0" />
+                    <NavLinkLabel label={link.label} isNew={link.isNew} />
                   </Link>
                 </li>
               ))}
