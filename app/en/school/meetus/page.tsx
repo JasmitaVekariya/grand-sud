@@ -3,11 +3,15 @@
 import { useState, useEffect } from "react";
 import PageBanner from "@/components/common/PageBanner";
 import { motion } from "framer-motion";
+import MeetUsEventDates from "@/components/events/MeetUsEventDates";
+import MeetUsEventsCalendar from "@/components/school/MeetUsEventsCalendar";
+import { WebsiteEventsProvider } from "@/lib/website-events-context";
 
 const sections = [
   { id: "open-doors", label: "OPEN DOORS" },
   { id: "evenings", label: "INFORMATION EVENINGS" },
   { id: "fairs", label: "FAIRS AND OTHER EVENTS" },
+  { id: "all-events", label: "ALL UPCOMING EVENTS" },
 ];
 
 export default function MeetUsPage() {
@@ -91,6 +95,7 @@ export default function MeetUsPage() {
               <p>and discuss the programs, life at the school, our partners, internships, careers, job opportunities, and more.</p>
             </div>
 
+            <WebsiteEventsProvider lang="en" from="2025-01-01">
             <div className="flex flex-col space-y-0">
               
               {/* 1st Card: OPEN DOORS */}
@@ -110,20 +115,7 @@ export default function MeetUsPage() {
                     <div className="space-y-6 text-[14px] leading-relaxed font-medium text-white/90">
                       <p>Come and discover the school, its degree programs from high school diploma to master's degree, and its professional specializations on campus.</p>
                       <p className="font-bold text-white uppercase tracking-wider">Upcoming dates (Toulouse-Labège campus):</p>
-                      <ul className="grid grid-cols-1 gap-1 text-[13px]">
-                        <li>• October 11, 2025 – 10 a.m. to 1 p.m.</li>
-                        <li>• November 15, 2025 – 10 a.m. to 1 p.m.</li>
-                        <li>• December 13, 2025 – 10 a.m. to 1 p.m.</li>
-                        <li>• January 17, 2026 – 10 a.m. to 1 p.m.</li>
-                        <li>• February 14, 2026 – 10 a.m. to 1 p.m.</li>
-                        <li>• March 14, 2026 – 10 a.m. to 1 p.m.</li>
-                        <li>• April 11, 2026 – 10 a.m. to 1 p.m.</li>
-                        <li>• May 30, 2026 – 10 a.m. to 1 p.m.</li>
-                        <li>• June 13, 2026 – 10 a.m. to 1 p.m.</li>
-                        <li>• July 11, 2026 – 10 a.m. to 1 p.m.</li>
-                        <li>• August 22, 2026 – 10 a.m. to 1 p.m.</li>
-                        <li>• September 12, 2026 – 10 a.m. to 1 p.m.</li>
-                      </ul>
+                      <MeetUsEventDates lang="en" category="open_doors" />
                       <p className="italic text-[13px] pt-4">Note: these events are taking place onsite only</p>
                     </div>
                   </div>
@@ -147,19 +139,7 @@ export default function MeetUsPage() {
                     <div className="space-y-6 text-[14px] leading-relaxed font-medium text-white/90">
                       <p>Only available in the evenings? We welcome you once a month!</p>
                       <p className="font-bold text-white uppercase tracking-wider">Upcoming dates (Toulouse-Labège campus):</p>
-                      <ul className="grid grid-cols-1 gap-1 text-[13px]">
-                        <li>• October 15, 2025 – 5:00 p.m. to 8:30 p.m.</li>
-                        <li>• November 19, 2025 – 5:00 p.m. to 8:30 p.m.</li>
-                        <li>• December 17, 2025 – 5:00 p.m. to 8:30 p.m.</li>
-                        <li>• January 21, 2026 – 5:00 p.m. to 8:30 p.m.</li>
-                        <li>• February 18, 2026 – 5:00 p.m. to 8:30 p.m.</li>
-                        <li>• March 18, 2026 – 5:00 p.m. to 8:30 p.m.</li>
-                        <li>• April 15, 2026 – 5:00 p.m. to 8:30 p.m.</li>
-                        <li>• May 20, 2026 – 5:00 p.m. to 8:30 p.m.</li>
-                        <li>• June 17, 2026 – 5:00 p.m. to 8:30 p.m.</li>
-                        <li>• July 15, 2026 – 5:00 p.m. to 8:30 p.m.</li>
-                        <li>• August 26, 2026 – 5:00 p.m. to 8:30 p.m.</li>
-                      </ul>
+                      <MeetUsEventDates lang="en" category="information_evening" />
                       <p className="italic text-[13px] pt-4">Note: these events are taking place onsite only</p>
                     </div>
                   </div>
@@ -183,19 +163,22 @@ export default function MeetUsPage() {
                     <div className="space-y-6 text-[14px] leading-relaxed font-medium text-white/90">
                       <p>Every year, we participate in numerous trade shows and events aimed at young people looking for training opportunities. It's a chance to meet us and talk to our teams in a dynamic setting!</p>
                       <p className="font-bold text-white uppercase tracking-wider">Upcoming dates:</p>
-                      <ul className="grid grid-cols-1 gap-3 text-[13px]">
-                        <li>• October 4, 2025 – Higher Education Fair – Toulouse</li>
-                        <li>• November 8, 2025 – Higher Education Fair – Toulouse</li>
-                        <li>• November 29, 2025 – Student and Work-Study Fair – Pau</li>
-                        <li>• February 7, 2026 – Higher Education and Work-Study Fair – Toulouse</li>
-                      </ul>
+                      <MeetUsEventDates lang="en" category="fair" className="gap-3" />
                       <p className="italic text-[13px] pt-4 leading-relaxed">Note: these events are organized by other organizations, they are usually in French and onsite unless otherwise stated</p>
                     </div>
                   </div>
                 </div>
               </section>
 
+              <section id="all-events" className="scroll-mt-32 pt-16">
+                <h2 className="text-[28px] md:text-[36px] font-bold uppercase tracking-tight mb-8 text-[#2B2B2B]">
+                  ALL UPCOMING EVENTS
+                </h2>
+                <MeetUsEventsCalendar lang="en" />
+              </section>
+
             </div>
+            </WebsiteEventsProvider>
 
           </div>
 

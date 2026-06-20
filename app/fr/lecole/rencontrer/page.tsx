@@ -4,6 +4,8 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import PageBanner from "@/components/common/PageBanner";
 import MeetUsEventsCalendar from "@/components/school/MeetUsEventsCalendar";
+import MeetUsEventDates from "@/components/events/MeetUsEventDates";
+import { WebsiteEventsProvider } from "@/lib/website-events-context";
 
 const sections = [
   { id: "open-doors", label: "Portes Ouvertes" },
@@ -125,6 +127,7 @@ export default function NousRencontrerPage() {
               </p>
             </div>
 
+            <WebsiteEventsProvider lang="fr" from="2025-01-01">
             <div className="flex flex-col space-y-0">
               <section id="open-doors" className="scroll-mt-32">
                 <div className="flex flex-col md:flex-row bg-[#333] min-h-[565px] overflow-hidden group">
@@ -147,20 +150,7 @@ export default function NousRencontrerPage() {
                       <p className="font-bold text-white tracking-wider">
                         Prochaines dates (campus Toulouse-Labège) :
                       </p>
-                      <ul className="grid grid-cols-1 gap-1 text-[13px]">
-                        <li>11 octobre 2025 – 10h-13h</li>
-                        <li>18 novembre 2025 – 10h-19h</li>
-                        <li>6 décembre 2025 – 10h-19h</li>
-                        <li>17 janvier 2026 – 10h-13h</li>
-                        <li>14 février 2026 – 10h-13h</li>
-                        <li>14 mars 2026 – 10h-13h</li>
-                        <li>11 avril 2026 – 10h-13h</li>
-                        <li>30 mai 2026 – 10h-13h</li>
-                        <li>13 juin 2026 – 10h-13h</li>
-                        <li>11 juillet 2026 – 10h-13h</li>
-                        <li>22 août 2026 – 10h-13h</li>
-                        <li>12 septembre 2026 – 10h-13h</li>
-                      </ul>
+                      <MeetUsEventDates lang="fr" category="open_doors" />
                       <RegistrationButton />
                     </div>
                   </div>
@@ -185,19 +175,7 @@ export default function NousRencontrerPage() {
                       <p className="font-bold text-white tracking-wider">
                         Prochaines dates (campus Toulouse-Labège) :
                       </p>
-                      <ul className="grid grid-cols-1 gap-1 text-[13px]">
-                        <li>15 octobre 2025 – 17h-20h30</li>
-                        <li>19 novembre 2025 – 17h-20h30</li>
-                        <li>17 décembre 2025 – 17h-20h30</li>
-                        <li>21 janvier 2026 – 17h-20h30</li>
-                        <li>18 février 2026 – 17h-20h30</li>
-                        <li>18 mars 2026 – 17h-20h30</li>
-                        <li>15 avril 2026 – 17h-20h30</li>
-                        <li>20 mai 2026 – 17h-20h30</li>
-                        <li>17 juin 2026 – 17h-20h30</li>
-                        <li>15 juillet 2026 – 17h-20h30</li>
-                        <li>26 août 2026 – 17h-20h30</li>
-                      </ul>
+                      <MeetUsEventDates lang="fr" category="information_evening" />
                       <RegistrationButton />
                     </div>
                   </div>
@@ -224,12 +202,7 @@ export default function NousRencontrerPage() {
                         d&apos;échanger avec nos équipes dans un cadre dynamique !
                       </p>
                       <p className="font-bold text-white tracking-wider">Prochaines dates :</p>
-                      <ul className="grid grid-cols-1 gap-3 text-[13px]">
-                        <li>4 octobre 2025 – Salon des études supérieures – Toulouse</li>
-                        <li>8 novembre 2025 – Salon des études supérieures – Toulouse</li>
-                        <li>29 novembre 2025 – Salon de l&apos;étudiant et de l&apos;alternance – Pau</li>
-                        <li>7 février 2026 – Salon des études supérieures et de l&apos;alternance – Toulouse</li>
-                      </ul>
+                      <MeetUsEventDates lang="fr" category="fair" className="gap-3" />
                     </div>
                   </div>
                 </div>
@@ -239,9 +212,10 @@ export default function NousRencontrerPage() {
                 <h2 className="text-[32px] md:text-[42px] font-bold uppercase tracking-tight text-[#2B2B2B] mb-8">
                   Tous nos évènements
                 </h2>
-                <MeetUsEventsCalendar />
+                <MeetUsEventsCalendar lang="fr" />
               </section>
             </div>
+            </WebsiteEventsProvider>
           </div>
         </div>
       </div>

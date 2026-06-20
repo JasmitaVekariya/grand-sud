@@ -1,27 +1,17 @@
 "use client";
 
-import { useState, useRef, useEffect } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
-import { motion, AnimatePresence, useAnimation } from "framer-motion";
+import { motion, useAnimation } from "framer-motion";
 import { useLanguage } from "@/context/LanguageContext";
-
-const events = [
-  { day: "11", month: "JULY", time: "10:00 AM - 1:00 PM", title: "Open Days", monthFr: "JUILLET", titleFr: "Journées Portes Ouvertes" },
-  { day: "17", month: "JUNE", time: "5:00 PM - 8:30 PM", title: "Information Evening", monthFr: "JUIN", titleFr: "Soirée d'information" },
-  { day: "13", month: "JUNE", time: "10:00 AM - 1:00 PM", title: "Open Days", monthFr: "JUIN", titleFr: "Journées Portes Ouvertes" },
-  { day: "30", month: "MAY", time: "10:00 AM - 1:00 PM", title: "Open Days", monthFr: "MAI", titleFr: "Journées Portes Ouvertes" },
-  { day: "20", month: "MAY", time: "5:00 PM - 8:30 PM", title: "Information Evening", monthFr: "MAI", titleFr: "Soirée d'information" },
-  { day: "15", month: "APRIL", time: "5:00 PM - 8:30 PM", title: "Information Evening", monthFr: "AVRIL", titleFr: "Soirée d'information" },
-  { day: "11", month: "APRIL", time: "10:00 AM - 1:00 PM", title: "Open Days", monthFr: "AVRIL", titleFr: "Journées Portes Ouvertes" },
-];
+import { useEventsTicker } from "@/lib/use-events-ticker";
 
 export default function EventsSection() {
   const { lang } = useLanguage();
   const [isPaused, setIsPaused] = useState(false);
   const scrollControls = useAnimation();
-  
-  // Duplicate events for seamless scrolling
-  const allEvents = [...events, ...events];
+  const tickerEvents = useEventsTicker();
+  const allEvents = [...tickerEvents, ...tickerEvents];
 
   useEffect(() => {
     if (!isPaused) {
