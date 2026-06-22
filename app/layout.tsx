@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Montserrat } from "next/font/google";
+import { Allura, Montserrat } from "next/font/google";
 import "./globals.css";
 
 import Navbar from "@/components/layout/Navbar";
@@ -10,6 +10,12 @@ const montserrat = Montserrat({
   variable: "--font-montserrat",
   subsets: ["latin"],
   weight: ["400", "500", "600", "700", "800", "900"],
+});
+
+const allura = Allura({
+  variable: "--font-celebration",
+  subsets: ["latin", "latin-ext"],
+  weight: "400",
 });
 
 export const metadata: Metadata = {
@@ -36,7 +42,7 @@ export default function RootLayout({
   return (
     <html
       lang="fr"
-      className={`${montserrat.variable} h-full antialiased font-montserrat`}
+      className={`${montserrat.variable} ${allura.variable} h-full antialiased font-montserrat`}
       suppressHydrationWarning
     >
       <body className="min-h-full flex flex-col" suppressHydrationWarning>

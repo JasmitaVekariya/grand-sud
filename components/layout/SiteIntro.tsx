@@ -4,6 +4,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
 import { useLanguage } from "@/context/LanguageContext";
+import AnimatedLogoMark from "@/components/layout/AnimatedLogoMark";
 
 const COPY = {
   en: "Celebrating 35 years .........!",
@@ -150,17 +151,9 @@ export default function SiteIntro() {
             ? { duration: TIMING.logoBlink / 1000, ease: "easeInOut" }
             : { duration: TIMING.logoFadeIn / 1000, ease: "easeOut" }
         }
-        className="w-[148px] sm:w-[175px] md:w-[190px] overflow-hidden shadow-[0_8px_24px_rgba(0,0,0,0.12)] rounded-[12px]"
+        className="w-[148px] sm:w-[175px] md:w-[220px] overflow-hidden rounded-[12px] shadow-[0_10px_28px_rgba(0,0,0,0.14)] ring-1 ring-black/5"
       >
-        <img
-          src="/assets/logo.jpg"
-          alt="Grand Sud Logo"
-          width={881}
-          height={683}
-          className="block h-auto w-full"
-          loading="eager"
-          decoding="async"
-        />
+        <AnimatedLogoMark flipInterval={1100} />
       </motion.div>
 
       {showText && (
@@ -168,7 +161,7 @@ export default function SiteIntro() {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: phase === "exit" ? 0 : 1, y: 0 }}
           transition={{ duration: 0.25, ease: "easeOut" }}
-          className="mt-10 max-w-3xl text-center text-primary-red text-lg sm:text-xl md:text-2xl font-semibold tracking-wide min-h-[2.5rem]"
+          className="mt-10 max-w-3xl text-center font-celebration text-primary-red text-4xl sm:text-5xl md:text-6xl leading-snug tracking-normal min-h-[3.5rem]"
         >
           {typedText}
           {phase === "typewriter" && (

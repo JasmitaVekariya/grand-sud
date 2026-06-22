@@ -39,6 +39,7 @@
   --color-primary-dark: var(--primary-dark);
   --color-footer-dark: var(--footer-dark);
   --font-montserrat: "Montserrat", sans-serif;
+  --font-celebration: "Allura", cursive;
 }
 
 @media (prefers-color-scheme: dark) {

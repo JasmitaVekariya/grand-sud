@@ -96,7 +96,9 @@ export default function CourseAdmissions({
             <h3 className="text-[28px] font-bold">{intakes.intakesTitle}</h3>
             <div className="space-y-2 text-[13px]">
               <p><span className="font-bold">{intakes.nextYearLabel}:</span> {intakes.nextYearValue}</p>
-              <p><span className="font-bold">{intakes.deferredLabel}:</span> {intakes.deferredValue}</p>
+              {(intakes.deferredLabel || intakes.deferredValue) && (
+                <p><span className="font-bold">{intakes.deferredLabel}:</span> {intakes.deferredValue}</p>
+              )}
             </div>
           </div>
         </div>
